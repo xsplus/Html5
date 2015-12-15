@@ -4,18 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link href="css/style.css" rel="stylesheet">
+    <style>
+        .layer{
+            position: absolute;
+            background-size:100% 100% !important;
+            display: block;
+        }
+        .scene{
+            position: absolute;
+            background-image: url('img/1.jpg');
+            background-size:100% 100% !important;
+            display: none;
+        }
+        .scene.show{
+            display: block;
+        }
+        a{
+            background: red;
+        }
+    </style>
     <title>智慧城市</title>
 </head>
 <body id="index-body">
-<section>
-    <a href="html/qidong.html">启动谍影任务</a>
-    <a href="html/chakan.html">查看解决方案</a>
+<section class="scene show">
 </section>
+<!--<section>-->
+    <!--<a href="html/qidong.html">启动谍影任务</a>-->
+    <!--<a href="html/chakan.html">查看解决方案</a>-->
+<!--</section>-->
 </body>
 <footer>
     <script src="js/zepto.min.js"></script>
 </footer>
 </html>
 <script>
-    document.getElementById('index-body').style.backgroundImage = 'url("img/1.jpg")';
+    $(function(){
+
+        (function(objs,ele,w,h){
+            var sw,sh;/*记录长和宽的比例*/
+            /*重设窗体大小*/
+            $(window).resize(resize);/*窗体改变自适应*/
+            /*页面自适应高度*/
+            function resize(){
+                var zWin = $(window);
+                sw = zWin.width()/w;
+                sh = zWin.height()/h;
+                $('.scene.show .layer').trigger('changeSize');
+            }
+            for(var i=0;i<objs.length;i++) {
+                (function (tmp) {
+                    if(!tmp.attr) tmp.attr = {}
+                    tmp.attr.class = (tmp.attr&&tmp.attr.class)?tmp.attr.class+' layer':'layer';
+                    var obj = $('<' + (tmp.tag ? tmp.tag : 'div') + '/>').attr(tmp.attr).css(tmp.css);
+                    var w, h;
+                    if (tmp.img) {
+                        obj.css('background-image', 'url(' + tmp.img + ')')
+                        var img = new Image();
+                        img.src = tmp.img;
+                        img.onload = function () {
+                            w = img.width;
+                            h = img.height;
+                            obj.css({'width': w, 'height': h});
+                            resize();
+                        }
+                    } else {
+                        w = tmp.w;
+                        h = tmp.h;
+                        obj.css({'width': w, 'height': h});
+                        resize();
+                    }
+                    ele.append(obj);
+                    obj.bind('changeSize', function changeSize() {
+                        obj.css({'width':w*sw,'left':tmp.x*sw,'height':h*sh,'top':tmp.y*sh});
+                    })
+
+                })(objs[i])
+            }
+        })([
+            {'img':'img/1.jpg',x:0,y:0},
+            {'img':null,x:75,y:240,w:170,h:38,tag:'a',attr:{'href':'http://www.baidu.com','class':'abc'},css:{'background':"#fff"}},
+            {'img':null,x:310,y:240,w:170,h:38,tag:'a'},
+            ],$('.scene'),569,321);
+    })
+    /*
+    * .left{
+     width: 1.7rem;
+     height: 0.38rem;
+     left: 0.75rem;
+     top: 2.4rem;
+     background: red;
+     }
+     .right{
+     width: 1.7rem;
+     height: 0.38rem;
+     left: 3.1rem;
+     top: 2.4rem;
+     }
+    *
+    * */
 </script>
