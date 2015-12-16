@@ -2,127 +2,113 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
     <style>
-        .layer{
-            position: absolute;
-            background-size:100% 100% !important;
-            display: block;
-        }
-        .scene{
-            position: absolute;
-            background-image: url('img/1.jpg');
-            background-size:100% 100% !important;
-            display: none;
-        }
-        .scene.show{
-            display: block;
-        }
-        a{
-            background: red;
-        }
+
     </style>
     <title>智慧城市</title>
 </head>
-<body id="index-body">
-<section class="scene show animated bounceIn">
+<body>
+<section id="loading">
+    <div>
+
+        <span></span>
+        <span></span>
+        <span></span>
+        <a></a>
+    </div>
 </section>
+<section class="scene scene-index"></section>
+<section class="scene scene-main"></section>
 </body>
 <footer>
     <script src="js/zepto.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/main.js"></script>
 </footer>
 </html>
 <script>
-    $(function(){
-
-        (function(objs,ele,w,h){
-            var sw,sh;/*记录长和宽的比例*/
-            /*重设窗体大小*/
-            $(window).resize(resize);/*窗体改变自适应*/
-            /*页面自适应高度*/
-            function resize(){
-                var zWin = $(window);
-                sw = zWin.width()/w;
-                sh = zWin.height()/h;
-                $('.scene.show .layer').trigger('changeSize');
-            }
-            for(var i=0;i<objs.length;i++) {
-                (function (tmp) {
-                    if(!tmp.attr) tmp.attr = {}
-                    tmp.attr.class = (tmp.attr&&tmp.attr.class)?tmp.attr.class+' layer':'layer';
-                    var obj = $('<' + (tmp.tag ? tmp.tag : 'div') + '/>').attr(tmp.attr).css(tmp.css);
-                    var w, h;
-                    if (tmp.img) {
-                        obj.css('background-image', 'url(' + tmp.img + ')')
-                        var img = new Image();
-                        img.src = tmp.img;
-                        img.onload = function () {
-                            w = img.width;
-                            h = img.height;
-                            obj.css({'width': w, 'height': h});
-                            resize();
-                        }
-                    } else {
-                        w = tmp.w;
-                        h = tmp.h;
-                        obj.css({'width': w, 'height': h});
-                        resize();
+    $(function() {
+        var win = $(window);
+        var load_sum=0,load_n=0;
+        (function (scenes) {
+            for (var i = 0; i < scenes.length; i++) {
+                (function (scene) {
+                    scene = $.extend({
+                        'path':'',
+                        'auto_w':true,                         /*是否自动适应宽度*/
+                        'auto_h':true,                         /*是否自动适应高度*/
+                        'layers':[]                             /*场景的图层数据*/
+                    },scene)
+                    var sw, sh;                                 /*记录长和宽的比例*/
+                    for (var j = 0; j < scene.layers.length; j++) {
+                        (function (layer) {
+                            if (!layer.attr) layer.attr = {}
+                            layer.attr.class = (layer.attr && layer.attr.class) ? layer.attr.class + ' layer' : 'layer';
+                            var obj = $('<' + (layer.tag ? layer.tag : 'div') + '/>').attr(layer.attr).css(layer.css);
+                            var w, h;
+                            if (layer.img) {
+                                var img = new Image();
+                                img.src = scene.path + layer.img;
+                                load_sum++;
+                                img.onload = function () {
+                                    obj.css('background-image', 'url('+ scene.path + layer.img + ')');
+                                    w = layer.w?layer.w:img.width;
+                                    h = layer.h?layer.h:img.height;
+                                    obj.css({'width': w, 'height': h});
+                                    load_n++;
+                                    if(loading())win.resize();
+                                }
+                            } else {
+                                w = layer.w;
+                                h = layer.h;
+                                obj.css({'width': w, 'height': h});
+                            }
+                            scene.box.append(obj);
+                            var autoSize;
+                            if (!scene.auto_h && scene.auto_w) obj.bind('autoSize', function autoSizeW() {
+                                obj.css({'width': w * sw, 'left': layer.x * sw, 'height': h * sw, 'top': layer.y * sw});
+                            });
+                            else if (scene.auto_h && !scene.auto_w) obj.bind('autoSize', function autoSizeH() {
+                                obj.css({'width': w * sh, 'left': layer.x * sh, 'height': h * sh, 'top': layer.y * sh});
+                            });
+                            else if (scene.auto_h && scene.auto_w) obj.bind('autoSize', function autoSizeAll() {
+                                obj.css({'width': w * sw, 'left': layer.x * sw, 'height': h * sh, 'top': layer.y * sh});
+                            });
+                        })(scene.layers[j])
                     }
-                    ele.append(obj);
-                    obj.bind('changeSize', function changeSize() {
-                        obj.css({'width':w*sw,'left':tmp.x*sw,'height':h*sh,'top':tmp.y*sh});
-                    })
 
-                })(objs[i])
+                    function resize() {
+                        if(scene.box.is('.show')){
+                            sw = win.width() / scene.width;
+                            sh = win.height() / scene.height;
+                            scene.box.children('.layer').trigger('autoSize');
+                        }
+                    }
+                    win.resize(resize);                         /*重设窗体大小*/
+                })(scenes[i])
             }
-        })([
-            {'img':'img/1.jpg',x:0,y:0},
-            {'img':null,x:75,y:240,w:170,h:38,tag:'a',attr:{'href':'http://www.baidu.com','class':'abc'},css:{'background':"#fff"}},
-            {'img':null,x:310,y:240,w:170,h:38,tag:'a'},
-            ],$('.scene'),569,321);
+        })([scene_index,scene_main]);
+
+        function loading(){
+            $("#loading a").text((load_n/load_sum).toFixed(2)*100+"%");
+            if(load_n == load_sum){
+                $('.scene.scene-index').addClass('show')
+                $("#loading").remove();
+                for(var i=0;i<bindfun.length;i++){
+                    var fun = bindfun[i];
+                    if(fun)fun();
+                }
+                return true;
+            }
+            return false;
+        }
     })
-    /*
-    * .left{
-     width: 1.7rem;
-     height: 0.38rem;
-     left: 0.75rem;
-     top: 2.4rem;
-     background: red;
-     }
-     .right{
-     width: 1.7rem;
-     height: 0.38rem;
-     left: 3.1rem;
-     top: 2.4rem;
-     }
-    *
-    * */
 </script>
-<style type="text/css">
-    /* 样式放在结尾，防止 base64 图片造成拥塞 */
-    /* 屏幕旋转 */
-    @-webkit-keyframes rotation {
-        30% { transform: rotate(90deg); -webkit-transform: rotate(90deg) }
-        70%,80% { transform: rotate(0deg); -webkit-transform: rotate(0deg) }
-        100% { transform: rotate(0deg); -webkit-transform: rotate(0deg) }
-    }
-    @keyframes rotation {
-        30% { transform: rotate(90deg); -webkit-transform: rotate(90deg) }
-        70%,80% { transform: rotate(0deg); -webkit-transform: rotate(0deg) }
-        100% { transform: rotate(0deg); -webkit-transform: rotate(0deg) }
-    }
-    #orientLayer { display: none; z-index: 9999999; }
-    @media screen and (max-aspect-ratio: 13/9) { #orientLayer { display: block; } }
-    .mod-orient-layer { display: none; position: fixed; height: 100%; width: 100%; left: 0; top: 0; right: 0; bottom: 0; background: #000; z-index: 9997 }
-    .mod-orient-layer__content { position: absolute; width: 100%; top: 45%; margin-top: -75px; text-align: center }
-    .mod-orient-layer__icon-orient {background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIYAAADaCAMAAABU68ovAAAAXVBMVEUAAAD29vb////x8fH////////x8fH5+fn29vby8vL////5+fn39/f6+vr////x8fH////////+/v7////09PT////x8fH39/f////////////////////x8fH///+WLTLGAAAAHXRSTlMAIpML+gb4ZhHWn1c2gvHBvq1uKJcC6k8b187lQ9yhhboAAAQYSURBVHja7d3blpowFIDhTUIAOchZDkre/zE7ycySrbUUpsRN2/1fzO18KzEqxEVgTiZNfgmmtxRc8iaR8HNe8x4BtjQePKayYCIoyBSgvNNE1AkNSHqZyLqk97EgUCCHBzZ5mkg7ScvIJuIyOyXBRFxgpqWZyGsAZLB1KjsJi8nutHU4JCRbFRH8tmirI9k8Jx2sqNs8K/m0LQkrktO2crgcgXGB4AiTEsB0hJfo9MGgX7CGcYiYwQxmMOOvZwRhBG8tCoMXjBDeXvWCEcHbi14wgCBmMIMZzGAGM5jxETNwzMAxA8cMHDNwzMAxA8cMHDNwzMAxA8cMHDNwzMAxY6E2rUQxnH2tz9cirlJFwFBJedaPnUv0M7++egPDE8iAJcIDmxwH5wwv9vUviw2kLbVO3TJU5uul/EyB0FoLp4x60PdGUd3qPurrWyjGGTc05u+1dcgI7/+tCCPARWGhH7o5Y7RCf+bH9ctXLp6v2BVDxfqz0oPXeSVaNtINo/1SXDv4dck8IIkbhtC2ol+iouEonTBCbYvVMnXOjxww6s/RFrBUpXHh/gw1rHj5d/qhYn9Gpk2FWh6xRBRX5Oj3Znh2Sq49/L6+y8pB26q9GbE2dbA2mVbx6I+7MfBglLCttm73ZQi7AD3iL4HqjFYJHSPRppqaUaJ3ATpGa+ckpGak2hRRMyqjGMkvl+xyFeSMwjAqcsZgGDdyhl0oNTnDN4yenJGZFGxNChP5/Y3efh6SM2rDOJMzboYxkDMqwyjIGcIw6F+io2FU1IxIm1JqRmgXSkvNKNCXeTpGrU0JNSO2c6LIGPgCS8AuDHz9ta0SXWDtxoDRH+MqlbC2Dt2G2JFRadtQZt2qq/orGowdGb2euxYiqWEpVWhTBnszoNAPdStuQwxqf0aocdWKW4Z+DfszIh8pxJqbuCE4YAC+4bm0evtipjpgJHeFnyyt1Ku2xa0bhjxr27p75rECNwyI9ZwvXkHq+7aTaMEV44YYy/spfgjgjNHaWW+GeUhGEX7tLlVinIFDDSgnOwhi1V6bU0b6tVS9eAERe863g4dRrtiHdc6o+nn5vtyVVgR79Cqt4uL6gfHPQyGqtP2vf7HADGbcYwaOGThm4JiBYwaOGThm4JiBYwaOGThm4JiBYwaOGThm4JiBYwaOGThm4JjhtOM+J/AgT008yDMkN/dPP9hzS8zAMQN3OEYeekp5YU7KOKXwVXqiY+QS7smcinGKABWdiBgpPJTSMHJ4KidhhPBUSMLw4CmPhKHgKUXCkHsygum71ftNSgCX6bsl8FQyfbcL5EdYsDk0R3j7aiA5wpt5AjKg/2gLJEBD/0Hf2OOf/vRrj6z/7GtP4B3nMKyjHA12kIPSjnJs3FEO0TvKkYJHOWCR+rjJH0Vn6fI5PjNbAAAAAElFTkSuQmCC');display: inline-block; width: 67px; height: 109px;
-        -webkit-animation: rotation infinite 1.5s ease-in-out; animation: rotation infinite 1.5s ease-in-out; -webkit-background-size: 67px; background-size: 67px }
-    .mod-orient-layer__desc { margin-top: 20px; font-size: 15px; color: #fff }
-
-</style>
-
 <div id="orientLayer" class="mod-orient-layer">
     <div class="mod-orient-layer__content">
         <i class="icon mod-orient-layer__icon-orient"></i>

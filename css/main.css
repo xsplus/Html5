@@ -1,0 +1,182 @@
+/* 样式放在结尾，防止 base64 图片造成拥塞 */
+/* 屏幕旋转 */
+@-webkit-keyframes rotation {
+    30% { transform: rotate(90deg); -webkit-transform: rotate(90deg) }
+    70%,80% { transform: rotate(0deg); -webkit-transform: rotate(0deg) }
+    100% { transform: rotate(0deg); -webkit-transform: rotate(0deg) }
+}
+@keyframes rotation {
+    30% { transform: rotate(90deg); -webkit-transform: rotate(90deg) }
+    70%,80% { transform: rotate(0deg); -webkit-transform: rotate(0deg) }
+    100% { transform: rotate(0deg); -webkit-transform: rotate(0deg) }
+}
+#orientLayer { display: none; z-index: 9999999; }
+@media screen and (max-aspect-ratio: 13/9) { #orientLayer { display: block; } }
+.mod-orient-layer { display: none; position: fixed; height: 100%; width: 100%; left: 0; top: 0; right: 0; bottom: 0; background: #000; z-index: 9997 }
+.mod-orient-layer__content { position: absolute; width: 100%; top: 45%; margin-top: -75px; text-align: center }
+.mod-orient-layer__icon-orient {background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIYAAADaCAMAAABU68ovAAAAXVBMVEUAAAD29vb////x8fH////////x8fH5+fn29vby8vL////5+fn39/f6+vr////x8fH////////+/v7////09PT////x8fH39/f////////////////////x8fH///+WLTLGAAAAHXRSTlMAIpML+gb4ZhHWn1c2gvHBvq1uKJcC6k8b187lQ9yhhboAAAQYSURBVHja7d3blpowFIDhTUIAOchZDkre/zE7ycySrbUUpsRN2/1fzO18KzEqxEVgTiZNfgmmtxRc8iaR8HNe8x4BtjQePKayYCIoyBSgvNNE1AkNSHqZyLqk97EgUCCHBzZ5mkg7ScvIJuIyOyXBRFxgpqWZyGsAZLB1KjsJi8nutHU4JCRbFRH8tmirI9k8Jx2sqNs8K/m0LQkrktO2crgcgXGB4AiTEsB0hJfo9MGgX7CGcYiYwQxmMOOvZwRhBG8tCoMXjBDeXvWCEcHbi14wgCBmMIMZzGAGM5jxETNwzMAxA8cMHDNwzMAxA8cMHDNwzMAxA8cMHDNwzMAxY6E2rUQxnH2tz9cirlJFwFBJedaPnUv0M7++egPDE8iAJcIDmxwH5wwv9vUviw2kLbVO3TJU5uul/EyB0FoLp4x60PdGUd3qPurrWyjGGTc05u+1dcgI7/+tCCPARWGhH7o5Y7RCf+bH9ctXLp6v2BVDxfqz0oPXeSVaNtINo/1SXDv4dck8IIkbhtC2ol+iouEonTBCbYvVMnXOjxww6s/RFrBUpXHh/gw1rHj5d/qhYn9Gpk2FWh6xRBRX5Oj3Znh2Sq49/L6+y8pB26q9GbE2dbA2mVbx6I+7MfBglLCttm73ZQi7AD3iL4HqjFYJHSPRppqaUaJ3ATpGa+ckpGak2hRRMyqjGMkvl+xyFeSMwjAqcsZgGDdyhl0oNTnDN4yenJGZFGxNChP5/Y3efh6SM2rDOJMzboYxkDMqwyjIGcIw6F+io2FU1IxIm1JqRmgXSkvNKNCXeTpGrU0JNSO2c6LIGPgCS8AuDHz9ta0SXWDtxoDRH+MqlbC2Dt2G2JFRadtQZt2qq/orGowdGb2euxYiqWEpVWhTBnszoNAPdStuQwxqf0aocdWKW4Z+DfszIh8pxJqbuCE4YAC+4bm0evtipjpgJHeFnyyt1Ku2xa0bhjxr27p75rECNwyI9ZwvXkHq+7aTaMEV44YYy/spfgjgjNHaWW+GeUhGEX7tLlVinIFDDSgnOwhi1V6bU0b6tVS9eAERe863g4dRrtiHdc6o+nn5vtyVVgR79Cqt4uL6gfHPQyGqtP2vf7HADGbcYwaOGThm4JiBYwaOGThm4JiBYwaOGThm4JiBYwaOGThm4JiBYwaOGThm4JjhtOM+J/AgT008yDMkN/dPP9hzS8zAMQN3OEYeekp5YU7KOKXwVXqiY+QS7smcinGKABWdiBgpPJTSMHJ4KidhhPBUSMLw4CmPhKHgKUXCkHsygum71ftNSgCX6bsl8FQyfbcL5EdYsDk0R3j7aiA5wpt5AjKg/2gLJEBD/0Hf2OOf/vRrj6z/7GtP4B3nMKyjHA12kIPSjnJs3FEO0TvKkYJHOWCR+rjJH0Vn6fI5PjNbAAAAAElFTkSuQmCC');display: inline-block; width: 67px; height: 109px;
+    -webkit-animation: rotation infinite 1.5s ease-in-out; animation: rotation infinite 1.5s ease-in-out; -webkit-background-size: 67px; background-size: 67px }
+.mod-orient-layer__desc { margin-top: 20px; font-size: 15px; color: #fff }
+
+/* 风车旋转 */
+@-webkit-keyframes fengche{
+    from{-webkit-transform:rotate(0deg)}
+    to{-webkit-transform:rotate(360deg)}
+}
+@-moz-keyframes fengche{
+    from{-moz-transform:rotate(0deg)}
+    to{-moz-transform:rotate(360deg)}
+}
+@-ms-keyframes fengche{
+    from{-ms-transform:rotate(0deg)}
+    to{-ms-transform:rotate(360deg)}
+}
+@-o-keyframes fengche{
+    from{-o-transform:rotate(0deg)}
+    to{-o-transform:rotate(360deg)}
+}
+.fengche{
+    animation: 3.5s linear 0s normal none infinite fengche;
+    -webkit-animation:3.5s linear 0s normal none infinite fengche;
+    transform-origin: 66% 50%;
+}
+
+/* 云飘动 */
+@-webkit-keyframes yun{
+    from{-webkit-transform:translateX(0)}
+    to{-webkit-transform:translateX(500px)}
+}
+@-moz-keyframes fengche{
+    from{-moz-transform:translateX(0)}
+    to{-moz-transform:translateX(500px)}
+}
+@-ms-keyframes fengche{
+    from{-ms-transform:translateX(0)}
+    to{-ms-transform:translateX(500px)}
+}
+@-o-keyframes fengche{
+    from{-o-transform:translateX(0)}
+    to{-o-transform:translateX(500px)}
+}
+.yun{
+    animation:55.5s linear 0s normal none infinite yun;
+    -webkit-animation:55.5s linear 0s normal none infinite yun;
+}
+.yun1{
+    animation-delay: 0s;
+}
+.yun2{
+    animation-delay: 10s;
+}
+.yun3{
+    animation-delay: 20s;
+}
+.yun4{
+    animation-delay: 30s;
+}
+
+/* 星星闪烁 */
+@-webkit-keyframes star {
+    0% {
+        transform: scale(1)
+    }
+
+    33% {
+        transform: scale(.2)
+    }
+
+    66% {
+        transform: scale(1.2)
+    }
+
+    100% {
+        transform: scale(1)
+    }
+}
+.star{
+    animation-name: star;
+    -webkit-animation-name: star;
+    animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+    animation-delay: .5s;
+    -webkit-animation-delay: .5s;
+    animation-timing-function: linear;
+    -webkit-animation-timing-function: linear;
+    animation-fill-mode: backwards;
+    -webkit-animation-fill-mode: backwards;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite
+}
+/* 地标闪烁 */
+@-webkit-keyframes dibiao {
+    0% {
+        transform: scale(1)
+    }
+
+    33% {
+        transform: scale(.9)
+    }
+
+    66% {
+        transform: scale(1.1)
+    }
+
+    100% {
+        transform: scale(1)
+    }
+}
+.dibiao{
+    animation-name: dibiao;
+    -webkit-animation-name: dibiao;
+    animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+    animation-delay: .5s;
+    -webkit-animation-delay: .5s;
+    animation-timing-function: linear;
+    -webkit-animation-timing-function: linear;
+    animation-fill-mode: backwards;
+    -webkit-animation-fill-mode: backwards;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite
+}
+
+/* 大飞机飞动 */
+@-webkit-keyframes dafeiji {
+    0% {
+        transform: scale(.1)
+    }
+
+    20% {
+        transform: scale(.2)
+    }
+
+    40% {
+        transform: scale(.5)
+    }
+
+    60% {
+        transform: scale(.7)
+    }
+
+    80% {
+        transform: scale(1)
+    }
+
+    100% {
+        transform: scale(1.2)
+    }
+}
+.dafeiji{
+    animation-name: dafeiji;
+    -webkit-animation-name: dafeiji;
+    animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+    animation-delay: .5s;
+    -webkit-animation-delay: .5s;
+    animation-timing-function: linear;
+    -webkit-animation-timing-function: linear;
+    animation-fill-mode: backwards;
+    -webkit-animation-fill-mode: backwards;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite
+}
