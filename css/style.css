@@ -1,7 +1,8 @@
 @media all and (orientation : landscape) {
     /* 这是匹配横屏的状态，横屏时的css代码　*/
     *{ margin:0; padding:0; }
-    body {
+    html,body {
+        height: 100%;
         background-color: gold;
     }
 }
@@ -9,7 +10,8 @@
 @media all and (orientation : portrait){
     /*　这是匹配竖屏的状态，竖屏时的css代码　*/
     *{ margin:0; padding:0; }
-    body {
+    html,body {
+        height: 100%;
         background-color: green;
     }
     .scene{
