@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .layer{
+            position: absolute;
+            background-size:100% 100% !important;
+            display: block;
+        }
+        .scene{
+            position: absolute;
+            background-image: url('img/1.jpg');
+            background-size:100% 100% !important;
+            display: none;
+        }
+        .scene.show{
+            display: block;
+        }
+        a{
+            background: red;
+        }
+    </style>
+    <title>智慧城市</title>
+</head>
+<body id="index-body">
+<section class="scene show">
+</section>
+<!--<section>-->
+<!--<a href="html/qidong.html">启动谍影任务</a>-->
+<!--<a href="html/chakan.html">查看解决方案</a>-->
+<!--</section>-->
+</body>
+<footer>
+    <script src="js/zepto.min.js"></script>
+</footer>
+</html>
+<script>
+    $(function(){
+
+        (function(objs,ele,w,h){
+            var sw,sh;/*记录长和宽的比例*/
+            /*重设窗体大小*/
+            $(window).resize(resize);/*窗体改变自适应*/
+            /*页面自适应高度*/
+            function resize(){
+                var zWin = $(window);
+                sw = zWin.width()/w;
+                sh = zWin.height()/h;
+                $('.scene.show .layer').trigger('changeSize');
+            }
+            for(var i=0;i<objs.length;i++) {
+                (function (tmp) {
+                    if(!tmp.attr) tmp.attr = {}
+                    tmp.attr.class = (tmp.attr&&tmp.attr.class)?tmp.attr.class+' layer':'layer';
+                    var obj = $('<' + (tmp.tag ? tmp.tag : 'div') + '/>').attr(tmp.attr).css(tmp.css);
+                    var w, h;
+                    if (tmp.img) {
+                        obj.css('background-image', 'url(' + tmp.img + ')')
+                        var img = new Image();
+                        img.src = tmp.img;
+                        img.onload = function () {
+                            w = tmp.w?tmp.w:img.width;
+                            h = tmp.h?tmp.h:img.height;
+                            obj.css({'width': w, 'height': h});
+                            resize();
+                        }
+                    } else {
+                        w = tmp.w;
+                        h = tmp.h;
+                        obj.css({'width': w, 'height': h});
+                        resize();
+                    }
+                    ele.append(obj);
+                    obj.bind('changeSize', function changeSize() {
+                        obj.css({'width':w*sh,'left':tmp.x*sh,'height':h*sh,'top':tmp.y*sh});
+                    })
+                })(objs[i])
+            }
+        })([
+            {'img':'img/bg.png',x:0,y:0},
+            {'img':'img/fengche.png',x:1275,y:1684,w:140,h:120,'attr':{'class':'fengche'}},
+            {'img':'img/fengche.png',x:1992,y:1476,'attr':{'class':'fengche'}},
+            {'img':'img/fengche.png',x:2510,y:1565,w:89,h:108,'attr':{'class':'fengche'}},
+            {'img':'img/fengche.png',x:5127,y:1455,w:197,h:214,'attr':{'class':'fengche'}},
+            {'img':'img/fengche.png',x:7094,y:1371,w:110,h:122,'attr':{'class':'fengche'}},
+            {'img':'img/fengche.png',x:7620,y:1371,w:159,h:199,'attr':{'class':'fengche'}},
+            {'img':'img/fengche.png',x:8472,y:1519,w:164,h:146,'attr':{'class':'fengche'}},
+            {'img':'img/fengche.png',x:10709,y:620,w:384,h:397,'attr':{'class':'fengche'}},
+            {'img':'img/fengche.png',x:11209,y:820,w:189,h:215,'attr':{'class':'fengche'}},
+            {'img':'img/fengche.png',x:11350,y:543,w:370,h:385,'attr':{'class':'fengche'}},
+        ],$('.scene'),11811,2953);
+    })
+</script>
+<style type="text/css">
+    /* 样式放在结尾，防止 base64 图片造成拥塞 */
+    /* 屏幕旋转 */
+    @-webkit-keyframes rotation {
+        30% { transform: rotate(90deg); -webkit-transform: rotate(90deg) }
+        70%,80% { transform: rotate(0deg); -webkit-transform: rotate(0deg) }
+        100% { transform: rotate(0deg); -webkit-transform: rotate(0deg) }
+    }
+    @keyframes rotation {
+        30% { transform: rotate(90deg); -webkit-transform: rotate(90deg) }
+        70%,80% { transform: rotate(0deg); -webkit-transform: rotate(0deg) }
+        100% { transform: rotate(0deg); -webkit-transform: rotate(0deg) }
+    }
+    #orientLayer { display: none; z-index: 9999999; }
+    @media screen and (max-aspect-ratio: 13/9) { #orientLayer { display: block; } }
+    .mod-orient-layer { display: none; position: fixed; height: 100%; width: 100%; left: 0; top: 0; right: 0; bottom: 0; background: #000; z-index: 9997 }
+    .mod-orient-layer__content { position: absolute; width: 100%; top: 45%; margin-top: -75px; text-align: center }
+    .mod-orient-layer__icon-orient {background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIYAAADaCAMAAABU68ovAAAAXVBMVEUAAAD29vb////x8fH////////x8fH5+fn29vby8vL////5+fn39/f6+vr////x8fH////////+/v7////09PT////x8fH39/f////////////////////x8fH///+WLTLGAAAAHXRSTlMAIpML+gb4ZhHWn1c2gvHBvq1uKJcC6k8b187lQ9yhhboAAAQYSURBVHja7d3blpowFIDhTUIAOchZDkre/zE7ycySrbUUpsRN2/1fzO18KzEqxEVgTiZNfgmmtxRc8iaR8HNe8x4BtjQePKayYCIoyBSgvNNE1AkNSHqZyLqk97EgUCCHBzZ5mkg7ScvIJuIyOyXBRFxgpqWZyGsAZLB1KjsJi8nutHU4JCRbFRH8tmirI9k8Jx2sqNs8K/m0LQkrktO2crgcgXGB4AiTEsB0hJfo9MGgX7CGcYiYwQxmMOOvZwRhBG8tCoMXjBDeXvWCEcHbi14wgCBmMIMZzGAGM5jxETNwzMAxA8cMHDNwzMAxA8cMHDNwzMAxA8cMHDNwzMAxY6E2rUQxnH2tz9cirlJFwFBJedaPnUv0M7++egPDE8iAJcIDmxwH5wwv9vUviw2kLbVO3TJU5uul/EyB0FoLp4x60PdGUd3qPurrWyjGGTc05u+1dcgI7/+tCCPARWGhH7o5Y7RCf+bH9ctXLp6v2BVDxfqz0oPXeSVaNtINo/1SXDv4dck8IIkbhtC2ol+iouEonTBCbYvVMnXOjxww6s/RFrBUpXHh/gw1rHj5d/qhYn9Gpk2FWh6xRBRX5Oj3Znh2Sq49/L6+y8pB26q9GbE2dbA2mVbx6I+7MfBglLCttm73ZQi7AD3iL4HqjFYJHSPRppqaUaJ3ATpGa+ckpGak2hRRMyqjGMkvl+xyFeSMwjAqcsZgGDdyhl0oNTnDN4yenJGZFGxNChP5/Y3efh6SM2rDOJMzboYxkDMqwyjIGcIw6F+io2FU1IxIm1JqRmgXSkvNKNCXeTpGrU0JNSO2c6LIGPgCS8AuDHz9ta0SXWDtxoDRH+MqlbC2Dt2G2JFRadtQZt2qq/orGowdGb2euxYiqWEpVWhTBnszoNAPdStuQwxqf0aocdWKW4Z+DfszIh8pxJqbuCE4YAC+4bm0evtipjpgJHeFnyyt1Ku2xa0bhjxr27p75rECNwyI9ZwvXkHq+7aTaMEV44YYy/spfgjgjNHaWW+GeUhGEX7tLlVinIFDDSgnOwhi1V6bU0b6tVS9eAERe863g4dRrtiHdc6o+nn5vtyVVgR79Cqt4uL6gfHPQyGqtP2vf7HADGbcYwaOGThm4JiBYwaOGThm4JiBYwaOGThm4JiBYwaOGThm4JiBYwaOGThm4JjhtOM+J/AgT008yDMkN/dPP9hzS8zAMQN3OEYeekp5YU7KOKXwVXqiY+QS7smcinGKABWdiBgpPJTSMHJ4KidhhPBUSMLw4CmPhKHgKUXCkHsygum71ftNSgCX6bsl8FQyfbcL5EdYsDk0R3j7aiA5wpt5AjKg/2gLJEBD/0Hf2OOf/vRrj6z/7GtP4B3nMKyjHA12kIPSjnJs3FEO0TvKkYJHOWCR+rjJH0Vn6fI5PjNbAAAAAElFTkSuQmCC');display: inline-block; width: 67px; height: 109px;
+        -webkit-animation: rotation infinite 1.5s ease-in-out; animation: rotation infinite 1.5s ease-in-out; -webkit-background-size: 67px; background-size: 67px }
+    .mod-orient-layer__desc { margin-top: 20px; font-size: 15px; color: #fff }
+
+    /* 风车旋转 */
+    @-webkit-keyframes fengche{
+        from{-webkit-transform:rotate(0deg)}
+        to{-webkit-transform:rotate(360deg)}
+    }
+    @-moz-keyframes fengche{
+        from{-moz-transform:rotate(0deg)}
+        to{-moz-transform:rotate(360deg)}
+    }
+    @-ms-keyframes fengche{
+        from{-ms-transform:rotate(0deg)}
+        to{-ms-transform:rotate(360deg)}
+    }
+    @-o-keyframes fengche{
+        from{-o-transform:rotate(0deg)}
+        to{-o-transform:rotate(360deg)}
+    }
+    .fengche{
+        animation: 9.5s linear 0s normal none infinite fengche;
+        -webkit-animation:9.5s linear 0s normal none infinite fengche;
+        transform-origin: 66% 50%;
+    }
+</style>
+
+<div id="orientLayer" class="mod-orient-layer">
+    <div class="mod-orient-layer__content">
+        <i class="icon mod-orient-layer__icon-orient"></i>
+        <div class="mod-orient-layer__desc">为了更好的体验，请使用横屏浏览</div>
+    </div>
+</div>
