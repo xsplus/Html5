@@ -49,6 +49,7 @@
                 var zWin = $(window);
                 sw = zWin.width()/w;
                 sh = zWin.height()/h;
+                $('body').css({'height':zWin.height(),'width':zWin.width()});
                 $('.scene.show .layer').trigger('changeSize');
             }
             for(var i=0;i<objs.length;i++) {
