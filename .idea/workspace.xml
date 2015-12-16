@@ -36,10 +36,10 @@
       <file leaf-file-name="fengche.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/fengche.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4861111">
-              <caret line="86" column="43" selection-start-line="86" selection-start-column="43" selection-end-line="86" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.06944445">
+              <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
               <folding>
-                <element signature="e#4755#6452#2" expanded="true" />
+                <element signature="e#4791#6488#2" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -106,8 +106,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="352" />
-    <option name="y" value="7" />
+    <option name="x" value="243" />
+    <option name="y" value="13" />
     <option name="width" value="1085" />
     <option name="height" value="744" />
   </component>
@@ -258,7 +258,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="352" y="7" width="1085" height="744" extended-state="0" />
+    <frame x="243" y="13" width="1085" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1070901" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -482,10 +482,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fengche.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4861111">
-          <caret line="86" column="43" selection-start-line="86" selection-start-column="43" selection-end-line="86" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.06944445">
+          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
           <folding>
-            <element signature="e#4755#6452#2" expanded="true" />
+            <element signature="e#4791#6488#2" expanded="true" />
           </folding>
         </state>
       </provider>
