@@ -28,7 +28,7 @@
         <span></span>
         <span></span>
         <span></span>
-        <a></a>
+        <a>0%</a>
     </div>
 </section>
 <section class="scene scene-index"></section>
@@ -74,7 +74,9 @@
                         'auto_h':true,                         /*是否自动适应高度*/
                         'layers':[]                             /*场景的图层数据*/
                     },scene)
-                    if(scene.debug) scene.box.addClass('debug');
+                    if(scene.debug) scene.box.addClass('debug').append("<div class='pos_box'></div>").bind({'mousemove':function(e){
+                        $(this).children('.pos_box').css({'left': e.pageX,'top': e.pageY}).html('x:'+ e.pageX+'<br>'+'y:'+ e.pageY);
+                    }});
                     var sw, sh;                                 /*记录长和宽的比例*/
                     for (var j = 0; j < scene.layers.length; j++) {
                         (function (layer) {
@@ -136,9 +138,10 @@
             scene_huiyi,scene_zhongxiaoxue,scene_daxue,scene_yinhang,
             scene_yiyuan,scene_ditie,scene_gouwuzhongxin,scene_jingqu,scene_changfang]);
         function loading(){
-            $("#loading a").text((load_n/load_sum).toFixed(2)*100+"%");
+            $("#loading a").text((load_n/load_sum*100).toFixed(0)+"%");
+            console.log($("#loading a").text());
             if(load_n == load_sum){
-                $('.scene.scene-index').addClass('show')
+                $('.scene.scene-main').addClass('show')
                 $("#loading").remove();
                 for(var i=0;i<bindfun.length;i++){
                     var fun = bindfun[i];
