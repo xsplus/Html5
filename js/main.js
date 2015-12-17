@@ -3,12 +3,12 @@
  */
 var scene_main = {
     'box':$('.scene.scene-main'),          /*场景的标签*/
-    'debug':true,                            /*是否开启调试模式*/
+    'debug':false,                            /*是否开启调试模式*/
     'width':11811,                            /*场景的宽*/
     'height':2953,                           /*场景的高*/
     'path':'img/main/',                    /*图片根目录*/
     'auto_w':false,                        /*是否自动适应宽度*/
-    'auto_h':false,                         /*是否自动适应高度*/
+    'auto_h':true,                         /*是否自动适应高度*/
     'layers':[
         //背景图
         {'img':'bg4.png'},
@@ -24,18 +24,17 @@ var scene_main = {
         {'img':'fengche.png',x:11154,y:830,w:189,h:215,'attr':{'class':'fengche'}},
         {'img':'fengche.png',x:11310,y:595,w:370,h:385,'attr':{'class':'fengche'}},
         //云
-        {'img':'heiyun.png',x:-1200,y:144,w:419,h:137,'attr':{'class':'yun yun1'}},
-        {'img':'baiyun.png',x:-400,y:726,w:344,h:123,'attr':{'class':'yun yun1'}},
-        {'img':'baiyun.png',x:-800,y:1026,w:344,h:123,'attr':{'class':'yun yun1'}},
-        {'img':'heiyun.png',x:-1200,y:244,w:419,h:137,'attr':{'class':'yun yun2'}},
-        {'img':'baiyun.png',x:-400,y:526,w:344,h:123,'attr':{'class':'yun yun2'}},
-        {'img':'baiyun.png',x:-800,y:826,w:344,h:123,'attr':{'class':'yun yun2'}},
-        {'img':'heiyun.png',x:-1200,y:144,w:419,h:137,'attr':{'class':'yun yun3'}},
-        {'img':'baiyun.png',x:-400,y:726,w:344,h:123,'attr':{'class':'yun yun3'}},
-        {'img':'baiyun.png',x:-800,y:1026,w:344,h:123,'attr':{'class':'yun yun3'}},
-        {'img':'heiyun.png',x:-1200,y:244,w:419,h:137,'attr':{'class':'yun yun4'}},
-        {'img':'baiyun.png',x:-400,y:526,w:344,h:123,'attr':{'class':'yun yun4'}},
-        {'img':'baiyun.png',x:-800,y:826,w:344,h:123,'attr':{'class':'yun yun4'}},
+        {'img':'heiyun.png',x:-500,y:144,w:419,h:137,'attr':{'class':'yun'}},
+        {'img':'baiyun.png',x:-350,y:546,w:344,h:123,'attr':{'class':'yun'}},
+        {'img':'baiyun.png',x:-1200,y:726,w:344,h:123,'attr':{'class':'yun'}},
+        {'img':'heiyun.png',x:-1450,y:244,w:419,h:137,'attr':{'class':'yun'}},
+        {'img':'baiyun.png',x:-2000,y:526,w:344,h:123,'attr':{'class':'yun'}},
+        {'img':'baiyun.png',x:-2800,y:556,w:344,h:123,'attr':{'class':'yun'}},
+        {'img':'heiyun.png',x:-2500,y:144,w:419,h:137,'attr':{'class':'yun'}},
+        {'img':'baiyun.png',x:-3350,y:626,w:344,h:123,'attr':{'class':'yun'}},
+        {'img':'baiyun.png',x:-3900,y:726,w:344,h:123,'attr':{'class':'yun'}},
+        {'img':'heiyun.png',x:-3500,y:244,w:419,h:137,'attr':{'class':'yun'}},
+        {'img':'baiyun.png',x:-4500,y:626,w:344,h:123,'attr':{'class':'yun'}},
         //星星
         {'img':'star.png',x:674,y:458,w:40,h:40,'attr':{'class':'star'}},
         {'img':'star.png',x:1097,y:274,w:30,h:30,'attr':{'class':'star'}},

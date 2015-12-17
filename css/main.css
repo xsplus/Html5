@@ -24,35 +24,23 @@
 /* 云飘动 */
 @-webkit-keyframes yun{
     from{-webkit-transform:translateX(0)}
-    to{-webkit-transform:translateX(500px)}
+    to{-webkit-transform:translateX(1000px)}
 }
 @-moz-keyframes fengche{
     from{-moz-transform:translateX(0)}
-    to{-moz-transform:translateX(500px)}
+    to{-moz-transform:translateX(1000px)}
 }
 @-ms-keyframes fengche{
     from{-ms-transform:translateX(0)}
-    to{-ms-transform:translateX(500px)}
+    to{-ms-transform:translateX(1000px)}
 }
 @-o-keyframes fengche{
     from{-o-transform:translateX(0)}
-    to{-o-transform:translateX(500px)}
+    to{-o-transform:translateX(1000px)}
 }
 .yun{
-    animation:yun 55.5s linear 0s infinite ;
-    -webkit-animation:yun 55.5s linear 0s infinite;
-}
-.yun1{
-    animation-delay: 0s;
-}
-.yun2{
-    animation-delay: 10s;
-}
-.yun3{
-    animation-delay: 20s;
-}
-.yun4{
-    animation-delay: 30s;
+    animation:yun 50.5s linear 0s infinite ;
+    -webkit-animation:yun 50.5s linear 0s infinite;
 }
 
 /* 星星闪烁 */
