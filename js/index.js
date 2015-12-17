@@ -10,9 +10,9 @@ var scene_index = {
     'auto_w':true,                        /*是否自动适应宽度*/
     'auto_h':true,                         /*是否自动适应高度*/
     'layers':[                              /*场景的图层数据*/
-        {'img':'1.png'},
-        {x:75,y:240,w:170,h:38,attr:{'class':'qidong'}},
-        {x:310,y:240,w:170,h:38,tag:'a'},
+        {'img':'1.png',x:0,y:0},
+        {'img':null,x:75,y:240,w:170,h:38,attr:{'class':'qidong'}},
+        {'img':null,x:310,y:240,w:170,h:38,attr:{'class':'chakan'}},
     ]
 }
 
@@ -22,6 +22,12 @@ bindfun.push(function(){
     $('.qidong').bind({'touchstart':function(){
         $('.scene-index').removeClass('show');
         $('.scene-main').addClass('show');
+        $(window).resize();
+    }})
+
+    $('.chakan').bind({'touchstart':function(){
+        $('.scene-index').removeClass('show');
+        $('.scene-anli').addClass('show');
         $(window).resize();
     }})
 })

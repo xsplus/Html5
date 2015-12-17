@@ -63,6 +63,16 @@ var scene_main = {
         {'img':'changfang.png',x:9131,y:360,w:373,h:164,'attr':{'class':'dibiao'}},
         {'img':'jingqu.png',x:10615,y:294,w:189,h:147,'attr':{'class':'dibiao'}},
         {'img':'ditie.png',x:11240,y:740,w:199,h:156,'attr':{'class':'dibiao'}},
+        //地标加上div用于添加事件
+        {x:1507,y:565,w:800,h:800,'attr':{'class':'dibiaoAction'}},
+        {x:2782,y:971,w:700,h:700,'attr':{'class':'dibiaoAction'}},
+        {x:4229,y:715,w:700,h:700,'attr':{'class':'dibiaoAction'}},
+        {x:5301,y:666,w:700,h:700,'attr':{'class':'dibiaoAction'}},
+        {x:5977,y:315,w:700,h:700,'attr':{'class':'dibiaoAction'}},
+        {x:7408,y:236,w:700,h:700,'attr':{'class':'dibiaoAction'}},
+        {x:8980,y:140,w:700,h:700,'attr':{'class':'dibiaoAction'}},
+        {x:10415,y:10,w:600,h:600,'attr':{'class':'dibiaoAction'}},
+        {x:11090,y:540,w:600,h:600,'attr':{'class':'dibiaoAction'}},
         //大飞机
         {'img':'dafeiji.png',x:3387,y:328,w:1467,h:550,'attr':{'class':'dafeiji'}},
     ]
@@ -70,7 +80,8 @@ var scene_main = {
 
 bindfun.push(function(){
     //给地标绑定事件
-    $('.dibiao').bind('touchstart',function(){
-        console.log("888888");
+    $('.dibiaoAction').bind('touchstart',function(){
+        $('.scene.scene-main').removeClass('show');
+        $('.scene.scene-huiyi').addClass('show');
     });
 })

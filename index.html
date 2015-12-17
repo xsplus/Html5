@@ -7,6 +7,16 @@
     <link href="css/animate.min.css" rel="stylesheet" type="text/css">
     <link href="css/index.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
+    <link href="css/anli.css" rel="stylesheet">
+    <link href="css/huiyi.css" rel="stylesheet">
+    <link href="css/yinhang.css" rel="stylesheet">
+    <link href="css/yiyuan.css" rel="stylesheet">
+    <link href="css/ditie.css" rel="stylesheet">
+    <link href="css/daxue.css" rel="stylesheet">
+    <link href="css/gouwuzhongxin.css" rel="stylesheet">
+    <link href="css/changfang.css" rel="stylesheet">
+    <link href="css/zhongxiaoxue.css" rel="stylesheet">
+    <link href="css/jingqu.css" rel="stylesheet">
     <style>
 
     </style>
@@ -15,7 +25,6 @@
 <body>
 <section id="loading">
     <div>
-
         <span></span>
         <span></span>
         <span></span>
@@ -24,11 +33,31 @@
 </section>
 <section class="scene scene-index"></section>
 <section class="scene scene-main"></section>
+<section class="scene scene-anli"></section>
+<section class="scene scene-huiyi"></section>
+<section class="scene scene-zhongxiaoxue"></section>
+<section class="scene scene-daxue"></section>
+<section class="scene scene-yiyuan"></section>
+<section class="scene scene-yinhang"></section>
+<section class="scene scene-gouwuzhongxin"></section>
+<section class="scene scene-changfang"></section>
+<section class="scene scene-jingqu"></section>
+<section class="scene scene-ditie"></section>
 </body>
 <footer>
     <script src="js/zepto.min.js"></script>
     <script src="js/index.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/anli.js"></script>
+    <script src="js/huiyi.js"></script>
+    <script src="js/zhongxiaoxue.js"></script>
+    <script src="js/yiyuan.js"></script>
+    <script src="js/yinhang.js"></script>
+    <script src="js/changfang.js"></script>
+    <script src="js/ditie.js"></script>
+    <script src="js/jingqu.js"></script>
+    <script src="js/gouwuzhongxin.js"></script>
+    <script src="js/daxue.js"></script>
 </footer>
 </html>
 <script>
@@ -103,7 +132,9 @@
                     win.resize(resize);                         /*重设窗体大小*/
                 })(scenes[i])
             }
-        })([scene_index,scene_main]);
+        })([scene_index,scene_main,scene_anli,
+            scene_huiyi,scene_zhongxiaoxue,scene_daxue,scene_yinhang,
+            scene_yiyuan,scene_ditie,scene_gouwuzhongxin,scene_jingqu,scene_changfang]);
         function loading(){
             $("#loading a").text((load_n/load_sum).toFixed(2)*100+"%");
             if(load_n == load_sum){
