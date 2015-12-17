@@ -3,6 +3,7 @@
  */
 var scene_index = {
     'box':$('.scene.scene-index'),       /*场景的标签*/
+    'debug':false,                            /*是否开启调试模式*/
     'width':569,                            /*场景的宽*/
     'height':321,                           /*场景的高*/
     'path':'img/index/',                  /*图片根目录*/

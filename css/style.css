@@ -24,3 +24,7 @@ html,body{ height: 100%;}
 .scene.show {
     display: block;
 }
+
+.debug .layer{
+    border: 1px solid #ffffff;
+}

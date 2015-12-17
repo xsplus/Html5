@@ -3,11 +3,12 @@
  */
 var scene_main = {
     'box':$('.scene.scene-main'),          /*场景的标签*/
+    'debug':true,                            /*是否开启调试模式*/
     'width':11811,                            /*场景的宽*/
     'height':2953,                           /*场景的高*/
     'path':'img/main/',                    /*图片根目录*/
     'auto_w':false,                        /*是否自动适应宽度*/
-    'auto_h':true,                         /*是否自动适应高度*/
+    'auto_h':false,                         /*是否自动适应高度*/
     'layers':[
         //背景图
         {'img':'bg4.png'},
