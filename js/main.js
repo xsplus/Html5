@@ -2,15 +2,15 @@
  * Created by Administrator on 12/16 0016.
  */
 var scene_main = {
-    'box':$('.scene.scene-main'),       /*场景的标签*/
+    'box':$('.scene.scene-main'),          /*场景的标签*/
     'width':11811,                            /*场景的宽*/
     'height':2953,                           /*场景的高*/
-    'path':'img/main/',                    /*默认路径*/
+    'path':'img/main/',                    /*图片根目录*/
     'auto_w':false,                        /*是否自动适应宽度*/
     'auto_h':true,                         /*是否自动适应高度*/
     'layers':[
         //背景图
-        {'img':'bg4.png',x:0,y:0,w:11811,h:2953},
+        {'img':'bg4.png'},
         //风车
         {'img':'fengche.png',x:1275,y:1684,w:140,h:120,'attr':{'class':'fengche'}},
         {'img':'fengche.png',x:1992,y:1476,'attr':{'class':'fengche'}},

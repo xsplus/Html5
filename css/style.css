@@ -1,34 +1,26 @@
+*{ margin:0; padding:0; }
+html,body{ height: 100%;}
 @media all and (orientation : landscape) {
     /* 这是匹配横屏的状态，横屏时的css代码　*/
-    *{ margin:0; padding:0; }
-    body {
-        height: 100%;
-        background-color: gold;
-    }
+    body { background-color: gold; }
 }
 
-@media all and (orientation : portrait){
+@media all and (orientation : portrait) {
     /*　这是匹配竖屏的状态，竖屏时的css代码　*/
-    *{ margin:0; padding:0; }
-    html,body {
-        height: 100%;
-        background-color: green;
-    }
-    .scene{
-        display: none !important;
-    }
+    html, body { background-color: green;  }
+    .scene { display: none !important; }
 }
 
-.layer{
+.layer {
     position: absolute;
-    background-size:100% 100% !important;
+    background-size: 100% 100% !important;
     display: block;
 }
-.scene{
+.scene {
     position: absolute;
-    background-size:100% 100% !important;
+    background-size: 100% 100% !important;
     display: none;
 }
-.scene.show{
+.scene.show {
     display: block;
 }
