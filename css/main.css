@@ -109,3 +109,8 @@
     animation-iteration-count: infinite;
     -webkit-animation-iteration-count: infinite
 }
+
+/*大楼灯*/
+.daloudeng{
+    background: gold;
+}

@@ -78,8 +78,10 @@
                         'debug':false,                         /*是否开启调试模式*/
                         'auto_w':true,                         /*是否自动适应宽度*/
                         'auto_h':true,                         /*是否自动适应高度*/
+                        'touch':false,
                         'layers':[]                             /*场景的图层数据*/
                     },scene)
+
                     if(scene.debug) scene.box.addClass('debug').append("<div class='pos_box'></div>").bind({'mousemove':function(e){
                         $(this).children('.pos_box').css({'left': e.pageX,'top': e.pageY}).html('x:'+ e.pageX+'<br>'+'y:'+ e.pageY);
                     }});
@@ -100,7 +102,7 @@
                                     h = layer.h?layer.h:img.height;
                                     obj.css({'width': w, 'height': h});
                                     load_n++;
-                                    if(loading())win.resize();
+                                    loading();
                                 }
                             } else {
                                 w = layer.w;
@@ -145,17 +147,17 @@
             scene_yiyuan,scene_ditie,scene_gouwuzhongxin,scene_jingqu,scene_changfang]);
         function loading(){
             $("#loading a").text((load_n/load_sum*100).toFixed(0)+"%");
-            console.log($("#loading a").text());
             if(load_n == load_sum){
-                $('.scene.scene-main').addClass('show')
-                $("#loading").remove();
-                for(var i=0;i<bindfun.length;i++){
-                    var fun = bindfun[i];
-                    if(fun)fun();
-                }
-                return true;
+                window.setTimeout(function(){
+                    $('.scene.scene-main').addClass('show')
+                    for(var i=0;i<bindfun.length;i++){
+                        var fun = bindfun[i];
+                        if(fun) fun();
+                    }
+                    win.resize();
+                    $("#loading").remove();
+                },500)
             }
-            return false;
         }
     })
 </script>
