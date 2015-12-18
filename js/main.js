@@ -184,7 +184,7 @@ var scene_main = {
 
 bindfun.push(function(){
     /*重力感应*/
-    if (window.DeviceOrientationEvent) {
+    if (window.DeviceOrientationEvent && !scene_main.debug) {
         var alpha;
         var main_box = $('.scene-main');
         var main_bg = $('.scene-main .bg');
@@ -195,7 +195,6 @@ bindfun.push(function(){
                 var limit = main_bg.width() - window.innerWidth
                 var change = limit>>6;
                 var _alpha = event.beta;
-
                 if (_alpha){
                     var _alpha = _alpha.toFixed(1);
                     if (alpha && _alpha) {

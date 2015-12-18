@@ -61,23 +61,31 @@
 <script>
     $(function() {
         var win = $(window);
-        var load_sum=0,load_n=0;
+        var load_sum = 0, load_n = 0;
         (function (scenes) {
             for (var i = 0; i < scenes.length; i++) {
                 (function (scene) {
                     scene = $.extend({
-                        'path':'',                              /*图片根目录*/
-                        'debug':false,                         /*是否开启调试模式*/
-                        'auto_w':true,                         /*是否自动适应宽度*/
-                        'auto_h':true,                         /*是否自动适应高度*/
-                        'touch':false,
-                        'layers':[]                             /*场景的图层数据*/
-                    },scene)
-
-                    if(scene.debug) scene.box.addClass('debug').append("<div class='pos_box'></div>").bind({'mousemove':function(e){
-                        $(this).children('.pos_box').css({'left': e.pageX,'top': e.pageY}).html('x:'+ e.pageX+'<br>'+'y:'+ e.pageY);
-                    }});
-                    var sw, sh;                                 /*记录长和宽的比例*/
+                        'path': '', /*图片根目录*/
+                        'debug': false, /*是否开启调试模式*/
+                        'auto_w': true, /*是否自动适应宽度*/
+                        'auto_h': true, /*是否自动适应高度*/
+                        'touch': false,
+                        'show': false,
+                        'layers': []                             /*场景的图层数据*/
+                    }, scene)
+                    scene.box.css({'width': win.width(), 'height': win.height()});
+                    if (scene.show)scene.box.addClass('show');
+                    if (scene.debug) scene.box.addClass('debug').append("<div class='pos_box'></div>").bind({
+                        'mousemove': function (e) {
+                            $(this).children('.pos_box').css({
+                                'left': e.pageX,
+                                'top': e.pageY
+                            }).html('x:' + e.pageX + '<br>' + 'y:' + e.pageY);
+                        }
+                    });
+                    var sw, sh;
+                    /*记录长和宽的比例*/
                     for (var j = 0; j < scene.layers.length; j++) {
                         (function (layer) {
                             if (!layer.attr) layer.attr = {}
@@ -89,9 +97,13 @@
                                 img.src = scene.path + layer.img;
                                 load_sum++;
                                 img.onload = function () {
-                                    w = layer.w?layer.w:img.width;
-                                    h = layer.h?layer.h:img.height;
-                                    obj.css({'width': w, 'height': h,'background-image':'url('+ scene.path + layer.img + ')'});
+                                    w = layer.w ? layer.w : img.width;
+                                    h = layer.h ? layer.h : img.height;
+                                    obj.css({
+                                        'width': w,
+                                        'height': h,
+                                        'background-image': 'url(' + scene.path + layer.img + ')'
+                                    });
                                     load_n++;
                                     loading();
                                 }
@@ -104,55 +116,79 @@
                             scene.box.append(obj);
                             var autoSize;
                             if (!scene.auto_h && scene.auto_w) {
-                                autoSize = function() {
-                                    obj.css({'width': w * sw, 'left': layer.x * sw, 'height': h * sw, 'top': layer.y * sw});
+                                autoSize = function () {
+                                    obj.css({
+                                        'width': w * sw,
+                                        'left': layer.x * sw,
+                                        'height': h * sw,
+                                        'top': layer.y * sw
+                                    });
                                 }
                             }
                             else if (scene.auto_h && !scene.auto_w) {
-                                autoSize = function() {
-                                    obj.css({'width': w * sh, 'left': layer.x * sh, 'height': h * sh, 'top': layer.y * sh});
+                                autoSize = function () {
+                                    obj.css({
+                                        'width': w * sh,
+                                        'left': layer.x * sh,
+                                        'height': h * sh,
+                                        'top': layer.y * sh
+                                    });
                                 }
                             }
                             else if (scene.auto_h && scene.auto_w) {
-                                autoSize = function() {
-                                    obj.css({'width': w * sw, 'left': layer.x * sw, 'height': h * sh, 'top': layer.y * sh});
+                                autoSize = function () {
+                                    obj.css({
+                                        'width': w * sw,
+                                        'left': layer.x * sw,
+                                        'height': h * sh,
+                                        'top': layer.y * sh
+                                    });
                                 }
-                            }else{
-
                             }
-                            if(autoSize && !scene.debug) obj.bind('autoSize',autoSize)
+                            if (autoSize && !scene.debug) obj.bind('autoSize', autoSize)
                         })(scene.layers[j])
                     }
                     function resize() {
-                        if(scene.box.is('.show')){
-                            sw = win.width() / scene.width;
-                            sh = win.height() / scene.height;
+                        if (scene.box.is('.show') && !scene.debug) {
+                            var w = win.width()
+                            var h = win.height()
+                            sw = w / scene.width;
+                            sh = h / scene.height;
                             scene.box.children('.layer').trigger('autoSize');
+                            if (scene.auto_h) scene.box.css({'height': h});
+                            if (scene.auto_w) scene.box.css({'width': w});
                         }
                     }
-                    win.resize(resize);                         /*重设窗体大小*/
-                    if(scene.show)scene.box.addClass('show');
+
+                    win.resize(resize);
+                    /*重设窗体大小*/
                 })(scenes[i])
             }
-        })([scene_loading,scene_index,scene_main,scene_anli,
-            scene_huiyi,scene_zhongxiaoxue,scene_daxue,scene_yinhang,
-            scene_yiyuan,scene_ditie,scene_gouwuzhongxin,scene_jingqu,scene_changfang]);
-        function loading(){
-            var v = load_n/load_sum;
-            $(".baifenbi").text((v*100).toFixed(0)+"%");
-            $(".load3").css('transform','scaleX('+v*2+')');
-            if(load_n == load_sum){
-                for(var i=0;i<bindfun.length;i++){
+        })([scene_loading, scene_index, scene_main, scene_anli,
+            scene_huiyi, scene_zhongxiaoxue, scene_daxue, scene_yinhang,
+            scene_yiyuan, scene_ditie, scene_gouwuzhongxin, scene_jingqu, scene_changfang]);
+        function loading() {
+            var v = load_n / load_sum;
+            $(".baifenbi").text((v * 100).toFixed(0) + "%");
+            $(".load3").css('transform', 'scaleX(' + v * 2 + ')');
+            if (load_n == load_sum) {
+                for (var i = 0; i < bindfun.length; i++) {
                     var fun = bindfun[i];
-                    if(fun) fun();
+                    if (fun) fun();
                 }
-                $('.scene.scene-index').addClass('show').css('transform','scale(0)');
-                win.resize();
-                window.setTimeout(function(){
-                    $('.scene.scene-index').css('transform','scale(1)');
-                },0)
+                $('.scene.scene-index').show('scale(0)', 'scale(1)');
             }
         }
+
+        $.fn.show = function (before, after) {
+            var t = $(this);
+            t.addClass('show').css('transform', before);
+            win.resize();
+            window.setTimeout(function () {
+                t.css('transform', after);
+            }, 0)
+        }
+
     })
 </script>
 
