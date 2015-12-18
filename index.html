@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="css/loading.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/anli.css" rel="stylesheet">
@@ -17,20 +18,10 @@
     <link href="css/changfang.css" rel="stylesheet">
     <link href="css/zhongxiaoxue.css" rel="stylesheet">
     <link href="css/jingqu.css" rel="stylesheet">
-    <style>
-
-    </style>
     <title>智慧城市</title>
 </head>
 <body>
-<section id="loading">
-    <div>
-        <span></span>
-        <span></span>
-        <span></span>
-        <a>0%</a>
-    </div>
-</section>
+<section class="scene scene-loading"></section>
 <section class="scene scene-index"></section>
 <section class="scene scene-main"></section>
 <section class="scene scene-anli"></section>
@@ -52,6 +43,7 @@
 </body>
 <footer>
     <script src="js/zepto.min.js"></script>
+    <script src="js/loading.js"></script>
     <script src="js/index.js"></script>
     <script src="js/main.js"></script>
     <script src="js/anli.js"></script>
@@ -97,10 +89,9 @@
                                 img.src = scene.path + layer.img;
                                 load_sum++;
                                 img.onload = function () {
-                                    obj.css('background-image', 'url('+ scene.path + layer.img + ')');
                                     w = layer.w?layer.w:img.width;
                                     h = layer.h?layer.h:img.height;
-                                    obj.css({'width': w, 'height': h});
+                                    obj.css({'width': w, 'height': h,'background-image':'url('+ scene.path + layer.img + ')'});
                                     load_n++;
                                     loading();
                                 }
@@ -140,23 +131,26 @@
                         }
                     }
                     win.resize(resize);                         /*重设窗体大小*/
+                    if(scene.show)scene.box.addClass('show');
                 })(scenes[i])
             }
-        })([scene_index,scene_main,scene_anli,
+        })([scene_loading,scene_index,scene_main,scene_anli,
             scene_huiyi,scene_zhongxiaoxue,scene_daxue,scene_yinhang,
             scene_yiyuan,scene_ditie,scene_gouwuzhongxin,scene_jingqu,scene_changfang]);
         function loading(){
-            $("#loading a").text((load_n/load_sum*100).toFixed(0)+"%");
+            var v = load_n/load_sum;
+            $(".baifenbi").text((v*100).toFixed(0)+"%");
+            $(".load3").css('transform','scaleX('+v*2+')');
             if(load_n == load_sum){
+                for(var i=0;i<bindfun.length;i++){
+                    var fun = bindfun[i];
+                    if(fun) fun();
+                }
+                $('.scene.scene-index').addClass('show').css('transform','scale(0)');
+                win.resize();
                 window.setTimeout(function(){
-                    $('.scene.scene-main').addClass('show')
-                    for(var i=0;i<bindfun.length;i++){
-                        var fun = bindfun[i];
-                        if(fun) fun();
-                    }
-                    win.resize();
-                    $("#loading").remove();
-                },500)
+                    $('.scene.scene-index').css('transform','scale(1)');
+                },0)
             }
         }
     })
