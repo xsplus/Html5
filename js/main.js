@@ -12,7 +12,7 @@ var scene_main = {
     'touch':true,
     'layers':[
         //背景图
-        {'img':'bg4.png','attr':{'class':'scene-main-bg'}},
+        {'img':'bg4.png','attr':{'class':'bg'}},
         //风车
         {'img':'fengche.png',x:1275,y:1684,w:140,h:120,'attr':{'class':'fengche'}},
         {'img':'fengche.png',x:1992,y:1476,'attr':{'class':'fengche'}},
@@ -183,36 +183,36 @@ var scene_main = {
 }
 
 bindfun.push(function(){
-    ///*重力感应*/
-    //if (window.DeviceOrientationEvent) {
-    //    var alpha;
-    //    var main_box = $('.scene-main');
-    //    var main_bg = $('.scene-main .bg');
-    //    main_box.css('left',-window.innerWidth*0.3);
-    //    window.addEventListener("deviceorientation", orientationHandler, false);
-    //    function orientationHandler(event) {
-    //        if(main_box.is('.show')){
-    //            var limit = main_bg.width() - window.innerWidth
-    //            var change = limit>>6;
-    //            var _alpha = event.beta;
-    //
-    //            if (_alpha){
-    //                var _alpha = _alpha.toFixed(1);
-    //                if (alpha && _alpha) {
-    //                    var tmp = _alpha - alpha;
-    //                    if(tmp > 180) tmp = _alpha - alpha - 360;
-    //                    else if(tmp < -180) tmp = _alpha - alpha + 360;
-    //
-    //                    var tmp = parseFloat(main_box.css('left')) + tmp * change;
-    //                    if(tmp > 0) main_box.css('left',0);
-    //                    else if(limit+tmp<0) main_box.css('left',-limit);
-    //                    else main_box.css('left',tmp);
-    //                }
-    //            }
-    //            alpha = _alpha;
-    //        }
-    //    }
-    //}
+    /*重力感应*/
+    if (window.DeviceOrientationEvent) {
+        var alpha;
+        var main_box = $('.scene-main');
+        var main_bg = $('.scene-main .bg');
+        main_box.css('left',-window.innerWidth*0.3);
+        window.addEventListener("deviceorientation", orientationHandler, false);
+        function orientationHandler(event) {
+            if(main_box.is('.show')){
+                var limit = main_bg.width() - window.innerWidth
+                var change = limit>>6;
+                var _alpha = event.beta;
+
+                if (_alpha){
+                    var _alpha = _alpha.toFixed(1);
+                    if (alpha && _alpha) {
+                        var tmp = _alpha - alpha;
+                        if(tmp > 180) tmp = _alpha - alpha - 360;
+                        else if(tmp < -180) tmp = _alpha - alpha + 360;
+
+                        var tmp = parseFloat(main_box.css('left')) + tmp * change;
+                        if(tmp > 0) main_box.css('left',0);
+                        else if(limit+tmp<0) main_box.css('left',-limit);
+                        else main_box.css('left',tmp);
+                    }
+                }
+                alpha = _alpha;
+            }
+        }
+    }
 
     //给地标绑定事件
     $('.dibiaoAction').bind('touchstart',function(){
