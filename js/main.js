@@ -12,7 +12,7 @@ var scene_main = {
     'touch':true,
     'layers':[
         //背景图
-        {'img':'bg.png','attr':{'class':'bg'}},
+        {'img':'bg.png','attr':{'class':'bg'},isbg:true},
         //风车
         {'img':'fengche.png',x:1275,y:1684,w:140,h:120,'attr':{'class':'fengche'}},
         {'img':'fengche.png',x:1992,y:1476,'attr':{'class':'fengche'}},
@@ -289,35 +289,72 @@ var scene_main = {
 }
 
 bindfun.push(function(){
-    /*重力感应*/
-    if (window.DeviceOrientationEvent && !scene_main.debug) {
-        var alpha;
-        var main_box = $('.scene-main');
+    if (!!(('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch)) {
+        var main_box = $('.scene-main')
+        if(!scene_main.debug) main_box.css('left', -window.innerWidth * 0.3);
         var main_bg = $('.scene-main .bg');
-        main_box.css('left',-window.innerWidth*0.3);
-        window.addEventListener("deviceorientation", orientationHandler, false);
-        function orientationHandler(event) {
-            if(main_box.is('.show')){
-                var limit = main_bg.width() - window.innerWidth
-                var change = limit>>6;
-                var _alpha = event.beta;
-                if (_alpha){
-                    var _alpha = _alpha.toFixed(1);
-                    if (alpha && _alpha) {
-                        var tmp = _alpha - alpha;
-                        if(tmp > 180) tmp = _alpha - alpha - 360;
-                        else if(tmp < -180) tmp = _alpha - alpha + 360;
+        var limit = main_bg.width() - window.innerWidth;
+        var pos = {x : parseFloat(main_box.css('left')), y : 0};
+        var startPos, isTouch;
+        //触摸事件自定义
+        main_box.on('touchstart', function (event) {
+            var touch = event.targetTouches[0];     //touches数组对象获得屏幕上所有的touch，取第一个touch
+            startPos = {x: pos.x-touch.pageX, y: touch.pageY };    //取第一个touch的坐标值
+            main_box.on('touchmove',touchmove);
+            main_box.one('touchend',touchend);
+            isTouch = true;
+        });
+        function touchmove(event) {
+            if (event.targetTouches.length > 1 || event.scale && event.scale !== 1) return;
+            var touch = event.targetTouches[0];
+            var tmp = {x: touch.pageX + startPos.x, y: touch.pageY - startPos.y};
+            event.preventDefault();      //阻止触摸事件的默认行为，即阻止滚屏
+            moveTo(tmp.x)
+        }
+        function touchend() {
+            //解绑事件
+            isTouch = false;
+            main_box.off('touchmove',touchmove);
 
-                        var tmp = parseFloat(main_box.css('left')) + tmp * change;
-                        if(tmp > 0) main_box.css('left',0);
-                        else if(limit+tmp<0) main_box.css('left',-limit);
-                        else main_box.css('left',tmp);
+        }
+        function moveTo(x){
+            if (x > 0) x = 0;
+            else if (limit + x < 0) x = -limit;
+            main_box.css('left', x);
+            pos.x = x;
+        }
+
+        /*重力感应*/
+        try {
+            if (window.DeviceOrientationEvent && !scene_main.debug) {
+                var alpha;
+                window.addEventListener("deviceorientation", orientationHandler, false);
+                function orientationHandler(event) {
+                    if (main_box.is('.show') && !isTouch) {
+                        var change = limit >> 6;
+                        var _alpha = event.alpha;
+                        if (_alpha) {
+                            var _alpha = _alpha.toFixed(1);
+                            if (alpha && _alpha) {
+                                var tmp = _alpha - alpha;
+                                if (tmp > 180) tmp -= 360;
+                                else if (tmp < -180) tmp += 360;
+                                moveTo(pos.x + tmp * change)
+                            }
+                        }
+                        alpha = _alpha;
                     }
                 }
-                alpha = _alpha;
             }
         }
+        catch (e) {}
+
+        $(window).resize(function(){
+            limit = main_bg.width() - window.innerWidth;
+        });
     }
+
+
 
     //给地标绑定事件
     $('.dibiaoAction').bind('touchstart',function(){
