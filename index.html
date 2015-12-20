@@ -2,9 +2,10 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
     <link href="css/style.css" rel="stylesheet">
     <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="css/loading.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/anli.css" rel="stylesheet">
@@ -17,20 +18,10 @@
     <link href="css/changfang.css" rel="stylesheet">
     <link href="css/zhongxiaoxue.css" rel="stylesheet">
     <link href="css/jingqu.css" rel="stylesheet">
-    <style>
-
-    </style>
     <title>智慧城市</title>
 </head>
 <body>
-<section id="loading">
-    <div>
-        <span></span>
-        <span></span>
-        <span></span>
-        <a></a>
-    </div>
-</section>
+<section class="scene scene-loading"></section>
 <section class="scene scene-index"></section>
 <section class="scene scene-main"></section>
 <section class="scene scene-anli"></section>
@@ -43,9 +34,16 @@
 <section class="scene scene-changfang"></section>
 <section class="scene scene-jingqu"></section>
 <section class="scene scene-ditie"></section>
+<div id="orientLayer" class="mod-orient-layer">
+    <div class="mod-orient-layer__content">
+        <i class="icon mod-orient-layer__icon-orient"></i>
+        <div class="mod-orient-layer__desc">为了更好的体验，请使用横屏浏览</div>
+    </div>
+</div>
 </body>
 <footer>
     <script src="js/zepto.min.js"></script>
+    <script src="js/loading.js"></script>
     <script src="js/index.js"></script>
     <script src="js/main.js"></script>
     <script src="js/anli.js"></script>
@@ -63,96 +61,157 @@
 <script>
     $(function() {
         var win = $(window);
-        var load_sum=0,load_n=0;
+        var load_sum = 0, load_n = 0;
         (function (scenes) {
             for (var i = 0; i < scenes.length; i++) {
                 (function (scene) {
                     scene = $.extend({
-                        'path':'',                              /*图片根目录*/
-                        'debug':false,                         /*是否开启调试模式*/
-                        'auto_w':true,                         /*是否自动适应宽度*/
-                        'auto_h':true,                         /*是否自动适应高度*/
-                        'layers':[]                             /*场景的图层数据*/
-                    },scene)
-                    if(scene.debug) scene.box.addClass('debug');
-                    var sw, sh;                                 /*记录长和宽的比例*/
+                        'path': '', /*图片根目录*/
+                        'debug': false, /*是否开启调试模式*/
+                        'auto_w': true, /*是否自动适应宽度*/
+                        'auto_h': true, /*是否自动适应高度*/
+                        'touch': false,
+                        'show': false,
+                        'layers': []                             /*场景的图层数据*/
+                    }, scene)
+                    scene.box.css({'width': win.width(), 'height': win.height()});
+                    if (scene.debug) scene.box.addClass('debug').append("<div class='pos_box'></div>").on({
+                        'mousemove': function (e) {
+                            $(this).children('.pos_box').css({
+                                'left': e.pageX,
+                                'top': e.pageY
+                            }).html('x:' + e.pageX + '<br>' + 'y:' + e.pageY);
+                        }
+                    });
+                    var scale = {w: 1, h: 1}, bg_style = {scale: 1, offsetX: 0, offsetY: 0};
+                    var offset = {x: 0, y: 0}
+                    /*记录长和宽的比例*/
                     for (var j = 0; j < scene.layers.length; j++) {
                         (function (layer) {
-                            if (!layer.attr) layer.attr = {}
-                            layer.attr.class = (layer.attr && layer.attr.class) ? layer.attr.class + ' layer' : 'layer';
-                            var obj = $('<' + (layer.tag ? layer.tag : 'div') + '/>').attr(layer.attr).css(layer.css);
-                            var w, h;
+                            layer = $.extend({
+                                attr:{},
+                                tag:'div',
+                                x:0,
+                                y:0,
+                                w:0,
+                                h:0
+                            },layer);
+                            layer.attr.class = layer.attr.class ? layer.attr.class + ' layer' : 'layer';
+                            var obj = $('<' + layer.tag + '/>').attr(layer.attr).css(layer.css);
                             if (layer.img) {
                                 var img = new Image();
                                 img.src = scene.path + layer.img;
                                 load_sum++;
                                 img.onload = function () {
-                                    obj.css('background-image', 'url('+ scene.path + layer.img + ')');
-                                    w = layer.w?layer.w:img.width;
-                                    h = layer.h?layer.h:img.height;
-                                    obj.css({'width': w, 'height': h});
+                                    if(!layer.w) layer.w = img.width;
+                                    if(!layer.h) layer.h = img.height;
+                                    obj.css({ 'background-image': 'url(' + scene.path + layer.img + ')'});
                                     load_n++;
-                                    if(loading())win.resize();
+                                    loading();
                                 }
-                            } else {
-                                w = layer.w;
-                                h = layer.h;
-                                obj.css({'width': w, 'height': h});
                             }
-                            obj.css({'left': layer.x, 'top': layer.y});
                             scene.box.append(obj);
                             var autoSize;
-                            if (!scene.auto_h && scene.auto_w) {
-                                autoSize = function() {
-                                    obj.css({'width': w * sw, 'left': layer.x * sw, 'height': h * sw, 'top': layer.y * sw});
+                            if (scene.auto_h && scene.auto_w) {
+                                if(layer.isbg){
+                                    autoSize = function () {
+                                        obj.css({
+                                            'width': layer.w * bg_style.scale,
+                                            'left': layer.x  + bg_style.offsetX,
+                                            'height': layer.h * bg_style.scale,
+                                            'top': layer.y + bg_style.offsetY
+                                        });
+                                    }
+                                }else{
+                                    autoSize = function () {
+                                        obj.css({
+                                            'width': layer.w * scale,
+                                            'left': layer.x * scale + offset.x,
+                                            'height': layer.h * scale,
+                                            'top': layer.y * scale + offset.y
+                                        });
+                                    }
+                                }
+                            } else {
+                                autoSize = function () {
+                                    obj.css({
+                                        'width': layer.w * scale,
+                                        'left': layer.x * scale,
+                                        'height': layer.h * scale,
+                                        'top': layer.y * scale
+                                    });
                                 }
                             }
-                            else if (scene.auto_h && !scene.auto_w) {
-                                autoSize = function() {
-                                    obj.css({'width': w * sh, 'left': layer.x * sh, 'height': h * sh, 'top': layer.y * sh});
-                                }
-                            }
-                            else if (scene.auto_h && scene.auto_w) {
-                                autoSize = function() {
-                                    obj.css({'width': w * sw, 'left': layer.x * sw, 'height': h * sh, 'top': layer.y * sh});
-                                }
-                            }else{
-
-                            }
-                            if(autoSize && !scene.debug) obj.bind('autoSize',autoSize)
+                            if (autoSize && !scene.debug) obj.on('autoSize', autoSize)
                         })(scene.layers[j])
                     }
                     function resize() {
-                        if(scene.box.is('.show')){
-                            sw = win.width() / scene.width;
-                            sh = win.height() / scene.height;
+                        if (scene.box.is('.show') && !scene.debug) {
+                            var w = win.width()
+                            var h = win.height()
+                            if (scene.auto_h) {
+                                if (scene.auto_w) {
+                                    scene.box.css({'width': w, 'height': h});
+                                    var scaleW = w / scene.width;
+                                    var scaleH = h / scene.height;
+                                    if (scaleW > scaleH) {
+                                        var tmp = (scaleW - scaleH) / 2;
+                                        offset = {x: tmp * scene.width, y: 0};
+                                        bg_style = {scale: scaleW, offsetX: 0, offsetY: -tmp * scene.height};
+                                        scale = scaleH;
+                                    } else {
+                                        var tmp = (scaleH - scaleW) / 2;
+                                        offset = {x: 0, y: tmp * scene.height};
+                                        bg_style = {scale: scaleH, offsetX: -tmp * scene.width, offsetY: 0};
+                                        scale = scaleW;
+                                    }
+                                } else {
+                                    scale = h / scene.height;
+                                    scene.box.css({'height': h});
+                                }
+                            } else if (scene.auto_w) {
+                                scale = h / scene.width;
+                                scene.box.css({'width': w});
+                            }
                             scene.box.children('.layer').trigger('autoSize');
                         }
                     }
-                    win.resize(resize);                         /*重设窗体大小*/
+                    win.resize(resize);
+                    if (scene.show){
+                        scene.box.addClass('show');
+                        resize();
+                    }
                 })(scenes[i])
             }
-        })([scene_index,scene_main,scene_anli,
-            scene_huiyi,scene_zhongxiaoxue,scene_daxue,scene_yinhang,
-            scene_yiyuan,scene_ditie,scene_gouwuzhongxin,scene_jingqu,scene_changfang]);
-        function loading(){
-            $("#loading a").text((load_n/load_sum).toFixed(2)*100+"%");
-            if(load_n == load_sum){
-                $('.scene.scene-index').addClass('show')
-                $("#loading").remove();
-                for(var i=0;i<bindfun.length;i++){
+        })([scene_loading, scene_index, scene_main, scene_anli,
+            scene_huiyi, scene_zhongxiaoxue, scene_daxue, scene_yinhang,
+            scene_yiyuan, scene_ditie, scene_gouwuzhongxin, scene_jingqu, scene_changfang]);
+        function loading() {
+            var v = load_n / load_sum;
+            $(".baifenbi").text((v * 100).toFixed(0) + "%");
+            $(".load3").css('transform', 'scaleX(' + v * 2 + ')');
+            if (load_n == load_sum) {
+                for (var i = 0; i < bindfun.length; i++) {
                     var fun = bindfun[i];
-                    if(fun)fun();
+                    if (fun) fun();
                 }
-                return true;
+                $('.scene.scene-index').show('scale(0)', 'scale(1)', function () {
+                    $('.scene-loading').remove();
+                });
             }
-            return false;
         }
+
+        $.fn.show = function (before, after, fn, transition) {
+            var t = $(this);
+            t.addClass('show').css({'transform': before, 'transition': transition});
+            win.resize();
+            window.setTimeout(function () {
+                t.css('transform', after);
+                var time = parseFloat(t.css('transition-duration')) * 1000;
+                window.setTimeout(fn, time);
+            }, 1000)
+        }
+
     })
 </script>
-<div id="orientLayer" class="mod-orient-layer">
-    <div class="mod-orient-layer__content">
-        <i class="icon mod-orient-layer__icon-orient"></i>
-        <div class="mod-orient-layer__desc">为了更好的体验，请使用横屏浏览</div>
-    </div>
-</div>
+
