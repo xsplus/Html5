@@ -72,6 +72,7 @@
     100% {  transform: scale(1)  }
 }
 .dibiao{
+    z-index: 9;
     animation-name: dibiao;
     -webkit-animation-name: dibiao;
     animation-duration: 2s;
@@ -86,14 +87,31 @@
     -webkit-animation-iteration-count: infinite
 }
 
+/* 地标标识 */
+@-webkit-keyframes dibiaobiaoshi {
+    0%{-webkit-transform:translateY(0)}
+    50%{-webkit-transform:translateY(80px)}
+}
+.dibiaobiaoshi{
+    z-index: 9;
+    animation-name: dibiaobiaoshi;
+    -webkit-animation-name: dibiaobiaoshi;
+    animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+    animation-delay: .5s;
+    -webkit-animation-delay: .5s;
+    animation-timing-function: linear;
+    -webkit-animation-timing-function: linear;
+    animation-fill-mode: backwards;
+    -webkit-animation-fill-mode: backwards;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite
+}
+
 /* 大飞机飞动 */
 @-webkit-keyframes dafeiji {
-    0% { transform: scale(.1) }
-    20% { transform: scale(.2)  }
-    40% { transform: scale(.5) }
-    60% { transform: scale(.7) }
-    80% { transform: scale(1) }
-    100% { transform: scale(1.2) }
+    from{-webkit-transform:translateY(0)}
+    to{-webkit-transform:translateY(12px)}
 }
 .dafeiji{
     animation-name: dafeiji;
@@ -111,6 +129,73 @@
 }
 
 /*大楼灯*/
+@-webkit-keyframes daloudeng {
+    20% { transform: scale(1)  }
+    60% { transform: scale(1) }
+    80% { transform: scale(0) }
+}
 .daloudeng{
-    background: gold;
+    background: white;
+    animation-name: daloudeng;
+    -webkit-animation-name: daloudeng;
+    animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+    animation-delay: .5s;
+    -webkit-animation-delay: .5s;
+    animation-timing-function: linear;
+    -webkit-animation-timing-function: linear;
+    animation-fill-mode: backwards;
+    -webkit-animation-fill-mode: backwards;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite
+}
+
+/* 摩天轮旋转 */
+@-webkit-keyframes motianlun{
+    from{-webkit-transform:rotate(0deg)}
+    to{-webkit-transform:rotate(360deg)}
+}
+.motianlun{
+    animation:fengche 5.5s linear 2s infinite ;
+    -webkit-animation:fengche 5.5s linear 2s infinite ;
+}
+
+/* 小飞机1 */
+@-webkit-keyframes xiaofeiji1{
+    0%{-webkit-transform:translateX(0) translateY(0)}
+    100%{-webkit-transform:translateX(-200px) translateY(-400px)}
+}
+.xiaofeiji1{
+    animation-name: xiaofeiji1;
+    -webkit-animation-name: xiaofeiji1;
+    animation-duration: 15s;
+    -webkit-animation-duration: 15s;
+    animation-delay: .5s;
+    -webkit-animation-delay: .5s;
+    animation-timing-function: linear;
+    -webkit-animation-timing-function: linear;
+    animation-fill-mode: backwards;
+    -webkit-animation-fill-mode: backwards;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite
+}
+
+/* 小飞机2 */
+@-webkit-keyframes xiaofeiji2{
+    0%{-webkit-transform:translateX(0) translateY(0)}
+    100%{-webkit-transform:translateX(250px) translateY(-500px)}
+}
+.xiaofeiji2{
+    animation-name: xiaofeiji2;
+    -webkit-animation-name: xiaofeiji2;
+    animation-duration: 15s;
+    -webkit-animation-duration: 15s;
+    animation-delay: .5s;
+    -webkit-animation-delay: .5s;
+    animation-timing-function: linear;
+    -webkit-animation-timing-function: linear;
+    animation-fill-mode: backwards;
+    -webkit-animation-fill-mode: backwards;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite
 }
