@@ -3,7 +3,7 @@
  */
 var scene_main = {
     'box':$('.scene.scene-main'),          /*场景的标签*/
-    'debug':true,                            /*是否开启调试模式*/
+    'debug':false,                            /*是否开启调试模式*/
     'width':11811,                            /*场景的宽*/
     'height':2953,                           /*场景的高*/
     'path':'img/main/',                    /*图片根目录*/

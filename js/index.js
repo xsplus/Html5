@@ -19,13 +19,15 @@ var scene_index = {
 var bindfun = [];
 
 bindfun.push(function(){
-    $('.qidong').bind({'touchstart':function(){
+    $('.qidong').on({'touchstart':function(){
+        console.log("进入主页");
         $('.scene-index').removeClass('show');
         $('.scene-main').addClass('show');
         $(window).resize();
     }})
 
-    $('.chakan').bind({'touchstart':function(){
+    $('.chakan').on({'touchstart':function(){
+        console.log("进入案例页");
         $('.scene-index').removeClass('show');
         $('.scene-anli').addClass('show');
         $(window).resize();
