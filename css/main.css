@@ -111,6 +111,7 @@
     to{-webkit-transform:translateY(1.2vh)}
 }
 .dafeiji{
+    z-index: 5;
     animation-name: dafeiji;
     -webkit-animation-name: dafeiji;
     animation-duration: 2s;

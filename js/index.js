@@ -22,15 +22,21 @@ var bindfun = [];
 bindfun.push(function(){
     $('.qidong').on({'touchstart':function(){
         console.log("进入主页");
-        $('.scene-index').removeClass('show');
-        $('.scene-main').addClass('show');
-        $(window).resize();
+        $(this).addClass('btndoudong');
+        setTimeout(function(){
+            $('.scene-index').removeClass('show');
+            $('.scene-main').addClass('show');
+            $(window).resize();
+        },300)
     }})
 
     $('.chakan').on({'touchstart':function(){
         console.log("进入案例页");
-        $('.scene-index').removeClass('show');
-        $('.scene-anli').addClass('show');
-        $(window).resize();
+        $(this).addClass('btndoudong');
+        setTimeout(function(){
+            $('.scene-index').removeClass('show');
+            $('.scene-anli').addClass('show');
+            $(window).resize();
+        },300)
     }})
 })
