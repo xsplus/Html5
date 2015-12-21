@@ -213,8 +213,8 @@
     to{-webkit-transform:rotate(360deg)}
 }
 .motianlun{
-    animation:fengche 5.5s linear 2s infinite ;
-    -webkit-animation:fengche 5.5s linear 2s infinite ;
+    animation:fengche 10.5s linear 2s infinite ;
+    -webkit-animation:fengche 10.5s linear 2s infinite ;
 }
 
 /* 小飞机1 */

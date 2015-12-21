@@ -24,14 +24,15 @@ var scene_main = {
         {'img':'fengche.png',x:11154,y:830,w:189,h:215,'attr':{'class':'fengche'}},
         {'img':'fengche.png',x:11310,y:595,w:370,h:385,'attr':{'class':'fengche'}},
         //云
-        {'img':'heiyun.png',x:200,y:144,w:419,h:137,'attr':{'class':'yun'}},
-        {'img':'baiyun.png',x:1050,y:546,w:344,h:123,'attr':{'class':'yun'}},
-        {'img':'heiyun.png',x:1800,y:244,w:419,h:137,'attr':{'class':'yun'}},
-        {'img':'baiyun.png',x:2100,y:556,w:344,h:123,'attr':{'class':'yun'}},
+        {'img':'heiyun.png',x:100,y:144,w:419,h:137,'attr':{'class':'yun'}},
+        {'img':'heiyun.png',x:1300,y:244,w:419,h:137,'attr':{'class':'yun'}},
         {'img':'heiyun.png',x:2700,y:144,w:419,h:137,'attr':{'class':'yun'}},
-        {'img':'baiyun.png',x:3200,y:726,w:344,h:123,'attr':{'class':'yun'}},
-        {'img':'heiyun.png',x:3500,y:244,w:419,h:137,'attr':{'class':'yun'}},
-        {'img':'baiyun.png',x:3800,y:626,w:344,h:123,'attr':{'class':'yun'}},
+        {'img':'heiyun.png',x:4300,y:244,w:419,h:137,'attr':{'class':'yun'}},
+
+        {'img':'baiyun.png',x:600,y:526,w:344,h:123,'attr':{'class':'yun'}},
+        {'img':'baiyun.png',x:2000,y:446,w:344,h:123,'attr':{'class':'yun'}},
+        {'img':'baiyun.png',x:3400,y:326,w:344,h:123,'attr':{'class':'yun'}},
+        {'img':'baiyun.png',x:5000,y:356,w:344,h:123,'attr':{'class':'yun'}},
         //星星
         {'img':'star.png',x:674,y:458,w:40,h:40,'attr':{'class':'star star1'}},
         {'img':'star.png',x:1097,y:274,w:30,h:30,'attr':{'class':'star star2'}},
@@ -278,7 +279,7 @@ var scene_main = {
         {'img':'dibiaobiaoshi.png',x:10412,y:234,'attr':{'class':'dibiaobiaoshi'}},
         {'img':'dibiaobiaoshi.png',x:11046,y:698,'attr':{'class':'dibiaobiaoshi'}},
         //摩天轮
-        {'img':'motianlun.png',x:2755,y:1110,'attr':{'class':'motianlun'}},
+        {'img':'motianlun.png',x:2755,y:1115,'attr':{'class':'motianlun'}},
         //中小学建筑
         {'img':'zxxjianzhu.png',x:2700,y:1842,'attr':{'class':'zxxjianzhu'}},
         //说明
@@ -388,6 +389,7 @@ bindfun.push(function(){
                 $('.scene.scene-ditie').addClass('show');
                 break;
         }
+        $(window).resize();
     });
     //OK
     $('.btn_ok').on('touchstart',function(){
