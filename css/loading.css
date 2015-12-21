@@ -43,3 +43,13 @@
 .load3 {
     transform-origin: 8% 50%;
 }
+
+.baifenbi{
+
+}
+.baifenbi a{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #fff;
+}
