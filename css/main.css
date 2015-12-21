@@ -28,19 +28,7 @@
 /* 云飘动 */
 @-webkit-keyframes yun{
     from{-webkit-transform:translateX(0)}
-    to{-webkit-transform:translateX(1000px)}
-}
-@-moz-keyframes fengche{
-    from{-moz-transform:translateX(0)}
-    to{-moz-transform:translateX(1000px)}
-}
-@-ms-keyframes fengche{
-    from{-ms-transform:translateX(0)}
-    to{-ms-transform:translateX(1000px)}
-}
-@-o-keyframes fengche{
-    from{-o-transform:translateX(0)}
-    to{-o-transform:translateX(1000px)}
+    to{-webkit-transform:translateX(50vw)}
 }
 .yun{
     animation:yun 50.5s linear 0s infinite ;
@@ -94,7 +82,7 @@
 /* 地标标识 */
 @-webkit-keyframes dibiaobiaoshi {
     0%{-webkit-transform:translateY(0)}
-    50%{-webkit-transform:translateY(80px)}
+    50%{-webkit-transform:translateY(3vh)}
 }
 .dibiaobiaoshi{
     z-index: 9;
@@ -115,7 +103,7 @@
 /* 大飞机飞动 */
 @-webkit-keyframes dafeiji {
     from{-webkit-transform:translateY(0)}
-    to{-webkit-transform:translateY(12px)}
+    to{-webkit-transform:translateY(1.2vh)}
 }
 .dafeiji{
     animation-name: dafeiji;
@@ -167,7 +155,7 @@
 /* 小飞机1 */
 @-webkit-keyframes xiaofeiji1{
     0%{-webkit-transform:translateX(0) translateY(0)}
-    100%{-webkit-transform:translateX(-200px) translateY(-400px)}
+    100%{-webkit-transform:translateX(-20vw) translateY(-40vh)}
 }
 .xiaofeiji1{
     animation-name: xiaofeiji1;
@@ -187,7 +175,7 @@
 /* 小飞机2 */
 @-webkit-keyframes xiaofeiji2{
     0%{-webkit-transform:translateX(0) translateY(0)}
-    100%{-webkit-transform:translateX(250px) translateY(-500px)}
+    100%{-webkit-transform:translateX(25vw) translateY(-50vh)}
 }
 .xiaofeiji2{
     animation-name: xiaofeiji2;

@@ -13,7 +13,7 @@ var scene_index = {
         {'img':'bg.png',isbg:true},
         {'img':'btn1.png',x:1792,y:1670,attr:{'class':'qidong'}},
         {'img':'btn2.png',x:1685,y:2122,attr:{'class':'chakan'}},
-        {'img':'title.png',x:722,y:366},
+        {'img':'title.png',x:722,y:366,attr:{'class':'title'}},
     ]
 }
 
