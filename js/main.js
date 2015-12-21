@@ -61,15 +61,15 @@ var scene_main = {
         {'img':'jingqu.png',x:10615,y:294,w:189,h:147,'attr':{'class':'dibiao'}},
         {'img':'ditie.png',x:11240,y:740,w:199,h:156,'attr':{'class':'dibiao'}},
         //地标加上div用于添加事件
-        {x:1507,y:565,w:800,h:800,'attr':{'class':'dibiaoAction'}},
-        {x:2782,y:971,w:700,h:700,'attr':{'class':'dibiaoAction'}},
-        {x:4229,y:715,w:700,h:700,'attr':{'class':'dibiaoAction'}},
-        {x:5301,y:666,w:700,h:700,'attr':{'class':'dibiaoAction'}},
-        {x:5977,y:315,w:700,h:700,'attr':{'class':'dibiaoAction'}},
-        {x:7408,y:236,w:700,h:700,'attr':{'class':'dibiaoAction'}},
-        {x:8980,y:140,w:700,h:700,'attr':{'class':'dibiaoAction'}},
-        {x:10415,y:10,w:600,h:600,'attr':{'class':'dibiaoAction'}},
-        {x:11090,y:540,w:600,h:600,'attr':{'class':'dibiaoAction'}},
+        {x:1507,y:565,w:800,h:800,'attr':{'class':'dibiaoAction','data-id':1}},
+        {x:2782,y:971,w:700,h:700,'attr':{'class':'dibiaoAction','data-id':2}},
+        {x:4229,y:715,w:700,h:700,'attr':{'class':'dibiaoAction','data-id':3}},
+        {x:5301,y:666,w:700,h:700,'attr':{'class':'dibiaoAction','data-id':4}},
+        {x:5977,y:315,w:700,h:700,'attr':{'class':'dibiaoAction','data-id':5}},
+        {x:7408,y:236,w:700,h:700,'attr':{'class':'dibiaoAction','data-id':6}},
+        {x:8980,y:140,w:700,h:700,'attr':{'class':'dibiaoAction','data-id':7}},
+        {x:10415,y:10,w:600,h:600,'attr':{'class':'dibiaoAction','data-id':8}},
+        {x:11090,y:540,w:600,h:600,'attr':{'class':'dibiaoAction','data-id':9}},
         //大飞机
         {'img':'dafeiji.png',x:3387,y:328,w:1467,h:550,'attr':{'class':'dafeiji'}},
         //大楼灯
@@ -357,8 +357,38 @@ bindfun.push(function(){
 
     //给地标绑定事件
     $('.dibiaoAction').on('touchstart',function(){
+        console.log("进入地标场景");
+        var id = $(this).data('id');
         $('.scene.scene-main').removeClass('show');
-        $('.scene.scene-huiyi').addClass('show');
+        switch (id){
+            case 1:
+                $('.scene.scene-huiyi').addClass('show');
+                break;
+            case 2:
+                $('.scene.scene-zhongxiaoxue').addClass('show');
+                break;
+            case 3:
+                $('.scene.scene-daxue').addClass('show');
+                break;
+            case 4:
+                $('.scene.scene-yiyuan').addClass('show');
+                break;
+            case 5:
+                $('.scene.scene-yinhang').addClass('show');
+                break;
+            case 6:
+                $('.scene.scene-gouwuzhongxin').addClass('show');
+                break;
+            case 7:
+                $('.scene.scene-jingqu').addClass('show');
+                break;
+            case 8:
+                $('.scene.scene-changfang').addClass('show');
+                break;
+            case 9:
+                $('.scene.scene-ditie').addClass('show');
+                break;
+        }
     });
     //OK
     $('.btn_ok').on('touchstart',function(){
