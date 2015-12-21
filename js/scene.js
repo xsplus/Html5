@@ -1,7 +1,7 @@
 /**
  * Created by Administrator on 12/20 0020.
  */
-var scene_scene = {
+sceneslist.push({
     'box':$('.scene.scene-scene'),       /*场景的标签*/
     'width':569,                            /*场景的宽*/
     'height':321,                           /*场景的高*/
@@ -11,4 +11,4 @@ var scene_scene = {
     'layers':[                              /*场景的图层数据*/
         {'img':null,x:1,y:1,w:200,h:200,css:{'background-color':'red'}},
     ]
-}
+})

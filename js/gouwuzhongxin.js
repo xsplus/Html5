@@ -1,7 +1,7 @@
 /**
  * Created by theonead on 12/17 0017.
  */
-var scene_gouwuzhongxin = {
+sceneslist.push({
     'box':$('.scene.scene-gouwuzhongxin'),       /*场景的标签*/
     'width':569,                            /*场景的宽*/
     'height':321,                           /*场景的高*/
@@ -11,9 +11,9 @@ var scene_gouwuzhongxin = {
     'layers':[                              /*场景的图层数据*/
         {'img':null,x:1,y:1,w:1,h:1,attr:{'class':''}},
     ]
-}
+})
 
-bindfun.push(function(){
+initfunlist.push(function(){
     $('').pitTouch(function(){
         $('.scene-').removeClass('show');
         $('.scene-index').addClass('show');

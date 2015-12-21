@@ -1,6 +1,5 @@
 .scene-main{
     overflow: visible;
-    cursor: pointer;
 }
 
 /* 风车旋转 */
@@ -198,7 +197,7 @@
     -webkit-animation:xiaofeiji2 15s linear infinite;
 }
 
-.shuoming_bg,.shuoming,.btn_ok{
+.shuoming_bg,.shuoming,.scene-main .btn_ok{
     z-index: 99;
     position:fixed;
 }
@@ -206,6 +205,8 @@
     background-color:rgba(0,0,0,0.6);
     width:100% !important;
     height:100% !important;
+    left:0 !important;
+    top:0 !important;
 }
 
 /* OK闪烁 */
@@ -218,4 +219,19 @@
 .scene-main .btn_ok{
     animation:btn_ok 2s linear infinite ;
     -webkit-animation:btn_ok 2s linear infinite;
+    cursor: pointer;
+}
+
+
+
+
+
+
+/**************** windows style **************/
+.scene-main{
+    cursor: all-scroll;
+}
+
+.scene-main .dibiaoAction{
+    cursor: pointer;
 }

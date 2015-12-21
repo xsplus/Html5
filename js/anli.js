@@ -1,7 +1,7 @@
 /**
  * Created by theonead on 12/17 0017.
  */
-var scene_anli = {
+sceneslist.push({
     'box':$('.scene.scene-anli'),       /*场景的标签*/
     'debug':false,
     'width':4742,                            /*场景的宽*/
@@ -25,9 +25,9 @@ var scene_anli = {
         //tip
         {'img':'tip.png',x:1870,y:1880,attr:{'class':'tip'}}
     ]
-}
+})
 
-bindfun.push(function(){
+initfunlist.push(function(){
     $('.btn_wailian').pitTouch(function(){
         console.log("进入案例详情页");
         $(this).addClass('btndoudong');

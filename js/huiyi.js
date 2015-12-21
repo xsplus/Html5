@@ -1,7 +1,7 @@
 /**
  * Created by theonead on 12/17 0017.
  */
-var scene_huiyi = {
+sceneslist.push({
     'box':$('.scene.scene-huiyi'),       /*场景的标签*/
     'debug':false,                            /*是否开启调试模式*/
     'width':569,                            /*场景的宽*/
@@ -14,9 +14,9 @@ var scene_huiyi = {
         {'img':'common/backmain.png',x:1,y:1,w:100,h:50,attr:{'class':'backmain'}},
         {'img':'common/chakananli.png',x:301,y:1,w:100,h:50,attr:{'class':'chakananli'}},
     ]
-}
+})
 
-bindfun.push(function(){
+initfunlist.push(function(){
     $('.backmain').pitTouch(function(){
         $('.scene-huiyi').removeClass('show');
         $('.scene-main').addClass('show');

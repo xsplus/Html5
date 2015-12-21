@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
     <link href="css/style.css" rel="stylesheet">
-    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
     <link href="css/loading.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
@@ -44,6 +43,7 @@
 </body>
 <footer>
     <script src="js/zepto.min.js"></script>
+    <script src="js/base.js"></script>
     <script src="js/loading.js"></script>
     <script src="js/index.js"></script>
     <script src="js/main.js"></script>
@@ -62,139 +62,14 @@
 </html>
 <script>
     $(function() {
-        var win = $(window);
-        var load_sum = 0, load_n = 0;
-        (function (scenes) {
-            for (var i = 0; i < scenes.length; i++) {
-                (function (scene) {
-                    scene = $.extend({
-                        'path': '', /*图片根目录*/
-                        'debug': false, /*是否开启调试模式*/
-                        'auto_w': true, /*是否自动适应宽度*/
-                        'auto_h': true, /*是否自动适应高度*/
-                        'show': false,
-                        'layers': []                             /*场景的图层数据*/
-                    }, scene)
-                    scene.box.css({'width': win.width(), 'height': win.height()});
-                    if (scene.debug) {
-                        scene.box.addClass('debug').append("<div class='pos_box'></div>").on({
-                            'mousemove': function (e) {
-                                $(this).children('.pos_box').css({'left': e.pageX, 'top': e.pageY}).html('x:' + e.pageX + '<br>' + 'y:' + e.pageY);
-                            }
-                        });
-                        $('html,body').css('overflow','scroll');
-                    }
-                    var scale = {w: 1, h: 1},offset = {x: 0, y: 0}, bg_style = {scale: 1, offsetX: 0, offsetY: 0};
-                    /*记录长和宽的比例*/
-                    for (var j = 0; j < scene.layers.length; j++) {
-                        (function (layer) {
-                            layer = $.extend({ attr:{}, tag:'div', x:0, y:0, w:0, h:0 },layer);
-                            layer.attr.class = layer.attr.class ? layer.attr.class + ' layer' : 'layer';
-                            var obj = $('<' + layer.tag + '/>').attr(layer.attr).css(layer.css);
-                            if (layer.img) {
-                                var img = new Image();
-                                img.src = scene.path + layer.img;
-                                load_sum++;
-                                img.onload = function () {
-                                    if(!layer.w) layer.w = img.width;
-                                    if(!layer.h) layer.h = img.height;
-                                    obj.css({ 'background-image': 'url(' + scene.path + layer.img + ')'});
-                                    if(scene.debug)drawobj(layer.x, layer.y, layer.w, layer.h);
-                                    load_n++;
-                                    loading();
-                                }
-                            }else if(scene.debug)drawobj(layer.x, layer.y, layer.w, layer.h);
-                            scene.box.append(obj);
-                            var autoSize;
-                            if (scene.auto_h && scene.auto_w) {
-                                if(layer.isbg){
-                                    autoSize = function () { drawobj(layer.x + bg_style.offsetX, layer.y + bg_style.offsetY, layer.w * bg_style.scale, layer.h * bg_style.scale); }
-                                }else{
-                                    autoSize = function () { drawobj(layer.x * scale + offset.x, layer.y * scale + offset.y, layer.w * scale, layer.h * scale); }
-                                }
-                            } else {
-                                autoSize = function () { drawobj(layer.x * scale,layer.y * scale,layer.w * scale,layer.h * scale); }
-                            }
-                            if (autoSize && !scene.debug) obj.on('autoSize', autoSize)
-                            function drawobj(x,y,w,h) {
-                                obj.css({'left': x, 'top': y, 'width': w, 'height': h});
-                            }
-                        })(scene.layers[j])
-                    }
-                    function resize() {
-                        if (scene.box.is('.show') && !scene.debug) {
-                            var w = win.width()
-                            var h = win.height()
-                            if (scene.auto_h) {
-                                if (scene.auto_w) {
-                                    scene.box.css({'width': w, 'height': h});
-                                    var scaleW = w / scene.width;
-                                    var scaleH = h / scene.height;
-                                    if (scaleW > scaleH) {
-                                        var tmp = (scaleW - scaleH) / 2;
-                                        offset = {x: tmp * scene.width, y: 0};
-                                        bg_style = {scale: scaleW, offsetX: 0, offsetY: -tmp * scene.height};
-                                        scale = scaleH;
-                                    } else {
-                                        var tmp = (scaleH - scaleW) / 2;
-                                        offset = {x: 0, y: tmp * scene.height};
-                                        bg_style = {scale: scaleH, offsetX: -tmp * scene.width, offsetY: 0};
-                                        scale = scaleW;
-                                    }
-                                } else {
-                                    scale = h / scene.height;
-                                    scene.box.css({'height': h});
-                                }
-                            } else if (scene.auto_w) {
-                                scale = h / scene.width;
-                                scene.box.css({'width': w});
-                            }
-                            scene.box.children('.layer').trigger('autoSize');
-                        }
-                    }
-                    win.resize(resize);
-                    if (scene.show){
-                        scene.box.addClass('show');
-                        resize();
-                    }
-                })(scenes[i])
-            }
-        })([scene_loading, scene_index, scene_main, scene_anli,scene_scene,
-            scene_huiyi, scene_zhongxiaoxue, scene_daxue, scene_yinhang,
-            scene_yiyuan, scene_ditie, scene_gouwuzhongxin, scene_jingqu, scene_changfang]);
-
-        $.fn.show = function (before, after, fn, transition) {
-            var t = $(this);
-            t.addClass('show').css({'transform': before, 'transition': transition});
-            win.resize();
-            if(after){
-                window.setTimeout(function () {
-                    t.css('transform', after);
-                    var time = parseFloat(t.css('transition-duration')) * 1000;
-                    window.setTimeout(fn, time);
-                }, 1000)
-            }else if(fn) fn();
-        }
-
-        $.isPhone = !!(('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch);
-
-        if($.isPhone){
-            $.fn.pitTouch = function(fn){
-                $(this).on('touchstart',fn);
-            }
-        }else{
-            $.fn.pitTouch = function(fn){
-                $(this).on('click',fn);
-            }
-        }
-
-        function loading() {
+        createScenes(sceneslist);
+        loadingfun = function (load_n,load_sum) {
             var v = load_n / load_sum;
             $(".baifenbi").html("<a>"+(v * 100).toFixed(0) + "%</a>");
             $(".load3").css('transform', 'scaleX(' + v * 2 + ')');
             if (load_n == load_sum) {
-                for (var i = 0; i < bindfun.length; i++) {
-                    var fun = bindfun[i];
+                for (var i = 0; i < initfunlist.length; i++) {
+                    var fun = initfunlist[i];
                     if (fun) fun();
                 }
                 $('.scene.scene-index').show('scale(0)', 'scale(1)', function () {

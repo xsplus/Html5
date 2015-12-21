@@ -1,9 +1,9 @@
 /**
  * Created by Administrator on 12/16 0016.
  */
-var scene_index = {
+sceneslist.push({
     'box':$('.scene.scene-index'),       /*场景的标签*/
-    'debug':false,                            /*是否开启调试模式*/
+    'debug':true,                            /*是否开启调试模式*/
     'width':4742,                            /*场景的宽*/
     'height':2667,                           /*场景的高*/
     'path':'img/index/',                  /*图片根目录*/
@@ -15,11 +15,9 @@ var scene_index = {
         {'img':'btn2.png',x:1685,y:2122,attr:{'class':'chakan'}},
         {'img':'title.png',x:722,y:366,attr:{'class':'title'}},
     ]
-}
+})
 
-var bindfun = [];
-
-bindfun.push(function(){
+initfunlist.push(function(){
 
     $('.qidong').pitTouch(function(){
         console.log("进入主页");

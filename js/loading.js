@@ -1,7 +1,7 @@
 /**
  * Created by theonead on 12/18 0018.
  */
-var scene_loading = {
+sceneslist.push({
     'box':$('.scene.scene-loading'),       /*场景的标签*/
     'debug':false,                            /*是否开启调试模式*/
     'width':4742,                            /*场景的宽*/
@@ -18,4 +18,4 @@ var scene_loading = {
         {'img':'load4.png',x:1564,y:1295,w:433,h:69,'attr':{'class':'load4'}},
         {x:2900,y:1020,w:400,h:200,'attr':{'class':'baifenbi'}},
     ]
-}
+})

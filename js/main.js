@@ -1,7 +1,7 @@
 /**
  * Created by Administrator on 12/16 0016.
  */
-var scene_main = {
+sceneslist.push(scene_main = {
     'box':$('.scene.scene-main'),          /*场景的标签*/
     'debug':false,                            /*是否开启调试模式*/
     'width':11811,                            /*场景的宽*/
@@ -282,21 +282,34 @@ var scene_main = {
         {'img':'motianlun.png',x:2755,y:1115,'attr':{'class':'motianlun'}},
         //中小学建筑
         {'img':'zxxjianzhu.png',x:2700,y:1842,'attr':{'class':'zxxjianzhu'}},
+
+    ]
+});
+
+sceneslist.push({
+    'box':$('.scene.scene-main'),       /*场景的标签*/
+    'debug':false,                            /*是否开启调试模式*/
+    'width':5251,                            /*场景的宽*/
+    'height':2953,                           /*场景的高*/
+    'path':'img/main/',                  /*图片根目录*/
+    'auto_w':true,                        /*是否自动适应宽度*/
+    'auto_h':true,                         /*是否自动适应高度*/
+    'layers':[                              /*场景的图层数据*/
         //说明
-        {'attr':{'class':'shuoming_bg'}},
+        {'attr':{'class':'shuoming_bg'},isbg:true},
         {'img':'shuoming.png',w:5251,h:2953,'attr':{'class':'shuoming'}},
         //OK
         {'img':'btn_ok.png',x:2504,y:1940,w:282,h:259,attr:{'class':'btn_ok'}},
     ]
-}
+})
 
-bindfun.push(function(){
+initfunlist.push(function(){
     var main_box = $('.scene-main');
     if(!scene_main.debug) main_box.css('left', -window.innerWidth * 0.3);
+    var main_bg = $('.scene-main .bg');
+    var limit = main_bg.width() - window.innerWidth;
+    var pos = {x : parseFloat(main_box.css('left')), y : 0};
     if ($.isPhone) {
-        var main_bg = $('.scene-main .bg');
-        var limit = main_bg.width() - window.innerWidth;
-        var pos = {x : parseFloat(main_box.css('left')), y : 0};
         var startPos, isTouch;
         //触摸事件自定义
         main_box.on('touchstart', function (event) {
@@ -317,15 +330,7 @@ bindfun.push(function(){
             //解绑事件
             isTouch = false;
             main_box.off('touchmove',touchmove);
-
         }
-        function moveTo(x){
-            if (x > 0) x = 0;
-            else if (limit + x < 0) x = -limit;
-            main_box.css('left', x);
-            pos.x = x;
-        }
-
         /*重力感应*/
         try {
             if (window.DeviceOrientationEvent && !scene_main.debug) {
@@ -350,13 +355,36 @@ bindfun.push(function(){
             }
         }
         catch (e) {}
-
-        $(window).resize(function(){
-            limit = main_bg.width() - window.innerWidth;
-        });
     }
+    else{
+        var startPos;
+        //触摸事件自定义
+        main_box.on('mousedown', function (event) {
+            startPos = {x: pos.x-event.pageX, y: event.pageY };    //取第一个touch的坐标值
+            main_box.on('mousemove',mousemove);
+            main_box.one('mouseup',mouseup);
+        });
+        function mousemove(event) {
+            var tmp = {x: event.pageX + startPos.x, y: event.pageY - startPos.y};
+            event.preventDefault();      //阻止触摸事件的默认行为，即阻止滚屏
+            moveTo(tmp.x)
+        }
+        function mouseup() {
+            //解绑事件
+            main_box.off('mousemove',mousemove);
+        }
+    }
+    function moveTo(x){
+        if (x > 0) x = 0;
+        else if (limit + x < 0) x = -limit;
+        main_box.css('left', x);
+        pos.x = x;
+    }
+    $(window).resize(function(){
+        limit = main_bg.width() - window.innerWidth;
+    });
     //给地标绑定事件
-    $('.dibiaoAction').on('touchstart',function(){
+    $('.dibiaoAction').pitTouch(function(){
         console.log("进入地标场景");
         var id = $(this).data('id');
         $('.scene.scene-main').removeClass('show');
