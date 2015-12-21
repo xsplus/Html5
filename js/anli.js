@@ -10,6 +10,18 @@ var scene_anli = {
     'auto_h':true,                         /*是否自动适应高度*/
     'touch':true,
     'layers':[                              /*场景的图层数据*/
-        {'img':'bg_anliji.png',attr:{'background-color':'red'},isbg:true},
+        {'img':'bg_anliji.png',isbg:true},
+        //案例按钮
+        {'img':'btn_huiyi.png',x:50,y:50,attr:{'class':'btn_wailian','data-id':1}},
+        {'img':'btn_zhongxiaoxue.png',x:50,y:50,attr:{'class':'btn_wailian','data-id':1}},
+        {'img':'btn_daxue.png.png',x:50,y:50,attr:{'class':'btn_wailian','data-id':1}},
+        {'img':'btn_yiyuan.png',x:50,y:50,attr:{'class':'btn_wailian','data-id':1}},
+        {'img':'btn_yinhang.png',x:50,y:50,attr:{'class':'btn_wailian','data-id':1}},
+        {'img':'btn_gouwu.png',x:50,y:50,attr:{'class':'btn_wailian','data-id':1}},
+        {'img':'btn_changfang.png',x:50,y:50,attr:{'class':'btn_wailian','data-id':1}},
+        {'img':'btn_jingqu.png',x:50,y:50,attr:{'class':'btn_wailian','data-id':1}},
+        {'img':'btn_ditie.png',x:50,y:50,attr:{'class':'btn_wailian','data-id':1}}
+        //tip
+        {'img':'tip.png',x:50,y:50,attr:{'class':'tip'}}
     ]
 }
