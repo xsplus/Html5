@@ -20,7 +20,8 @@ var scene_index = {
 var bindfun = [];
 
 bindfun.push(function(){
-    $('.qidong').on({'touchstart':function(){
+
+    $('.qidong').pitTouch(function(){
         console.log("进入主页");
         $(this).addClass('btndoudong');
         setTimeout(function(){
@@ -28,9 +29,9 @@ bindfun.push(function(){
             $('.scene-main').addClass('show');
             $(window).resize();
         },300)
-    }})
+    })
 
-    $('.chakan').on({'touchstart':function(){
+    $('.chakan').pitTouch(function(){
         console.log("进入案例页");
         $(this).addClass('btndoudong');
         setTimeout(function(){
@@ -38,5 +39,5 @@ bindfun.push(function(){
             $('.scene-anli').addClass('show');
             $(window).resize();
         },300)
-    }})
+    })
 })

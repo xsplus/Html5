@@ -1,5 +1,6 @@
 .scene-main{
     overflow: visible;
+    cursor: pointer;
 }
 
 /* 风车旋转 */
@@ -43,14 +44,8 @@
     100% {  transform: scale(1)  }
 }
 .star{
-    animation-name: star;
-    -webkit-animation-name: star;
-    animation-duration: 5s;
-    -webkit-animation-duration: 5s;
-    animation-timing-function: linear;
-    -webkit-animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    -webkit-animation-iteration-count: infinite
+    animation:star 5s linear infinite ;
+    -webkit-animation:dibiao 5s linear infinite ;
 }
 .star1{
     animation-delay: .5s;
@@ -82,18 +77,8 @@
 }
 .dibiao{
     z-index: 9;
-    animation-name: dibiao;
-    -webkit-animation-name: dibiao;
-    animation-duration: 2s;
-    -webkit-animation-duration: 2s;
-    animation-delay: .5s;
-    -webkit-animation-delay: .5s;
-    animation-timing-function: linear;
-    -webkit-animation-timing-function: linear;
-    animation-fill-mode: backwards;
-    -webkit-animation-fill-mode: backwards;
-    animation-iteration-count: infinite;
-    -webkit-animation-iteration-count: infinite
+    animation:dibiao 2s linear infinite ;
+    -webkit-animation:dibiao 2s linear infinite ;
 }
 
 /* 地标Action */
@@ -108,18 +93,8 @@
 }
 .dibiaobiaoshi{
     z-index: 9;
-    animation-name: dibiaobiaoshi;
-    -webkit-animation-name: dibiaobiaoshi;
-    animation-duration: 2s;
-    -webkit-animation-duration: 2s;
-    animation-delay: .5s;
-    -webkit-animation-delay: .5s;
-    animation-timing-function: linear;
-    -webkit-animation-timing-function: linear;
-    animation-fill-mode: backwards;
-    -webkit-animation-fill-mode: backwards;
-    animation-iteration-count: infinite;
-    -webkit-animation-iteration-count: infinite
+    animation:dibiaobiaoshi 2s linear infinite ;
+    -webkit-animation:dibiaobiaoshi 2s linear infinite ;
 }
 
 /* 大飞机飞动 */
@@ -129,18 +104,8 @@
 }
 .dafeiji{
     z-index: 5;
-    animation-name: dafeiji;
-    -webkit-animation-name: dafeiji;
-    animation-duration: 2s;
-    -webkit-animation-duration: 2s;
-    animation-delay: .5s;
-    -webkit-animation-delay: .5s;
-    animation-timing-function: linear;
-    -webkit-animation-timing-function: linear;
-    animation-fill-mode: backwards;
-    -webkit-animation-fill-mode: backwards;
-    animation-iteration-count: infinite;
-    -webkit-animation-iteration-count: infinite
+    animation:dafeiji 2s linear infinite ;
+    -webkit-animation:dafeiji 2s linear infinite ;
 }
 
 /*大楼灯*/
@@ -150,12 +115,8 @@
 }
 .daloudeng{
     background: white;
-    animation-name: daloudeng;
-    -webkit-animation-name: daloudeng;
-    animation-duration: 10s;
-    -webkit-animation-duration: 10s;
-    animation-iteration-count: infinite;
-    -webkit-animation-iteration-count: infinite
+    animation:daloudeng 10s linear infinite ;
+    -webkit-animation:daloudeng 10s linear infinite ;
 }
 .deng1{
     animation-delay: .5s;
@@ -223,18 +184,8 @@
     100%{-webkit-transform:translateX(-20vw) translateY(-40vh)}
 }
 .xiaofeiji1{
-    animation-name: xiaofeiji1;
-    -webkit-animation-name: xiaofeiji1;
-    animation-duration: 15s;
-    -webkit-animation-duration: 15s;
-    animation-delay: .5s;
-    -webkit-animation-delay: .5s;
-    animation-timing-function: linear;
-    -webkit-animation-timing-function: linear;
-    animation-fill-mode: backwards;
-    -webkit-animation-fill-mode: backwards;
-    animation-iteration-count: infinite;
-    -webkit-animation-iteration-count: infinite
+    animation:xiaofeiji1 15s linear 5s infinite ;
+    -webkit-animation:xiaofeiji1 15s linear -5s infinite;
 }
 
 /* 小飞机2 */
@@ -243,18 +194,8 @@
     100%{-webkit-transform:translateX(25vw) translateY(-50vh)}
 }
 .xiaofeiji2{
-    animation-name: xiaofeiji2;
-    -webkit-animation-name: xiaofeiji2;
-    animation-duration: 15s;
-    -webkit-animation-duration: 15s;
-    animation-delay: .5s;
-    -webkit-animation-delay: .5s;
-    animation-timing-function: linear;
-    -webkit-animation-timing-function: linear;
-    animation-fill-mode: backwards;
-    -webkit-animation-fill-mode: backwards;
-    animation-iteration-count: infinite;
-    -webkit-animation-iteration-count: infinite
+    animation:xiaofeiji2 15s linear infinite ;
+    -webkit-animation:xiaofeiji2 15s linear infinite;
 }
 
 .shuoming_bg,.shuoming,.btn_ok{
@@ -274,15 +215,7 @@
     66% {  transform: scale(1.6)  }
     100% {  transform: scale(1)  }
 }
-.btn_ok{
-    animation-name: btn_ok;
-    -webkit-animation-name: btn_ok;
-    animation-duration: 2s;
-    -webkit-animation-duration: 2s;
-    animation-timing-function: linear;
-    -webkit-animation-timing-function: linear;
-    animation-fill-mode: backwards;
-    -webkit-animation-fill-mode: backwards;
-    animation-iteration-count: infinite;
-    -webkit-animation-iteration-count: infinite
+.scene-main .btn_ok{
+    animation:btn_ok 2s linear infinite ;
+    -webkit-animation:btn_ok 2s linear infinite;
 }

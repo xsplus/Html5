@@ -17,14 +17,14 @@ var scene_huiyi = {
 }
 
 bindfun.push(function(){
-    $('.backmain').bind({'touchstart':function(){
+    $('.backmain').pitTouch(function(){
         $('.scene-huiyi').removeClass('show');
         $('.scene-main').addClass('show');
         $(window).resize();
-    }})
-    $('.chakananli').bind({'touchstart':function(){
+    })
+    $('.chakananli').pitTouch(function(){
         $('.scene-huiyi').removeClass('show');
         $('.scene-anli').addClass('show');
         $(window).resize();
-    }})
+    })
 })

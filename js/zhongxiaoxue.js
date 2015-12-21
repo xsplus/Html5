@@ -14,9 +14,9 @@ var scene_zhongxiaoxue = {
 }
 
 bindfun.push(function(){
-    $('').bind({'touchstart':function(){
+    $('').pitTouch(function(){
         $('.scene-').removeClass('show');
         $('.scene-index').addClass('show');
         $(window).resize();
-    }})
+    })
 })

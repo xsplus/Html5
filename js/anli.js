@@ -28,7 +28,7 @@ var scene_anli = {
 }
 
 bindfun.push(function(){
-    $('.btn_wailian').on({'touchstart':function(){
+    $('.btn_wailian').pitTouch(function(){
         console.log("进入案例详情页");
         $(this).addClass('btndoudong');
         var id = $(this).data('id');
@@ -63,5 +63,5 @@ bindfun.push(function(){
                     break;
             }
         }, 500);
-    }})
+    });
 })

@@ -392,9 +392,10 @@ bindfun.push(function(){
         $(window).resize();
     });
     //OK
-    $('.btn_ok').on('touchstart',function(){
+    $('.btn_ok').pitTouch(function(){
         console.log("关闭提醒");
+        $('.scene.scene-main .shuoming_bg').remove();
         $('.scene.scene-main .shuoming').remove();
         $('.scene.scene-main .btn_ok').remove();
-    });
+    })
 })
