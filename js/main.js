@@ -285,6 +285,10 @@ var scene_main = {
         {'img':'motianlun.png',x:2755,y:1110,'attr':{'class':'motianlun'}},
         //中小学建筑
         {'img':'zxxjianzhu.png',x:2700,y:1842,'attr':{'class':'zxxjianzhu'}},
+        //说明
+        {'img':'shuoming.png',x:1582,y:0,w:5251,h:2953,'attr':{'class':'shuoming'},'css':{'background-color':'rgba(0,0,0,0.6)'}},
+        //OK
+        {'img':'btn_ok.png',x:4086,y:1940,w:282,h:259,attr:{'class':'btn_ok'}},
     ]
 }
 
@@ -357,8 +361,14 @@ bindfun.push(function(){
 
 
     //给地标绑定事件
-    $('.dibiaoAction').bind('touchstart',function(){
+    $('.dibiaoAction').on('touchstart',function(){
         $('.scene.scene-main').removeClass('show');
         $('.scene.scene-huiyi').addClass('show');
+    });
+    //OK
+    $('.btn_ok').on('touchstart',function(){
+        console.log("关闭提醒");
+        $('.scene.scene-main .shuoming').remove();
+        $('.scene.scene-main .btn_ok').remove();
     });
 })
