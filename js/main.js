@@ -9,7 +9,6 @@ var scene_main = {
     'path':'img/main/',                    /*图片根目录*/
     'auto_w':false,                        /*是否自动适应屏幕宽度*/
     'auto_h':true,                         /*是否自动适应屏幕高度*/
-    'touch':true,
     'layers':[
         //背景图
         {'img':'bg.png','attr':{'class':'bg'},isbg:true},
