@@ -72,32 +72,23 @@
                         'debug': false, /*是否开启调试模式*/
                         'auto_w': true, /*是否自动适应宽度*/
                         'auto_h': true, /*是否自动适应高度*/
-                        'touch': false,
                         'show': false,
                         'layers': []                             /*场景的图层数据*/
                     }, scene)
                     scene.box.css({'width': win.width(), 'height': win.height()});
-                    if (scene.debug) scene.box.addClass('debug').append("<div class='pos_box'></div>").on({
-                        'mousemove': function (e) {
-                            $(this).children('.pos_box').css({
-                                'left': e.pageX,
-                                'top': e.pageY
-                            }).html('x:' + e.pageX + '<br>' + 'y:' + e.pageY);
-                        }
-                    });
-                    var scale = {w: 1, h: 1}, bg_style = {scale: 1, offsetX: 0, offsetY: 0};
-                    var offset = {x: 0, y: 0}
+                    if (scene.debug) {
+                        scene.box.addClass('debug').append("<div class='pos_box'></div>").on({
+                            'mousemove': function (e) {
+                                $(this).children('.pos_box').css({'left': e.pageX, 'top': e.pageY}).html('x:' + e.pageX + '<br>' + 'y:' + e.pageY);
+                            }
+                        });
+                        $('html,body').css('overflow','scroll');
+                    }
+                    var scale = {w: 1, h: 1},offset = {x: 0, y: 0}, bg_style = {scale: 1, offsetX: 0, offsetY: 0};
                     /*记录长和宽的比例*/
                     for (var j = 0; j < scene.layers.length; j++) {
                         (function (layer) {
-                            layer = $.extend({
-                                attr:{},
-                                tag:'div',
-                                x:0,
-                                y:0,
-                                w:0,
-                                h:0
-                            },layer);
+                            layer = $.extend({ attr:{}, tag:'div', x:0, y:0, w:0, h:0 },layer);
                             layer.attr.class = layer.attr.class ? layer.attr.class + ' layer' : 'layer';
                             var obj = $('<' + layer.tag + '/>').attr(layer.attr).css(layer.css);
                             if (layer.img) {
@@ -108,43 +99,26 @@
                                     if(!layer.w) layer.w = img.width;
                                     if(!layer.h) layer.h = img.height;
                                     obj.css({ 'background-image': 'url(' + scene.path + layer.img + ')'});
+                                    if(scene.debug)drawobj(layer.x, layer.y, layer.w, layer.h);
                                     load_n++;
                                     loading();
                                 }
-                            }
+                            }else if(scene.debug)drawobj(layer.x, layer.y, layer.w, layer.h);
                             scene.box.append(obj);
                             var autoSize;
                             if (scene.auto_h && scene.auto_w) {
                                 if(layer.isbg){
-                                    autoSize = function () {
-                                        obj.css({
-                                            'width': layer.w * bg_style.scale,
-                                            'left': layer.x  + bg_style.offsetX,
-                                            'height': layer.h * bg_style.scale,
-                                            'top': layer.y + bg_style.offsetY
-                                        });
-                                    }
+                                    autoSize = function () { drawobj(layer.x + bg_style.offsetX, layer.y + bg_style.offsetY, layer.w * bg_style.scale, layer.h * bg_style.scale); }
                                 }else{
-                                    autoSize = function () {
-                                        obj.css({
-                                            'width': layer.w * scale,
-                                            'left': layer.x * scale + offset.x,
-                                            'height': layer.h * scale,
-                                            'top': layer.y * scale + offset.y
-                                        });
-                                    }
+                                    autoSize = function () { drawobj(layer.x * scale + offset.x, layer.y * scale + offset.y, layer.w * scale, layer.h * scale); }
                                 }
                             } else {
-                                autoSize = function () {
-                                    obj.css({
-                                        'width': layer.w * scale,
-                                        'left': layer.x * scale,
-                                        'height': layer.h * scale,
-                                        'top': layer.y * scale
-                                    });
-                                }
+                                autoSize = function () { drawobj(layer.x * scale,layer.y * scale,layer.w * scale,layer.h * scale); }
                             }
                             if (autoSize && !scene.debug) obj.on('autoSize', autoSize)
+                            function drawobj(x,y,w,h) {
+                                obj.css({'left': x, 'top': y, 'width': w, 'height': h});
+                            }
                         })(scene.layers[j])
                     }
                     function resize() {
@@ -197,7 +171,7 @@
                     var fun = bindfun[i];
                     if (fun) fun();
                 }
-                $('.scene.scene-index').show('scale(0)', 'scale(1)', function () {
+                $('.scene.scene-main').show('scale(0)', 'scale(1)', function () {
                     $('.scene-loading').remove();
                 });
             }
