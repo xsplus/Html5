@@ -39,13 +39,8 @@
     -webkit-animation-iteration-count: infinite;
     transform-origin: 0;
 }
-
 .load3 {
     transform-origin: 8% 50%;
-}
-
-.baifenbi{
-
 }
 .baifenbi a{
     position: absolute;

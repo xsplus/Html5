@@ -162,6 +162,20 @@
         })([scene_loading, scene_index, scene_main, scene_anli,scene_scene,
             scene_huiyi, scene_zhongxiaoxue, scene_daxue, scene_yinhang,
             scene_yiyuan, scene_ditie, scene_gouwuzhongxin, scene_jingqu, scene_changfang]);
+
+        $.fn.show = function (before, after, fn, transition) {
+            var t = $(this);
+            t.addClass('show').css({'transform': before, 'transition': transition});
+            win.resize();
+            if(after){
+                window.setTimeout(function () {
+                    t.css('transform', after);
+                    var time = parseFloat(t.css('transition-duration')) * 1000;
+                    window.setTimeout(fn, time);
+                }, 1000)
+            }else if(fn) fn();
+        }
+
         function loading() {
             var v = load_n / load_sum;
             $(".baifenbi").html("<a>"+(v * 100).toFixed(0) + "%</a>");
@@ -173,21 +187,10 @@
                 }
                 $('.scene.scene-index').show('scale(0)', 'scale(1)', function () {
                     $('.scene-loading').remove();
-                });
+                },'0.3s');
+                /*$('.scene.scene-main').show();*/
             }
         }
-
-        $.fn.show = function (before, after, fn, transition) {
-            var t = $(this);
-            t.addClass('show').css({'transform': before, 'transition': transition});
-            win.resize();
-            /*window.setTimeout(function () {
-                t.css('transform', after);
-                var time = parseFloat(t.css('transition-duration')) * 1000;
-                window.setTimeout(fn, time);
-            }, 1000)*/
-        }
-
     })
 </script>
 

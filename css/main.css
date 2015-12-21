@@ -38,24 +38,41 @@
 /* 星星闪烁 */
 @-webkit-keyframes star {
     0% {  transform: scale(1)  }
-    33% {  transform: scale(.2)  }
-    66% {  transform: scale(1.2)  }
+    48% {  transform: scale(.2)  }
+    52% {  transform: scale(1.2)  }
     100% {  transform: scale(1)  }
 }
 .star{
     animation-name: star;
     -webkit-animation-name: star;
-    animation-duration: 2s;
-    -webkit-animation-duration: 2s;
-    animation-delay: .5s;
-    -webkit-animation-delay: .5s;
+    animation-duration: 5s;
+    -webkit-animation-duration: 5s;
     animation-timing-function: linear;
     -webkit-animation-timing-function: linear;
-    animation-fill-mode: backwards;
-    -webkit-animation-fill-mode: backwards;
     animation-iteration-count: infinite;
     -webkit-animation-iteration-count: infinite
 }
+.star1{
+    animation-delay: .5s;
+    -webkit-animation-delay: .5s;
+}
+.star2{
+    animation-delay: 1.5s;
+    -webkit-animation-delay: 1.5s;
+}
+.star3{
+    animation-delay: 2.5s;
+    -webkit-animation-delay: 2.5s;
+}
+.star4{
+    animation-delay: 3.5s;
+    -webkit-animation-delay: 3.5s;
+}
+.star5{
+    animation-delay: 4.5s;
+    -webkit-animation-delay: 4.5s;
+}
+
 /* 地标闪烁 */
 @-webkit-keyframes dibiao {
     0% {transform: scale(1)  }
@@ -128,24 +145,66 @@
 
 /*大楼灯*/
 @-webkit-keyframes daloudeng {
-    20% { transform: scale(1)  }
-    60% { transform: scale(1) }
-    80% { transform: scale(0) }
+    42% { opacity:0;  }
+    54% { opacity:0.8; }
 }
 .daloudeng{
     background: white;
     animation-name: daloudeng;
     -webkit-animation-name: daloudeng;
-    animation-duration: 2s;
-    -webkit-animation-duration: 2s;
-    animation-delay: .5s;
-    -webkit-animation-delay: .5s;
-    animation-timing-function: linear;
-    -webkit-animation-timing-function: linear;
-    animation-fill-mode: backwards;
-    -webkit-animation-fill-mode: backwards;
+    animation-duration: 10s;
+    -webkit-animation-duration: 10s;
     animation-iteration-count: infinite;
     -webkit-animation-iteration-count: infinite
+}
+.deng1{
+    animation-delay: .5s;
+    -webkit-animation-delay: .5s;
+}
+
+.deng2{
+    animation-delay: .8s;
+    -webkit-animation-delay: .8s;
+}
+
+.deng3{
+    animation-delay: 1.2s;
+    -webkit-animation-delay: 1.2s;
+}
+
+.deng4{
+    animation-delay: 1.5s;
+    -webkit-animation-delay: 1.5s;
+}
+
+.deng5{
+    animation-delay: 1.9s;
+    -webkit-animation-delay: 1.9s;
+}
+
+.deng6{
+    animation-delay: 2.5s;
+    -webkit-animation-delay: 2.5s;
+}
+
+.deng7{
+    animation-delay: 3s;
+    -webkit-animation-delay: 3s;
+}
+
+.deng8{
+    animation-delay: 3.5s;
+    -webkit-animation-delay: 3.5s;
+}
+
+.deng9{
+    animation-delay: 4.5s;
+    -webkit-animation-delay: 4.5s;
+}
+
+.deng10{
+    animation-delay: 4.9s;
+    -webkit-animation-delay: 4.9s;
 }
 
 /* 摩天轮旋转 */
