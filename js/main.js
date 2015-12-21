@@ -283,16 +283,17 @@ var scene_main = {
         //中小学建筑
         {'img':'zxxjianzhu.png',x:2700,y:1842,'attr':{'class':'zxxjianzhu'}},
         //说明
-        {'img':'shuoming.png',w:5251,h:2953,'attr':{'class':'shuoming'},'css':{'background-color':'rgba(0,0,0,0.6)','position':'fixed'}},
+        {'attr':{'class':'shuoming_bg'}},
+        {'img':'shuoming.png',w:5251,h:2953,'attr':{'class':'shuoming'}},
         //OK
-        {'img':'btn_ok.png',x:2504,y:1940,w:282,h:259,attr:{'class':'btn_ok'},'css':{'position':'fixed'}},
+        {'img':'btn_ok.png',x:2504,y:1940,w:282,h:259,attr:{'class':'btn_ok'}},
     ]
 }
 
 bindfun.push(function(){
-    var main_box = $('.scene-main')
+    var main_box = $('.scene-main');
     if(!scene_main.debug) main_box.css('left', -window.innerWidth * 0.3);
-    if (!!(('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch)) {
+    if ($.isPhone) {
         var main_bg = $('.scene-main .bg');
         var limit = main_bg.width() - window.innerWidth;
         var pos = {x : parseFloat(main_box.css('left')), y : 0};
@@ -354,7 +355,6 @@ bindfun.push(function(){
             limit = main_bg.width() - window.innerWidth;
         });
     }
-
     //给地标绑定事件
     $('.dibiaoAction').on('touchstart',function(){
         console.log("进入地标场景");

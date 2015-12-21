@@ -176,6 +176,18 @@
             }else if(fn) fn();
         }
 
+        $.isPhone = !!(('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch);
+
+        if($.isPhone){
+            $.fn.pitTouch = function(fn){
+                $(this).on('touchstart',fn);
+            }
+        }else{
+            $.fn.pitTouch = function(fn){
+                $(this).on('click',fn);
+            }
+        }
+
         function loading() {
             var v = load_n / load_sum;
             $(".baifenbi").html("<a>"+(v * 100).toFixed(0) + "%</a>");
