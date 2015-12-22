@@ -388,33 +388,34 @@ initfunlist.push(function(){
         console.log("进入地标场景");
         var id = $(this).data('id');
         $('.scene.scene-main').removeClass('show');
+        $('.scene.scene-anlibox').addClass('show');
         switch (id){
             case 1:
-                $('.scene.scene-huiyi').addClass('show');
+                $('.scene.scene-huiyi').show();
                 break;
             case 2:
-                $('.scene.scene-zhongxiaoxue').addClass('show');
+                $('.scene.scene-zhongxiaoxue').show();
                 break;
             case 3:
-                $('.scene.scene-daxue').addClass('show');
+                $('.scene.scene-daxue').show();
                 break;
             case 4:
-                $('.scene.scene-yiyuan').addClass('show');
+                $('.scene.scene-yiyuan').show();
                 break;
             case 5:
-                $('.scene.scene-yinhang').addClass('show');
+                $('.scene.scene-yinhang').show();
                 break;
             case 6:
-                $('.scene.scene-gouwuzhongxin').addClass('show');
+                $('.scene.scene-gouwuzhongxin').show();
                 break;
             case 7:
-                $('.scene.scene-jingqu').addClass('show');
+                $('.scene.scene-changfang').show();
                 break;
             case 8:
-                $('.scene.scene-changfang').addClass('show');
+                $('.scene.scene-jingqu').show();
                 break;
             case 9:
-                $('.scene.scene-ditie').addClass('show');
+                $('.scene.scene-ditie').show();
                 break;
         }
         $(window).resize();

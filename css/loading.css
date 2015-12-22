@@ -22,7 +22,7 @@
 /* 粗线拉伸 */
 @-webkit-keyframes load4 {
     0% {transform: scaleX(0.1) }
-    100% {  transform: scaleX(1) }
+    100% {  transform: scaleX(2) }
 }
 .load4{
     transform-origin: 0;

@@ -3,6 +3,9 @@
  */
 var win = $(window);
 
+//存储场景ID
+var sceneID = '';
+
 var sceneslist = [],initfunlist = [],loadingfun;
 
 function createScenes(scenes) {
@@ -150,6 +153,9 @@ function createScenes(scenes) {
 $.fn.show = function (before, after, fn, transition) {
     var t = $(this);
     t.addClass('show').css({'transform': before, 'transition': transition});
+
+    sceneID = t;
+
     win.resize();
     if(after){
         window.setTimeout(function () {

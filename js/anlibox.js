@@ -2,14 +2,14 @@
  * Created by theone on 2015/12/22.
  */
 sceneslist.push({
-    'box':$('.scene.scene-anlibox'),       /*³¡¾°µÄ±êÇ©*/
-    'debug':false,                            /*ÊÇ·ñ¿ªÆôµ÷ÊÔÄ£Ê½*/
-    'width':4742,                            /*³¡¾°µÄ¿í*/
-    'height':2667,                           /*³¡¾°µÄ¸ß*/
-    'path':'img/anlibox/',                  /*Í¼Æ¬¸ùÄ¿Â¼*/
-    'auto_w':true,                        /*ÊÇ·ñ×Ô¶¯ÊÊÓ¦¿í¶È*/
-    'auto_h':true,                         /*ÊÇ·ñ×Ô¶¯ÊÊÓ¦¸ß¶È*/
-    'layers':[                              /*³¡¾°µÄÍ¼²ãÊı¾İ*/
+    'box':$('.scene.scene-anlibox'),
+    'debug':false,
+    'width':4742,
+    'height':2667,
+    'path':'img/anlibox/',
+    'auto_w':true,
+    'auto_h':true,
+    'layers':[
         {"img":"bg.png","isbg":true},
         {"img":"anli_box.png","x":128,"y":353},
         {"img":"wenti_box.png","x":516,"y":504},
@@ -22,21 +22,23 @@ sceneslist.push({
 
 initfunlist.push(function(){
 
-    $('.qidong').pitTouch(function(){
-        console.log("½øÈëÖ÷Ò³");
+    $('.fanhui').pitTouch(function(){
         $(this).addClass('btndoudong');
         setTimeout(function(){
-            $('.scene-index').removeClass('show');
+            console.log('è¿”å›main');
+            sceneID.removeClass('show');
+            $('.scene.scene-anlibox').removeClass('show');
             $('.scene-main').addClass('show');
             $(window).resize();
         },300)
     })
 
-    $('.chakan').pitTouch(function(){
-        console.log("½øÈë°¸ÀıÒ³");
+    $('.cankao').pitTouch(function(){
         $(this).addClass('btndoudong');
         setTimeout(function(){
-            $('.scene-index').removeClass('show');
+            console.log('æŸ¥çœ‹å‚è€ƒæ¡ˆä¾‹');
+            sceneID.removeClass('show');
+            $('.scene.scene-anlibox').removeClass('show');
             $('.scene-anli').addClass('show');
             $(window).resize();
         },300)
