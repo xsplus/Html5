@@ -20,12 +20,12 @@ function createScenes(scenes) {
             if (scene.debug) {
                 scene.box.addClass('debug').append("<div class='pos_box'></div>").on({
                     'mousemove': function (e) {
-                        $(this).children('.pos_box').css({'left': e.pageX, 'top': e.pageY}).html('x:' + e.pageX + '<br>' + 'y:' + e.pageY);
+                        $(this).children('.pos_box').css({'left': e.pageX + 10, 'top': e.pageY + 10}).html('x:' + e.pageX + '<br>' + 'y:' + e.pageY);
                     }
                 });
                 var auto_create_btn = $('<button class="auto_create_btn">生成代码</button>');
                 auto_create_btn.on('click',function(){
-                    var layers = [];
+                    var layers = '\n';
                     for (var j = 0; j < scene.layers.length; j++) {
                         var layer = {}
                         if(scene.layers[j].img) layer.img = scene.layers[j].img;
@@ -34,10 +34,13 @@ function createScenes(scenes) {
                         if(x) layer.x = x;
                         var y = parseInt(scene.layers[j].obj.css('top'));
                         if(y) layer.y = y;
-                        if(scene.layers[j].attr) layer.attr = JSON.stringify(scene.layers[j].attr);
-                        if(scene.layers[j].css) layer.css = JSON.stringify(scene.layers[j].css);
+                        if(scene.layers[j].attr) {
+                            layer.attr = scene.layers[j].attr;
+                            if(layer.attr.class)layer.attr.class = layer.attr.class.replace(' layer','');
+                        }
+                        if(scene.layers[j].css) layer.css = scene.layers[j].css;
                         if(scene.layers[j].isbg) layer.isbg = true;
-                        layers.push(layer);
+                        layers += JSON.stringify(layer) + ',\n';
                     }
                     console.log(layers);
                 })
@@ -66,13 +69,14 @@ function createScenes(scenes) {
                         }
                     }else if(scene.debug)drawobj(layer.x, layer.y, layer.w, layer.h);
                     scene.box.append(obj);
-                    if(scene.debug){
+                    if(scene.debug && !layer.isbg){
                         var startPos;
                         //触摸事件自定义
                         obj.on('mousedown', function (event) {
                             startPos = {x: layer.x-event.pageX, y:layer.y-event.pageY };    //取第一个touch的坐标值
                             obj.on('mousemove',mousemove);
                             obj.one('mouseup',mouseup);
+                            obj.addClass('moving');
                         });
                         function mousemove(event) {
                             layer.x = event.pageX + startPos.x;
@@ -80,9 +84,11 @@ function createScenes(scenes) {
                             event.preventDefault();      //阻止触摸事件的默认行为，即阻止滚屏
                             obj.css({'left': layer.x, 'top': layer.y})
                         }
-                        function mouseup() {
+                        function mouseup(event) {
                             //解绑事件
+                            event.preventDefault();
                             obj.off('mousemove',mousemove);
+                            obj.removeClass('moving');
                         }
                     }
                     var autoSize;
