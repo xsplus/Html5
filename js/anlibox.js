@@ -11,12 +11,12 @@ sceneslist.push({
     'auto_h':true,                         /*是否自动适应高度*/
     'layers':[                              /*场景的图层数据*/
         {"img":"bg.png","isbg":true},
+        {"img":"anli_box.png","x":128,"y":353},
+        {"img":"wenti_box.png","x":516,"y":504},
         {"img":"cankao.png","x":3540,"y":87},
         {"img":"fanhui.png","x":128,"y":132},
         {"img":"yinyue.png","x":4380,"y":96},
         {"img":"shenyin.png","x":4493,"y":153},
-        {"img":"anli_box.png","x":128,"y":353},
-        {"img":"wenti_box.png","x":516,"y":504},
     ]
 })
 

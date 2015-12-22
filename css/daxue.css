@@ -1,0 +1,72 @@
+.scene-daxue.true .wenti,.scene-daxue.false1 .wenti,.scene-daxue.false2 .wenti,.scene-daxue.true .btn,
+.scene-daxue.true .wenhao,.scene-daxue.true .wifi1,.scene-daxue.true .wifi2,.scene-daxue.true .wifi_5,
+.scene-daxue .false1,.scene-daxue .false2,.scene-daxue .true {
+    display: none;
+}
+.scene-daxue.false1 .false1,.scene-daxue.false2 .false2,.scene-daxue.true .true{
+    display: block;
+}
+
+@keyframes wifi{
+    0%{opacity: 0}
+}
+.wifi1,.wifi2{
+    animation:wifi 3s steps(2) infinite ;
+    -webkit-animation:wifi 3s steps(2) infinite;
+}
+.wifi_1{
+    animation-delay: -2s;
+}
+.wifi_2{
+    animation-delay: -1.5s;
+}
+.wifi_3{
+    animation-delay: -1s;
+}
+.wifi_4{
+    animation-delay: -0.5s;
+}
+
+@keyframes wifi_5{
+    0%{transform: rotateZ(-20deg)}
+    6%{transform: rotateZ(20deg)}
+    12%{transform: rotateZ(-10deg)}
+    18%{transform: rotateZ(10deg)}
+    24%{transform: rotateZ(-5deg)}
+    30%{transform: rotateZ(5deg)}
+    36%{transform: rotateZ(0deg)}
+}
+.wifi_5{
+    animation:wifi_5 3s linear 2s infinite ;
+    -webkit-animation:wifi_5 3s linear 2s infinite;
+}
+
+@keyframes wenhao{
+    33%{transform: translateY(2vh)}
+    66%{transform: translateY(-2vh)}
+}
+.wenhao{
+    animation:wenhao 3s linear 2s infinite ;
+    -webkit-animation:wenhao 3s linear 2s infinite;
+}
+
+@keyframes cilun1{
+    0%{transform: rotateZ(0deg)}
+    100%{transform: rotateZ(360deg)}
+}
+@keyframes cilun2{
+    0%{transform: rotateZ(0deg)}
+    100%{transform: rotateZ(-360deg)}
+}
+.scene-daxue.true .cilun1{
+    animation:cilun1 1.2s linear infinite ;
+    -webkit-animation:cilun1 1.2s linear infinite;
+}
+.scene-daxue.true .cilun2{
+    animation:cilun2 3s linear infinite ;
+    -webkit-animation:cilun2 3s linear infinite;
+}
+.scene-daxue.true .dengpao{
+    animation:wenhao 3s linear infinite ;
+    -webkit-animation:wenhao 3s linear infinite;
+}

@@ -70,14 +70,17 @@ function createScenes(scenes) {
                     }else if(scene.debug)drawobj(layer.x, layer.y, layer.w, layer.h);
                     scene.box.append(obj);
                     if(scene.debug && !layer.isbg){
-                        var startPos;
+                        var startPos,z_index = 999999;
                         //触摸事件自定义
                         obj.on('mousedown', function (event) {
                             startPos = {x: layer.x-event.pageX, y:layer.y-event.pageY };    //取第一个touch的坐标值
                             scene.box.on('mousemove',mousemove);
-                            obj.one('mouseup',mouseup);
+                            scene.box.one('mouseup',mouseup);
                             obj.addClass('moving');
                         });
+                        obj.css('z-index',z_index).dblclick(function(){
+                            obj.css('z-index',--z_index)
+                        })
                         function mousemove(event) {
                             layer.x = event.pageX + startPos.x;
                             layer.y = event.pageY + startPos.y;
