@@ -70,8 +70,8 @@
 /* 地标闪烁 */
 @-webkit-keyframes dibiao {
     0% {transform: scale(1)  }
-    33% {  transform: scale(.9)  }
-    66% {  transform: scale(1.1)  }
+    33% {  transform: scale(1.3)  }
+    66% {  transform: scale(1.6)  }
     100% {  transform: scale(1)  }
 }
 .dibiao{
@@ -211,20 +211,16 @@
 
 /* OK闪烁 */
 @-webkit-keyframes btn_ok {
-    0% {  transform: scale(1)  }
-    33% {  transform: scale(1.3)  }
-    66% {  transform: scale(1.6)  }
-    100% {  transform: scale(1)  }
+    0% {  transform: scale(1.5)  }
+    33% {  transform: scale(1.75)  }
+    66% {  transform: scale(2)  }
+    100% {  transform: scale(1.5)  }
 }
 .scene-main .btn_ok{
     animation:btn_ok 2s linear infinite ;
     -webkit-animation:btn_ok 2s linear infinite;
     cursor: pointer;
 }
-
-
-
-
 
 
 /**************** windows style **************/

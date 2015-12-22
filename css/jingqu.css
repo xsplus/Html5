@@ -1,6 +1,7 @@
 .scene.scene-jingqu .true{
     display: none;
 }
-.scene.scene-jingqu .false{
+
+.scene.scene-jingqu .next{
     display: none;
 }

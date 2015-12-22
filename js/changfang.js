@@ -20,11 +20,14 @@ sceneslist.push({
         {"img":"mstrue.png","x":2206,"y":700,"attr":{"class":"true"}},
         {"img":"daanfalse.png","x":674,"y":653,"attr":{"class":"false"}},
         {"img":"msfalse.png","x":2570,"y":650,"attr":{"class":"false"}},
+        {"img":"next.png","x":954,"y":1620,"attr":{"class":"next"}},
+        {"img":"ku.png","x":1680,"y":1020,"attr":{"class":"false"}},
+        {"img":"xiao.png","x":1680,"y":1020,"attr":{"class":"true"}},
     ]
 })
 
 initfunlist.push(function(){
-    $('.strue').pitTouch(function(){
+    $('.scene.scene-changfang .strue').pitTouch(function(){
         $(this).addClass('btndoudong');
         console.log("回答正确");
         setTimeout(function(){
@@ -36,7 +39,7 @@ initfunlist.push(function(){
             $('.scene.scene-changfang .next').css('display','block');
         },300)
     })
-    $('.sfalse').pitTouch(function(){
+    $('.scene.scene-changfang .sfalse').pitTouch(function(){
         $(this).addClass('btndoudong');
         console.log("回答错误");
         setTimeout(function(){
@@ -45,7 +48,7 @@ initfunlist.push(function(){
             $('.scene.scene-changfang .false').css('display','block');
         },300)
     })
-    $('.next').pitTouch(function(){
+    $('.scene.scene-changfang .next').pitTouch(function(){
         $(this).addClass('btndoudong');
         console.log("进入下一个场景");
         setTimeout(function(){

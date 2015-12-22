@@ -45,17 +45,33 @@ sceneslist.push({
         {"img":"kele.png","x":3436,"y":1692,"attr":{"class":"true"}},
         {"img":"yeswenzi1.png","x":656,"y":684,"attr":{"class":"true"}},
         {"img":"yeswenzi2.png","x":2196,"y":750,"attr":{"class":"true"}},
+        {"img":"next.png","x":954,"y":1620,"attr":{"class":"next"}},
+        {"img":"ku.png","x":1680,"y":1020,"attr":{"class":"ku"}},
+        {"img":"xiao.png","x":1680,"y":1020,"attr":{"class":"xiao"}},
     ]
 })
 
 initfunlist.push(function(){
     $('.scene.scene-daxue .btn1').pitTouch(function(){
         $('.scene.scene-daxue').removeClass('true false2').addClass('false1');
+        $('.scene.scene-daxue .ku').css('display','block');
     });
     $('.scene.scene-daxue .btn2').pitTouch(function(){
         $('.scene.scene-daxue').removeClass('false1 true').addClass('false2');
+        $('.scene.scene-daxue .ku').css('display','block');
     });
     $('.scene.scene-daxue .btn3').pitTouch(function(){
         $('.scene.scene-daxue').removeClass('false1 false2').addClass('true');
+        $('.scene.scene-daxue .ku').css('display','none');
+        $('.scene.scene-daxue .xiao').css('display','block');
+        $('.scene.scene-daxue .next').css('display','block');
     });
+    $('.scene.scene-daxue .next').pitTouch(function(){
+        $(this).addClass('btndoudong');
+        console.log("进入下一个场景");
+        setTimeout(function(){
+            $('.scene.scene-daxue').removeClass('show');
+            $('.scene.scene-yiyuan').show();
+        },300)
+    })
 })

@@ -20,11 +20,13 @@ sceneslist.push({
         {"img":"mstrue.png","x":2306,"y":833,"attr":{"class":"true"}},
         {"img":"daanfalse.png","x":684,"y":653,"attr":{"class":"false"}},
         {"img":"msfalse.png","x":2620,"y":700,"attr":{"class":"false"}},
+        {"img":"ku.png","x":1680,"y":1020,"attr":{"class":"false"}},
+        {"img":"xiao.png","x":1680,"y":1020,"attr":{"class":"true"}},
     ]
 })
 
 initfunlist.push(function(){
-    $('.strue').pitTouch(function(){
+    $('.scene.scene-ditie .strue').pitTouch(function(){
         $(this).addClass('btndoudong');
         console.log("回答正确");
         setTimeout(function(){
@@ -33,7 +35,7 @@ initfunlist.push(function(){
             $('.scene.scene-ditie .true').css('display','block');
         },300)
     })
-    $('.sfalse').pitTouch(function(){
+    $('.scene.scene-ditie .sfalse').pitTouch(function(){
         $(this).addClass('btndoudong');
         console.log("回答错误");
         setTimeout(function(){
