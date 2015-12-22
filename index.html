@@ -24,6 +24,7 @@
 <section class="scene scene-loading"></section>
 <section class="scene scene-index"></section>
 <section class="scene scene-main"></section>
+<section class="scene scene-anlibox"></section>
 <section class="scene scene-anli"></section>
 <section class="scene scene-huiyi"></section>
 <section class="scene scene-zhongxiaoxue"></section>
@@ -47,6 +48,7 @@
     <script src="js/loading.js"></script>
     <script src="js/index.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/anlibox.js"></script>
     <script src="js/anli.js"></script>
     <script src="js/huiyi.js"></script>
     <script src="js/zhongxiaoxue.js"></script>
@@ -72,10 +74,10 @@
                     var fun = initfunlist[i];
                     if (fun) fun();
                 }
-                $('.scene.scene-index').show('scale(0)', 'scale(1)', function () {
+                /*$('.scene.scene-index').show('scale(0)', 'scale(1)', function () {
                     $('.scene-loading').remove();
-                },'0.3s');
-                /*$('.scene.scene-main').show();*/
+                },'0.3s');*/
+                $('.scene.scene-anlibox').show();
             }
         }
     })

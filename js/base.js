@@ -74,7 +74,7 @@ function createScenes(scenes) {
                         //触摸事件自定义
                         obj.on('mousedown', function (event) {
                             startPos = {x: layer.x-event.pageX, y:layer.y-event.pageY };    //取第一个touch的坐标值
-                            obj.on('mousemove',mousemove);
+                            scene.box.on('mousemove',mousemove);
                             obj.one('mouseup',mouseup);
                             obj.addClass('moving');
                         });
@@ -87,7 +87,7 @@ function createScenes(scenes) {
                         function mouseup(event) {
                             //解绑事件
                             event.preventDefault();
-                            obj.off('mousemove',mousemove);
+                            scene.box.off('mousemove',mousemove);
                             obj.removeClass('moving');
                         }
                     }
