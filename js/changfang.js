@@ -25,21 +25,32 @@ sceneslist.push({
 
 initfunlist.push(function(){
     $('.strue').pitTouch(function(){
-        //$(this).addClass('btndoudong');
+        $(this).addClass('btndoudong');
         console.log("回答正确");
         setTimeout(function(){
             $('.scene.scene-changfang .wenti').css('display','none');
             $('.scene.scene-changfang .false').css('display','none');
+            $('.scene.scene-changfang .strue').css('display','none');
+            $('.scene.scene-changfang .sfalse').css('display','none');
             $('.scene.scene-changfang .true').css('display','block');
+            $('.scene.scene-changfang .next').css('display','block');
         },300)
     })
     $('.sfalse').pitTouch(function(){
-        //$(this).addClass('btndoudong');
+        $(this).addClass('btndoudong');
         console.log("回答错误");
         setTimeout(function(){
             $('.scene.scene-changfang .wenti').css('display','none');
             $('.scene.scene-changfang .true').css('display','none');
             $('.scene.scene-changfang .false').css('display','block');
+        },300)
+    })
+    $('.next').pitTouch(function(){
+        $(this).addClass('btndoudong');
+        console.log("进入下一个场景");
+        setTimeout(function(){
+            $('.scene.scene-changfang').removeClass('show');
+            $('.scene.scene-jingqu').show();
         },300)
     })
 })

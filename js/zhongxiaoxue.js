@@ -25,21 +25,32 @@ sceneslist.push({
 
 initfunlist.push(function(){
     $('.strue').pitTouch(function(){
-        //$(this).addClass('btndoudong');
+        $(this).addClass('btndoudong');
         console.log("回答正确");
         setTimeout(function(){
             $('.scene.scene-zhongxiaoxue .wenti').css('display','none');
             $('.scene.scene-zhongxiaoxue .false').css('display','none');
+            $('.scene.scene-zhongxiaoxue .strue').css('display','none');
+            $('.scene.scene-zhongxiaoxue .sfalse').css('display','none');
             $('.scene.scene-zhongxiaoxue .true').css('display','block');
+            $('.scene.scene-zhongxiaoxue .next').css('display','block');
         },300)
     })
     $('.sfalse').pitTouch(function(){
-        //$(this).addClass('btndoudong');
+        $(this).addClass('btndoudong');
         console.log("回答错误");
         setTimeout(function(){
             $('.scene.scene-zhongxiaoxue .wenti').css('display','none');
             $('.scene.scene-zhongxiaoxue .true').css('display','none');
             $('.scene.scene-zhongxiaoxue .false').css('display','block');
+        },300)
+    })
+    $('.next').pitTouch(function(){
+        $(this).addClass('btndoudong');
+        console.log("进入下一个场景");
+        setTimeout(function(){
+            $('.scene.scene-zhongxiaoxue').removeClass('show');
+            $('.scene.scene-daxue').show();
         },300)
     })
 })

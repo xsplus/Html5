@@ -25,7 +25,7 @@ sceneslist.push({
 
 initfunlist.push(function(){
     $('.strue').pitTouch(function(){
-        //$(this).addClass('btndoudong');
+        $(this).addClass('btndoudong');
         console.log("回答正确");
         setTimeout(function(){
             $('.scene.scene-ditie .wenti').css('display','none');
@@ -34,7 +34,7 @@ initfunlist.push(function(){
         },300)
     })
     $('.sfalse').pitTouch(function(){
-        //$(this).addClass('btndoudong');
+        $(this).addClass('btndoudong');
         console.log("回答错误");
         setTimeout(function(){
             $('.scene.scene-ditie .wenti').css('display','none');

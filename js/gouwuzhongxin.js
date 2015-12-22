@@ -25,21 +25,32 @@ sceneslist.push({
 
 initfunlist.push(function(){
     $('.strue').pitTouch(function(){
-        //$(this).addClass('btndoudong');
+        $(this).addClass('btndoudong');
         console.log("回答正确");
         setTimeout(function(){
             $('.scene.scene-gouwuzhongxin .wenti').css('display','none');
             $('.scene.scene-gouwuzhongxin .false').css('display','none');
+            $('.scene.scene-gouwuzhongxin .strue').css('display','none');
+            $('.scene.scene-gouwuzhongxin .sfalse').css('display','none');
             $('.scene.scene-gouwuzhongxin .true').css('display','block');
+            $('.scene.scene-gouwuzhongxin .next').css('display','block');
         },300)
     })
     $('.sfalse').pitTouch(function(){
-        //$(this).addClass('btndoudong');
+        $(this).addClass('btndoudong');
         console.log("回答错误");
         setTimeout(function(){
             $('.scene.scene-gouwuzhongxin .wenti').css('display','none');
             $('.scene.scene-gouwuzhongxin .true').css('display','none');
             $('.scene.scene-gouwuzhongxin .false').css('display','block');
+        },300)
+    })
+    $('.next').pitTouch(function(){
+        $(this).addClass('btndoudong');
+        console.log("进入下一个场景");
+        setTimeout(function(){
+            $('.scene.scene-gouwuzhongxin').removeClass('show');
+            $('.scene.scene-changfang').show();
         },300)
     })
 })

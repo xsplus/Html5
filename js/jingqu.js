@@ -23,26 +23,41 @@ sceneslist.push({
         {"img":"wenhao.png","x":3294,"y":1695,"attr":{"class":"false"}},
         {"img":"wenhao.png","x":3024,"y":1695,"attr":{"class":"false"}},
         {"img":"wenhao.png","x":3154,"y":1820,"attr":{"class":"false"}},
+        {"img":"ku.png","x":3154,"y":1820,"attr":{"class":"true ku"}},
+        {"img":"xiao.png","x":2154,"y":1820,"attr":{"class":"false xiao"}},
     ]
 })
 
 initfunlist.push(function(){
     $('.strue').pitTouch(function(){
-        //$(this).addClass('btndoudong');
+        $(this).addClass('btndoudong');
         console.log("回答正确");
         setTimeout(function(){
             $('.scene.scene-jingqu .wenti').css('display','none');
             $('.scene.scene-jingqu .false').css('display','none');
+            $('.scene.scene-jingqu .strue').css('display','none');
+            $('.scene.scene-jingqu .sfalse').css('display','none');
             $('.scene.scene-jingqu .true').css('display','block');
+            $('.scene.scene-jingqu .next').css('display','block');
+            $('.scene.scene-jingqu .xiao').css('display','block');
         },300)
     })
     $('.sfalse').pitTouch(function(){
-        //$(this).addClass('btndoudong');
+        $(this).addClass('btndoudong');
         console.log("回答错误");
         setTimeout(function(){
             $('.scene.scene-jingqu .wenti').css('display','none');
             $('.scene.scene-jingqu .true').css('display','none');
             $('.scene.scene-jingqu .false').css('display','block');
+            $('.scene.scene-jingqu .ku').css('display','block');
+        },300)
+    })
+    $('.next').pitTouch(function(){
+        $(this).addClass('btndoudong');
+        console.log("进入下一个场景");
+        setTimeout(function(){
+            $('.scene.scene-jingqu').removeClass('show');
+            $('.scene.scene-ditie').show();
         },300)
     })
 })
