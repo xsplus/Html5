@@ -11,7 +11,7 @@ sceneslist.push(scene_main = {
     'auto_h':true,                         /*是否自动适应屏幕高度*/
     'layers':[
         //背景图
-        {'img':'bg.png','attr':{'class':'bg'},isbg:true},
+        {'img':'bg.gif',w:11811,h:2953,'attr':{'class':'bg'},isbg:true},
         //风车
         {'img':'fengche.png',x:1275,y:1684,w:140,h:120,'attr':{'class':'fengche'}},
         {'img':'fengche.png',x:1992,y:1476,'attr':{'class':'fengche'}},
