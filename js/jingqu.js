@@ -25,7 +25,6 @@ sceneslist.push({
         {"img":"wenhao.png","x":3154,"y":1820,"attr":{"class":"false"}},
         {"img":"next.png","x":954,"y":1620,"attr":{"class":"next"}},
         {"img":"ku.png","x":1680,"y":1020,"attr":{"class":"false"}},
-        {"img":"xiao.png","x":1680,"y":1020,"attr":{"class":"true"}},
     ]
 })
 
