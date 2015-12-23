@@ -6,23 +6,20 @@ sceneslist.push({
     'debug':false,                            /*是否开启调试模式*/
     'width':4742,
     'height':2667,
-    'path':'img/scene/jingqu',                    /*默认路径*/
+    'path':'img/scene/jingqu/',                    /*默认路径*/
     'auto_w':true,                        /*是否自动适应宽度*/
     'auto_h':true,                         /*是否自动适应高度*/
     'layers':[                              /*场景的图层数据*/
 
-        {"img":"changjingbg.png","x":2104,"y":1207},
-        {"img":"wenti.png","x":614,"y":600,"attr":{"class":"wenti"}},
-        {"img":"wentims.png","x":2260,"y":786,"attr":{"class":"wenti"}},
-        {"img":"true.png","x":523,"y":1560,"attr":{"class":"strue"}},
-        {"img":"false.png","x":523,"y":1923,"attr":{"class":"sfalse"}},
-        {"img":"daantrue.png","x":623,"y":616,"attr":{"class":"true"}},
+        {"img":"changjing.png","x":2104,"y":1057},
+        {"img":"wenti.png","x":634,"y":660,"attr":{"class":"wenti"}},
+        {"img":"wentims.png","x":2200,"y":746,"attr":{"class":"wenti"}},
+        {"img":"true.png","x":563,"y":1560,"attr":{"class":"strue"}},
+        {"img":"false.png","x":563,"y":1923,"attr":{"class":"sfalse"}},
+        {"img":"daantrue.png","x":643,"y":696,"attr":{"class":"true"}},
         {"img":"mstrue.png","x":2306,"y":833,"attr":{"class":"true"}},
-        {"img":"daanfalse.png","x":624,"y":603,"attr":{"class":"false"}},
+        {"img":"daanfalse.png","x":694,"y":703,"attr":{"class":"false"}},
         {"img":"msfalse.png","x":2670,"y":900,"attr":{"class":"false"}},
-        {"img":"wenhao.png","x":3294,"y":1695,"attr":{"class":"false"}},
-        {"img":"wenhao.png","x":3024,"y":1695,"attr":{"class":"false"}},
-        {"img":"wenhao.png","x":3154,"y":1820,"attr":{"class":"false"}},
     ]
 })
 
@@ -38,6 +35,7 @@ sceneslist.push({
         {"img":"next.png","x":954,"y":1620,"attr":{"class":"next"}},
         {"img":"ku.png","x":1848,"y":1180,"attr":{"class":"false"}},
         {"img":"weibiao.png","x":1785,"y":370,"attr":{"class":"true"}},
+        {"img":"lingjiang.png","x":814,"y":1520,w:860,h:792,"attr":{"class":"lingjiang"}},
     ]
 })
 
@@ -49,7 +47,6 @@ initfunlist.push(function(){
             $('.scene.scene-jingqu .wenti').css('display','none');
             $('.scene.scene-jingqu .true').css('display','none');
             $('.scene.scene-jingqu .false').css('display','block');
-            $('.scene.scene-jingqu .ku').css('display','block');
         },300)
     })
 })

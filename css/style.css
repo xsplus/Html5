@@ -16,6 +16,7 @@ html,body{ height: 100%;overflow: hidden; font-family: 微软雅黑;font-size: 4
     background-size: 100% 100% !important;
     display: block;
 }
+
 .scene.show .layer.show {
     display: block;
 }
@@ -28,6 +29,7 @@ html,body{ height: 100%;overflow: hidden; font-family: 微软雅黑;font-size: 4
     z-index: 9;
     width: 100%;
 }
+
 .scene.show {
     display: block;
 }
@@ -64,10 +66,20 @@ html,body{ height: 100%;overflow: hidden; font-family: 微软雅黑;font-size: 4
 .shengyin.play{
     display: block;
 }
-.scene .ku,.scene .false,.scene .true,.scene .next{
+.scene .ku,.scene .false,.scene .true,.scene .next,.scene .lingjiang{
     display: none;
 }
 
+
+/* 隐藏anlibox 奖杯页面 */
+.jiangbei,.again,.xuexi,.gonggao,.lingjiang .wenti_box{
+    display: none;
+}
+
+/* 显示anlibox 奖杯页面 */
+.lingjiang .jiangbei,.lingjiang .again,.lingjiang .xuexi,.lingjiang .gonggao{
+    display: block;
+}
 
 /* 样式放在结尾，防止 base64 图片造成拥塞 */
 /* 屏幕旋转 */
