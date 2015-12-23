@@ -2,7 +2,7 @@
 html,body{ height: 100%;overflow: hidden; font-family: 微软雅黑;font-size: 4vh}
 @media all and (orientation : landscape) {
     /* 这是匹配横屏的状态，横屏时的css代码　*/
-    body { background-color: blue; }
+    body { background-color: white; }
 }
 
 @media all and (orientation : portrait) {

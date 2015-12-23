@@ -20,6 +20,8 @@ sceneslist.push({
         {"img":"mstrue.png","x":2156,"y":833,"attr":{"class":"true"}},
         {"img":"daanfalse.png","x":674,"y":603,"attr":{"class":"false"}},
         {"img":"msfalse.png","x":2870,"y":900,"attr":{"class":"false"}},
+        {"img":"changjing.png","x":2404,"y":1377,"attr":{"class":"changjing"}},
+        {"img":"changjingtrue.png","x":2429,"y":1377,"attr":{"class":"true"}},
 
     ]
 })
@@ -36,6 +38,7 @@ sceneslist.push({
         {"img":"next.png","x":954,"y":1620,"attr":{"class":"next"}},
         {"img":"ku.png","x":1680,"y":1020,"attr":{"class":"false"}},
         {"img":"xiao.png","x":1680,"y":1020,"attr":{"class":"true"}},
+        {"img":"weibiao.png","x":1785,"y":370,"attr":{"class":"true"}},
     ]
 })
 
@@ -47,6 +50,7 @@ initfunlist.push(function(){
             $('.scene.scene-zhongxiaoxue .wenti').css('display','none');
             $('.scene.scene-zhongxiaoxue .false').css('display','none');
             $('.scene.scene-zhongxiaoxue .strue').css('display','none');
+            $('.scene.scene-zhongxiaoxue .changjing').css('display','none');
             $('.scene.scene-zhongxiaoxue .sfalse').css('display','none');
             $('.scene.scene-zhongxiaoxue .true').css('display','block');
             $('.scene.scene-zhongxiaoxue .next').css('display','block');

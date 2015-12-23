@@ -10,7 +10,7 @@ sceneslist.push({
     'auto_w':true,                        /*是否自动适应宽度*/
     'auto_h':true,                         /*是否自动适应高度*/
     'layers':[                              /*场景的图层数据*/
-        {"img":"changjing.png","x":2174,"y":887},
+        {"img":"changjingbg.png","x":2174,"y":887},
         {"img":"wenti.png","x":624,"y":650,"attr":{"class":"wenti"}},
         {"img":"wentims.png","x":2400,"y":686,"attr":{"class":"wenti"}},
         {"img":"true.png","x":573,"y":1560,"attr":{"class":"strue"}},
@@ -19,6 +19,7 @@ sceneslist.push({
         {"img":"mstrue.png","x":2306,"y":833,"attr":{"class":"true"}},
         {"img":"daanfalse.png","x":684,"y":653,"attr":{"class":"false"}},
         {"img":"msfalse.png","x":2620,"y":700,"attr":{"class":"false"}},
+        {"img":"wifi.png","x":3700,"y":1320,"attr":{"class":"true"}},
     ]
 })
 
@@ -33,6 +34,7 @@ sceneslist.push({
     'layers':[                              /*场景的图层数据*/
         {"img":"ku.png","x":1680,"y":1020,"attr":{"class":"false"}},
         {"img":"xiao.png","x":1680,"y":1020,"attr":{"class":"true"}},
+        {"img":"weibiao.png","x":1785,"y":370,"attr":{"class":"true"}},
     ]
 })
 
@@ -42,7 +44,8 @@ initfunlist.push(function(){
         console.log("回答正确");
         setTimeout(function(){
             $('.scene.scene-ditie .wenti').css('display','none');
-            $('.scene.scene-ditie .false').css('display','none');
+            $('.scene.scene-ditie .strue').css('display','none');
+            $('.scene.scene-ditie .sfalse').css('display','none');
             $('.scene.scene-ditie .true').css('display','block');
         },300)
     })

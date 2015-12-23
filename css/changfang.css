@@ -4,6 +4,9 @@
 .scene.scene-changfang .false{
     display: none;
 }
+.scene.scene-changfang .gongren{
+    z-index: 50;
+}
 .scene.scene-changfang .next{
     display: none;
 }

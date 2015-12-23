@@ -60,6 +60,7 @@ sceneslist.push({
         {"img":"next.png","x":954,"y":1620,"attr":{"class":"next"}},
         {"img":"ku.png","x":1680,"y":1020,"attr":{"class":"ku"}},
         {"img":"xiao.png","x":1680,"y":1020,"attr":{"class":"xiao"}},
+        {"img":"weibiao.png","x":1785,"y":370,"attr":{"class":"true"}},
     ]
 })
 

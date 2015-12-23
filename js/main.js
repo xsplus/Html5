@@ -391,30 +391,39 @@ initfunlist.push(function(){
         $('.scene.scene-anlibox').addClass('show');
         switch (id){
             case 1:
+                $('.scene.scene-main .huiyi').addClass('juliedoudong');
                 $('.scene.scene-huiyi').show();
                 break;
             case 2:
+                $('.scene.scene-main .zhongxiaoxue').addClass('juliedoudong');
                 $('.scene.scene-zhongxiaoxue').show();
                 break;
             case 3:
+                $('.scene.scene-main .daxue').addClass('juliedoudong');
                 $('.scene.scene-daxue').show();
                 break;
             case 4:
+                $('.scene.scene-main .yiyuan').addClass('juliedoudong');
                 $('.scene.scene-yiyuan').show();
                 break;
             case 5:
+                $('.scene.scene-main .yinhang').addClass('juliedoudong');
                 $('.scene.scene-yinhang').show();
                 break;
             case 6:
+                $('.scene.scene-main .gouwuzhongxin').addClass('juliedoudong');
                 $('.scene.scene-gouwuzhongxin').show();
                 break;
             case 7:
+                $('.scene.scene-main .changfang').addClass('juliedoudong');
                 $('.scene.scene-changfang').show();
                 break;
             case 8:
+                $('.scene.scene-main .jingqu').addClass('juliedoudong');
                 $('.scene.scene-jingqu').show();
                 break;
             case 9:
+                $('.scene.scene-main .ditie').addClass('juliedoudong');
                 $('.scene.scene-ditie').show();
                 break;
         }
