@@ -44,7 +44,7 @@
 }
 .star{
     animation:star 5s linear infinite ;
-    -webkit-animation:dibiao 5s linear infinite ;
+    -webkit-animation:star 5s linear infinite ;
 }
 .star1{
     animation-delay: .5s;
@@ -220,6 +220,19 @@
     animation:btn_ok 2s linear infinite ;
     -webkit-animation:btn_ok 2s linear infinite;
     cursor: pointer;
+}
+
+/* 按钮剧烈抖动 */
+@-webkit-keyframes juliedoudong {
+    0% {transform: scale(1)  }
+    33% {  transform: scale(1.5)  }
+    66% {  transform: scale(2)  }
+    100% {  transform: scale(1)  }
+}
+.juliedoudong{
+    z-index: 9;
+    animation:juliedoudong 0.5s linear 1 ;
+    -webkit-animation:juliedoudong 0.5s linear 1 ;
 }
 
 

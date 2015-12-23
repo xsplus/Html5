@@ -2,7 +2,7 @@
 html,body{ height: 100%;overflow: hidden; font-family: 微软雅黑;font-size: 4vh}
 @media all and (orientation : landscape) {
     /* 这是匹配横屏的状态，横屏时的css代码　*/
-    body { background-color: blue; }
+    body { background-color: white; }
 }
 
 @media all and (orientation : portrait) {
@@ -14,6 +14,9 @@ html,body{ height: 100%;overflow: hidden; font-family: 微软雅黑;font-size: 4
 .layer {
     position: absolute;
     background-size: 100% 100% !important;
+    display: block;
+}
+.layer.show {
     display: block;
 }
 .scene {
@@ -54,6 +57,17 @@ html,body{ height: 100%;overflow: hidden; font-family: 微软雅黑;font-size: 4
 .btn{
     cursor: pointer;
 }
+
+.shengyin{
+    display: none;
+}
+.shengyin.play{
+    display: block;
+}
+.scene .ku,.scene .false,.scene .true,.scene .next{
+    display: none;
+}
+
 
 /* 样式放在结尾，防止 base64 图片造成拥塞 */
 /* 屏幕旋转 */

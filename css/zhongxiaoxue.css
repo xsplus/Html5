@@ -1,13 +1,13 @@
-.scene.scene-zhongxiaoxue .true{
-    display: none;
-}
-.scene.scene-zhongxiaoxue .false{
-    display: none;
-}
-.scene.scene-zhongxiaoxue .next{
-    display: none;
-}
 .daantrue{
     transform: scale(0.85);
     transform-origin: 40% 0px 0px;
+}
+
+.scene-zhongxiaoxue.true .wenti,.scene-zhongxiaoxue.true .false,
+.scene-zhongxiaoxue.true .strue,.scene-zhongxiaoxue.true .sfalse,.scene-zhongxiaoxue.show.true .changjing{
+    display: none !important;
+}
+
+.scene-zhongxiaoxue.show.true .true{
+    display: block !important;
 }

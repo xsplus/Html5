@@ -1,7 +1,8 @@
-.scene.scene-jingqu .true{
-    display: none;
+
+.scene-jingqu.true .wenti,.scene-jingqu.true .false,.scene-jingqu.true .strue,.scene-jingqu.true .sfalse{
+    display: none !important;
 }
 
-.scene.scene-jingqu .next{
-    display: none;
+.scene-jingqu.true.show .true{
+    display: block !important;
 }

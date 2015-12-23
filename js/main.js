@@ -11,7 +11,7 @@ sceneslist.push(scene_main = {
     'auto_h':true,                         /*是否自动适应屏幕高度*/
     'layers':[
         //背景图
-        {'img':'bg.gif',w:11811,h:2953,'attr':{'class':'bg'},isbg:true},
+        {'img':'bg.png',w:11811,h:2953,'attr':{'class':'bg'},isbg:true},
         //风车
         {'img':'fengche.png',x:1275,y:1684,w:140,h:120,'attr':{'class':'fengche'}},
         {'img':'fengche.png',x:1992,y:1476,'attr':{'class':'fengche'}},
@@ -51,25 +51,25 @@ sceneslist.push(scene_main = {
         {'img':'star.png',x:5500,y:450,w:30,h:30,'attr':{'class':'star star3'}},
         {'img':'star.png',x:7200,y:600,w:30,h:30,'attr':{'class':'star star2'}},
         //地标
-        {'img':'huiyi.png',x:1807,y:765,w:359,h:163,'attr':{'class':'dibiao huiyi'}},
-        {'img':'zhongxiaoxue.png',x:2982,y:1171,w:278,h:163,'attr':{'class':'dibiao zhongxiaoxue'}},
-        {'img':'daxue.png',x:4429,y:915,w:191,h:157,'attr':{'class':'dibiao daxue'}},
-        {'img':'yiyuan.png',x:5501,y:866,w:187,h:150,'attr':{'class':'dibiao yiyuan'}},
-        {'img':'yinhang.png',x:6277,y:615,w:181,h:157,'attr':{'class':'dibiao yinhang'}},
-        {'img':'gouwuzhongxin.png',x:7608,y:436,w:373,h:171,'attr':{'class':'dibiao gouwuzhongxin'}},
-        {'img':'changfang.png',x:9131,y:360,w:373,h:164,'attr':{'class':'dibiao changfang'}},
-        {'img':'jingqu.png',x:10615,y:294,w:189,h:147,'attr':{'class':'dibiao jingqu'}},
-        {'img':'ditie.png',x:11240,y:740,w:199,h:156,'attr':{'class':'dibiao ditie'}},
-        //地标加上div用于添加事件
-        {x:1507,y:565,w:800,h:800,'attr':{'class':'dibiaoAction','data-id':1}},
-        {x:2782,y:971,w:700,h:700,'attr':{'class':'dibiaoAction','data-id':2}},
-        {x:4229,y:715,w:700,h:700,'attr':{'class':'dibiaoAction','data-id':3}},
-        {x:5301,y:666,w:700,h:700,'attr':{'class':'dibiaoAction','data-id':4}},
-        {x:5977,y:315,w:700,h:700,'attr':{'class':'dibiaoAction','data-id':5}},
-        {x:7408,y:236,w:700,h:700,'attr':{'class':'dibiaoAction','data-id':6}},
-        {x:8980,y:140,w:700,h:700,'attr':{'class':'dibiaoAction','data-id':7}},
-        {x:10415,y:10,w:600,h:600,'attr':{'class':'dibiaoAction','data-id':8}},
-        {x:11090,y:540,w:600,h:600,'attr':{'class':'dibiaoAction','data-id':9}},
+        {'img':'huiyi.png',x:1807,y:765,w:359,h:163,'attr':{'class':'dibiao huiyi btn','data-id':'huiyi'}},
+        {'img':'zhongxiaoxue.png',x:2982,y:1171,w:278,h:163,'attr':{'class':'dibiao zhongxiaoxue btn','data-id':'zhongxiaoxue'}},
+        {'img':'daxue.png',x:4429,y:915,w:191,h:157,'attr':{'class':'dibiao daxue btn','data-id':'daxue'}},
+        {'img':'yiyuan.png',x:5501,y:866,w:187,h:150,'attr':{'class':'dibiao yiyuan btn','data-id':'yiyuan'}},
+        {'img':'yinhang.png',x:6277,y:615,w:181,h:157,'attr':{'class':'dibiao yinhang btn','data-id':'yinhang'}},
+        {'img':'gouwuzhongxin.png',x:7608,y:436,w:373,h:171,'attr':{'class':'dibiao gouwuzhongxin btn','data-id':'gouwuzhongxin'}},
+        {'img':'changfang.png',x:9131,y:360,w:373,h:164,'attr':{'class':'dibiao changfang btn','data-id':'changfang'}},
+        {'img':'jingqu.png',x:10615,y:294,w:189,h:147,'attr':{'class':'dibiao jingqu btn','data-id':'jingqu'}},
+        {'img':'ditie.png',x:11240,y:740,w:199,h:156,'attr':{'class':'dibiao ditie btn','data-id':'ditie'}},
+        //地标标识
+        {'img':'dibiaobiaoshi.png',x:1595,y:755,'attr':{'class':'dibiaobiaoshi btn','data-id':'huiyi'}},
+        {'img':'dibiaobiaoshi.png',x:2786,y:1147,'attr':{'class':'dibiaobiaoshi btn','data-id':'zhongxiaoxue'}},
+        {'img':'dibiaobiaoshi.png',x:4246,y:853,'attr':{'class':'dibiaobiaoshi btn','data-id':'daxue'}},
+        {'img':'dibiaobiaoshi.png',x:5295,y:821,'attr':{'class':'dibiaobiaoshi btn','data-id':'yiyuan'}},
+        {'img':'dibiaobiaoshi.png',x:6067,y:543,'attr':{'class':'dibiaobiaoshi btn','data-id':'yinhang'}},
+        {'img':'dibiaobiaoshi.png',x:7379,y:410,'attr':{'class':'dibiaobiaoshi btn','data-id':'gouwuzhongxin'}},
+        {'img':'dibiaobiaoshi.png',x:9000,y:319,'attr':{'class':'dibiaobiaoshi btn','data-id':'changfang'}},
+        {'img':'dibiaobiaoshi.png',x:10412,y:234,'attr':{'class':'dibiaobiaoshi btn','data-id':'jingqu'}},
+        {'img':'dibiaobiaoshi.png',x:11046,y:698,'attr':{'class':'dibiaobiaoshi btn','data-id':'ditie'}},
         //大飞机
         {'img':'dafeiji.png',x:3387,y:328,w:1467,h:550,'attr':{'class':'dafeiji'}},
         //大楼灯
@@ -268,16 +268,6 @@ sceneslist.push(scene_main = {
         //小飞机
         {'img':'xiaofeiji1.png',x:8068,y:256,'attr':{'class':'xiaofeiji1'}},
         {'img':'xiaofeiji2.png',x:2091,y:484,'attr':{'class':'xiaofeiji2'}},
-        //地标标识
-        {'img':'dibiaobiaoshi.png',x:1595,y:755,'attr':{'class':'dibiaobiaoshi'}},
-        {'img':'dibiaobiaoshi.png',x:2786,y:1147,'attr':{'class':'dibiaobiaoshi'}},
-        {'img':'dibiaobiaoshi.png',x:4246,y:853,'attr':{'class':'dibiaobiaoshi'}},
-        {'img':'dibiaobiaoshi.png',x:5295,y:821,'attr':{'class':'dibiaobiaoshi'}},
-        {'img':'dibiaobiaoshi.png',x:6067,y:543,'attr':{'class':'dibiaobiaoshi'}},
-        {'img':'dibiaobiaoshi.png',x:7379,y:410,'attr':{'class':'dibiaobiaoshi'}},
-        {'img':'dibiaobiaoshi.png',x:9000,y:319,'attr':{'class':'dibiaobiaoshi'}},
-        {'img':'dibiaobiaoshi.png',x:10412,y:234,'attr':{'class':'dibiaobiaoshi'}},
-        {'img':'dibiaobiaoshi.png',x:11046,y:698,'attr':{'class':'dibiaobiaoshi'}},
         //摩天轮
         {'img':'motianlun.png',x:2755,y:1115,'attr':{'class':'motianlun'}},
         //中小学建筑
@@ -287,7 +277,7 @@ sceneslist.push(scene_main = {
 });
 
 sceneslist.push({
-    'box':$('.scene.scene-main'),       /*场景的标签*/
+    'box':$('.scene-main'),       /*场景的标签*/
     'debug':false,                            /*是否开启调试模式*/
     'width':5251,                            /*场景的宽*/
     'height':2953,                           /*场景的高*/
@@ -380,45 +370,18 @@ initfunlist.push(function(){
         main_box.css('left', x);
         pos.x = x;
     }
-    $(window).resize(function(){
+    win.resize(function(){
         limit = main_bg.width() - window.innerWidth;
     });
     //给地标绑定事件
-    $('.dibiaoAction').pitTouch(function(){
+    $('.scene-main .btn').pitTouch(function(){
         console.log("进入地标场景");
-        var id = $(this).data('id');
-        $('.scene.scene-main').removeClass('show');
-        $('.scene.scene-anlibox').addClass('show');
-        switch (id){
-            case 1:
-                $('.scene.scene-huiyi').show();
-                break;
-            case 2:
-                $('.scene.scene-zhongxiaoxue').show();
-                break;
-            case 3:
-                $('.scene.scene-daxue').show();
-                break;
-            case 4:
-                $('.scene.scene-yiyuan').show();
-                break;
-            case 5:
-                $('.scene.scene-yinhang').show();
-                break;
-            case 6:
-                $('.scene.scene-gouwuzhongxin').show();
-                break;
-            case 7:
-                $('.scene.scene-changfang').show();
-                break;
-            case 8:
-                $('.scene.scene-jingqu').show();
-                break;
-            case 9:
-                $('.scene.scene-ditie').show();
-                break;
-        }
-        $(window).resize();
+        var key = $(this).data('id');
+        $('.scene-main').removeClass('show');
+        $('.scene-anlibox').addClass('show');
+        $('.scene-main '+key).addClass('juliedoudong');
+        $('.scene-'+key).show();
+        win.resize();
     });
     //OK
     $('.btn_ok').pitTouch(function(){

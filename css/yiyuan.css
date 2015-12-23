@@ -1,9 +1,9 @@
-.scene.scene-yiyuan .true{
-    display: none;
+
+.scene-yiyuan.true .wenti,.scene-yiyuan.true .false,
+.scene-yiyuan.true .strue,.scene-yiyuan.true .sfalse,.scene-yiyuan.true.show .changjing{
+    display: none !important;
 }
-.scene.scene-yiyuan .false{
-    display: none;
-}
-.scene.scene-yiyuan .next{
-    display: none;
+
+.scene-yiyuan.true.show .true{
+    display: block !important;
 }

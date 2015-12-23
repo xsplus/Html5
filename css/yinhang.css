@@ -1,9 +1,8 @@
-.scene.scene-yinhang .true{
-    display: none;
+
+.scene-yinhang.true .wenti,.scene-yinhang.true .false,.scene-yinhang.true .strue,.scene-yinhang.true .sfalse{
+    display: none !important;
 }
-.scene.scene-yinhang .false{
-    display: none;
-}
-.scene.scene-yinhang .next{
-    display: none;
+
+.scene-yinhang.true.show .true{
+    display: block !important;
 }
