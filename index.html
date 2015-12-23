@@ -87,7 +87,7 @@
                     console.log("回答正确");
                     var obj =  $('.scene.child').not('.true').eq(0);
                     console.log(obj);
-                    if(obj){
+                    if(obj.length){
                         scene.children('.next').addClass("show").pitTouch(function(){
                             $(this).addClass('btndoudong');
                             console.log("进入下一个场景");
@@ -95,11 +95,16 @@
                             //scene scene-zhongxiaoxue child show true
                             var s = scene.attr('class');
                             var a = s.indexOf('scene-');
-                            $('.scene.scene-main .'+s.substr(a+6,s.indexOf(' ',a)-a)).addClass('juliedoudong');
+                            $('.scene.scene-main .'+s.substr(a+6,s.indexOf(' ',a)-a-6)).addClass('juliedoudong');
                             obj.show();
                         })
                     }else{
-                        alert('完成');
+                        scene.children('.lingjiang').addClass('show').pitTouch(function(){
+                            $(this).addClass('btndoudong');
+                            console.log("回到主页领奖");
+                            scene.removeClass('show');
+                            $('.scene.scene-anlibox').addClass('lingjiang');
+                        })
                     }
                 })
             }
