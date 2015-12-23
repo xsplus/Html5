@@ -20,17 +20,17 @@
     -webkit-animation-iteration-count: infinite;
 }
 /* 粗线拉伸 */
+/*
 @-webkit-keyframes load4 {
-    0% {transform: scaleX(0.1) }
-    100% {  transform: scaleX(2.5) }
+    50% {  transform: scaleX(0) }
 }
 .load4{
-    transform-origin: 0;
+    transform-origin: 0 50%;
     animation:load4 1s linear infinite ;
     -webkit-animation:load4 1s linear infinite ;
-}
+}*/
 .load3 {
-    transform-origin: 8% 50%;
+    transform-origin: 0% 50%;
 }
 .baifenbi a{
     position: absolute;

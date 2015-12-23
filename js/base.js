@@ -10,7 +10,6 @@ var sceneslist = [],initfunlist = [],loadingfun;
 
 function createScenes(scenes) {
     var load_sum = 0, load_n = 0;
-    var sceneslist = [];
     for (var i = 0; i < scenes.length; i++) {
         (function (scene) {
             scene = $.extend({
