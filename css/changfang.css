@@ -1,20 +1,11 @@
-.scene.scene-changfang .true{
-    display: none;
-}
-.scene.scene-changfang .false{
-    display: none;
-}
+
 .scene.scene-changfang .gongren{
     z-index: 50;
 }
-.scene.scene-changfang .next{
-    display: none;
-}
-
 .scene-changfang.true .wenti,.scene-changfang.true .false,.scene-changfang.true .strue,.scene-changfang.true .sfalse{
-    display: none;
+    display: none !important;
 }
 
 .scene-changfang.show.true .true,.scene-changfang.show.true .changjing{
-    display: block;
+    display: block !important;
 }

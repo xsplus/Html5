@@ -87,7 +87,7 @@
                     console.log("回答正确");
                     var obj =  $('.scene.child').not('.true').eq(0);
                     if(obj){
-                        scene.children('.next').css('display','block').pitTouch(function(){
+                        scene.children('.next').addClass("show").pitTouch(function(){
                             $(this).addClass('btndoudong');
                             console.log("进入下一个场景");
                             scene.removeClass('show');

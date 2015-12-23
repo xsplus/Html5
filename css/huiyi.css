@@ -1,19 +1,10 @@
-.scene.scene-huiyi .true{
-    display: none;
-}
-.scene.scene-huiyi .false{
-    display: none;
-}
-.scene.scene-huiyi .next{
-    display: none;
-}
 
 .scene-huiyi.true .wenti,.scene-huiyi.true .false,.scene-huiyi.true .strue,.scene-huiyi.true .sfalse{
-    display: none;
+    display: none !important;
 }
 
 .scene-huiyi.true.show .true{
-    display: block;
+    display: block !important;
 }
 
 /* 问号抖动 */

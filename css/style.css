@@ -16,6 +16,9 @@ html,body{ height: 100%;overflow: hidden; font-family: 微软雅黑;font-size: 4
     background-size: 100% 100% !important;
     display: block;
 }
+.layer.show {
+    display: block;
+}
 .scene {
     position: absolute;
     background-size: 100% 100% !important;
@@ -61,7 +64,7 @@ html,body{ height: 100%;overflow: hidden; font-family: 微软雅黑;font-size: 4
 .shengyin.play{
     display: block;
 }
-.scene .ku,.scene .xiao,.scene .next{
+.scene .ku,.scene .false,.scene .true,.scene .next{
     display: none;
 }
 
