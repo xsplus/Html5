@@ -35,8 +35,7 @@ sceneslist.push({
     'auto_h':true,                         /*是否自动适应高度*/
     'layers':[                              /*场景的图层数据*/
         {"img":"next.png","x":954,"y":1620,"attr":{"class":"next"}},
-        {"img":"ku.png","x":1680,"y":1020,"attr":{"class":"false"}},
-        {"img":"xiao.png","x":1680,"y":1020,"attr":{"class":"true"}},
+        {"img":"ku.png","x":1848,"y":1180,"attr":{"class":"false"}},
         {"img":"weibiao.png","x":1785,"y":370,"attr":{"class":"true"}},
     ]
 })
