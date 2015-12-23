@@ -86,6 +86,7 @@
                     scene.addClass('true');
                     console.log("回答正确");
                     var obj =  $('.scene.child').not('.true').eq(0);
+                    console.log(obj);
                     if(obj){
                         scene.children('.next').addClass("show").pitTouch(function(){
                             $(this).addClass('btndoudong');

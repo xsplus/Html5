@@ -11,12 +11,12 @@ html,body{ height: 100%;overflow: hidden; font-family: 微软雅黑;font-size: 4
     .scene { display: none !important; }
 }
 
-.layer {
+.layer{
     position: absolute;
     background-size: 100% 100% !important;
     display: block;
 }
-.layer.show {
+.scene.show .layer.show {
     display: block;
 }
 .scene {

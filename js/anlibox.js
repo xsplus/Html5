@@ -43,7 +43,7 @@ initfunlist.push(function(){
         },300)
     })
 
-    $(".yinyue").append('<audio loop autoplay><source src="mp3/music.mp3" type="audio/mpeg"></audio>').pitTouch(function(){
+    $(".yinyue,.shengyin").append('<audio loop autoplay><source src="mp3/music.mp3" type="audio/mpeg"></audio>').pitTouch(function(){
         if($(".shengyin").is('.play')){
             $('.yinyue audio').get(0).pause();
             $(".shengyin").removeClass('play');
