@@ -10,6 +10,7 @@ var sceneslist = [],initfunlist = [],loadingfun;
 
 function createScenes(scenes) {
     var load_sum = 0, load_n = 0;
+    var sceneslist = [];
     for (var i = 0; i < scenes.length; i++) {
         (function (scene) {
             scene = $.extend({
@@ -153,9 +154,7 @@ function createScenes(scenes) {
 $.fn.show = function (before, after, fn, transition) {
     var t = $(this);
     t.addClass('show').css({'transform': before, 'transition': transition});
-
     sceneID = t;
-
     win.resize();
     if(after){
         window.setTimeout(function () {

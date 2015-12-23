@@ -45,6 +45,18 @@ sceneslist.push({
         {"img":"kele.png","x":3436,"y":1692,"attr":{"class":"true"}},
         {"img":"yeswenzi1.png","x":656,"y":684,"attr":{"class":"true"}},
         {"img":"yeswenzi2.png","x":2196,"y":750,"attr":{"class":"true"}},
+    ]
+})
+
+sceneslist.push({
+    'box':$('.scene.scene-daxue'),       /*场景的标签*/
+    'debug':false,                            /*是否开启调试模式*/
+    'width':4742,                            /*场景的宽*/
+    'height':2667,                           /*场景的高*/
+    'path':'img/scene/common/',          /*默认路径*/
+    'auto_w':true,                        /*是否自动适应宽度*/
+    'auto_h':true,                         /*是否自动适应高度*/
+    'layers':[                              /*场景的图层数据*/
         {"img":"next.png","x":954,"y":1620,"attr":{"class":"next"}},
         {"img":"ku.png","x":1680,"y":1020,"attr":{"class":"ku"}},
         {"img":"xiao.png","x":1680,"y":1020,"attr":{"class":"xiao"}},

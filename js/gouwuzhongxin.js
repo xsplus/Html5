@@ -20,6 +20,18 @@ sceneslist.push({
         {"img":"mstrue.png","x":2206,"y":833,"attr":{"class":"true"}},
         {"img":"daanfalse.png","x":624,"y":603,"attr":{"class":"false"}},
         {"img":"msfalse.png","x":2670,"y":900,"attr":{"class":"false"}},
+    ]
+})
+
+sceneslist.push({
+    'box':$('.scene.scene-gouwuzhongxin'),       /*场景的标签*/
+    'debug':false,                            /*是否开启调试模式*/
+    'width':4742,                            /*场景的宽*/
+    'height':2667,                           /*场景的高*/
+    'path':'img/scene/common/',          /*默认路径*/
+    'auto_w':true,                        /*是否自动适应宽度*/
+    'auto_h':true,                         /*是否自动适应高度*/
+    'layers':[                              /*场景的图层数据*/
         {"img":"next.png","x":954,"y":1620,"attr":{"class":"next"}},
         {"img":"ku.png","x":1680,"y":1020,"attr":{"class":"false"}},
         {"img":"xiao.png","x":1680,"y":1020,"attr":{"class":"true"}},

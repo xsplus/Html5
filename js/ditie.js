@@ -10,7 +10,6 @@ sceneslist.push({
     'auto_w':true,                        /*是否自动适应宽度*/
     'auto_h':true,                         /*是否自动适应高度*/
     'layers':[                              /*场景的图层数据*/
-
         {"img":"changjing.png","x":2174,"y":887},
         {"img":"wenti.png","x":624,"y":650,"attr":{"class":"wenti"}},
         {"img":"wentims.png","x":2400,"y":686,"attr":{"class":"wenti"}},
@@ -20,6 +19,18 @@ sceneslist.push({
         {"img":"mstrue.png","x":2306,"y":833,"attr":{"class":"true"}},
         {"img":"daanfalse.png","x":684,"y":653,"attr":{"class":"false"}},
         {"img":"msfalse.png","x":2620,"y":700,"attr":{"class":"false"}},
+    ]
+})
+
+sceneslist.push({
+    'box':$('.scene.scene-ditie'),       /*场景的标签*/
+    'debug':false,                            /*是否开启调试模式*/
+    'width':4742,                            /*场景的宽*/
+    'height':2667,                           /*场景的高*/
+    'path':'img/scene/common/',          /*默认路径*/
+    'auto_w':true,                        /*是否自动适应宽度*/
+    'auto_h':true,                         /*是否自动适应高度*/
+    'layers':[                              /*场景的图层数据*/
         {"img":"ku.png","x":1680,"y":1020,"attr":{"class":"false"}},
         {"img":"xiao.png","x":1680,"y":1020,"attr":{"class":"true"}},
     ]
