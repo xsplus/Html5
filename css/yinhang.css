@@ -7,3 +7,11 @@
 .scene.scene-yinhang .next{
     display: none;
 }
+
+.scene-yinhang.true .wenti,.scene-yinhang.true .false,.scene-yinhang.true .strue,.scene-yinhang.true .sfalse{
+    display: none;
+}
+
+.scene-yinhang.true.show .true{
+    display: block;
+}

@@ -4,3 +4,11 @@
 .scene.scene-ditie .false{
     display: none;
 }
+
+.scene-ditie.true .wenti,.scene-ditie.true .strue,.scene-ditie.true .sfalse{
+    display: none;
+}
+
+.scene-ditie.true.show .true{
+    display: block;
+}

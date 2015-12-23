@@ -43,19 +43,6 @@ sceneslist.push({
 })
 
 initfunlist.push(function(){
-    $('.scene.scene-yiyuan .strue').pitTouch(function(){
-        $(this).addClass('btndoudong');
-        console.log("回答正确");
-        setTimeout(function(){
-            $('.scene.scene-yiyuan .wenti').css('display','none');
-            $('.scene.scene-yiyuan .false').css('display','none');
-            $('.scene.scene-yiyuan .strue').css('display','none');
-            $('.scene.scene-yiyuan .sfalse').css('display','none');
-            $('.scene.scene-yiyuan .changjing').css('display','none');
-            $('.scene.scene-yiyuan .true').css('display','block');
-            $('.scene.scene-yiyuan .next').css('display','block');
-        },300)
-    })
     $('.scene.scene-yiyuan .sfalse').pitTouch(function(){
         $(this).addClass('btndoudong');
         console.log("回答错误");
@@ -63,15 +50,6 @@ initfunlist.push(function(){
             $('.scene.scene-yiyuan .wenti').css('display','none');
             $('.scene.scene-yiyuan .true').css('display','none');
             $('.scene.scene-yiyuan .false').css('display','block');
-        },300)
-    })
-    $('.scene.scene-yiyuan .next').pitTouch(function(){
-        $(this).addClass('btndoudong');
-        console.log("进入下一个场景");
-        setTimeout(function(){
-            $('.scene.scene-yiyuan').removeClass('show');
-            $('.scene.scene-main .yinhang').addClass('juliedoudong');
-            $('.scene.scene-yinhang').show();
         },300)
     })
 })

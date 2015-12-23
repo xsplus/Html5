@@ -8,6 +8,14 @@
     display: none;
 }
 
+.scene-huiyi.true .wenti,.scene-huiyi.true .false,.scene-huiyi.true .strue,.scene-huiyi.true .sfalse{
+    display: none;
+}
+
+.scene-huiyi.true.show .true{
+    display: block;
+}
+
 /* 问号抖动 */
 @-webkit-keyframes wenhaodoudong{
     0%{-webkit-transform:translateX(0) translateY(0)}

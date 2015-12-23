@@ -55,6 +55,17 @@ html,body{ height: 100%;overflow: hidden; font-family: 微软雅黑;font-size: 4
     cursor: pointer;
 }
 
+.shengyin{
+    display: none;
+}
+.shengyin.play{
+    display: block;
+}
+.scene .ku,.scene .xiao,.scene .next{
+    display: none;
+}
+
+
 /* 样式放在结尾，防止 base64 图片造成拥塞 */
 /* 屏幕旋转 */
 @-webkit-keyframes rotation {

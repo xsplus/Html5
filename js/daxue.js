@@ -16,10 +16,10 @@ sceneslist.push({
         {"img":"xuanze.png","x":660,"y":1128,"attr":{"class":"wenti"}},
         {"img":"xuanxiang_btn.png","x":565,"y":1369,"attr":{"class":"btn btn1"}},
         {"img":"xuanxiang_btn.png","x":566,"y":1725,"attr":{"class":"btn btn2"}},
-        {"img":"xuanxiang_btn.png","x":564,"y":2076,"attr":{"class":"btn btn3"}},
+        {"img":"xuanxiang_btn.png","x":564,"y":2076,"attr":{"class":"btn strue"}},
         {"img":"xuanxiang1.png","x":628,"y":1556,"attr":{"class":"btn btn1"}},
         {"img":"xuanxiang2.png","x":628,"y":1924,"attr":{"class":"btn btn2"}},
-        {"img":"xuanxiang3.png","x":628,"y":2284,"attr":{"class":"btn btn3"}},
+        {"img":"xuanxiang3.png","x":628,"y":2284,"attr":{"class":"btn strue"}},
         {"img":"wenhao.png","x":3321,"y":1156,"attr":{"class":"wenhao"}},
         {"img":"wifi1.png","x":2768,"y":1300,"attr":{"class":"wifi1 wifi_1"}},
         {"img":"wifi2.png","x":2736,"y":1259,"attr":{"class":"wifi1 wifi_2"}},
@@ -65,22 +65,13 @@ sceneslist.push({
 })
 
 initfunlist.push(function(){
-    $('.scene.scene-daxue .btn1').pitTouch(function(){
-        $(this).addClass('btndoudong');
+    $('.scene-daxue .btn1').pitTouch(function(){
+        $('.scene-daxue .btn1').addClass('btndoudong');
         $('.scene.scene-daxue').removeClass('true false2').addClass('false1');
-        $('.scene.scene-daxue .ku').css('display','block');
     });
-    $('.scene.scene-daxue .btn2').pitTouch(function(){
-        $(this).addClass('btndoudong');
+    $('.scene-daxue .btn2').pitTouch(function(){
+        $('.scene-daxue .btn2').addClass('btndoudong');
         $('.scene.scene-daxue').removeClass('false1 true').addClass('false2');
-        $('.scene.scene-daxue .ku').css('display','block');
-    });
-    $('.scene.scene-daxue .btn3').pitTouch(function(){
-        $(this).addClass('btndoudong');
-        $('.scene.scene-daxue').removeClass('false1 false2').addClass('true');
-        $('.scene.scene-daxue .ku').css('display','none');
-        $('.scene.scene-daxue .xiao').css('display','block');
-        $('.scene.scene-daxue .next').css('display','block');
     });
     $('.scene.scene-daxue .next').pitTouch(function(){
         $(this).addClass('btndoudong');

@@ -39,16 +39,6 @@ sceneslist.push({
 })
 
 initfunlist.push(function(){
-    $('.scene.scene-ditie .strue').pitTouch(function(){
-        $(this).addClass('btndoudong');
-        console.log("回答正确");
-        setTimeout(function(){
-            $('.scene.scene-ditie .wenti').css('display','none');
-            $('.scene.scene-ditie .strue').css('display','none');
-            $('.scene.scene-ditie .sfalse').css('display','none');
-            $('.scene.scene-ditie .true').css('display','block');
-        },300)
-    })
     $('.scene.scene-ditie .sfalse').pitTouch(function(){
         $(this).addClass('btndoudong');
         console.log("回答错误");

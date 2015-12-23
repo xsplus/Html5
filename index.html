@@ -26,15 +26,15 @@
 <section class="scene scene-main"></section>
 <section class="scene scene-anlibox"></section>
 <section class="scene scene-anli"></section>
-<section class="scene scene-huiyi"></section>
-<section class="scene scene-zhongxiaoxue"></section>
-<section class="scene scene-daxue"></section>
-<section class="scene scene-yiyuan"></section>
-<section class="scene scene-yinhang"></section>
-<section class="scene scene-gouwuzhongxin"></section>
-<section class="scene scene-changfang"></section>
-<section class="scene scene-jingqu"></section>
-<section class="scene scene-ditie"></section>
+<section class="scene scene-huiyi child"></section>
+<section class="scene scene-zhongxiaoxue child"></section>
+<section class="scene scene-daxue child"></section>
+<section class="scene scene-yiyuan child"></section>
+<section class="scene scene-yinhang child"></section>
+<section class="scene scene-gouwuzhongxin child"></section>
+<section class="scene scene-changfang child"></section>
+<section class="scene scene-jingqu child"></section>
+<section class="scene scene-ditie child"></section>
 <div id="orientLayer" class="mod-orient-layer">
     <div class="mod-orient-layer__content">
         <i class="icon mod-orient-layer__icon-orient"></i>
@@ -79,8 +79,28 @@
                 $('.scene.scene-index').show('scale(0)', 'scale(1)', function () {
                     $('.scene-loading').remove();
                 },'0.3s');
-//                $('.scene.scene-anlibox').show();
-//                $('.scene.scene-changfang').show();
+
+                $('.scene .strue').pitTouch(function(){
+                    $(this).addClass('btndoudong');
+                    var scene = $(this).parent();
+                    scene.addClass('true');
+                    console.log("回答正确");
+                    var obj =  $('.scene.child').not('.true').eq(0);
+                    if(obj){
+                        scene.children('.next').css('display','block').pitTouch(function(){
+                            $(this).addClass('btndoudong');
+                            console.log("进入下一个场景");
+                            scene.removeClass('show');
+                            //scene scene-zhongxiaoxue child show true
+                            var s = scene.attr('class');
+                            var a = s.indexOf('scene-');
+                            $('.scene.scene-main .'+s.substr(a+6,s.indexOf(' ',a)-a)).addClass('juliedoudong');
+                            obj.show();
+                        })
+                    }else{
+                        alert('完成');
+                    }
+                })
             }
         }
     })

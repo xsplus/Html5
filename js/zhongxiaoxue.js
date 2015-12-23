@@ -22,7 +22,6 @@ sceneslist.push({
         {"img":"msfalse.png","x":2870,"y":900,"attr":{"class":"false"}},
         {"img":"changjing.png","x":2404,"y":1377,"attr":{"class":"changjing"}},
         {"img":"changjingtrue.png","x":2429,"y":1377,"attr":{"class":"true"}},
-
     ]
 })
 
@@ -43,19 +42,6 @@ sceneslist.push({
 })
 
 initfunlist.push(function(){
-    $('.scene.scene-zhongxiaoxue .strue').pitTouch(function(){
-        $(this).addClass('btndoudong');
-        console.log("中小学回答正确");
-        setTimeout(function(){
-            $('.scene.scene-zhongxiaoxue .wenti').css('display','none');
-            $('.scene.scene-zhongxiaoxue .false').css('display','none');
-            $('.scene.scene-zhongxiaoxue .strue').css('display','none');
-            $('.scene.scene-zhongxiaoxue .changjing').css('display','none');
-            $('.scene.scene-zhongxiaoxue .sfalse').css('display','none');
-            $('.scene.scene-zhongxiaoxue .true').css('display','block');
-            $('.scene.scene-zhongxiaoxue .next').css('display','block');
-        },300)
-    })
     $('.scene.scene-zhongxiaoxue .sfalse').pitTouch(function(){
         $(this).addClass('btndoudong');
         console.log("回答错误");
@@ -63,14 +49,6 @@ initfunlist.push(function(){
             $('.scene.scene-zhongxiaoxue .wenti').css('display','none');
             $('.scene.scene-zhongxiaoxue .true').css('display','none');
             $('.scene.scene-zhongxiaoxue .false').css('display','block');
-        },300)
-    })
-    $('.scene.scene-zhongxiaoxue .next').pitTouch(function(){
-        $(this).addClass('btndoudong');
-        console.log("进入下一个场景");
-        setTimeout(function(){
-            $('.scene.scene-zhongxiaoxue').removeClass('show');
-            $('.scene.scene-daxue').show();
         },300)
     })
 })

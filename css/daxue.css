@@ -1,19 +1,11 @@
 .scene-daxue.true .wenti,.scene-daxue.false1 .wenti,.scene-daxue.false2 .wenti,.scene-daxue.true .btn,
 .scene-daxue.true .wenhao,.scene-daxue.true .wifi1,.scene-daxue.true .wifi2,.scene-daxue.true .wifi_5,
-.scene-daxue .false1,.scene-daxue .false2,.scene-daxue .true {
+.scene-daxue .false1,.scene-daxue .false2,.scene-daxue .true{
     display: none;
 }
-.scene-daxue.false1 .false1,.scene-daxue.false2 .false2,.scene-daxue.true .true{
+.scene-daxue.show.false1 .false1,.scene-daxue.show.false2 .false2,.scene-daxue.show.true .true,
+.scene-daxue.show.true .next,.scene-daxue.show.true .xiao,.scene-daxue.show.false1 .ku,.scene-daxue.show.false2 .ku{
     display: block;
-}
-.scene.scene-daxue .next{
-    display: none;
-}
-.scene.scene-daxue .ku{
-    display: none;
-}
-.scene.scene-daxue .xiao{
-     display: none;
 }
 @keyframes wifi{
     0%{opacity: 0}

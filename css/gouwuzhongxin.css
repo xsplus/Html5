@@ -7,3 +7,11 @@
 .scene.scene-gouwuzhongxin .next{
     display: none;
 }
+
+.scene-gouwuzhongxin.true .wenti,.scene-gouwuzhongxin.true .false,.scene-gouwuzhongxin.true .strue,.scene-gouwuzhongxin.true .sfalse{
+    display: none;
+}
+
+.scene-gouwuzhongxin.show.true .true,.scene-gouwuzhongxin.show.true .changjing{
+    display: block;
+}

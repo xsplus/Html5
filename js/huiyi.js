@@ -43,18 +43,6 @@ sceneslist.push({
 })
 
 initfunlist.push(function(){
-    $('.scene.scene-huiyi .strue').pitTouch(function(){
-        $(this).addClass('btndoudong');
-        console.log("回答正确");
-        setTimeout(function(){
-            $('.scene.scene-huiyi .wenti').css('display','none');
-            $('.scene.scene-huiyi .false').css('display','none');
-            $('.scene.scene-huiyi .strue').css('display','none');
-            $('.scene.scene-huiyi .sfalse').css('display','none');
-            $('.scene.scene-huiyi .true').css('display','block');
-            $('.scene.scene-huiyi .next').css('display','block');
-        },300)
-    })
     $('.scene.scene-huiyi .sfalse').pitTouch(function(){
         $(this).addClass('btndoudong');
         console.log("回答错误");
@@ -62,14 +50,6 @@ initfunlist.push(function(){
             $('.scene.scene-huiyi .wenti').css('display','none');
             $('.scene.scene-huiyi .true').css('display','none');
             $('.scene.scene-huiyi .false').css('display','block');
-        },300)
-    })
-    $('.scene.scene-huiyi .next').pitTouch(function(){
-        $(this).addClass('btndoudong');
-        console.log("进入下一个场景");
-        setTimeout(function(){
-            $('.scene.scene-huiyi').removeClass('show');
-            $('.scene.scene-zhongxiaoxue').show();
         },300)
     })
 })

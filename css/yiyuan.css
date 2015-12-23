@@ -7,3 +7,11 @@
 .scene.scene-yiyuan .next{
     display: none;
 }
+
+.scene-yiyuan.true .wenti,.scene-yiyuan.true .false,.scene-yiyuan.true .strue,.scene-yiyuan.true .sfalse{
+    display: none;
+}
+
+.scene-yiyuan.true.show .true,.scene-yiyuan.true.show .changjing{
+    display: block;
+}
