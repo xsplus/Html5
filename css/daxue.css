@@ -4,8 +4,12 @@
     display: none;
 }
 .scene-daxue.show.false1 .false1,.scene-daxue.show.false2 .false2,.scene-daxue.show.true .true,
-.scene-daxue.show.true .next,.scene-daxue.show.true .xiao,.scene-daxue.show.false1 .ku,.scene-daxue.show.false2 .ku{
+.scene-daxue.show.false1 .ku,.scene-daxue.show.false2 .ku{
     display: block;
+}
+.scene-daxue.true .false1,.scene-daxue.true .false2,
+.scene-daxue.true.false1 .ku,.scene-daxue.true.false2 .ku{
+    display: none !important;
 }
 @keyframes wifi{
     0%{opacity: 0}

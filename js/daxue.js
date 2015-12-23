@@ -2,7 +2,7 @@
  * Created by theonead on 12/17 0017.
  */
 sceneslist.push({
-    'box':$('.scene.scene-daxue'),       /*场景的标签*/
+    'box':$('.scene-daxue'),       /*场景的标签*/
     'debug':false,                            /*是否开启调试模式*/
     'width':4742,                            /*场景的宽*/
     'height':2667,                           /*场景的高*/
@@ -58,7 +58,7 @@ sceneslist.push({
     'auto_h':true,                         /*是否自动适应高度*/
     'layers':[                              /*场景的图层数据*/
         {"img":"next.png","x":954,"y":1620,"attr":{"class":"next"}},
-        {"img":"ku.png","x":1848,"y":1180,"attr":{"class":"false"}},
+        {"img":"ku.png","x":1848,"y":1180,"attr":{"class":"ku"}},
         {"img":"weibiao.png","x":1785,"y":370,"attr":{"class":"true"}},
     ]
 })
@@ -72,13 +72,4 @@ initfunlist.push(function(){
         $('.scene-daxue .btn2').addClass('btndoudong');
         $('.scene.scene-daxue').removeClass('false1 true').addClass('false2');
     });
-    $('.scene.scene-daxue .next').pitTouch(function(){
-        $(this).addClass('btndoudong');
-        console.log("进入下一个场景");
-        setTimeout(function(){
-            $('.scene.scene-daxue').removeClass('show');
-            $('.scene.scene-main .yiyuan').addClass('juliedoudong');
-            $('.scene.scene-yiyuan').show();
-        },300)
-    })
 })
