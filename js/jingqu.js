@@ -71,6 +71,7 @@ initfunlist.push(function(){
         console.log("进入下一个场景");
         setTimeout(function(){
             $('.scene.scene-jingqu').removeClass('show');
+            $('.scene.scene-main .ditie').addClass('juliedoudong');
             $('.scene.scene-ditie').show();
         },300)
     })

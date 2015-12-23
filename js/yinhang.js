@@ -66,6 +66,7 @@ initfunlist.push(function(){
         console.log("进入下一个场景");
         setTimeout(function(){
             $('.scene.scene-yinhang').removeClass('show');
+            $('.scene.scene-main .gouwuzhongxin').addClass('juliedoudong');
             $('.scene.scene-gouwuzhongxin').show();
         },300)
     })

@@ -66,14 +66,17 @@ sceneslist.push({
 
 initfunlist.push(function(){
     $('.scene.scene-daxue .btn1').pitTouch(function(){
+        $(this).addClass('btndoudong');
         $('.scene.scene-daxue').removeClass('true false2').addClass('false1');
         $('.scene.scene-daxue .ku').css('display','block');
     });
     $('.scene.scene-daxue .btn2').pitTouch(function(){
+        $(this).addClass('btndoudong');
         $('.scene.scene-daxue').removeClass('false1 true').addClass('false2');
         $('.scene.scene-daxue .ku').css('display','block');
     });
     $('.scene.scene-daxue .btn3').pitTouch(function(){
+        $(this).addClass('btndoudong');
         $('.scene.scene-daxue').removeClass('false1 false2').addClass('true');
         $('.scene.scene-daxue .ku').css('display','none');
         $('.scene.scene-daxue .xiao').css('display','block');
@@ -84,6 +87,7 @@ initfunlist.push(function(){
         console.log("进入下一个场景");
         setTimeout(function(){
             $('.scene.scene-daxue').removeClass('show');
+            $('.scene.scene-main .yiyuan').addClass('juliedoudong');
             $('.scene.scene-yiyuan').show();
         },300)
     })

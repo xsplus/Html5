@@ -70,6 +70,7 @@ initfunlist.push(function(){
         console.log("进入下一个场景");
         setTimeout(function(){
             $('.scene.scene-yiyuan').removeClass('show');
+            $('.scene.scene-main .yinhang').addClass('juliedoudong');
             $('.scene.scene-yinhang').show();
         },300)
     })
