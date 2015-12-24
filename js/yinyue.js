@@ -2,8 +2,8 @@
  * Created by Administrator on 12/16 0016.
  */
 sceneslist.push({
-    'box':$('.scene-yinyue'),       /*场景的标签*/
-    'debug':false,                            /*是否开启调试模式*/
+    'box':$('.scene.scene-yinyue'),       /*场景的标签*/
+    'debug':true,                            /*是否开启调试模式*/
     'width':4742,                            /*场景的宽*/
     'height':2667,                           /*场景的高*/
     'path':'img/yinyue/',                  /*图片根目录*/
