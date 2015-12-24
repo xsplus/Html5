@@ -120,7 +120,7 @@
         // 在这里调用 API
         // 分享给朋友
         wx.onMenuShareAppMessage({
-            imgUrl : siteUrl + 'img/share.jpg', // 分享图文小图(请修改为对应图片)
+            imgUrl : 'img/share.jpg', // 分享图文小图(请修改为对应图片)
             link: shareUrl, // 分享链接
             desc : '看完终于知道锐捷多牛逼', // 分享描述
             title : '锐捷无线', // 分享标题
@@ -138,7 +138,7 @@
         wx.onMenuShareTimeline({
             title: '锐捷无线案例', // 分享标题
             link: shareUrl, // 分享链接
-            imgUrl : siteUrl + 'img/share.jpg', // 分享图文小图(请修改为对应图片)
+            imgUrl : 'img/share.jpg', // 分享图文小图(请修改为对应图片)
             success: function () {
                 // 用户确认分享后执行的回调函数
             },
