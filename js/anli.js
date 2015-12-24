@@ -1,5 +1,6 @@
 /**
  * Created by Administrator on 12/16 0016.
+ 
  */
 sceneslist.push(scene_main = {
     'box':$('.scene.scene-anli'),          /*场景的标签*/
