@@ -72,7 +72,7 @@ sceneslist.push(scene_main = {
         {'img':'dibiaobiaoshi.png',x:10412,y:234,'attr':{'class':'dibiaobiaoshi btn','data-id':'jingqu'}},
         {'img':'dibiaobiaoshi.png',x:11046,y:698,'attr':{'class':'dibiaobiaoshi btn','data-id':'ditie'}},
         //大飞机
-        {'img':'dafeiji.png',x:3387,y:328,w:1467,h:550,'attr':{'class':'dafeiji'}},
+        {'img':'dafeiji.png',x:3387,y:328,w:1467,h:550,'attr':{'class':'dafeiji btn','data-id':'jichang'}},
         //大楼灯
         {x:1102,y:2144,w:10,h:10,'attr':{'class':'daloudeng deng1'}},
         {x:1152,y:2144,w:10,h:10,'attr':{'class':'daloudeng deng2'}},
@@ -278,7 +278,7 @@ sceneslist.push(scene_main = {
 });
 
 sceneslist.push({
-    'box':$('.scene-main'),       /*场景的标签*/
+    'box':$('.scene-anli'),       /*场景的标签*/
     'debug':false,                            /*是否开启调试模式*/
     'width':5251,                            /*场景的宽*/
     'height':2953,                           /*场景的高*/
@@ -294,10 +294,73 @@ sceneslist.push({
     ]
 })
 
+sceneslist.push({
+    'box':$('.scene-anlichild'),       /*场景的标签*/
+    'debug':false,                            /*是否开启调试模式*/
+    'width':4742,                            /*场景的宽*/
+    'height':2667,                           /*场景的高*/
+    'path':'img/anlichild/',                  /*图片根目录*/
+    'auto_w':true,                        /*是否自动适应宽度*/
+    'auto_h':true,                         /*是否自动适应高度*/
+    'layers':[                              /*场景的图层数据*/
+        //会议
+        /*{"img":"huiyi_yulan.png","isbg":true},*/
+        {isbg:true,w:4742,h:2667,css:{'background-color':"black"},"attr":{"class":"bg"}},
+        {"img":"huiyibg.png","x":172,"y":120,"attr":{"class":"huiyi"}},
+        {"img":"huiyibtn1.png","x":468,"y":764,"attr":{"class":"huiyibtn1 huiyi"}},
+        {"img":"huiyibtn2.png","x":1952,"y":764,"attr":{"class":"huiyibtn2 huiyi"}},
+        {"img":"huiyibtn3.png","x":3424,"y":812,"attr":{"class":"huiyibtn3 huiyi"}},
+
+       //中小学 zhongxiaoxue
+       // {"img":"zhongxiaoxue_yulan.png","attr":{"class":"zhongxiaoxue"},"isbg":true},
+        {"img":"zhongxiaoxuebg.png","x":232,"y":164,"attr":{"class":"zhongxiaoxue"}},
+        {"img":"zhongxiaoxuebtn1.png","x":696,"y":1032,"attr":{"class":"zhongxiaoxuebtn1 zhongxiaoxue"}},
+        {"img":"zhongxiaoxuebtn2.png","x":2876,"y":1024,"attr":{"class":"zhongxiaoxuebtn2 zhongxiaoxue"}},
+        //大学 daxue
+        //{"img":"daxue_yulan.png","attr":{"class":"daxue"},"isbg":true},
+        {"img":"daxuebg.png","x":200,"y":112,"attr":{"class":"daxue"}},
+        {"img":"daxuebtn1.png","x":660,"y":996,"attr":{"class":"daxuebtn1 daxue"}},
+        {"img":"daxuebtn2.png","x":2840,"y":992,"attr":{"class":"daxuebtn2 daxue"}},
+        //医院 yiyuan
+        ///*{"img":"yiyuan_yulan.png","isbg":true},*/
+        //{"img":"yiyuanbg.png","x":172,"y":120,"attr":{"class":"yiyuan"}},
+        //{"img":"yiyuanbtn1.png","x":468,"y":764,"attr":{"class":"yiyuanbtn1 yiyuan"}},
+        //{"img":"yiyuanbtn2.png","x":1952,"y":764,"attr":{"class":"yiyuanbtn2 yiyuan"}},
+        //{"img":"yiyuanbtn3.png","x":3424,"y":812,"attr":{"class":"yiyuanbtn3 yiyuan"}},
+       //银行 yinhang
+       // {"img":"yinhang_yulan.png","attr":{"class":"yinhang"},"isbg":true},
+        {"img":"yinhangbg.png","x":236,"y":168,"attr":{"class":"yinhang"}},
+        {"img":"yinhangbtn1.png","x":692,"y":1032,"attr":{"class":"yinhangbtn1 yinhang"}},
+        {"img":"yinhangbtn2.png","x":2876,"y":1036,"attr":{"class":"yinhangbtn2 yinhang"}},
+        //购物 gouwuzhongxin
+        //{"img":"gouwuzhongxin_yulan.png","attr":{"class":"gouwuzhongxin"},"isbg":true},
+        {"img":"gouwuzhongxinbg.png","x":232,"y":168,"attr":{"class":"gouwuzhongxin"}},
+        {"img":"gouwuzhongxinbtn1.png","x":692,"y":1024,"attr":{"class":"gouwuzhongxinbtn1 gouwuzhongxin"}},
+        {"img":"gouwuzhongxinbtn2.png","x":2876,"y":1028,"attr":{"class":"gouwuzhongxinbtn2 gouwuzhongxin"}},
+        //厂房 changfang
+        //{"img":"changfang_yulan.png","attr":{"class":"changfang"},"isbg":true},
+        {"img":"changfangbg.png","x":236,"y":172,"attr":{"class":"changfang"}},
+        {"img":"changfangbtn1.png","x":692,"y":1028,"attr":{"class":"changfangbtn1 changfang"}},
+        {"img":"changfangbtn2.png","x":2880,"y":1028,"attr":{"class":"changfangbtn2 changfang"}},
+        //景区 jingqu
+        //{"img":"jingqu_yulan.png","attr":{"class":"jingqu"},"isbg":true},
+        {"img":"jingqubg.png","x":716,"y":172,"attr":{"class":"jingqu"}},
+        {"img":"jingqubtn1.png","x":1780,"y":928,"attr":{"class":"jingqubtn1 jingqu"}},
+         //地铁 ditie
+        //{"img":"ditie_yulan.png","attr":{"class":"ditie"},"isbg":true},
+        {"img":"ditiebg.png","x":712,"y":176,"attr":{"class":"ditie"}},
+        {"img":"ditiebtn1.png","x":1780,"y":924,"attr":{"class":"ditiebtn1 ditie"}},
+        //机场 jichang
+        //{"img":"jichang_yulan.png","attr":{"class":"jichang"},"isbg":true},
+        {"img":"jichangbg.png","x":712,"y":168,"attr":{"class":"jichang"}},
+        {"img":"jichangbtn1.png","x":1784,"y":924,"attr":{"class":"jichangbtn1 jichang"}},
+    ]
+})
+
 initfunlist.push(function(){
-    var main_box = $('.scene-main');
+    var main_box = $('.scene-anli');
     if(!scene_main.debug) main_box.css('left', -window.innerWidth * 0.3);
-    var main_bg = $('.scene-main .bg');
+    var main_bg = $('.scene-anli .bg');
     var limit = main_bg.width() - window.innerWidth;
     var pos = {x : parseFloat(main_box.css('left')), y : 0};
     if ($.isPhone) {
@@ -375,20 +438,18 @@ initfunlist.push(function(){
         limit = main_bg.width() - window.innerWidth;
     });
     //给地标绑定事件
-    $('.scene-main .btn').pitTouch(function(){
+    $('.scene-anli .btn').pitTouch(function(){
         console.log("进入地标场景");
         var key = $(this).data('id');
-        $('.scene-main').removeClass('show');
-        $('.scene-anlibox').addClass('show');
-        $('.scene-main '+key).addClass('juliedoudong');
-        $('.scene-'+key).show();
+        $('.scene-anli').removeClass('show');
+        $('.scene-anlichild').addClass('show').attr('type',key);
         win.resize();
     });
     //OK
     $('.btn_ok').pitTouch(function(){
         console.log("关闭提醒");
-        $('.scene.scene-main .shuoming_bg').remove();
-        $('.scene.scene-main .shuoming').remove();
-        $('.scene.scene-main .btn_ok').remove();
+        $('.scene.scene-anli .shuoming_bg').remove();
+        $('.scene.scene-anli .shuoming').remove();
+        $('.scene.scene-anli .btn_ok').remove();
     })
 })

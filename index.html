@@ -26,6 +26,7 @@
 <section class="scene scene-main"></section>
 <section class="scene scene-anlibox"></section>
 <section class="scene scene-anli"></section>
+<section class="scene scene-anlichild"></section>
 <section class="scene scene-yinyue filter"></section>
 <section class="scene scene-huiyi child"></section>
 <section class="scene scene-zhongxiaoxue child"></section>
@@ -75,6 +76,8 @@
                 $('.scene').on('touchmove',function(event){
                     event.preventDefault();
                 });
+
+                /*$('.scene-anlichild').show();*/
 
                 $('.scene-index').show('scale(0)', 'scale(1)', function () {
                     $('.scene-loading').remove();

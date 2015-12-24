@@ -197,7 +197,7 @@
     -webkit-animation:xiaofeiji2 15s linear infinite;
 }
 
-.shuoming_bg,.shuoming,.scene-main .btn_ok{
+.shuoming_bg,.shuoming,.scene-main .btn_ok,.scene-anli .btn_ok{
     z-index: 99;
     position:fixed;
 }
@@ -220,7 +220,7 @@
     66% {  transform: scale(2)  }
     100% {  transform: scale(1.5)  }
 }
-.scene-main .btn_ok{
+.scene-main .btn_ok,.scene-anli .btn_ok{
     animation:btn_ok 2s linear infinite ;
     -webkit-animation:btn_ok 2s linear infinite;
     cursor: pointer;

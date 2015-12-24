@@ -21,3 +21,42 @@
     animation:btndoudong 0.5s linear 1 ;
     -webkit-animation:btndoudong 0.5s linear 1 ;
 }
+
+/* 隐藏 所有案例 */
+.scene-anlichild .layer{
+    display: none;
+}
+
+.scene-anlichild .bg{
+    display: block;
+}
+
+.scene-anlichild[type='huiyi'] .huiyi{
+    display: block;
+}
+.scene-anlichild[type='zhongxiaoxue'] .zhongxiaoxue{
+    display: block;
+}
+.scene-anlichild[type='daxue'] .daxue{
+    display: block;
+}
+.scene-anlichild[type='yiyuan'] .yiyuan{
+    display: block;
+}
+.scene-anlichild[type='yinhang'] .yinhang{
+    display: block;
+}.scene-anlichild[type='gouwuzhongxin'] .gouwuzhongxin{
+     display: block;
+ }
+.scene-anlichild[type='changfang'] .changfang{
+    display: block;
+}
+.scene-anlichild[type='jingqu'] .jingqu{
+    display: block;
+}
+.scene-anlichild[type='ditie'] .ditie{
+    display: block;
+}
+.scene-anlichild[type='jichang'] .jichang{
+    display: block;
+}
