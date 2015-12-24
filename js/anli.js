@@ -354,6 +354,8 @@ sceneslist.push({
         //{"img":"jichang_yulan.png","attr":{"class":"jichang"},"isbg":true},
         {"img":"jichangbg.png","x":712,"y":168,"attr":{"class":"jichang"}},
         {"img":"jichangbtn1.png","x":1784,"y":924,"attr":{"class":"jichangbtn1 jichang"}},
+
+        {"x":128,"y":132,w:420,h:165.5,css:{'background':"url('img/anlibox/fanhui.png')"},"attr":{"class":"fanhui btn bg"}},
     ]
 })
 
@@ -451,5 +453,15 @@ initfunlist.push(function(){
         $('.scene.scene-anli .shuoming_bg').remove();
         $('.scene.scene-anli .shuoming').remove();
         $('.scene.scene-anli .btn_ok').remove();
+    })
+
+    $('.scene-anlichild .fanhui').pitTouch(function(){
+        $(this).addClass('btndoudong');
+        setTimeout(function(){
+            console.log('返回anli');
+            $('.scene.scene-anlichild').removeClass('show');
+            $('.scene-anli').addClass('show');
+            $(window).resize();
+        },300)
     })
 })

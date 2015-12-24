@@ -23,7 +23,7 @@ sceneslist.push({
 })
 
 initfunlist.push(function(){
-    $('.fanhui').pitTouch(function(){
+    $('.scene-anlibox .fanhui').pitTouch(function(){
         $(this).addClass('btndoudong');
         setTimeout(function(){
             console.log('返回main');
@@ -35,7 +35,7 @@ initfunlist.push(function(){
         },300)
     })
 
-    $('.cankao').pitTouch(function(){
+    $('.scene-anlibox .cankao').pitTouch(function(){
         $(this).addClass('btndoudong');
         setTimeout(function(){
             console.log('查看参考案例');
@@ -46,7 +46,7 @@ initfunlist.push(function(){
         },300)
     })
 
-    $(".again").pitTouch(function(){
+    $(".scene-anlibox .again").pitTouch(function(){
         window.location.reload();
     });
 })
