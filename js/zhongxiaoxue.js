@@ -10,7 +10,6 @@ sceneslist.push({
     'auto_w':true,                        /*是否自动适应宽度*/
     'auto_h':true,                         /*是否自动适应高度*/
     'layers':[                              /*场景的图层数据*/
-
         {"img":"changjingbg.png","x":2480,"y":1175},
         {"img":"wenti.png","x":768,"y":626,"attr":{"class":"wenti"}},
         {"img":"wentims.png","x":2472,"y":814,"attr":{"class":"wenti"}},

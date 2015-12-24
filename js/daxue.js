@@ -50,7 +50,7 @@ sceneslist.push({
 
 sceneslist.push({
     'box':$('.scene.scene-daxue'),       /*场景的标签*/
-    'debug':true,                            /*是否开启调试模式*/
+    'debug':false,                            /*是否开启调试模式*/
     'width':4742,                            /*场景的宽*/
     'height':2667,                           /*场景的高*/
     'path':'img/scene/common/',          /*默认路径*/
