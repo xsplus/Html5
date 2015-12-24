@@ -11,18 +11,18 @@ sceneslist.push({
     'auto_h':true,                         /*是否自动适应高度*/
     'layers':[                              /*场景的图层数据*/
 
-        {"img":"changjing.png","x":2460,"y":1211},
-        {"img":"wenti.png","x":730,"y":614,"attr":{"class":"wenti"}},
-        {"img":"wentims.png","x":2410,"y":778,"attr":{"class":"wenti"}},
-        {"img":"true.png","x":751,"y":1540,"attr":{"class":"strue"}},
-        {"img":"false.png","x":737,"y":1923,"attr":{"class":"sfalse"}},
-        {"img":"daantrue.png","x":727,"y":610,"attr":{"class":"true"}},
-        {"img":"mstrue.png","x":2410,"y":825,"attr":{"class":"true"}},
-        {"img":"daanfalse.png","x":728,"y":641,"attr":{"class":"false"}},
-        {"img":"msfalse.png","x":3044,"y":852,"attr":{"class":"false"}},
-        {"img":"wenhao.png","x":3294,"y":1745,"attr":{"class":"false wenhaodoudong"}},
-        {"img":"wenhao.png","x":3024,"y":1745,"attr":{"class":"false wenhaodoudong"}},
-        {"img":"wenhao.png","x":3154,"y":1870,"attr":{"class":"false wenhaodoudong"}},
+        {"img":"changjing.png","x":2184,"y":1231},
+        {"img":"wenti.png","x":374,"y":618,"attr":{"class":"wenti"}},
+        {"img":"wentims.png","x":2142,"y":702,"attr":{"class":"wenti"}},
+        {"img":"true.png","x":379,"y":1580,"attr":{"class":"strue"}},
+        {"img":"false.png","x":381,"y":1959,"attr":{"class":"sfalse"}},
+        {"img":"daantrue.png","x":351,"y":598,"attr":{"class":"true"}},
+        {"img":"mstrue.png","x":2150,"y":825,"attr":{"class":"true"}},
+        {"img":"daanfalse.png","x":360,"y":645,"attr":{"class":"false"}},
+        {"img":"msfalse.png","x":2708,"y":832,"attr":{"class":"false"}},
+        {"img":"wenhao.png","x":3298,"y":1693,"attr":{"class":"false wenhaodoudong"}},
+        {"img":"wenhao.png","x":3020,"y":1685,"attr":{"class":"false wenhaodoudong"}},
+        {"img":"wenhao.png","x":3166,"y":1810,"attr":{"class":"false wenhaodoudong"}},
     ]
 })
 
@@ -35,10 +35,10 @@ sceneslist.push({
     'auto_w':true,                        /*是否自动适应宽度*/
     'auto_h':true,                         /*是否自动适应高度*/
     'layers':[                              /*场景的图层数据*/
-        {"img":"next.png","x":1054,"y":1620,"attr":{"class":"next"}},
-        {"img":"ku.png","x":1968,"y":1140,"attr":{"class":"false"}},
-        {"img":"weibiao.png","x":1893,"y":390,"attr":{"class":"true"}},
-        {"img":"lingjiang.png","x":814,"y":1520,w:860,h:792,"attr":{"class":"lingjiang"}},
+        {"img":"next.png","x":620,"y":1572,"attr":{"class":"next"}},
+        {"img":"ku.png","x":1608,"y":1148,"attr":{"class":"false"}},
+        {"img":"weibiao.png","x":1541,"y":370,"attr":{"class":"true"}},
+        {"img":"lingjiang.png","x":814,"y":1520,"attr":{"class":"lingjiang"}},
     ]
 })
 

@@ -3,7 +3,7 @@
  */
 sceneslist.push({
     'box':$('.scene.scene-yinyue'),       /*场景的标签*/
-    'debug':true,                            /*是否开启调试模式*/
+    'debug':false,                            /*是否开启调试模式*/
     'width':4742,                            /*场景的宽*/
     'height':2667,                           /*场景的高*/
     'path':'img/yinyue/',                  /*图片根目录*/
