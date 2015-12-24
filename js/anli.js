@@ -305,7 +305,7 @@ sceneslist.push({
     'layers':[                              /*场景的图层数据*/
         //会议
         /*{"img":"huiyi_yulan.png","isbg":true},*/
-        {isbg:true,w:4742,h:2667,css:{'background-color':"black"},"attr":{"class":"bg"}},
+        {isbg:true,w:4742,h:2667,css:{'background':"url('img/anlibox/bg.png')"},"attr":{"class":"bg"}},
         {"img":"huiyibg.png","x":172,"y":120,"attr":{"class":"huiyi"}},
         {"img":"huiyibtn1.png","x":468,"y":764,"attr":{"class":"huiyibtn1 huiyi"}},
         {"img":"huiyibtn2.png","x":1952,"y":764,"attr":{"class":"huiyibtn2 huiyi"}},
