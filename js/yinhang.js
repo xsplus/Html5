@@ -11,15 +11,17 @@ sceneslist.push({
     'auto_h':true,                         /*是否自动适应高度*/
     'layers':[                              /*场景的图层数据*/
 
-        {"img":"changjing.png","x":2104,"y":857},
-        {"img":"wenti.png","x":614,"y":600,"attr":{"class":"wenti"}},
-        {"img":"wentims.png","x":2260,"y":786,"attr":{"class":"wenti"}},
+        {"img":"changjingbg.png","x":1954,"y":827},
+        {"img":"wenti.png","x":624,"y":650,"attr":{"class":"wenti"}},
+        {"img":"wentims.png","x":2100,"y":766,"attr":{"class":"wenti"}},
         {"img":"true.png","x":573,"y":1560,"attr":{"class":"strue"}},
         {"img":"false.png","x":573,"y":1923,"attr":{"class":"sfalse"}},
-        {"img":"daantrue.png","x":623,"y":616,"attr":{"class":"true"}},
-        {"img":"mstrue.png","x":2706,"y":833,"attr":{"class":"true"}},
-        {"img":"daanfalse.png","x":684,"y":603,"attr":{"class":"false"}},
+        {"img":"daantrue.png","x":673,"y":656,"attr":{"class":"true"}},
+        {"img":"mstrue.png","x":2606,"y":833,"attr":{"class":"true"}},
+        {"img":"daanfalse.png","x":634,"y":653,"attr":{"class":"false"}},
         {"img":"msfalse.png","x":2670,"y":900,"attr":{"class":"false"}},
+        {"img":"changjing.png","x":2184,"y":1727,"attr":{"class":"changjing"}},
+        {"img":"changjingtrue.png","x":2204,"y":1877,"attr":{"class":"true"}},
     ]
 })
 

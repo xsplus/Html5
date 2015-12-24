@@ -11,10 +11,10 @@ sceneslist.push({
     'auto_h':true,                         /*是否自动适应高度*/
     'layers':[                              /*场景的图层数据*/
         {"img":"changjingbg.png","x":2174,"y":887},
-        {"img":"wenti.png","x":624,"y":650,"attr":{"class":"wenti"}},
-        {"img":"wentims.png","x":2400,"y":700,"attr":{"class":"wenti"}},
+        {"img":"wenti.png","x":564,"y":650,"attr":{"class":"wenti"}},
+        {"img":"wentims.png","x":2200,"y":700,"attr":{"class":"wenti"}},
         {"img":"true.png","x":573,"y":1560,"attr":{"class":"strue"}},
-        {"img":"false.png","x":573,"y":1923,"attr":{"class":"sfalse"}},
+        {"img":"false.png","x":563,"y":1943,"attr":{"class":"sfalse"}},
         {"img":"daantrue.png","x":673,"y":616,"attr":{"class":"true"}},
         {"img":"mstrue.png","x":2306,"y":700,"attr":{"class":"true"}},
         {"img":"daanfalse.png","x":684,"y":653,"attr":{"class":"false"}},
