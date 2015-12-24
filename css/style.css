@@ -95,6 +95,10 @@ body.phone{
     z-index: 99;
 }
 
+.filter .yinyue,.filter .shengyin{
+    -webkit-filter: brightness(10);
+}
+
 /* 样式放在结尾，防止 base64 图片造成拥塞 */
 /* 屏幕旋转 */
 @-webkit-keyframes rotation {

@@ -1,5 +1,6 @@
 
-.scene-jingqu.true .wenti,.scene-jingqu.true .false,.scene-jingqu.true .strue,.scene-jingqu.true .sfalse{
+.scene-jingqu.true .wenti,.scene-jingqu.true .false,.scene-jingqu.true .strue,.scene-jingqu.true .sfalse,
+.scene-jingqu.true .falseshow{
     display: none !important;
 }
 

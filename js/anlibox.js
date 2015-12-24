@@ -28,6 +28,7 @@ initfunlist.push(function(){
         setTimeout(function(){
             console.log('返回main');
             sceneID.removeClass('show');
+            $('.scene-yinyue').addClass('filter');
             $('.scene.scene-anlibox').removeClass('show');
             $('.scene-main').addClass('show');
             $(window).resize();

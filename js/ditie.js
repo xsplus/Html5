@@ -32,10 +32,10 @@ sceneslist.push({
     'auto_w':true,                        /*是否自动适应宽度*/
     'auto_h':true,                         /*是否自动适应高度*/
     'layers':[                              /*场景的图层数据*/
-        {"img":"ku.png","x":1848,"y":1180,"attr":{"class":"false"}},
-        {"img":"weibiao.png","x":1785,"y":370,"attr":{"class":"true"}},
-        {"img":"next.png","x":954,"y":1620,"attr":{"class":"next"}},
-        {"img":"lingjiang.png","x":814,"y":1520,w:860,h:792,"attr":{"class":"lingjiang"}},
+        {"img":"next.png","x":771,"y":1611,"attr":{"class":"next"}},
+        {"img":"ku.png","x":1605,"y":1141,"attr":{"class":"false"}},
+        {"img":"weibiao.png","x":1539,"y":337,"attr":{"class":"true"}},
+        {"img":"lingjiang.png","x":814,"y":1520,"attr":{"class":"lingjiang"}},
     ]
 })
 

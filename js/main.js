@@ -400,8 +400,8 @@ initfunlist.push(function(){
         $('.scene-main').removeClass('show');
         $('.scene-anlibox').addClass('show');
         $('.scene-main '+key).addClass('juliedoudong');
+        $('.scene-yinyue').removeClass('filter');
         $('.scene-'+key).show();
-        win.resize();
     });
     //OK
     $('.btn_ok').pitTouch(function() {
