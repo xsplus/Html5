@@ -1,16 +1,22 @@
 *{ margin:0; padding:0; }
 html,body{ height: 100%;overflow: hidden; font-family: 微软雅黑;font-size: 4vh}
-@media all and (orientation : landscape) {
-    /* 这是匹配横屏的状态，横屏时的css代码　*/
+/*@media all and (orientation : landscape) {
+     这是匹配横屏的状态，横屏时的css代码　
     body { background-color: white; }
-}
+}*/
 
-@media all and (orientation : portrait) {
-    /*　这是匹配竖屏的状态，竖屏时的css代码　*/
+/*@media all and (orientation : portrait) {
+  　这是匹配竖屏的状态，竖屏时的css代码　
     html, body { background-color: green;  }
     .scene { display: none !important; }
-}
+}*/
 
+body.phone{
+    transform-origin: 50% 50%;
+    transform: rotateZ(90deg);
+    overflow: visible;
+    background: #000;
+}
 .layer{
     position: absolute;
     background-size: 100% 100% !important;
@@ -70,6 +76,9 @@ html,body{ height: 100%;overflow: hidden; font-family: 微软雅黑;font-size: 4
     display: none;
 }
 
+.strue,.sfalse{
+    cursor: pointer;
+}
 
 /* 隐藏anlibox 奖杯页面 */
 .jiangbei,.again,.xuexi,.gonggao,.lingjiang .wenti_box{

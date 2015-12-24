@@ -12,7 +12,7 @@ sceneslist.push({
     'layers':[
         {"img":"bg.png","isbg":true},
         {"img":"anli_box.png","x":128,"y":353},
-        {"img":"wenti_box.png","x":516,"y":504,"attr":{"class":"wenti_box"}},
+        {"img":"wenti_box.png","x":276,"y":459,"attr":{"class":"wenti_box"}},
         {"img":"cankao.png","x":3540,"y":87,"attr":{"class":"cankao btn"}},
         {"img":"fanhui.png","x":128,"y":132,w:420,h:165.5,"attr":{"class":"fanhui btn"}},
         {"img":"again.png","x":648,"y":2060,"attr":{"class":"again btn"}},

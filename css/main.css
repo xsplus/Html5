@@ -208,6 +208,10 @@
     left:0 !important;
     top:0 !important;
 }
+.phone .shuoming_bg{
+    width:100vh !important;
+    height:100vw !important;
+}
 
 /* OK闪烁 */
 @-webkit-keyframes btn_ok {

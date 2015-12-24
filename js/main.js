@@ -295,16 +295,42 @@ sceneslist.push({
 
 initfunlist.push(function(){
     var main_box = $('.scene-main');
-    if(!scene_main.debug) main_box.css('left', -window.innerWidth * 0.3);
-    var main_bg = $('.scene-main .bg');
-    var limit = main_bg.width() - window.innerWidth;
-    var pos = {x : parseFloat(main_box.css('left')), y : 0};
+    if(!scene_main.debug) main_box.css('left', -$.size('w') * 0.3);
+    var pos,moveTo,limit,setlimit,cross_screen = $.isPhone && $.cross_screen;
+    if(cross_screen){
+        pos = {x : 0, y : parseFloat(main_box.css('left'))};
+        setlimit = function(){
+            limit = $('.scene-main .bg').height() - $.size('w');
+        }
+        setlimit();
+        moveTo = function(p){
+            if (p.y > 0) p.y = 0;
+            else if (limit + p.y < 0) p.y = -limit;
+            main_box.css('left', p.y);
+            console.log(limit);
+            pos.y = p.y;
+        }
+
+    }else{
+        pos = {x : parseFloat(main_box.css('left')), y : 0};
+        setlimit = function(){
+            limit = $('.scene-main .bg').width() - $.size('w');
+        }
+        setlimit();
+        moveTo = function(p){
+            if (p.x > 0) p.x = 0;
+            else if (limit + p.x < 0) p.x = -limit;
+            main_box.css('left', p.x);
+            pos.x = p.x;
+        }
+    }
+    var isTouch;
     if ($.isPhone) {
-        var startPos, isTouch;
+        var startPos;
         //触摸事件自定义
         main_box.on('touchstart', function (event) {
             var touch = event.targetTouches[0];     //touches数组对象获得屏幕上所有的touch，取第一个touch
-            startPos = {x: pos.x-touch.pageX, y: touch.pageY };    //取第一个touch的坐标值
+            startPos = {x: pos.x-touch.pageX, y: pos.y-touch.pageY };    //取第一个touch的坐标值
             main_box.on('touchmove',touchmove);
             main_box.one('touchend',touchend);
             isTouch = true;
@@ -312,9 +338,9 @@ initfunlist.push(function(){
         function touchmove(event) {
             if (event.targetTouches.length > 1 || event.scale && event.scale !== 1) return;
             var touch = event.targetTouches[0];
-            var tmp = {x: touch.pageX + startPos.x, y: touch.pageY - startPos.y};
+            var tmp = {x: touch.pageX + startPos.x, y: touch.pageY + startPos.y};
             event.preventDefault();      //阻止触摸事件的默认行为，即阻止滚屏
-            moveTo(tmp.x)
+            moveTo(tmp);
         }
         function touchend() {
             //解绑事件
@@ -328,7 +354,7 @@ initfunlist.push(function(){
                 window.addEventListener("deviceorientation", orientationHandler, false);
                 function orientationHandler(event) {
                     if (main_box.is('.show') && !isTouch) {
-                        var change = limit >> 6;
+                        var change = limit / 200;
                         var _alpha = event.alpha;
                         if (_alpha) {
                             var _alpha = _alpha.toFixed(1);
@@ -336,7 +362,8 @@ initfunlist.push(function(){
                                 var tmp = _alpha - alpha;
                                 if (tmp > 180) tmp -= 360;
                                 else if (tmp < -180) tmp += 360;
-                                moveTo(pos.x + tmp * change)
+                                moveTo({y:pos.y + tmp * change})
+
                             }
                         }
                         alpha = _alpha;
@@ -357,22 +384,15 @@ initfunlist.push(function(){
         function mousemove(event) {
             var tmp = {x: event.pageX + startPos.x, y: event.pageY - startPos.y};
             event.preventDefault();      //阻止触摸事件的默认行为，即阻止滚屏
-            moveTo(tmp.x)
+            moveTo(tmp)
         }
         function mouseup() {
             //解绑事件
             main_box.off('mousemove',mousemove);
         }
     }
-    function moveTo(x){
-        if (x > 0) x = 0;
-        else if (limit + x < 0) x = -limit;
-        main_box.css('left', x);
-        pos.x = x;
-    }
-    win.resize(function(){
-        limit = main_bg.width() - window.innerWidth;
-    });
+
+    win.resize(setlimit);
     //给地标绑定事件
     $('.scene-main .btn').pitTouch(function(){
         console.log("进入地标场景");
@@ -384,10 +404,13 @@ initfunlist.push(function(){
         win.resize();
     });
     //OK
-    $('.btn_ok').pitTouch(function(){
+    $('.btn_ok').pitTouch(function() {
         console.log("关闭提醒");
         $('.scene.scene-main .shuoming_bg').remove();
         $('.scene.scene-main .shuoming').remove();
         $('.scene.scene-main .btn_ok').remove();
+        window.setTimeout(function () {
+            main_box.trigger('touchend')
+        }, 500);
     })
 })

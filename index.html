@@ -36,12 +36,6 @@
 <section class="scene scene-changfang child"></section>
 <section class="scene scene-jingqu child"></section>
 <section class="scene scene-ditie child"></section>
-<div id="orientLayer" class="mod-orient-layer">
-    <div class="mod-orient-layer__content">
-        <i class="icon mod-orient-layer__icon-orient"></i>
-        <div class="mod-orient-layer__desc">为了更好的体验，请使用横屏浏览</div>
-    </div>
-</div>
 </body>
 <footer>
     <script src="js/zepto.min.js"></script>
@@ -66,7 +60,7 @@
 </html>
 <script>
     $(function() {
-        createScenes(sceneslist);
+        createScenes(sceneslist,true);
         loadingfun = function (load_n,load_sum) {
             var v = load_n / load_sum;
             $(".baifenbi").html("<a>"+(v * 100).toFixed(0) + "%</a>");
@@ -78,17 +72,19 @@
                     var fun = initfunlist[i];
                     if (fun) fun();
                 }
-//                $('.scene.scene-index,.scene.scene-yinyue').show('scale(0)', 'scale(1)', function () {
-//                    $('.scene-loading').remove();
-//                },'0.3s');
-                $('.scene.scene-anlibox,.scene.scene-ditie').show();
+                $('.scene').on('touchmove',function(event){
+                    event.preventDefault();
+                });
+
+                $('.scene.scene-index').show('scale(0)', 'scale(1)', function () {
+                    $('.scene-loading').remove();
+                },'0.3s');
                 $('.scene .strue').pitTouch(function(){
                     $(this).addClass('btndoudong');
                     var scene = $(this).parent();
                     scene.addClass('true');
                     console.log("回答正确");
                     var obj =  $('.scene.child').not('.true').eq(0);
-                    console.log(obj);
                     if(obj.length){
                         scene.children('.next').addClass("show").pitTouch(function(){
                             $(this).addClass('btndoudong');

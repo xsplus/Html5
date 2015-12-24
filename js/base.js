@@ -2,13 +2,58 @@
  * Created by Administrator on 2015/12/21 0021.
  */
 var win = $(window);
+$.isPhone = !!(('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch);
+
+
+if($.isPhone){
+    $.fn.pitTouch = function(fn){
+        $(this).on('touchstart',fn);
+    }
+}else{
+    $.fn.pitTouch = function(fn){
+        $(this).on('click',fn);
+    }
+}
+
+$.fn.show = function (before, after, fn, transition) {
+    var t = $(this);
+    t.addClass('show').css({'transform': before, 'transition': transition});
+    sceneID = t;
+    win.resize();
+    if(after){
+        window.setTimeout(function () {
+            t.css('transform', after);
+            var time = parseFloat(t.css('transition-duration')) * 1000;
+            window.setTimeout(fn, time);
+        }, 1000)
+    }else if(fn) fn();
+}
+
 
 //存储场景ID
 var sceneID = '';
 
 var sceneslist = [],initfunlist = [],loadingfun;
 
-function createScenes(scenes) {
+function createScenes(scenes,cross_screen) {
+    if($.isPhone && cross_screen){
+        $('body').addClass('phone').height(win.width());
+        win.resize(function() {
+            $('body').height(win.width());
+        })
+        $.size = function(k) {
+            if (k == 'h')return win.width();
+            else if (k == 'w') return win.height();
+            else return {h: win.width(), w: win.height()};
+        }
+    }else {
+        $.size = function (k) {
+            if (k == 'h')  return win.height();
+            else if (k == 'w') return win.width();
+            else  return {h: win.height(), w: win.width()};
+        }
+    }
+    $.cross_screen = cross_screen;
     var load_sum = 0, load_n = 0;
     for (var i = 0; i < scenes.length; i++) {
         (function (scene) {
@@ -115,12 +160,11 @@ function createScenes(scenes) {
             }
             function resize() {
                 if (scene.box.is('.show') && !scene.debug) {
-                    var w = win.width()
-                    var h = win.height()
+                    var size = $.size();
                     if (scene.auto_h) {
                         if (scene.auto_w) {
-                            var scaleW = w / scene.width;
-                            var scaleH = h / scene.height;
+                            var scaleW = size.w / scene.width;
+                            var scaleH = size.h / scene.height;
                             if (scaleW > scaleH) {
                                 var tmp = (scaleW - scaleH) / 2;
                                 offset = {x: tmp * scene.width, y: 0};
@@ -133,10 +177,10 @@ function createScenes(scenes) {
                                 scale = scaleW;
                             }
                         } else {
-                            scale = h / scene.height;
+                            scale = size.h / scene.height;
                         }
                     } else if (scene.auto_w) {
-                        scale = h / scene.width;
+                        scale = size.h / scene.width;
                     }
                     scene.box.children('.layer').trigger('autoSize');
                 }
@@ -147,31 +191,5 @@ function createScenes(scenes) {
                 resize();
             }
         })(scenes[i])
-    }
-}
-
-$.fn.show = function (before, after, fn, transition) {
-    var t = $(this);
-    t.addClass('show').css({'transform': before, 'transition': transition});
-    sceneID = t;
-    win.resize();
-    if(after){
-        window.setTimeout(function () {
-            t.css('transform', after);
-            var time = parseFloat(t.css('transition-duration')) * 1000;
-            window.setTimeout(fn, time);
-        }, 1000)
-    }else if(fn) fn();
-}
-
-$.isPhone = !!(('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch);
-
-if($.isPhone){
-    $.fn.pitTouch = function(fn){
-        $(this).on('touchstart',fn);
-    }
-}else{
-    $.fn.pitTouch = function(fn){
-        $(this).on('click',fn);
     }
 }
