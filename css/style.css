@@ -81,6 +81,11 @@ html,body{ height: 100%;overflow: hidden; font-family: 微软雅黑;font-size: 4
     display: block;
 }
 
+
+.yinyue .shenyin{
+    z-index: 99;
+}
+
 /* 样式放在结尾，防止 base64 图片造成拥塞 */
 /* 屏幕旋转 */
 @-webkit-keyframes rotation {

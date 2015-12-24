@@ -26,6 +26,7 @@
 <section class="scene scene-main"></section>
 <section class="scene scene-anlibox"></section>
 <section class="scene scene-anli"></section>
+<section class="scene scene-yinyue"></section>
 <section class="scene scene-huiyi child"></section>
 <section class="scene scene-zhongxiaoxue child"></section>
 <section class="scene scene-daxue child"></section>
@@ -60,6 +61,7 @@
     <script src="js/gouwuzhongxin.js"></script>
     <script src="js/daxue.js"></script>
     <script src="js/scene.js"></script>
+    <script src="js/yinyue.js"></script>
 </footer>
 </html>
 <script>
@@ -76,7 +78,7 @@
                     var fun = initfunlist[i];
                     if (fun) fun();
                 }
-                $('.scene.scene-index').show('scale(0)', 'scale(1)', function () {
+                $('.scene.scene-index,.scene.scene-yinyue').show('scale(0)', 'scale(1)', function () {
                     $('.scene-loading').remove();
                 },'0.3s');
 
@@ -110,5 +112,94 @@
             }
         } 
     })
+</script>
+
+<script type="text/javascript">
+    var shareUrl = location.href.split('#')[0];
+    function initShare() {
+        // 在这里调用 API
+        // 分享给朋友
+        wx.onMenuShareAppMessage({
+            imgUrl : siteUrl + 'img/share.jpg', // 分享图文小图(请修改为对应图片)
+            link: shareUrl, // 分享链接
+            desc : '看完终于知道锐捷多牛逼', // 分享描述
+            title : '锐捷无线', // 分享标题
+            type: 'link', // 分享类型,music、video或link，不填默认为link
+            dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+            success: function () {
+                // 用户确认分享后执行的回调函数
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+            }
+        });
+
+        // 分享到朋友圈
+        wx.onMenuShareTimeline({
+            title: '锐捷无线案例', // 分享标题
+            link: shareUrl, // 分享链接
+            imgUrl : siteUrl + 'img/share.jpg', // 分享图文小图(请修改为对应图片)
+            success: function () {
+                // 用户确认分享后执行的回调函数
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+            }
+        });
+    }
+
+    // 通过jsonp获取设置
+    var wxConfig = null;
+    $.ajax({
+        url: 'http://www.wfcapp.com/index.php?g=Wap&m=ShareAPI&a=index&token=rfyzyy1422930888',
+        data: {url:shareUrl},
+        dataType: 'jsonp',
+        success: function(data) {
+            if (data.code == 0) {
+                data = data.data;
+                if (wx) {
+                    wx.config({
+                        debug: false,
+                        appId: data.appId,
+                        timestamp: data.timestamp,
+                        nonceStr: data.nonceStr,
+                        signature: data.signature,
+                        jsApiList: [
+                            // 所有要调用的 API 都要加到这个列表中
+                            'onMenuShareTimeline',
+                            'onMenuShareAppMessage',
+                        ]
+                    });
+                    wx.ready(function () {
+                        initShare();
+                    });
+                } else {
+                    wxConfig = data;
+                }
+            } else {
+                console.log(data.msg);
+            }
+        }
+    });
+</script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+    if (wxConfig) {
+        wx.config({
+            debug: false,
+            appId: wxConfig.appId,
+            timestamp: wxConfig.timestamp,
+            nonceStr: wxConfig.nonceStr,
+            signature: wxConfig.signature,
+            jsApiList: [
+                // 所有要调用的 API 都要加到这个列表中
+                'onMenuShareTimeline',
+                'onMenuShareAppMessage',
+            ]
+        });
+        wx.ready(function () {
+            initShare();
+        });
+    }
 </script>
 

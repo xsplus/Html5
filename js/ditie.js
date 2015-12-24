@@ -15,11 +15,11 @@ sceneslist.push({
         {"img":"wentims.png","x":2400,"y":700,"attr":{"class":"wenti"}},
         {"img":"true.png","x":573,"y":1560,"attr":{"class":"strue"}},
         {"img":"false.png","x":573,"y":1923,"attr":{"class":"sfalse"}},
-        {"img":"daantrue.png","x":673,"y":716,"attr":{"class":"true"}},
+        {"img":"daantrue.png","x":673,"y":616,"attr":{"class":"true"}},
         {"img":"mstrue.png","x":2306,"y":700,"attr":{"class":"true"}},
         {"img":"daanfalse.png","x":684,"y":653,"attr":{"class":"false"}},
         {"img":"msfalse.png","x":2620,"y":700,"attr":{"class":"false"}},
-        {"img":"wifi.png","x":3700,"y":1320,"attr":{"class":"true"}},
+        {"img":"wifi.png","x":3700,"y":1320,"attr":{"class":"wifi"}},
     ]
 })
 
