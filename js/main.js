@@ -398,9 +398,10 @@ initfunlist.push(function() {
     win.resize(setlimit);
     $.show_main = function(){
         $('.scene-main').addClass('show');
-        if($('.scene-main').is('uninit')){
+        if($('.scene-main').is('.uninit')){
             setlimit();
             $('.scene-main').removeClass('uninit');
+            alert();
         }
     }
 
