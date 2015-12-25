@@ -397,11 +397,11 @@ initfunlist.push(function() {
     }
     win.resize(setlimit);
     $.show_main = function(){
+        $('.scene-main').addClass('show');
         if($('.scene-main').is('uninit')){
             setlimit();
             $('.scene-main').removeClass('uninit');
         }
-        $('.scene-main').addClass('show');
     }
 
     //给地标绑定事件

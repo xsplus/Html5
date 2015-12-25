@@ -464,11 +464,11 @@ initfunlist.push(function(){
 
     win.resize(setlimit);
     $.show_anli = function(){
+        $('.scene-anli').addClass('show');
         if($('.scene-anli').is('uninit')){
             setlimit();
             $('.scene-anli').removeClass('uninit');
         }
-        $('.scene-anli').addClass('show');
     }
 
     //给地标绑定事件
