@@ -511,14 +511,14 @@ initfunlist.push(function(){
         $(this).addClass('btndoudong');
         setTimeout(function(){
             console.log('跳转');
-            window.location.href="http://h5.baomitu.com/app/8b35b.html";
+            window.open("http://h5.baomitu.com/app/8b35b.html");
         },300)
     })
     $('.scene-anlichild .daxuebtn2').pitTouch(function(){
         $(this).addClass('btndoudong');
         setTimeout(function(){
             console.log('跳转');
-            window.location.href="http://h5.baomitu.com/app/64758.html";
+            window.open("http://h5.baomitu.com/app/64758.html");
         },300)
     })
     //厂房
@@ -526,14 +526,14 @@ initfunlist.push(function(){
         $(this).addClass('btndoudong');
         setTimeout(function(){
             console.log('跳转');
-            window.location.href="http://h5.baomitu.com/app/9adcc.html#rd";
+            window.open("http://h5.baomitu.com/app/9adcc.html#rd");
         },300)
     })
     $('.scene-anlichild .changfangbtn2').pitTouch(function(){
         $(this).addClass('btndoudong');
         setTimeout(function(){
             console.log('跳转');
-            window.location.href="http://h5.baomitu.com/app/Ahff3Dwv.html?iframe=1";
+            window.open("http://h5.baomitu.com/app/Ahff3Dwv.html?iframe=1");
         },300)
     })
     //商场
@@ -541,14 +541,14 @@ initfunlist.push(function(){
         $(this).addClass('btndoudong');
         setTimeout(function(){
             console.log('跳转');
-            window.location.href="http://mp.weixin.qq.com/s?__biz=MjM5NzU5MDM4Mw==&mid=208874836&idx=1&sn=011377cca937fc8d37a8190593d4e116&scene=4#wechat_redirect";
+            window.open("http://mp.weixin.qq.com/s?__biz=MjM5NzU5MDM4Mw==&mid=208874836&idx=1&sn=011377cca937fc8d37a8190593d4e116&scene=4#wechat_redirect");
         },300)
     })
     $('.scene-anlichild .gouwuzhongxinbtn2').pitTouch(function(){
         $(this).addClass('btndoudong');
         setTimeout(function(){
             console.log('跳转');
-            window.location.href="http://mp.weixin.qq.com/s?__biz=MjM5NzU5MDM4Mw==&mid=207133181&idx=1&sn=cf31549d77086695cd8d4b220de6500f&scene=4#wechat_redirect";
+            window.open("http://mp.weixin.qq.com/s?__biz=MjM5NzU5MDM4Mw==&mid=207133181&idx=1&sn=cf31549d77086695cd8d4b220de6500f&scene=4#wechat_redirect");
         },300)
     })
     //中小学
@@ -556,14 +556,14 @@ initfunlist.push(function(){
         $(this).addClass('btndoudong');
         setTimeout(function(){
             console.log('跳转');
-            window.location.href="http://mp.weixin.qq.com/s?__biz=MjM5NzU5MDM4Mw==&mid=209576558&idx=1&sn=636d7f6bfcdebf027a15ea45530a1584&scene=4#wechat_redirect";
+            window.open("http://mp.weixin.qq.com/s?__biz=MjM5NzU5MDM4Mw==&mid=209576558&idx=1&sn=636d7f6bfcdebf027a15ea45530a1584&scene=4#wechat_redirect");
         },300)
     })
     $('.scene-anlichild .zhongxiaoxuebtn2').pitTouch(function(){
         $(this).addClass('btndoudong');
         setTimeout(function(){
             console.log('跳转');
-            window.location.href="http://mp.weixin.qq.com/s?__biz=MjM5NzU5MDM4Mw==&mid=209639794&idx=2&sn=bd39c03d7557ccb37320abbb85286db0&scene=4#wechat_redirect";
+            window.open("http://mp.weixin.qq.com/s?__biz=MjM5NzU5MDM4Mw==&mid=209639794&idx=2&sn=bd39c03d7557ccb37320abbb85286db0&scene=4#wechat_redirect");
         },300)
     })
     //会议中心
@@ -571,21 +571,21 @@ initfunlist.push(function(){
         $(this).addClass('btndoudong');
         setTimeout(function(){
             console.log('跳转');
-            window.location.href="http://mp.weixin.qq.com/s?__biz=MjM5NzU5MDM4Mw==&mid=209134459&idx=1&sn=c115e9221fca9c9e1aa30d88864fe035&scene=1&srcid=1116pNzbRgB8E4lhKJWnboAB#wechat_redirect";
+            window.open("http://mp.weixin.qq.com/s?__biz=MjM5NzU5MDM4Mw==&mid=209134459&idx=1&sn=c115e9221fca9c9e1aa30d88864fe035&scene=1&srcid=1116pNzbRgB8E4lhKJWnboAB#wechat_redirect");
         },300)
     })
     $('.scene-anlichild .huiyibtn2').pitTouch(function(){
         $(this).addClass('btndoudong');
         setTimeout(function(){
             console.log('跳转');
-            window.location.href="http://mp.weixin.qq.com/s?__biz=MjM5NzU5MDM4Mw==&mid=400128057&idx=1&sn=67997a2064b3dcfd762a3622f7d91401&scene=1&srcid=1116mNSTbEMoSW0rdvQeF2j6#wechat_redirect";
+            window.open("http://mp.weixin.qq.com/s?__biz=MjM5NzU5MDM4Mw==&mid=400128057&idx=1&sn=67997a2064b3dcfd762a3622f7d91401&scene=1&srcid=1116mNSTbEMoSW0rdvQeF2j6#wechat_redirect");
         },300)
     })
     $('.scene-anlichild .huiyibtn3').pitTouch(function(){
         $(this).addClass('btndoudong');
         setTimeout(function(){
             console.log('跳转');
-            window.location.href="http://mp.weixin.qq.com/s?__biz=MjM5NzU5MDM4Mw==&mid=402020673&idx=1&sn=c6abcfd405b4dbb917c3b1fc5dbad197&scene=1&srcid=1125E6M6eTtgfzbp03OihUoT#wechat_redirect";
+            window.open("http://mp.weixin.qq.com/s?__biz=MjM5NzU5MDM4Mw==&mid=402020673&idx=1&sn=c6abcfd405b4dbb917c3b1fc5dbad197&scene=1&srcid=1125E6M6eTtgfzbp03OihUoT#wechat_redirect");
         },300)
     })
     //地铁
@@ -593,7 +593,7 @@ initfunlist.push(function(){
         $(this).addClass('btndoudong');
         setTimeout(function(){
             console.log('跳转');
-            window.location.href="http://mp.weixin.qq.com/s?__biz=MjM5NzU5MDM4Mw==&mid=205224722&idx=1&sn=f585da53960e7d9288ffcbbb103af107&scene=1&srcid=0914kZF63w9QucA7D7hZTOZY#wechat_redirect";
+            window.open("http://mp.weixin.qq.com/s?__biz=MjM5NzU5MDM4Mw==&mid=205224722&idx=1&sn=f585da53960e7d9288ffcbbb103af107&scene=1&srcid=0914kZF63w9QucA7D7hZTOZY#wechat_redirect");
         },300)
     })
     //银行
@@ -601,14 +601,14 @@ initfunlist.push(function(){
         $(this).addClass('btndoudong');
         setTimeout(function(){
             console.log('跳转');
-            window.location.href="http://www.ruijie.com.cn/al/jr-wlan/38670";
+            window.open("http://www.ruijie.com.cn/al/jr-wlan/38670");
         },300)
     })
     $('.scene-anlichild .yinhangbtn2').pitTouch(function(){
         $(this).addClass('btndoudong');
         setTimeout(function(){
             console.log('跳转');
-            window.location.href="http://www.ruijie.com.cn/al/jr-wlan/38870";
+            window.open("http://www.ruijie.com.cn/al/jr-wlan/38870");
         },300)
     })
 
