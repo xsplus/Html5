@@ -1,5 +1,6 @@
 
-.scene-ditie.true .wenti,.scene-ditie.true .strue,.scene-ditie.true .sfalse,.scene-ditie.true .wifi{
+.scene-ditie.true .wenti,.scene-ditie.true .strue,
+.scene-ditie.true .sfalse,.scene-ditie.true .wifi,.scene-ditie.true .false{
     display: none !important;
 }
 
