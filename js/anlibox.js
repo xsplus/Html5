@@ -19,6 +19,8 @@ sceneslist.push({
         {"img":"gonggao.png","x":1744,"y":2056,"attr":{"class":"gonggao btn"}},
         {"img":"xuexi.png","x":2860,"y":2056,"attr":{"class":"xuexi btn"}},
         {"img":"jiangbei.png","x":468,"y":488,"attr":{"class":"jiangbei"}},
+        {w:4742,h:2667,"attr":{"class":"fenxiangtishi"},"css":{"background":"rgba(0,0,0,0.8)"},isbg:true},
+        {"img":"fenxiangtishi.png","attr":{"class":"fenxiangtishi"}},
     ]
 })
 
@@ -47,6 +49,20 @@ initfunlist.push(function(){
     $(".scene-anlibox .again").pitTouch(function(){
         window.location.reload();
     });
+    $('.scene-anlibox .gonggao').pitTouch(function(){
+        $(this).addClass('btndoudong');
+        setTimeout(function(){
+            console.log('分享提示');
+            $('.fenxiangtishi').show();
+        },300)
+    })
+    $('.fenxiangtishi').pitTouch(function(){
+        $(this).addClass('btndoudong');
+        setTimeout(function(){
+            console.log('关闭分享提示');
+            $('.fenxiangtishi').remove();
+        },300)
+    })
     $('.scene-anlibox .xuexi').pitTouch(function(){
         $(this).addClass('btndoudong');
         setTimeout(function(){
