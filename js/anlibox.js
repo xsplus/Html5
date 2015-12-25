@@ -52,8 +52,7 @@ initfunlist.push(function(){
         setTimeout(function(){
             console.log('查看参考案例');
             $('.scene.scene-anlibox').removeClass('show');
-            $('.scene-anli').addClass('show');
-            $(window).resize();
+            $.show_anli();
         },300)
     })
 })
