@@ -401,7 +401,6 @@ initfunlist.push(function() {
         if($('.scene-main').is('.uninit')){
             setlimit();
             $('.scene-main').removeClass('uninit');
-            alert();
         }
     }
 

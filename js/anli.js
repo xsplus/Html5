@@ -288,6 +288,7 @@ sceneslist.push({
     'auto_h':true,                         /*是否自动适应高度*/
     'layers':[                              /*场景的图层数据*/
         {'img':'chakanxiangqing.png',x:2100,y:2422,'attr':{'class':'chakanxiangqing'}},
+        {"img":"jichang.png","x":3380,"y":110,w:400,h:432,"attr":{"class":"jichang btn"}},
         //说明
         {'attr':{'class':'shuoming_bg'},isbg:true},
         {'img':'shuoming.png',w:5251,h:2953,'attr':{'class':'shuoming'}},
