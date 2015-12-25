@@ -396,6 +396,14 @@ initfunlist.push(function() {
         }
     }
     win.resize(setlimit);
+    $.show_main = function(){
+        if($('.scene-main').is('uninit')){
+            setlimit();
+            $('.scene-main').removeClass('uninit');
+        }
+        $('.scene-main').addClass('show');
+    }
+
     //给地标绑定事件
     $('.scene-main .btn').pitTouch(function () {
         console.log("进入地标场景");

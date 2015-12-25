@@ -463,6 +463,14 @@ initfunlist.push(function(){
     }
 
     win.resize(setlimit);
+    $.show_anli = function(){
+        if($('.scene-anli').is('uninit')){
+            setlimit();
+            $('.scene-anli').removeClass('uninit');
+        }
+        $('.scene-anli').addClass('show');
+    }
+
     //给地标绑定事件
     $('.scene-anli .btn').pitTouch(function(){
         console.log("进入地标场景");

@@ -40,7 +40,7 @@ initfunlist.push(function(){
             console.log('查看参考案例');
             sceneID.removeClass('show');
             $('.scene.scene-anlibox').removeClass('show');
-            $('.scene-anli').addClass('show');
+            $.show_anli();
         },300)
     })
 
