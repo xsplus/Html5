@@ -10,7 +10,7 @@ sceneslist.push({
     'auto_w':true,                        /*是否自动适应宽度*/
     'auto_h':true,                         /*是否自动适应高度*/
     'layers':[                              /*场景的图层数据*/
-        {"img":"changjing.png","x":2156,"y":961,"attr":{"class":"changjing"}},
+        {"img":"changjing.png","x":2156,"y":961,w:2141,h:982,"attr":{"class":"changjing"}},
         {"img":"gongren.png","x":3824,"y":1767,"attr":{"class":"gongren"}},
         {"img":"wenti.png","x":312,"y":606,"attr":{"class":"wenti"}},
         {"img":"wentims.png","x":2160,"y":586,"attr":{"class":"wenti"}},
@@ -20,7 +20,7 @@ sceneslist.push({
         {"img":"mstrue.png","x":2194,"y":630,"attr":{"class":"true"}},
         {"img":"daanfalse.png","x":402,"y":625,"attr":{"class":"false"}},
         {"img":"msfalse.png","x":2314,"y":874,"attr":{"class":"false"}},
-        {"img":"changjingfalse.png","x":2154,"y":1530},
+        {"img":"changjingfalse.png","x":2154,"y":1530,w:2150,h:780},
     ]
 })
 
