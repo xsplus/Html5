@@ -95,7 +95,7 @@ body.phone{
     z-index: 999;
 }
 
-.filter .yinyue,.filter .shengyin,.scene-anlichild .fanhui{
+.filter .yinyue,.filter .shengyin,.scene-anlichild .fanhui,.fanhui_to_index{
     -webkit-filter: brightness(100);
     filter: brightness(100);
 }

@@ -74,6 +74,7 @@ sceneslist.push(scene_anli = {
         //大飞机
         {'img':'dafeiji.png',x:3387,y:328,w:1467,h:550,'attr':{'class':'dafeiji btn','data-id':'jichang'}},
         {'img':'dibiaobiaoshi.png',x:3587,y:30,'attr':{'class':'dibiaobiaoshi btn','data-id':'jichang'}},
+        {"img":"jichang.png","x":3780,"y":110,w:400,h:432,"attr":{"class":"jichang btn",'data-id':'jichang'},},
         //大楼灯
         {x:1102,y:2144,w:10,h:10,'attr':{'class':'daloudeng deng1'}},
         {x:1152,y:2144,w:10,h:10,'attr':{'class':'daloudeng deng2'}},
@@ -288,12 +289,24 @@ sceneslist.push({
     'auto_h':true,                         /*是否自动适应高度*/
     'layers':[                              /*场景的图层数据*/
         {'img':'chakanxiangqing.png',x:2100,y:2422,'attr':{'class':'chakanxiangqing'}},
-        {"img":"jichang.png","x":3380,"y":110,w:400,h:432,"attr":{"class":"jichang btn"}},
         //说明
         {'attr':{'class':'shuoming_bg'},isbg:true},
         {'img':'shuoming.png',w:5251,h:2953,'attr':{'class':'shuoming'}},
         //OK
         {'img':'btn_ok.png',x:2504,y:1940,w:282,h:259,attr:{'class':'btn_ok'}},
+    ]
+})
+
+sceneslist.push({
+    'box':$('.scene.scene-anli'),
+    'debug':false,
+    'width':4742,
+    'height':2667,
+    'path':'img/anlibox/',
+    'auto_w':true,
+    'auto_h':true,
+    'layers':[
+        {"img":"fanhui.png","x":128,"y":132,w:420,h:165.5,"attr":{"class":"fanhui_to_index"}},
     ]
 })
 
@@ -598,4 +611,14 @@ initfunlist.push(function(){
             window.location.href="http://www.ruijie.com.cn/al/jr-wlan/38870";
         },300)
     })
+
+    $('.scene-anli .fanhui_to_index').pitTouch(function () {
+        console.log("返回首页");
+        $('.scene-anli').removeClass('show');
+        $('.scene-index').show();
+        window.setTimeout(function () {
+            main_box.trigger('touchend')
+        }, 500);
+    })
+
 })

@@ -293,6 +293,19 @@ sceneslist.push({
     ]
 })
 
+sceneslist.push({
+    'box':$('.scene.scene-main'),
+    'debug':false,
+    'width':4742,
+    'height':2667,
+    'path':'img/anlibox/',
+    'auto_w':true,
+    'auto_h':true,
+    'layers':[
+        {"img":"fanhui.png","x":128,"y":132,w:420,h:165.5,"attr":{"class":"fanhui_to_index"}},
+    ]
+})
+
 initfunlist.push(function() {
     var main_box = $('.scene-main');
     if (!scene_main.debug) main_box.css('left', -$.size('w') * 0.3);
@@ -418,5 +431,13 @@ initfunlist.push(function() {
         $('.scene-main .shuoming_bg').remove();
         $('.scene-main .shuoming').remove();
         $('.scene-main .btn_ok').remove();
+    })
+    $('.scene-main .fanhui_to_index').pitTouch(function () {
+        console.log("返回首页");
+        $('.scene-main').removeClass('show');;
+        $('.scene-index').show();
+        window.setTimeout(function () {
+            main_box.trigger('touchend')
+        }, 500);
     })
 })
