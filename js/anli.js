@@ -397,7 +397,6 @@ initfunlist.push(function(){
     if ($.isPhone) {
         var startPos;
         //触摸事件自定义
-        anli_box.one('touchstart', setlimit);
         anli_box.on('touchstart', function (event) {
             var touch = event.targetTouches[0];     //touches数组对象获得屏幕上所有的touch，取第一个touch
             startPos = {x: pos.x-touch.pageX, y: pos.y-touch.pageY };    //取第一个touch的坐标值
@@ -446,7 +445,6 @@ initfunlist.push(function(){
     else{
         var startPos;
         //触摸事件自定义
-        anli_box.one('mousedown',setlimit);
         anli_box.on('mousedown', function (event) {
             startPos = {x: pos.x-event.pageX, y: event.pageY };    //取第一个touch的坐标值
             anli_box.on('mousemove',mousemove);
