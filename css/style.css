@@ -95,8 +95,9 @@ body.phone{
     z-index: 999;
 }
 
-.filter .yinyue,.filter .shengyin{
-    -webkit-filter: brightness(10);
+.filter .yinyue,.filter .shengyin,.scene-anlichild .fanhui{
+    -webkit-filter: brightness(100);
+    filter: brightness(100);
 }
 
 /* 样式放在结尾，防止 base64 图片造成拥塞 */

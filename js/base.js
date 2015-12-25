@@ -19,7 +19,6 @@ $.fn.show = function (before, after, fn, transition) {
     var t = $(this);
     t.addClass('show').css({'transform': before, 'transition': transition});
     sceneID = t;
-    win.resize();
     if(after){
         window.setTimeout(function () {
             t.css('transform', after);
@@ -28,7 +27,6 @@ $.fn.show = function (before, after, fn, transition) {
         }, 1000)
     }else if(fn) fn();
 }
-
 
 //存储场景ID
 var sceneID = '';
@@ -97,6 +95,7 @@ function createScenes(scenes,cross_screen) {
             }
             var scale = {w: 1, h: 1},offset = {x: 0, y: 0}, bg_style = {scale: 1, offsetX: 0, offsetY: 0};
             /*记录长和宽的比例*/
+            var layers_n = 0;
             for (var j = 0; j < scene.layers.length; j++) {
                 (function (layer) {
                     layer = $.extend({ attr:{}, tag:'div', x:0, y:0, w:0, h:0 },layer);
@@ -111,11 +110,21 @@ function createScenes(scenes,cross_screen) {
                             if(!layer.w) layer.w = img.width;
                             if(!layer.h) layer.h = img.height;
                             obj.css({ 'background-image': 'url(' + scene.path + layer.img + ')'});
-                            if(scene.debug)drawobj(layer.x, layer.y, layer.w, layer.h);
+                            if(scene.debug){
+                                drawobj(layer.x, layer.y, layer.w, layer.h);
+                            }
                             load_n++;
                             loadingfun(load_n,load_sum);
+                            if(++layers_n >= scene.layers.length){
+                                resize();
+                            }
                         }
-                    }else if(scene.debug)drawobj(layer.x, layer.y, layer.w, layer.h);
+                    }else{
+                        layers_n++;
+                        if(scene.debug){
+                            drawobj(layer.x, layer.y, layer.w, layer.h);
+                        }
+                    }
                     scene.box.append(obj);
                     if(scene.debug && !layer.isbg){
                         var startPos,z_index = 999999;
@@ -159,33 +168,36 @@ function createScenes(scenes,cross_screen) {
                 })(scene.layers[j])
             }
             function resize() {
-                if (scene.box.is('.show') && !scene.debug) {
-                    var size = $.size();
-                    if (scene.auto_h) {
-                        if (scene.auto_w) {
-                            var scaleW = size.w / scene.width;
-                            var scaleH = size.h / scene.height;
-                            if (scaleW > scaleH) {
-                                var tmp = (scaleW - scaleH) / 2;
-                                offset = {x: tmp * scene.width, y: 0};
-                                bg_style = {scale: scaleW, offsetX: 0, offsetY: -tmp * scene.height};
-                                scale = scaleH;
-                            } else {
-                                var tmp = (scaleH - scaleW) / 2;
-                                offset = {x: 0, y: tmp * scene.height};
-                                bg_style = {scale: scaleH, offsetX: -tmp * scene.width, offsetY: 0};
-                                scale = scaleW;
-                            }
+                console.log(scene.box.selector);
+                var size = $.size();
+                if (scene.auto_h) {
+                    if (scene.auto_w) {
+                        var scaleW = size.w / scene.width;
+                        var scaleH = size.h / scene.height;
+                        if (scaleW > scaleH) {
+                            var tmp = (scaleW - scaleH) / 2;
+                            offset = {x: tmp * scene.width, y: 0};
+                            bg_style = {scale: scaleW, offsetX: 0, offsetY: -tmp * scene.height};
+                            scale = scaleH;
                         } else {
-                            scale = size.h / scene.height;
+                            var tmp = (scaleH - scaleW) / 2;
+                            offset = {x: 0, y: tmp * scene.height};
+                            bg_style = {scale: scaleH, offsetX: -tmp * scene.width, offsetY: 0};
+                            scale = scaleW;
                         }
-                    } else if (scene.auto_w) {
-                        scale = size.h / scene.width;
+                    } else {
+                        scale = size.h / scene.height;
                     }
-                    scene.box.children('.layer').trigger('autoSize');
+                } else if (scene.auto_w) {
+                    scale = size.h / scene.width;
                 }
+                scene.box.children('.layer').trigger('autoSize');
             }
-            win.resize(resize);
+            win.resize(function(){
+                if (scene.box.is('.show') && !scene.debug) {
+                    resize();
+                }
+            });
             if (scene.show){
                 scene.box.addClass('show');
                 resize();

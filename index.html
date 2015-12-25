@@ -17,7 +17,6 @@
     <link href="css/changfang.css" rel="stylesheet">
     <link href="css/zhongxiaoxue.css" rel="stylesheet">
     <link href="css/jingqu.css" rel="stylesheet">
-    <link href="css/scene.css" rel="stylesheet">
     <title>智慧城市</title>
 </head>
 <body>
@@ -55,7 +54,6 @@
     <script src="js/jingqu.js"></script>
     <script src="js/gouwuzhongxin.js"></script>
     <script src="js/daxue.js"></script>
-    <script src="js/scene.js"></script>
     <script src="js/yinyue.js"></script>
 </footer>
 </html>
@@ -76,9 +74,7 @@
                 $('.scene').on('touchmove',function(event){
                     event.preventDefault();
                 });
-
                 /*$('.scene-anlichild').show();*/
-
                 $('.scene-index').show('scale(0)', 'scale(1)', function () {
                     $('.scene-loading').remove();
                 },'0.3s');
@@ -114,7 +110,7 @@
         }
     })
 </script>
-
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <script type="text/javascript">
     var shareUrl = location.href.split('#')[0];
     function initShare() {
@@ -183,7 +179,6 @@
         }
     });
 </script>
-<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <script type="text/javascript">
     if (wxConfig) {
         wx.config({

@@ -23,7 +23,7 @@ sceneslist.push({
 })
 
 sceneslist.push({
-    'box':$('.scene.scene-jingqu'),       /*场景的标签*/
+    'box':$('.scene-jingqu'),       /*场景的标签*/
     'debug':false,                          /*是否开启调试模式*/
     'width':4742,                            /*场景的宽*/
     'height':2667,                           /*场景的高*/
@@ -41,7 +41,7 @@ sceneslist.push({
 initfunlist.push(function(){
     $('.scene.scene-jingqu .sfalse').pitTouch(function(){
         $(this).addClass('btndoudong');
-        console.log("回答错误");
+        $.error_wav();
         setTimeout(function(){
             $('.scene.scene-jingqu .wenti').css('display','none');
             $('.scene.scene-jingqu .true').css('display','none');

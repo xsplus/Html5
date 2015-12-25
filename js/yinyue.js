@@ -2,7 +2,7 @@
  * Created by Administrator on 12/16 0016.
  */
 sceneslist.push({
-    'box':$('.scene.scene-yinyue'),       /*场景的标签*/
+    'box':$('.scene-yinyue'),       /*场景的标签*/
     'debug':false,                            /*是否开启调试模式*/
     'width':4742,                            /*场景的宽*/
     'height':2667,                           /*场景的高*/
@@ -17,9 +17,9 @@ sceneslist.push({
 
 initfunlist.push(function(){
 
-    $(".yinyue").append('<audio loop autoplay><source src="mp3/music.mp3" type="audio/mpeg"></audio>');
+    $(".yinyue").append('<audio loop autoplay><source src="music/music.mp3" type="audio/mpeg"></audio>');
+    $(".yinyue").append('<audio><source src="music/error.wav" type="audio/mpeg"></audio>');
     $(".yinyue,.shengyin").pitTouch(function(){
-        console.log($(".shengyin").attr('class'));
         if($(".shengyin").is('.play')){
             $('.yinyue audio').get(0).pause();
             $(".shengyin").removeClass('play');
@@ -30,4 +30,10 @@ initfunlist.push(function(){
             console.log("k");
         }
     });
+
+    $.error_wav = function(){
+        if($(".shengyin").is('.play')){
+            $('.yinyue audio').get(1).play();
+        }
+    }
 })

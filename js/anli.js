@@ -2,8 +2,8 @@
  * Created by Administrator on 12/16 0016.
  
  */
-sceneslist.push(scene_main = {
-    'box':$('.scene.scene-anli'),          /*场景的标签*/
+sceneslist.push(scene_anli = {
+    'box':$('.scene-anli'),          /*场景的标签*/
     'debug':false,                            /*是否开启调试模式*/
     'width':11811,                            /*场景的宽*/
     'height':2953,                           /*场景的高*/
@@ -305,7 +305,7 @@ sceneslist.push({
     'layers':[                              /*场景的图层数据*/
         //会议
         /*{"img":"huiyi_yulan.png","isbg":true},*/
-        {isbg:true,w:4742,h:2667,css:{'background':"url('img/anlibox/bg.png')"},"attr":{"class":"bg"}},
+        { isbg:true,w:4742,h:2667,css:{'background':"url('img/anlibox/bg.png')"},"attr":{"class":"bg"}},
         {"img":"huiyibg.png","x":172,"y":120,"attr":{"class":"huiyi"}},
         {"img":"huiyibtn1.png","x":468,"y":764,"attr":{"class":"huiyibtn1 huiyi"}},
         {"img":"huiyibtn2.png","x":1952,"y":764,"attr":{"class":"huiyibtn2 huiyi"}},
@@ -360,41 +360,68 @@ sceneslist.push({
 })
 
 initfunlist.push(function(){
-    var main_box = $('.scene-anli');
-    if(!scene_main.debug) main_box.css('left', -window.innerWidth * 0.3);
-    var main_bg = $('.scene-anli .bg');
-    var limit = main_bg.width() - window.innerWidth;
-    var pos = {x : parseFloat(main_box.css('left')), y : 0};
+    var anli_box = $('.scene-anli');
+    if(!scene_anli.debug) anli_box.css('left', -$.size('w') * 0.3);
+    var pos,moveTo,limit,setlimit,cross_screen = $.isPhone && $.cross_screen;
+    if(cross_screen){
+        pos = {x : 0, y : parseFloat(anli_box.css('left'))};
+        setlimit = function(){
+            limit = $('.scene-anli .bg').height() - $.size('w');
+        }
+        setlimit();
+        moveTo = function(p){
+            if (p.y > 0) p.y = 0;
+            else if (limit + p.y < 0) p.y = -limit;
+            anli_box.css('left', p.y);
+            console.log(limit);
+            pos.y = p.y;
+        }
+
+    }else{
+        pos = {x : parseFloat(anli_box.css('left')), y : 0};
+        setlimit = function(){
+            limit = $('.scene-anli .bg').width() - $.size('w');
+        }
+        setlimit();
+        moveTo = function(p){
+            if (p.x > 0) p.x = 0;
+            else if (limit + p.x < 0) p.x = -limit;
+            anli_box.css('left', p.x);
+            pos.x = p.x;
+        }
+    }
+    var isTouch;
     if ($.isPhone) {
-        var startPos, isTouch;
+        var startPos;
         //触摸事件自定义
-        main_box.on('touchstart', function (event) {
+        anli_box.one('touchstart', setlimit);
+        anli_box.on('touchstart', function (event) {
             var touch = event.targetTouches[0];     //touches数组对象获得屏幕上所有的touch，取第一个touch
-            startPos = {x: pos.x-touch.pageX, y: touch.pageY };    //取第一个touch的坐标值
-            main_box.on('touchmove',touchmove);
-            main_box.one('touchend',touchend);
+            startPos = {x: pos.x-touch.pageX, y: pos.y-touch.pageY };    //取第一个touch的坐标值
+            anli_box.on('touchmove',touchmove);
+            anli_box.one('touchend',touchend);
             isTouch = true;
         });
         function touchmove(event) {
             if (event.targetTouches.length > 1 || event.scale && event.scale !== 1) return;
             var touch = event.targetTouches[0];
-            var tmp = {x: touch.pageX + startPos.x, y: touch.pageY - startPos.y};
+            var tmp = {x: touch.pageX + startPos.x, y: touch.pageY + startPos.y};
             event.preventDefault();      //阻止触摸事件的默认行为，即阻止滚屏
-            moveTo(tmp.x)
+            moveTo(tmp);
         }
         function touchend() {
             //解绑事件
             isTouch = false;
-            main_box.off('touchmove',touchmove);
+            anli_box.off('touchmove',touchmove);
         }
         /*重力感应*/
         try {
-            if (window.DeviceOrientationEvent && !scene_main.debug) {
+            if (window.DeviceOrientationEvent && !scene_anli.debug) {
                 var alpha;
                 window.addEventListener("deviceorientation", orientationHandler, false);
                 function orientationHandler(event) {
-                    if (main_box.is('.show') && !isTouch) {
-                        var change = limit >> 6;
+                    if (anli_box.is('.show') && !isTouch) {
+                        var change = limit / 200;
                         var _alpha = event.alpha;
                         if (_alpha) {
                             var _alpha = _alpha.toFixed(1);
@@ -402,7 +429,8 @@ initfunlist.push(function(){
                                 var tmp = _alpha - alpha;
                                 if (tmp > 180) tmp -= 360;
                                 else if (tmp < -180) tmp += 360;
-                                moveTo(pos.x + tmp * change)
+                                moveTo({y:pos.y + tmp * change})
+
                             }
                         }
                         alpha = _alpha;
@@ -415,53 +443,48 @@ initfunlist.push(function(){
     else{
         var startPos;
         //触摸事件自定义
-        main_box.on('mousedown', function (event) {
+        anli_box.one('mousedown',setlimit);
+        anli_box.on('mousedown', function (event) {
             startPos = {x: pos.x-event.pageX, y: event.pageY };    //取第一个touch的坐标值
-            main_box.on('mousemove',mousemove);
-            main_box.one('mouseup',mouseup);
+            anli_box.on('mousemove',mousemove);
+            anli_box.one('mouseup',mouseup);
         });
         function mousemove(event) {
             var tmp = {x: event.pageX + startPos.x, y: event.pageY - startPos.y};
             event.preventDefault();      //阻止触摸事件的默认行为，即阻止滚屏
-            moveTo(tmp.x)
+            moveTo(tmp)
         }
         function mouseup() {
             //解绑事件
-            main_box.off('mousemove',mousemove);
+            anli_box.off('mousemove',mousemove);
         }
     }
-    function moveTo(x){
-        if (x > 0) x = 0;
-        else if (limit + x < 0) x = -limit;
-        main_box.css('left', x);
-        pos.x = x;
-    }
-    win.resize(function(){
-        limit = main_bg.width() - window.innerWidth;
-    });
+
+    win.resize(setlimit);
     //给地标绑定事件
     $('.scene-anli .btn').pitTouch(function(){
         console.log("进入地标场景");
         var key = $(this).data('id');
         $('.scene-anli').removeClass('show');
         $('.scene-anlichild').addClass('show').attr('type',key);
-        win.resize();
     });
     //OK
-    $('.btn_ok').pitTouch(function(){
+    $('.scene-anli .btn_ok').pitTouch(function() {
         console.log("关闭提醒");
-        $('.scene.scene-anli .shuoming_bg').remove();
-        $('.scene.scene-anli .shuoming').remove();
-        $('.scene.scene-anli .btn_ok').remove();
+        $('.scene-anli .shuoming_bg').remove();
+        $('.scene-anli .shuoming').remove();
+        $('.scene-anli .btn_ok').remove();
+        window.setTimeout(function () {
+            anli_box.trigger('touchend')
+        }, 500);
     })
 
     $('.scene-anlichild .fanhui').pitTouch(function(){
         $(this).addClass('btndoudong');
         setTimeout(function(){
             console.log('返回anli');
-            $('.scene.scene-anlichild').removeClass('show');
+            $('.scene-anlichild').removeClass('show');
             $('.scene-anli').addClass('show');
-            $(window).resize();
         },300)
     })
 })

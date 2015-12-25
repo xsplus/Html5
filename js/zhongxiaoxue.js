@@ -44,7 +44,7 @@ sceneslist.push({
 initfunlist.push(function(){
     $('.scene.scene-zhongxiaoxue .sfalse').pitTouch(function(){
         $(this).addClass('btndoudong');
-        console.log("回答错误");
+        $.error_wav();
         setTimeout(function(){
             $('.scene.scene-zhongxiaoxue .wenti').css('display','none');
             $('.scene.scene-zhongxiaoxue .true').css('display','none');

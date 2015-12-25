@@ -241,7 +241,7 @@
 
 
 /**************** windows style **************/
-.scene-main{
+.scene-main,.scene-anli{
     cursor: all-scroll;
 }
 

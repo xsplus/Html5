@@ -24,7 +24,7 @@ sceneslist.push({
 })
 
 sceneslist.push({
-    'box':$('.scene.scene-ditie'),       /*场景的标签*/
+    'box':$('.scene-ditie'),       /*场景的标签*/
     'debug':false,                          /*是否开启调试模式*/
     'width':4742,                            /*场景的宽*/
     'height':2667,                           /*场景的高*/
@@ -42,11 +42,12 @@ sceneslist.push({
 initfunlist.push(function(){
     $('.scene.scene-ditie .sfalse').pitTouch(function(){
         $(this).addClass('btndoudong');
-        console.log("回答错误");
+        $.error_wav();
         setTimeout(function(){
             $('.scene.scene-ditie .wenti').css('display','none');
             $('.scene.scene-ditie .true').css('display','none');
             $('.scene.scene-ditie .false').css('display','block');
         },300)
+
     })
 })

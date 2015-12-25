@@ -31,7 +31,6 @@ initfunlist.push(function(){
             $('.scene-yinyue').addClass('filter');
             $('.scene.scene-anlibox').removeClass('show');
             $('.scene-main').addClass('show');
-            $(window).resize();
         },300)
     })
 
@@ -42,7 +41,6 @@ initfunlist.push(function(){
             sceneID.removeClass('show');
             $('.scene.scene-anlibox').removeClass('show');
             $('.scene-anli').addClass('show');
-            $(window).resize();
         },300)
     })
 

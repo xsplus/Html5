@@ -49,7 +49,7 @@ sceneslist.push({
 })
 
 sceneslist.push({
-    'box':$('.scene.scene-daxue'),       /*场景的标签*/
+    'box':$('.scene-daxue'),       /*场景的标签*/
     'debug':false,                            /*是否开启调试模式*/
     'width':4742,                            /*场景的宽*/
     'height':2667,                           /*场景的高*/
@@ -68,9 +68,11 @@ initfunlist.push(function(){
     $('.scene-daxue .btn1').pitTouch(function(){
         $('.scene-daxue .btn1').addClass('btndoudong');
         $('.scene.scene-daxue').removeClass('true false2').addClass('false1');
+        $.error_wav();
     });
     $('.scene-daxue .btn2').pitTouch(function(){
         $('.scene-daxue .btn2').addClass('btndoudong');
         $('.scene.scene-daxue').removeClass('false1 true').addClass('false2');
+        $.error_wav();
     });
 })
