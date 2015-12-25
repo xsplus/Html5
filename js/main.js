@@ -300,10 +300,10 @@ initfunlist.push(function() {
     if (cross_screen) {
         pos = {x: 0, y: parseFloat(main_box.css('left'))};
         setlimit = function () {
-            limit = $('.scene-main .bg').height() - $.size('w');
-            console.log(limit);
+            if(main_box.is('.show')){
+                limit = $('.scene-main .bg').height() - $.size('w');
+            }
         }
-        setlimit();
         moveTo = function (p) {
             if (p.y > 0) p.y = 0;
             else if (limit + p.y < 0) p.y = -limit;
@@ -313,7 +313,7 @@ initfunlist.push(function() {
     } else {
         pos = {x: parseFloat(main_box.css('left')), y: 0};
         setlimit = function () {
-            limit = $('.scene-main .bg').width() - $.size('w');
+            limit = parseInt($('.scene-main .bg').css('width')) - $.size('w');
         }
         moveTo = function (p) {
             if (p.x > 0) p.x = 0;
@@ -326,6 +326,7 @@ initfunlist.push(function() {
     if ($.isPhone) {
         var startPos;
         //触摸事件自定义
+        main_box.one('touchstart',setlimit);
         main_box.on('touchstart', function (event) {
             var touch = event.targetTouches[0];     //touches数组对象获得屏幕上所有的touch，取第一个touch
             startPos = {x: pos.x - touch.pageX, y: pos.y - touch.pageY};    //取第一个touch的坐标值
@@ -340,13 +341,11 @@ initfunlist.push(function() {
             event.preventDefault();      //阻止触摸事件的默认行为，即阻止滚屏
             moveTo(tmp);
         }
-
         function touchend() {
             //解绑事件
             isTouch = false;
             main_box.off('touchmove', touchmove);
         }
-
         /*重力感应*/
         try {
             if (window.DeviceOrientationEvent && !scene_main.debug) {
@@ -392,14 +391,16 @@ initfunlist.push(function() {
             main_box.off('mousemove', mousemove);
         }
     }
-    win.resize(setlimit);
-    $.show_main = function(){
-        $('.scene-main').addClass('show');
-        if($('.scene-main').is('.uninit')){
-            setlimit();
-            $('.scene-main').removeClass('uninit');
+    win.resize(function(){
+        setlimit();
+        if(main_box){
+            var left = main_box.css('left');
+            if (left > 0) left = 0;
+            else if (limit + left < 0) left = -limit;
+            main_box.css('left', left);
         }
-    }
+    });
+    setlimit();
 
     //给地标绑定事件
     $('.scene-main .btn').pitTouch(function () {
@@ -417,8 +418,5 @@ initfunlist.push(function() {
         $('.scene-main .shuoming_bg').remove();
         $('.scene-main .shuoming').remove();
         $('.scene-main .btn_ok').remove();
-        window.setTimeout(function () {
-            main_box.trigger('touchend')
-        }, 500);
     })
 })

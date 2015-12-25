@@ -369,23 +369,21 @@ initfunlist.push(function(){
     if(cross_screen){
         pos = {x : 0, y : parseFloat(anli_box.css('left'))};
         setlimit = function(){
-            limit = $('.scene-anli .bg').height() - $.size('w');
+            if(anli_box.is('.show')){
+                limit = $('.scene-anli .bg').height() - $.size('w');
+            }
         }
-        setlimit();
         moveTo = function(p){
             if (p.y > 0) p.y = 0;
             else if (limit + p.y < 0) p.y = -limit;
             anli_box.css('left', p.y);
-            console.log(limit);
             pos.y = p.y;
         }
-
     }else{
         pos = {x : parseFloat(anli_box.css('left')), y : 0};
         setlimit = function(){
-            limit = $('.scene-anli .bg').width() - $.size('w');
+            limit = parseInt($('.scene-main .bg').css('width')) - $.size('w');
         }
-        setlimit();
         moveTo = function(p){
             if (p.x > 0) p.x = 0;
             else if (limit + p.x < 0) p.x = -limit;
@@ -397,6 +395,7 @@ initfunlist.push(function(){
     if ($.isPhone) {
         var startPos;
         //触摸事件自定义
+        anli_box.one('touchstart',setlimit);
         anli_box.on('touchstart', function (event) {
             var touch = event.targetTouches[0];     //touches数组对象获得屏幕上所有的touch，取第一个touch
             startPos = {x: pos.x-touch.pageX, y: pos.y-touch.pageY };    //取第一个touch的坐标值
@@ -432,7 +431,6 @@ initfunlist.push(function(){
                                 if (tmp > 180) tmp -= 360;
                                 else if (tmp < -180) tmp += 360;
                                 moveTo({y:pos.y + tmp * change})
-
                             }
                         }
                         alpha = _alpha;
@@ -461,14 +459,16 @@ initfunlist.push(function(){
         }
     }
 
-    win.resize(setlimit);
-    $.show_anli = function(){
-        $('.scene-anli').addClass('show');
-        if($('.scene-anli').is('.uninit')){
-            setlimit();
-            $('.scene-anli').removeClass('uninit');
+    win.resize(function(){
+        setlimit();
+        if(anli_box){
+            var left = anli_box.css('left');
+            if (left > 0) left = 0;
+            else if (limit + left < 0) left = -limit;
+            anli_box.css('left', left);
         }
-    }
+    });
+    setlimit();
 
     //给地标绑定事件
     $('.scene-anli .btn').pitTouch(function(){
@@ -483,9 +483,6 @@ initfunlist.push(function(){
         $('.scene-anli .shuoming_bg').remove();
         $('.scene-anli .shuoming').remove();
         $('.scene-anli .btn_ok').remove();
-        window.setTimeout(function () {
-            anli_box.trigger('touchend')
-        }, 500);
     })
     //返回
     $('.scene-anlichild .fanhui').pitTouch(function(){

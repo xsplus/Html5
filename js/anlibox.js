@@ -40,7 +40,7 @@ initfunlist.push(function(){
             console.log('查看参考案例');
             sceneID.removeClass('show');
             $('.scene.scene-anlibox').removeClass('show');
-            $.show_anli();
+            $('.scene-anli').show();
         },300)
     })
 
@@ -51,8 +51,8 @@ initfunlist.push(function(){
         $(this).addClass('btndoudong');
         setTimeout(function(){
             console.log('查看参考案例');
-            $('.scene.scene-anlibox').removeClass('show');
-            $.show_anli();
+            $('.scene-anlibox').removeClass('show');
+            $('.scene-anli').show();
         },300)
     })
 })
