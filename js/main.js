@@ -326,7 +326,6 @@ initfunlist.push(function() {
     if ($.isPhone) {
         var startPos;
         //触摸事件自定义
-        main_box.one('touchstart', setlimit);
         main_box.on('touchstart', function (event) {
             var touch = event.targetTouches[0];     //touches数组对象获得屏幕上所有的touch，取第一个touch
             startPos = {x: pos.x - touch.pageX, y: pos.y - touch.pageY};    //取第一个touch的坐标值
@@ -364,7 +363,6 @@ initfunlist.push(function() {
                                 if (tmp > 180) tmp -= 360;
                                 else if (tmp < -180) tmp += 360;
                                 moveTo({y: pos.y + tmp * change})
-
                             }
                         }
                         alpha = _alpha;
@@ -378,7 +376,6 @@ initfunlist.push(function() {
     else {
         var startPos;
         //触摸事件自定义
-        main_box.one('mousedown',setlimit);
         main_box.on('mousedown', function (event) {
             startPos = {x: pos.x - event.pageX, y: event.pageY};    //取第一个touch的坐标值
             main_box.on('mousemove', mousemove);
