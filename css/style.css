@@ -81,7 +81,7 @@ body.phone{
 }
 
 /* 隐藏anlibox 奖杯页面 */
-.jiangbei,.again,.xuexi,.gonggao,.lingjiang .wenti_box,.lingjiang .fanhui{
+.jiangbei,.again,.xuexi,.gonggao,.lingjiang .wenti_box,.lingjiang .fanhui,.lingjiang .cankao{
     display: none;
 }
 

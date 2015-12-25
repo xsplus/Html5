@@ -34,7 +34,7 @@ sceneslist.push({
         {"img":"next.png","x":620,"y":1572,"attr":{"class":"next"}},
         {"img":"ku.png","x":1608,"y":1148,"attr":{"class":"false"}},
         {"img":"weibiao.png","x":1541,"y":370,"attr":{"class":"true"}},
-        {"img":"lingjiang.png","x":814,"y":1520,"attr":{"class":"lingjiang"}},
+        {"img":"lingjiang.png","x":734,"y":1520,"attr":{"class":"lingjiang"}},
     ]
 })
 

@@ -73,6 +73,7 @@ sceneslist.push(scene_anli = {
         {'img':'dibiaobiaoshi.png',x:11046,y:698,'attr':{'class':'dibiaobiaoshi btn','data-id':'ditie'}},
         //大飞机
         {'img':'dafeiji.png',x:3387,y:328,w:1467,h:550,'attr':{'class':'dafeiji btn','data-id':'jichang'}},
+        {'img':'dibiaobiaoshi.png',x:3587,y:30,'attr':{'class':'dibiaobiaoshi btn','data-id':'jichang'}},
         //大楼灯
         {x:1102,y:2144,w:10,h:10,'attr':{'class':'daloudeng deng1'}},
         {x:1152,y:2144,w:10,h:10,'attr':{'class':'daloudeng deng2'}},
@@ -286,6 +287,7 @@ sceneslist.push({
     'auto_w':true,                        /*是否自动适应宽度*/
     'auto_h':true,                         /*是否自动适应高度*/
     'layers':[                              /*场景的图层数据*/
+        {'img':'chakanxiangqing.png',x:2100,y:2422,'attr':{'class':'chakanxiangqing'}},
         //说明
         {'attr':{'class':'shuoming_bg'},isbg:true},
         {'img':'shuoming.png',w:5251,h:2953,'attr':{'class':'shuoming'}},
@@ -478,13 +480,118 @@ initfunlist.push(function(){
             anli_box.trigger('touchend')
         }, 500);
     })
-
+    //返回
     $('.scene-anlichild .fanhui').pitTouch(function(){
         $(this).addClass('btndoudong');
         setTimeout(function(){
             console.log('返回anli');
             $('.scene-anlichild').removeClass('show');
             $('.scene-anli').addClass('show');
+        },300)
+    })
+    //大学
+    $('.scene-anlichild .daxuebtn1').pitTouch(function(){
+        $(this).addClass('btndoudong');
+        setTimeout(function(){
+            console.log('跳转');
+            window.location.href="http://h5.baomitu.com/app/8b35b.html";
+        },300)
+    })
+    $('.scene-anlichild .daxuebtn2').pitTouch(function(){
+        $(this).addClass('btndoudong');
+        setTimeout(function(){
+            console.log('跳转');
+            window.location.href="http://h5.baomitu.com/app/64758.html";
+        },300)
+    })
+    //厂房
+    $('.scene-anlichild .changfangbtn1').pitTouch(function(){
+        $(this).addClass('btndoudong');
+        setTimeout(function(){
+            console.log('跳转');
+            window.location.href="http://h5.baomitu.com/app/9adcc.html#rd";
+        },300)
+    })
+    $('.scene-anlichild .changfangbtn2').pitTouch(function(){
+        $(this).addClass('btndoudong');
+        setTimeout(function(){
+            console.log('跳转');
+            window.location.href="http://h5.baomitu.com/app/Ahff3Dwv.html?iframe=1";
+        },300)
+    })
+    //商场
+    $('.scene-anlichild .gouwuzhongxinbtn1').pitTouch(function(){
+        $(this).addClass('btndoudong');
+        setTimeout(function(){
+            console.log('跳转');
+            window.location.href="http://mp.weixin.qq.com/s?__biz=MjM5NzU5MDM4Mw==&mid=208874836&idx=1&sn=011377cca937fc8d37a8190593d4e116&scene=4#wechat_redirect";
+        },300)
+    })
+    $('.scene-anlichild .gouwuzhongxinbtn2').pitTouch(function(){
+        $(this).addClass('btndoudong');
+        setTimeout(function(){
+            console.log('跳转');
+            window.location.href="http://mp.weixin.qq.com/s?__biz=MjM5NzU5MDM4Mw==&mid=207133181&idx=1&sn=cf31549d77086695cd8d4b220de6500f&scene=4#wechat_redirect";
+        },300)
+    })
+    //中小学
+    $('.scene-anlichild .zhongxiaoxuebtn1').pitTouch(function(){
+        $(this).addClass('btndoudong');
+        setTimeout(function(){
+            console.log('跳转');
+            window.location.href="http://mp.weixin.qq.com/s?__biz=MjM5NzU5MDM4Mw==&mid=209576558&idx=1&sn=636d7f6bfcdebf027a15ea45530a1584&scene=4#wechat_redirect";
+        },300)
+    })
+    $('.scene-anlichild .zhongxiaoxuebtn2').pitTouch(function(){
+        $(this).addClass('btndoudong');
+        setTimeout(function(){
+            console.log('跳转');
+            window.location.href="http://mp.weixin.qq.com/s?__biz=MjM5NzU5MDM4Mw==&mid=209639794&idx=2&sn=bd39c03d7557ccb37320abbb85286db0&scene=4#wechat_redirect";
+        },300)
+    })
+    //会议中心
+    $('.scene-anlichild .huiyibtn1').pitTouch(function(){
+        $(this).addClass('btndoudong');
+        setTimeout(function(){
+            console.log('跳转');
+            window.location.href="http://mp.weixin.qq.com/s?__biz=MjM5NzU5MDM4Mw==&mid=209134459&idx=1&sn=c115e9221fca9c9e1aa30d88864fe035&scene=1&srcid=1116pNzbRgB8E4lhKJWnboAB#wechat_redirect";
+        },300)
+    })
+    $('.scene-anlichild .huiyibtn2').pitTouch(function(){
+        $(this).addClass('btndoudong');
+        setTimeout(function(){
+            console.log('跳转');
+            window.location.href="http://mp.weixin.qq.com/s?__biz=MjM5NzU5MDM4Mw==&mid=400128057&idx=1&sn=67997a2064b3dcfd762a3622f7d91401&scene=1&srcid=1116mNSTbEMoSW0rdvQeF2j6#wechat_redirect";
+        },300)
+    })
+    $('.scene-anlichild .huiyibtn3').pitTouch(function(){
+        $(this).addClass('btndoudong');
+        setTimeout(function(){
+            console.log('跳转');
+            window.location.href="http://mp.weixin.qq.com/s?__biz=MjM5NzU5MDM4Mw==&mid=402020673&idx=1&sn=c6abcfd405b4dbb917c3b1fc5dbad197&scene=1&srcid=1125E6M6eTtgfzbp03OihUoT#wechat_redirect";
+        },300)
+    })
+    //地铁
+    $('.scene-anlichild .ditiebtn1').pitTouch(function(){
+        $(this).addClass('btndoudong');
+        setTimeout(function(){
+            console.log('跳转');
+            window.location.href="http://mp.weixin.qq.com/s?__biz=MjM5NzU5MDM4Mw==&mid=205224722&idx=1&sn=f585da53960e7d9288ffcbbb103af107&scene=1&srcid=0914kZF63w9QucA7D7hZTOZY#wechat_redirect";
+        },300)
+    })
+    //银行
+    $('.scene-anlichild .yinhangbtn1').pitTouch(function(){
+        $(this).addClass('btndoudong');
+        setTimeout(function(){
+            console.log('跳转');
+            window.location.href="http://www.ruijie.com.cn/al/jr-wlan/38670";
+        },300)
+    })
+    $('.scene-anlichild .yinhangbtn2').pitTouch(function(){
+        $(this).addClass('btndoudong');
+        setTimeout(function(){
+            console.log('跳转');
+            window.location.href="http://www.ruijie.com.cn/al/jr-wlan/38870";
         },300)
     })
 })

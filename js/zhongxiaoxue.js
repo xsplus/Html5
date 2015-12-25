@@ -12,13 +12,13 @@ sceneslist.push({
     'layers':[                              /*场景的图层数据*/
 
         {"img":"changjingbg.png","x":2188,"y":1203},
-        {"img":"wenti.png","x":408,"y":614,"attr":{"class":"wenti"}},
-        {"img":"wentims.png","x":2180,"y":798,"attr":{"class":"wenti"}},
+        {"img":"wenti.png","x":376,"y":558,"attr":{"class":"wenti"}},
+        {"img":"wentims.png","x":2480,"y":738,"attr":{"class":"wenti"}},
         {"img":"true.png","x":371,"y":1552,"attr":{"class":"strue"}},
         {"img":"false.png","x":375,"y":1951,"attr":{"class":"sfalse"}},
-        {"img":"daantrue.png","x":331,"y":566,"attr":{"class":"true daantrue"}},
-        {"img":"mstrue.png","x":2264,"y":821,"attr":{"class":"true"}},
-        {"img":"daanfalse.png","x":358,"y":587,"attr":{"class":"false"}},
+        {"img":"daantrue.png","x":355,"y":606,"attr":{"class":"true daantrue"}},
+        {"img":"mstrue.png","x":2444,"y":817,"attr":{"class":"true"}},
+        {"img":"daanfalse.png","x":390,"y":599,"attr":{"class":"false"}},
         {"img":"msfalse.png","x":2806,"y":772,"attr":{"class":"false"}},
         {"img":"changjing.png","x":2492,"y":1365,"attr":{"class":"changjing"}},
         {"img":"changjingtrue.png","x":2513,"y":1361,"attr":{"class":"true"}},
@@ -37,7 +37,7 @@ sceneslist.push({
         {"img":"next.png","x":620,"y":1572,"attr":{"class":"next"}},
         {"img":"ku.png","x":1608,"y":1148,"attr":{"class":"false"}},
         {"img":"weibiao.png","x":1541,"y":370,"attr":{"class":"true"}},
-        {"img":"lingjiang.png","x":814,"y":1520,"attr":{"class":"lingjiang"}},
+        {"img":"lingjiang.png","x":734,"y":1520,"attr":{"class":"lingjiang"}},
     ]
 })
 
