@@ -277,24 +277,26 @@ sceneslist.push(scene_main = {
 });
 
 sceneslist.push({
-    'box':$('.scene-main'),       /*场景的标签*/
-    'debug':false,                            /*是否开启调试模式*/
-    'width':5251,                            /*场景的宽*/
-    'height':2953,                           /*场景的高*/
-    'path':'img/main/',                  /*图片根目录*/
-    'auto_w':true,                        /*是否自动适应宽度*/
-    'auto_h':true,                         /*是否自动适应高度*/
-    'layers':[                              /*场景的图层数据*/
+    'box': $('.scene-main'), /*场景的标签*/
+    'debug': false, /*是否开启调试模式*/
+    'width': 5251, /*场景的宽*/
+    'height': 2953, /*场景的高*/
+    'path': 'img/main/', /*图片根目录*/
+    'auto_w': true, /*是否自动适应宽度*/
+    'auto_h': true, /*是否自动适应高度*/
+    'layers': [/*场景的图层数据*/
         //说明
-        {'attr':{'class':'shuoming_bg'},isbg:true},
-        {'img':'shuoming.png',w:5251,h:2953,'attr':{'class':'shuoming'}},
+        {'attr': {'class': 'shuoming_bg'}, isbg: true},
+        {'img': 'shuoming.png', w: 5251, h: 2953, 'attr': {'class': 'shuoming'}},
         //OK
-        {'img':'btn_ok.png',x:2504,y:1940,w:282,h:259,attr:{'class':'btn_ok'}},
+        {'img': 'btn_ok.png', x: 2504, y: 1940, w: 282, h: 259, attr: {'class': 'btn_ok'}},
+        {x: 100, y: 2795, w: 5051, h: 30, attr: {'class': 'scroll'}},
+        {x: 100, y: 2760, w: 100, h: 100, attr: {'class': 'scroll_index'}}
     ]
 })
 
 sceneslist.push({
-    'box':$('.scene.scene-main'),
+    'box':$('.scene-main'),
     'debug':false,
     'width':4742,
     'height':2667,
@@ -312,7 +314,6 @@ initfunlist.push(function() {
     if (!scene_main.debug) {
         left = -$.size('w') * 0.3;
         main_box.css('left', left);
-        alert(left);
     }
     var pos, moveTo, limit, setlimit, cross_screen = $.isPhone && $.cross_screen;
     if (cross_screen) {
@@ -328,6 +329,10 @@ initfunlist.push(function() {
             else if (limit + p.y < 0) p.y = -limit;
             main_box.css('left', p.y);
             pos.y = p.y;
+            var s = -pos.y/limit;
+            var left = parseInt($('.scene-main .scroll').css('left'));
+            var width = parseInt($('.scene-main .scroll').css('width')) - parseInt($('.scene-main .scroll_index').css('width')) + 1;
+            $('.scene-main .scroll_index').css('left',left + width * s);
         }
     } else {
         pos = {x: parseFloat(main_box.css('left')), y: 0};
@@ -339,6 +344,10 @@ initfunlist.push(function() {
             else if (limit + p.x < 0) p.x = -limit;
             main_box.css('left', p.x);
             pos.x = p.x;
+            var s = -pos.x/limit;
+            var left = parseInt($('.scene-main .scroll').css('left'));
+            var width = parseInt($('.scene-main .scroll').css('width')) - parseInt($('.scene-main .scroll_index').css('width')) + 1;
+            $('.scene-main .scroll_index').css('left',left + width * s);
         }
     }
     var isTouch;
@@ -347,23 +356,47 @@ initfunlist.push(function() {
         //触摸事件自定义
         main_box.one('touchstart',setlimit);
         main_box.on('touchstart', function (event) {
-            var touch = event.targetTouches[0];     //touches数组对象获得屏幕上所有的touch，取第一个touch
-            startPos = {x: pos.x - touch.pageX, y: pos.y - touch.pageY};    //取第一个touch的坐标值
-            main_box.on('touchmove', touchmove);
-            main_box.one('touchend', touchend);
-            isTouch = true;
+            if(!isDrop){
+                var touch = event.targetTouches[0];     //touches数组对象获得屏幕上所有的touch，取第一个touch
+                startPos = {x: pos.x - touch.pageX, y: pos.y - touch.pageY};    //取第一个touch的坐标值
+                main_box.on('touchmove', touchmove);
+                main_box.one('touchend', touchend);
+                isTouch = true;
+            }
         });
         function touchmove(event) {
-            if (event.targetTouches.length > 1 || event.scale && event.scale !== 1) return;
-            var touch = event.targetTouches[0];
-            var tmp = {x: touch.pageX + startPos.x, y: touch.pageY + startPos.y};
-            event.preventDefault();      //阻止触摸事件的默认行为，即阻止滚屏
-            moveTo(tmp);
+            if(!isDrop){
+                if (event.targetTouches.length > 1 || event.scale && event.scale !== 1) return;
+                var touch = event.targetTouches[0];
+                var tmp = {x: touch.pageX + startPos.x, y: touch.pageY + startPos.y};
+                event.preventDefault();      //阻止触摸事件的默认行为，即阻止滚屏
+                moveTo(tmp);
+            }else{
+                main_box.off('touchmove', touchmove);
+            }
         }
         function touchend() {
             //解绑事件
             isTouch = false;
             main_box.off('touchmove', touchmove);
+        }
+        var isDrop = false;
+        $('.scene-main .scroll_index').on('touchstart', function (event){
+            main_box.on('touchmove', dropmove);
+            main_box.one('touchend', dropend);
+            isDrop = true;
+        })
+        function dropmove(event){
+            if (event.targetTouches.length > 1 || event.scale && event.scale !== 1) return;
+            var touch = event.targetTouches[0];
+            var left = parseInt($('.scene-main .scroll').css('left'));
+            var width = parseInt($('.scene-main .scroll').css('width')) - parseInt($('.scene-main .scroll_index').css('width')) + 1;
+            var s = (touch.pageY - left)/width;
+            moveTo({y:-limit * s});
+        }
+        function dropend(){
+            main_box.off('touchmove', dropmove);
+            isDrop = false;
         }
         /*重力感应*/
         try {
@@ -395,17 +428,7 @@ initfunlist.push(function() {
         var startPos;
         //触摸事件自定义
         main_box.on('mousemove', function mousemove(event) {
-            if(!startPos){
-                startPos = event.pageX;
-            }else {
-                var change = limit >> 8;
-                var tmp = event.pageX - startPos;
-                if(Math.abs(tmp) > 1){
-                    tmp = pos.x + (tmp > 0 ? -change : change);
-                    moveTo({x: tmp});
-                    startPos = event.pageX;
-                }
-            }
+            moveTo({x: -event.pageX / $.size('w') * limit});
         });
     }
     win.resize(function(){

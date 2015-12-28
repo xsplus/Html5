@@ -294,6 +294,8 @@ sceneslist.push({
         {'img':'shuoming.png',w:5251,h:2953,'attr':{'class':'shuoming'}},
         //OK
         {'img':'btn_ok.png',x:2504,y:1940,w:282,h:259,attr:{'class':'btn_ok'}},
+        {x: 100, y: 2795, w: 5051, h: 30, attr: {'class': 'scroll'}},
+        {x: 100, y: 2760, w: 100, h: 100, attr: {'class': 'scroll_index'}}
     ]
 })
 
@@ -383,7 +385,7 @@ sceneslist.push({
 initfunlist.push(function(){
     var anli_box = $('.scene-anli');
     var left = 0;
-    if (!scene_main.debug) {
+    if (!scene_anli.debug) {
         left = -$.size('w') * 0.3
         anli_box.css('left', left);
     }
@@ -395,22 +397,30 @@ initfunlist.push(function(){
                 limit = $('.scene-anli .bg').height() - $.size('w');
             }
         }
-        moveTo = function(p){
+        moveTo = function (p) {
             if (p.y > 0) p.y = 0;
             else if (limit + p.y < 0) p.y = -limit;
             anli_box.css('left', p.y);
             pos.y = p.y;
+            var s = -pos.y/limit;
+            var left = parseInt($('.scene-anli .scroll').css('left'));
+            var width = parseInt($('.scene-anli .scroll').css('width')) - parseInt($('.scene-anli .scroll_index').css('width')) + 1;
+            $('.scene-anli .scroll_index').css('left',left + width * s);
         }
     }else{
         pos = {x : parseFloat(anli_box.css('left')), y : 0};
         setlimit = function(){
-            limit = parseInt($('.scene-main .bg').css('width')) - $.size('w');
+            limit = parseInt($('.scene-anli .bg').css('width')) - $.size('w');
         }
-        moveTo = function(p){
+        moveTo = function (p) {
             if (p.x > 0) p.x = 0;
             else if (limit + p.x < 0) p.x = -limit;
             anli_box.css('left', p.x);
             pos.x = p.x;
+            var s = -pos.x/limit;
+            var left = parseInt($('.scene-anli .scroll').css('left'));
+            var width = parseInt($('.scene-anli .scroll').css('width')) - parseInt($('.scene-anli .scroll_index').css('width')) + 1;
+            $('.scene-anli .scroll_index').css('left',left + width * s);
         }
     }
     var isTouch;
@@ -419,23 +429,47 @@ initfunlist.push(function(){
         //触摸事件自定义
         anli_box.one('touchstart',setlimit);
         anli_box.on('touchstart', function (event) {
-            var touch = event.targetTouches[0];     //touches数组对象获得屏幕上所有的touch，取第一个touch
-            startPos = {x: pos.x-touch.pageX, y: pos.y-touch.pageY };    //取第一个touch的坐标值
-            anli_box.on('touchmove',touchmove);
-            anli_box.one('touchend',touchend);
-            isTouch = true;
+            if(!isDrop){
+                var touch = event.targetTouches[0];     //touches数组对象获得屏幕上所有的touch，取第一个touch
+                startPos = {x: pos.x-touch.pageX, y: pos.y-touch.pageY };    //取第一个touch的坐标值
+                anli_box.on('touchmove',touchmove);
+                anli_box.one('touchend',touchend);
+                isTouch = true;
+            }
         });
         function touchmove(event) {
-            if (event.targetTouches.length > 1 || event.scale && event.scale !== 1) return;
-            var touch = event.targetTouches[0];
-            var tmp = {x: touch.pageX + startPos.x, y: touch.pageY + startPos.y};
-            event.preventDefault();      //阻止触摸事件的默认行为，即阻止滚屏
-            moveTo(tmp);
+            if(!isDrop){
+                if (event.targetTouches.length > 1 || event.scale && event.scale !== 1) return;
+                var touch = event.targetTouches[0];
+                var tmp = {x: touch.pageX + startPos.x, y: touch.pageY + startPos.y};
+                event.preventDefault();      //阻止触摸事件的默认行为，即阻止滚屏
+                moveTo(tmp);
+            }else{
+                anli_box.off('touchmove',touchmove);
+            }
         }
         function touchend() {
             //解绑事件
             isTouch = false;
             anli_box.off('touchmove',touchmove);
+        }
+        var isDrop = false;
+        $('.scene-anli .scroll_index').on('touchstart', function (event){
+            anli_box.on('touchmove', dropmove);
+            anli_box.one('touchend', dropend);
+            isDrop = true;
+        })
+        function dropmove(event){
+            if (event.targetTouches.length > 1 || event.scale && event.scale !== 1) return;
+            var touch = event.targetTouches[0];
+            var left = parseInt($('.scene-anli .scroll').css('left'));
+            var width = parseInt($('.scene-anli .scroll').css('width')) - parseInt($('.scene-anli .scroll_index').css('width')) + 1;
+            var s = (touch.pageY - left)/width;
+            moveTo({y:-limit * s});
+        }
+        function dropend(){
+            anli_box.off('touchmove', dropmove);
+            isDrop = false;
         }
         /*重力感应*/
         try {
@@ -466,17 +500,11 @@ initfunlist.push(function(){
         var startPos;
         //触摸事件自定义
         anli_box.on('mousemove', function mousemove(event) {
-            if(!startPos){
-                startPos = event.pageX;
-            }else {
-                var change = limit >> 8;
-                var tmp = event.pageX - startPos;
-                if(Math.abs(tmp) > 1){
-                    tmp = pos.x + (tmp > 0 ? -change : change);
-                    moveTo({x: tmp});
-                    startPos = event.pageX;
-                }
-            }
+            var s = event.pageX / $.size('w')
+            moveTo({x: -s * limit});
+            var left = parseInt($('.scene-anli .scroll').css('left'));
+            var width = parseInt($('.scene-anli .scroll').css('width')) - parseInt($('.scene-anli .scroll_index').css('width')) + 1;
+            $('.scene-anli .scroll_index').css('left',left + width * s);
         });
     }
 
@@ -625,7 +653,7 @@ initfunlist.push(function(){
         $('.scene-anli').removeClass('show');
         $('.scene-index').show();
         window.setTimeout(function () {
-            main_box.trigger('touchend')
+            anli_box.trigger('touchend')
         }, 500);
     })
 
