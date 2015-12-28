@@ -84,7 +84,7 @@ body.phone{
 .shengyin.play{
     display: block;
 }
-.scene .ku,.scene .false,.scene .true,.scene .next,.scene .lingjiang{
+.scene .ku,.scene .false,.scene .true,.scene .prev,.scene .next,.scene .lingjiang{
     display: none;
 }
 

@@ -469,13 +469,3 @@
     z-index: 99;
     position:fixed;
 }
-.scroll_index{
-    background: #fff;
-    background: rgba(255,255,255,0.64);
-    border-radius: 50%;
-}
-.scroll{
-    background: #fff;
-    background: rgba(255,255,255,0.38);
-    border-radius: 1vh;
-}

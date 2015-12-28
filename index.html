@@ -85,8 +85,7 @@
                     var scene = $(this).parent();
                     scene.addClass('true');
                     console.log("回答正确");
-                    var obj =  $('.scene.child').not('.true').eq(0);
-                    if(obj.length){
+                    if($('.scene.child').not('.true').length){
                         scene.children('.next').addClass("show").pitTouch(function(){
                             $(this).addClass('btndoudong');
                             console.log("进入下一个场景");
@@ -95,14 +94,34 @@
                             var s = scene.attr('class');
                             var a = s.indexOf('scene-');
                             $('.scene.scene-main .'+s.substr(a+6,s.indexOf(' ',a)-a-6)).addClass('juliedoudong');
-                            obj.show();
+                            var obj = scene.next('.scene.child')
+                            if(obj.length){
+                                obj.show();
+                            }else{
+                                $('.scene.child').eq(0).show();
+                            }
+                        })
+                        scene.children('.prve').addClass("show").pitTouch(function(){
+                            $(this).addClass('btndoudong');
+                            console.log("进入下一个场景");
+                            scene.removeClass('show');
+                            //scene scene-zhongxiaoxue child show true
+                            var s = scene.attr('class');
+                            var a = s.indexOf('scene-');
+                            $('.scene.scene-main .'+s.substr(a+6,s.indexOf(' ',a)-a-6)).addClass('juliedoudong');
+                            var obj = scene.prev('.scene.child')
+                            if(obj.length){
+                                obj.show();
+                            }else{
+                                $('.scene.child').eq(0).show();
+                            }
                         })
                     }else{
                         scene.children('.lingjiang').addClass('show').pitTouch(function(){
                             $(this).addClass('btndoudong');
                             console.log("回到主页领奖");
                             scene.removeClass('show');
-                            $('.scene.scene-anlibox').addClass('lingjiang');
+                            $('.scene-anlibox').addClass('lingjiang');
                         })
                     }
                 })

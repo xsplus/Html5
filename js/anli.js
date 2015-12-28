@@ -294,8 +294,8 @@ sceneslist.push({
         {'img':'shuoming.png',w:5251,h:2953,'attr':{'class':'shuoming'}},
         //OK
         {'img':'btn_ok.png',x:2504,y:1940,w:282,h:259,attr:{'class':'btn_ok'}},
-        {x: 100, y: 2795, w: 5051, h: 30, attr: {'class': 'scroll'}},
-        {x: 100, y: 2760, w: 100, h: 100, attr: {'class': 'scroll_index'}}
+        {'img': 'scroll.png', x: 770, y: 2287, attr: {'class': 'scroll'}},
+        {'img': 'scroll_index.png', x: 830, y: 2208, attr: {'class': 'scroll_index'}}
     ]
 })
 
@@ -390,10 +390,10 @@ initfunlist.push(function(){
         anli_box.css('left', left);
     }
     var pos,moveTo,limit,setlimit,cross_screen = $.isPhone && $.cross_screen;
-    if(cross_screen){
-        pos = {x : 0 , y : left };
-        setlimit = function(){
-            if(anli_box.is('.show')){
+    if(cross_screen) {
+        pos = {x: 0, y: left};
+        setlimit = function () {
+            if (anli_box.is('.show')) {
                 limit = $('.scene-anli .bg').height() - $.size('w');
             }
         }
@@ -402,14 +402,14 @@ initfunlist.push(function(){
             else if (limit + p.y < 0) p.y = -limit;
             anli_box.css('left', p.y);
             pos.y = p.y;
-            var s = -pos.y/limit;
-            var left = parseInt($('.scene-anli .scroll').css('left'));
-            var width = parseInt($('.scene-anli .scroll').css('width')) - parseInt($('.scene-anli .scroll_index').css('width')) + 1;
-            $('.scene-anli .scroll_index').css('left',left + width * s);
+            var s = -pos.y / limit;
+            var width = parseInt($('.scene-anli .scroll').css('width')) - parseInt($('.scene-anli .scroll_index').css('width'));
+            var left = parseInt($('.scene-anli .scroll').css('left')) + width * 0.0185;
+            $('.scene-anli .scroll_index').css('left', left + width * s * 0.963);
         }
-    }else{
-        pos = {x : parseFloat(anli_box.css('left')), y : 0};
-        setlimit = function(){
+    }else {
+        pos = {x: parseFloat(anli_box.css('left')), y: 0};
+        setlimit = function () {
             limit = parseInt($('.scene-anli .bg').css('width')) - $.size('w');
         }
         moveTo = function (p) {
@@ -417,10 +417,10 @@ initfunlist.push(function(){
             else if (limit + p.x < 0) p.x = -limit;
             anli_box.css('left', p.x);
             pos.x = p.x;
-            var s = -pos.x/limit;
-            var left = parseInt($('.scene-anli .scroll').css('left'));
-            var width = parseInt($('.scene-anli .scroll').css('width')) - parseInt($('.scene-anli .scroll_index').css('width')) + 1;
-            $('.scene-anli .scroll_index').css('left',left + width * s);
+            var s = -pos.x / limit;
+            var width = parseInt($('.scene-anli .scroll').css('width')) - parseInt($('.scene-anli .scroll_index').css('width'));
+            var left = parseInt($('.scene-anli .scroll').css('left')) + width * 0.0185;
+            $('.scene-anli .scroll_index').css('left', left + width * s * 0.963);
         }
     }
     var isTouch;
