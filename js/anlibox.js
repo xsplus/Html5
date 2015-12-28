@@ -13,8 +13,9 @@ sceneslist.push({
         {"img":"bg.png","isbg":true},
         {"img":"anli_box.png","x":128,"y":353},
         {"img":"wenti_box.png","x":276,"y":459,"attr":{"class":"wenti_box"}},
+        {"img":"mao.png","x":120,"y":115,"attr":{"class":"mao"}},
         {"img":"cankao.png","x":3540,"y":87,"attr":{"class":"cankao btn"}},
-        {"img":"fanhui.png","x":128,"y":132,w:420,h:165.5,"attr":{"class":"fanhui btn"}},
+        {"img":"guanbi.png","x":2200,"y":112,"attr":{"class":"fanhui btn"}},
         {"img":"again.png","x":648,"y":2060,"attr":{"class":"again btn"}},
         {"img":"gonggao.png","x":1744,"y":2056,"attr":{"class":"gonggao btn"}},
         {"img":"xuexi.png","x":2860,"y":2056,"attr":{"class":"xuexi btn"}},
@@ -28,7 +29,7 @@ initfunlist.push(function(){
     $('.scene-anlibox .fanhui').pitTouch(function(){
         $(this).addClass('btndoudong');
         setTimeout(function(){
-            console.log('返回main');
+            console.log('关闭当前场景，返回main');
             sceneID.removeClass('show');
             $('.scene-yinyue').addClass('filter');
             $('.scene.scene-anlibox').removeClass('show');

@@ -19,6 +19,7 @@ sceneslist.push({
         {"img":"mstrue.png","x":2030,"y":580,"attr":{"class":"true"}},
         {"img":"daanfalse.png","x":427,"y":623,"attr":{"class":"false"}},
         {"img":"msfalse.png","x":2249,"y":629,"attr":{"class":"false"}},
+        {"img":"jqtitle.png","x":310,"y":135},
     ]
 })
 

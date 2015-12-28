@@ -21,6 +21,7 @@ sceneslist.push({
         {"img":"daanfalse.png","x":402,"y":625,"attr":{"class":"false"}},
         {"img":"msfalse.png","x":2314,"y":874,"attr":{"class":"false"}},
         {"img":"changjingfalse.png","x":2154,"y":1530,w:2150,h:780},
+        {"img":"cftitle.png","x":310,"y":105},
     ]
 })
 
