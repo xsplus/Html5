@@ -308,13 +308,15 @@ sceneslist.push({
 
 initfunlist.push(function() {
     var main_box = $('.scene-main');
-    var left = 0;
+    var left;
     if (!scene_main.debug) {
-        left = -$.size('w') * 0.3
+        left = -$.size('w') * 0.3;
         main_box.css('left', left);
+        alert(left);
     }
     var pos, moveTo, limit, setlimit, cross_screen = $.isPhone && $.cross_screen;
     if (cross_screen) {
+        if(!left) left = 0;
         pos = {x: 0, y: left};
         setlimit = function () {
             if(main_box.is('.show')){
