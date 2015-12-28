@@ -78,7 +78,6 @@
                 $('.scene-index').show('scale(0)', 'scale(1)', function () {
                     $('.scene-loading').remove();
                 },'0.3s');
-
                 $('.scene-yinyue').addClass('show');
                 $('.scene .strue').pitTouch(function(){
                     $(this).addClass('btndoudong');
@@ -101,7 +100,7 @@
                                 $('.scene.child').eq(0).show();
                             }
                         })
-                        scene.children('.prve').addClass("show").pitTouch(function(){
+                        scene.children('.prev').addClass("show").pitTouch(function(){
                             $(this).addClass('btndoudong');
                             console.log("进入下一个场景");
                             scene.removeClass('show');

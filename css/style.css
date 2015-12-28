@@ -84,10 +84,13 @@ body.phone{
 .shengyin.play{
     display: block;
 }
-.scene .ku,.scene .false,.scene .true,.scene .prev,.scene .next,.scene .lingjiang{
+.scene .ku,.scene .false,.scene .true,.scene .lingjiang{
     display: none;
 }
-
+.scene .prev,.scene .next{
+    display: none;
+    cursor: pointer;
+ }
 .strue,.sfalse{
     cursor: pointer;
 }
@@ -97,9 +100,13 @@ body.phone{
     display: none;
 }
 /* 隐藏anlibox 奖杯页面 */
-.jiangbei,.again,.xuexi,.gonggao,.lingjiang .wenti_box,.lingjiang .fanhui,.lingjiang .cankao{
+.jiangbei,.again,.xuexi,.gonggao,.lingjiang .fanhui,.lingjiang .cankao{
     display: none;
+    cursor: pointer;
 }
+.lingjiang .wenti_box{
+    display: none;
+ }
 
 /* 显示anlibox 奖杯页面 */
 .lingjiang .jiangbei,.lingjiang .again,.lingjiang .xuexi,.lingjiang .gonggao{

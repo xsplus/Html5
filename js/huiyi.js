@@ -24,6 +24,7 @@ sceneslist.push({
         {"img":"wenhao.png","x":3020,"y":1685,"attr":{"class":"false wenhaodoudong"}},
         {"img":"wenhao.png","x":3166,"y":1810,"attr":{"class":"false wenhaodoudong"}},
         {"img":"hytitle.png","x":310,"y":145},
+        {"img":"next.png","x":620,"y":1572,"attr":{"class":"next"}},
     ]
 })
 
@@ -36,7 +37,7 @@ sceneslist.push({
     'auto_w':true,                        /*是否自动适应宽度*/
     'auto_h':true,                         /*是否自动适应高度*/
     'layers':[                              /*场景的图层数据*/
-        {"img":"next.png","x":620,"y":1572,"attr":{"class":"next"}},
+        {"img":"pre.png","x":620,"y":1872,"attr":{"class":"prev"}},
         {"img":"ku.png","x":1608,"y":1148,"attr":{"class":"false"}},
         {"img":"weibiao.png","x":1541,"y":370,"attr":{"class":"true"}},
         {"img":"lingjiang.png","x":734,"y":1520,"attr":{"class":"lingjiang"}},
