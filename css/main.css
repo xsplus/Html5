@@ -22,62 +22,131 @@
 .fengche{
     animation:fengche 3.5s linear 0s infinite ;
     -webkit-animation:fengche 3.5s linear 0s infinite ;
+    -moz-animation:fengche 3.5s linear 0s infinite ;
+    -o-animation:fengche 3.5s linear 0s infinite ;
     transform-origin: 66% 50%;
+    -webkit-transform-origin: 66% 50%;
+    -moz-transform-origin: 66% 50%;
+    -o-transform-origin: 66% 50%;
 }
 
 /* 云飘动 */
+@keyframes yun{
+    from{transform:translateX(0)}
+    to{transform:translateX(50vw)}
+}
 @-webkit-keyframes yun{
     from{-webkit-transform:translateX(0)}
     to{-webkit-transform:translateX(50vw)}
 }
+@-moz-keyframes yun{
+    from{-moz-transform:translateX(0)}
+    to{-moz-transform:translateX(50vw)}
+}
+@-o-keyframes yun{
+    from{-o-transform:translateX(0)}
+    to{-o-transform:translateX(50vw)}
+}
 .yun{
     animation:yun 50.5s linear 0s infinite ;
     -webkit-animation:yun 50.5s linear 0s infinite;
+    -moz-animation:yun 50.5s linear 0s infinite;
+    -o-animation:yun 50.5s linear 0s infinite;
 }
 
 /* 星星闪烁 */
-@-webkit-keyframes star {
+@keyframes star {
     0% {  transform: scale(1)  }
     45% {  transform: scale(.2)  }
     55% {  transform: scale(1.2)  }
     100% {  transform: scale(1)  }
 }
+@-webkit-keyframes star {
+    0% {  -moz-transform: scale(1)  }
+    45% {  -moz-transform: scale(.2)  }
+    55% {  -moz-transform: scale(1.2)  }
+    100% {  -moz-transform: scale(1)  }
+}
+@-moz-keyframes star {
+    0% {  -moz-transform: scale(1)  }
+    45% {  -moz-transform: scale(.2)  }
+    55% {  -moz-transform: scale(1.2)  }
+    100% {  -moz-transform: scale(1)  }
+}
+@-o-keyframes star {
+    0% {  -o-transform: scale(1)  }
+    45% {  -o-transform: scale(.2)  }
+    55% {  -o-transform: scale(1.2)  }
+    100% {  -o-transform: scale(1)  }
+}
 .star{
     animation:star 5s linear infinite ;
     -webkit-animation:star 5s linear infinite ;
+    -moz-animation:star 5s linear infinite ;
+    -o-animation:star 5s linear infinite ;
 }
 .star1{
     animation-delay: .5s;
     -webkit-animation-delay: .5s;
+    -moz-animation-delay: .5s;
+    -o-animation-delay: .5s;
 }
 .star2{
     animation-delay: 1.5s;
     -webkit-animation-delay: 1.5s;
+    -moz-animation-delay: 1.5s;
+    -o-animation-delay: 1.5s;
 }
 .star3{
     animation-delay: 2.5s;
     -webkit-animation-delay: 2.5s;
+    -moz-animation-delay: 2.5s;
+    -o-animation-delay: 2.5s;
 }
 .star4{
     animation-delay: 3.5s;
     -webkit-animation-delay: 3.5s;
+    -moz-animation-delay: 3.5s;
+    -o-animation-delay: 3.5s;
 }
 .star5{
     animation-delay: 4.5s;
     -webkit-animation-delay: 4.5s;
+    -moz-animation-delay: 4.5s;
+    -o-animation-delay: 4.5s;
 }
 
 /* 地标闪烁 */
-@-webkit-keyframes dibiao {
+@keyframes dibiao {
     0% {transform: scale(1)  }
     33% {  transform: scale(1.3)  }
     66% {  transform: scale(1.6)  }
     100% {  transform: scale(1)  }
 }
+@-webkit-keyframes dibiao {
+    0% { -webkit-transform: scale(1)  }
+    33% {  -webkit-transform: scale(1.3)  }
+    66% {  -webkit-transform: scale(1.6)  }
+    100% {  -webkit-transform: scale(1)  }
+}
+@-moz-keyframes dibiao {
+    0% { -moz-transform: scale(1)  }
+    33% {  -moz-transform: scale(1.3)  }
+    66% {  -moz-transform: scale(1.6)  }
+    100% {  -moz-transform: scale(1)  }
+}
+@-o-keyframes dibiao {
+    0% { -o-transform: scale(1)  }
+    33% {  -o-transform: scale(1.3)  }
+    66% {  -o-transform: scale(1.6)  }
+    100% {  -o-transform: scale(1)  }
+}
 .scene-main .dibiao,.scene-main .jichang,.scene-anli .dibiao,.scene-anli .jichang{
     z-index: 9;
     animation:dibiao 2s linear infinite ;
     -webkit-animation:dibiao 2s linear infinite ;
+    -moz-animation:dibiao 2s linear infinite ;
+    -o-animation:dibiao 2s linear infinite ;
 }
 
 /* 地标Action */
@@ -86,6 +155,18 @@
 }
 
 /* 地标标识 */
+@keyframes dibiaobiaoshi {
+    0%{transform:translateY(0)}
+    50%{transform:translateY(3vh)}
+}
+@-moz-keyframes dibiaobiaoshi {
+    0%{-moz-transform:translateY(0)}
+    50%{-moz-transform:translateY(3vh)}
+}
+@-o-keyframes dibiaobiaoshi {
+    0%{-o-transform:translateY(0)}
+    50%{-o-transform:translateY(3vh)}
+}
 @-webkit-keyframes dibiaobiaoshi {
     0%{-webkit-transform:translateY(0)}
     50%{-webkit-transform:translateY(3vh)}
@@ -94,21 +175,49 @@
     z-index: 9;
     animation:dibiaobiaoshi 2s linear infinite ;
     -webkit-animation:dibiaobiaoshi 2s linear infinite ;
+    -moz-animation:dibiaobiaoshi 2s linear infinite ;
+    -o-animation:dibiaobiaoshi 2s linear infinite ;
 }
 
 /* 大飞机飞动 */
+@keyframes dafeiji {
+    from{transform:translateY(0)}
+    to{transform:translateY(1.2vh)}
+}
 @-webkit-keyframes dafeiji {
-    from{-webkit-transform:translateY(0)}
-    to{-webkit-transform:translateY(1.2vh)}
+     from{-webkit-transform:translateY(0)}
+     to{-webkit-transform:translateY(1.2vh)}
+ }
+@-moz-keyframes dafeiji {
+    from{-moz-transform:translateY(0)}
+    to{-moz-transform:translateY(1.2vh)}
+}
+@-o-keyframes dafeiji {
+    from{-o-transform:translateY(0)}
+    to{-o-transform:translateY(1.2vh)}
 }
 .dafeiji{
     z-index: 5;
     animation:dafeiji 2s linear infinite ;
     -webkit-animation:dafeiji 2s linear infinite ;
+    -o-animation:dafeiji 2s linear infinite ;
+    -moz-animation:dafeiji 2s linear infinite ;
 }
 
 /*大楼灯*/
+@keyframes daloudeng {
+    42% { opacity:0;  }
+    54% { opacity:0.8; }
+}
 @-webkit-keyframes daloudeng {
+    42% { opacity:0;  }
+    54% { opacity:0.8; }
+}
+@-moz-keyframes daloudeng {
+    42% { opacity:0;  }
+    54% { opacity:0.8; }
+}
+@-o-keyframes daloudeng {
     42% { opacity:0;  }
     54% { opacity:0.8; }
 }
@@ -116,85 +225,149 @@
     background: white;
     animation:daloudeng 10s linear infinite ;
     -webkit-animation:daloudeng 10s linear infinite ;
+    -moz-animation:daloudeng 10s linear infinite ;
+    -o-animation:daloudeng 10s linear infinite ;
 }
 .deng1{
     animation-delay: .5s;
     -webkit-animation-delay: .5s;
+    -moz-animation-delay: .5s;
+    -o-animation-delay: .5s;
 }
 
 .deng2{
     animation-delay: .8s;
     -webkit-animation-delay: .8s;
+    -moz-animation-delay: .8s;
+    -o-animation-delay: .8s;
 }
 
 .deng3{
     animation-delay: 1.2s;
     -webkit-animation-delay: 1.2s;
+    -moz-animation-delay: 1.2s;
+    -o-animation-delay: 1.2s;
 }
 
 .deng4{
     animation-delay: 1.5s;
     -webkit-animation-delay: 1.5s;
+    -moz-animation-delay: 1.5s;
+    -o-animation-delay: 1.5s;
 }
 
 .deng5{
     animation-delay: 1.9s;
     -webkit-animation-delay: 1.9s;
+    -moz-animation-delay: 1.9s;
+    -o-animation-delay: 1.9s;
 }
 
 .deng6{
     animation-delay: 2.5s;
     -webkit-animation-delay: 2.5s;
+    -moz-animation-delay: 2.5s;
+    -o-animation-delay: 2.5s;
 }
 
 .deng7{
     animation-delay: 3s;
     -webkit-animation-delay: 3s;
+    -moz-animation-delay: 3s;
+    -o-animation-delay: 3s;
 }
 
 .deng8{
     animation-delay: 3.5s;
     -webkit-animation-delay: 3.5s;
+    -moz-animation-delay: 3.5s;
+    -o-animation-delay: 3.5s;
 }
 
 .deng9{
     animation-delay: 4.5s;
     -webkit-animation-delay: 4.5s;
+    -moz-animation-delay: 4.5s;
+    -o-animation-delay: 4.5s;
 }
 
 .deng10{
     animation-delay: 4.9s;
     -webkit-animation-delay: 4.9s;
+    -moz-animation-delay: 4.9s;
+    -o-animation-delay: 4.9s;
 }
 
 /* 摩天轮旋转 */
+@keyframes motianlun{
+    from{transform:rotate(0deg)}
+    to{transform:rotate(360deg)}
+}
 @-webkit-keyframes motianlun{
     from{-webkit-transform:rotate(0deg)}
     to{-webkit-transform:rotate(360deg)}
 }
+@-moz-keyframes motianlun{
+    from{-moz-transform:rotate(0deg)}
+    to{-moz-transform:rotate(360deg)}
+}
+@-o-keyframes motianlun{
+    from{-o-transform:rotate(0deg)}
+    to{-o-transform:rotate(360deg)}
+}
 .motianlun{
     animation:fengche 20.5s linear 2s infinite ;
     -webkit-animation:fengche 20.5s linear 2s infinite ;
+    -moz-animation:fengche 20.5s linear 2s infinite ;
+    -o-animation:fengche 20.5s linear 2s infinite ;
 }
 
 /* 小飞机1 */
+@keyframes xiaofeiji1{
+    0%{transform:translateX(0) translateY(0)}
+    100%{transform:translateX(-20vw) translateY(-40vh)}
+}
 @-webkit-keyframes xiaofeiji1{
     0%{-webkit-transform:translateX(0) translateY(0)}
     100%{-webkit-transform:translateX(-20vw) translateY(-40vh)}
 }
+@-moz-keyframes xiaofeiji1{
+    0%{-moz-transform:translateX(0) translateY(0)}
+    100%{-moz-transform:translateX(-20vw) translateY(-40vh)}
+}
+@-o-keyframes xiaofeiji1{
+    0%{-o-transform:translateX(0) translateY(0)}
+    100%{-o-transform:translateX(-20vw) translateY(-40vh)}
+}
 .xiaofeiji1{
     animation:xiaofeiji1 15s linear 5s infinite ;
     -webkit-animation:xiaofeiji1 15s linear -5s infinite;
+    -moz-animation:xiaofeiji1 15s linear -5s infinite;
+    -o-animation:xiaofeiji1 15s linear -5s infinite;
 }
 
 /* 小飞机2 */
+@keyframes xiaofeiji2{
+    0%{transform:translateX(0) translateY(0)}
+    100%{transform:translateX(25vw) translateY(-50vh)}
+}
 @-webkit-keyframes xiaofeiji2{
     0%{-webkit-transform:translateX(0) translateY(0)}
     100%{-webkit-transform:translateX(25vw) translateY(-50vh)}
 }
+@-moz-keyframes xiaofeiji2{
+    0%{-moz-transform:translateX(0) translateY(0)}
+    100%{-moz-transform:translateX(25vw) translateY(-50vh)}
+}
+@-o-keyframes xiaofeiji2{
+    0%{-o-transform:translateX(0) translateY(0)}
+    100%{-o-transform:translateX(25vw) translateY(-50vh)}
+}
 .xiaofeiji2{
     animation:xiaofeiji2 15s linear infinite ;
     -webkit-animation:xiaofeiji2 15s linear infinite;
+    -moz-animation:xiaofeiji2 15s linear infinite;
+    -o-animation:xiaofeiji2 15s linear infinite;
 }
 
 .shuoming_bg,.shuoming,.scene-main .btn_ok,
@@ -215,37 +388,80 @@
 }
 
 /* OK闪烁 */
-@-webkit-keyframes btn_ok {
+@keyframes btn_ok {
     0% {  transform: scale(1.5)  }
     33% {  transform: scale(1.75)  }
     66% {  transform: scale(2)  }
     100% {  transform: scale(1.5)  }
 }
-.scene-main .btn_ok,.scene-anli .btn_ok,.scene-anli .chakanxiangqing{
+@-webkit-keyframes btn_ok {
+    0% {  -webkit-transform: scale(1.5)  }
+    33% {  -webkit-transform: scale(1.75)  }
+    66% {  -webkit-transform: scale(2)  }
+    100% {  -webkit-transform: scale(1.5)  }
+}
+@-moz-keyframes btn_ok {
+    0% {  -moz-transform: scale(1.5)  }
+    33% {  -moz-transform: scale(1.75)  }
+    66% {  -moz-transform: scale(2)  }
+    100% {  -moz-transform: scale(1.5)  }
+}
+@-o-keyframes btn_ok {
+    0% {  -o-transform: scale(1.5)  }
+    33% {  -o-transform: scale(1.75)  }
+    66% {  -o-transform: scale(2)  }
+    100% {  -o-transform: scale(1.5)  }
+}
+.scene-main .btn_ok,.scene-anli .btn_ok{
     animation:btn_ok 2s linear infinite ;
     -webkit-animation:btn_ok 2s linear infinite;
+    -moz-animation:btn_ok 2s linear infinite;
+    -o-animation:btn_ok 2s linear infinite;
     cursor: pointer;
 }
+.scene-anli .chakanxiangqing{
+    animation:btn_ok 2s linear infinite ;
+    -webkit-animation:btn_ok 2s linear infinite;
+    -moz-animation:btn_ok 2s linear infinite;
+    -o-animation:btn_ok 2s linear infinite;
+}
+
 
 /* 按钮剧烈抖动 */
-@-webkit-keyframes juliedoudong {
+@keyframes juliedoudong {
     0% {transform: scale(1)  }
     33% {  transform: scale(1.5)  }
     66% {  transform: scale(2)  }
     100% {  transform: scale(1)  }
 }
+@-webkit-keyframes juliedoudong {
+    0% { -webkit-transform: scale(1)  }
+    33% {  -webkit-transform: scale(1.5)  }
+    66% {  -webkit-transform: scale(2)  }
+    100% {  -webkit-transform: scale(1)  }
+}
+@-moz-keyframes juliedoudong {
+    0% { -moz-transform: scale(1)  }
+    33% {  -moz-transform: scale(1.5)  }
+    66% {  -moz-transform: scale(2)  }
+    100% {  -moz-transform: scale(1)  }
+}
+@-o-keyframes juliedoudong {
+    0% { -o-transform: scale(1)  }
+    33% {  -o-transform: scale(1.5)  }
+    66% {  -o-transform: scale(2)  }
+    100% {  -o-transform: scale(1)  }
+}
 .juliedoudong{
     z-index: 9;
     animation:juliedoudong 0.5s linear 1 ;
     -webkit-animation:juliedoudong 0.5s linear 1 ;
+    -moz-animation:juliedoudong 0.5s linear 1 ;
+    -o-animation:juliedoudong 0.5s linear 1 ;
 }
 
 
 /**************** windows style **************/
-.scene-main,.scene-anli{
-    cursor: all-scroll;
-}
-
 .scene-main .dibiaoAction{
     cursor: pointer;
 }

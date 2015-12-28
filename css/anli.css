@@ -1,20 +1,100 @@
 /* 指示 */
-@-webkit-keyframes tip {
-    0% {transform: scale(1)  }
-    33% {  transform: scale(1.2)  }
-    66% {  transform: scale(1.4)  }
-    100% {  transform: scale(1)  }
+@keyframes tip {
+    0% {
+        transform: scale(1)
+    }
+    33% {
+        transform: scale(1.2)
+    }
+    66% {
+        transform: scale(1.4)
+    }
+    100% {
+        transform: scale(1)
+    }
 }
-.tip{
+@-moz-keyframes tip {
+    0% {
+        -moz-transform: scale(1)
+    }
+    33% {
+        -moz-transform: scale(1.2)
+    }
+    66% {
+        -moz-transform: scale(1.4)
+    }
+    100% {
+        -moz-transform: scale(1)
+    }
+}
+@-webkit-keyframes tip {
+    0% {
+        -webkit-transform: scale(1)
+    }
+    33% {
+        -webkit-transform: scale(1.2)
+    }
+    66% {
+        -webkit-transform: scale(1.4)
+    }
+    100% {
+        -webkit-transform: scale(1)
+    }
+}
+@-o-keyframes tip {
+    0% {
+        -o-transform: scale(1)
+    }
+    33% {
+        -o-transform: scale(1.2)
+    }
+    66% {
+        -o-transform: scale(1.4)
+    }
+    100% {
+        -o-transform: scale(1)
+    }
+}
+.tip {
     z-index: 9;
-    animation:tip 2s linear infinite ;
-    -webkit-animation:tip 2s linear infinite ;
+    animation: tip 2s linear infinite;
+    -webkit-animation: tip 2s linear infinite;
+    -moz-animation: tip 2s linear infinite;
+    -o-animation: tip 2s linear infinite;
 }
 
 /* 按钮抖动 */
+@keyframes btndoudong {
+    0% {
+        transform: scale(1)
+    }
+    100% {
+        transform: scale(1.3)
+    }
+}
 @-webkit-keyframes btndoudong {
-    0% {transform: scale(1)  }
-    100% {  transform: scale(1.3)  }
+    0% {
+        -webkit-transform: scale(1)
+    }
+    100% {
+        -webkit-transform: scale(1.3)
+    }
+}
+@-moz-keyframes btndoudong {
+    0% {
+        -moz-transform: scale(1)
+    }
+    100% {
+        -moz-transform: scale(1.3)
+    }
+}
+@-o-keyframes btndoudong {
+    0% {
+        -o-transform: scale(1)
+    }
+    100% {
+        -o-transform: scale(1.3)
+    }
 }
 .btndoudong{
     z-index: 9;

@@ -1,23 +1,33 @@
 /* 大圆缩放 */
-@-webkit-keyframes load2 {
+@keyframes load2 {
     0% {transform:  rotate(0deg) }
     33% {  transform:  rotate(120deg) }
     66% {  transform:  rotate(240deg) }
     100% {  transform:  rotate(360deg) }
 }
+@-webkit-keyframes load2 {
+    0% { -webkit-transform:  rotate(0deg) }
+    33% {  -webkit-transform:  rotate(120deg) }
+    66% {  -webkit-transform:  rotate(240deg) }
+    100% {  -webkit-transform:  rotate(360deg) }
+}
+@-moz-keyframes load2 {
+    0% { -moz-transform:  rotate(0deg) }
+    33% {  -moz-transform:  rotate(120deg) }
+    66% {  -moz-transform:  rotate(240deg) }
+    100% {  -moz-transform:  rotate(360deg) }
+}
+@-o-keyframes load2 {
+    0% { -o-transform:  rotate(0deg) }
+    33% {  -o-transform:  rotate(120deg) }
+    66% {  -o-transform:  rotate(240deg) }
+    100% {  -o-transform:  rotate(360deg) }
+}
 .load2{
-    animation-name: load2;
-    -webkit-animation-name: load2;
-    animation-duration: 1s;
-    -webkit-animation-duration: 1s;
-    animation-delay: .3s;
-    -webkit-animation-delay: .3s;
-    animation-timing-function: linear;
-    -webkit-animation-timing-function: linear;
-    animation-fill-mode: backwards;
-    -webkit-animation-fill-mode: backwards;
-    animation-iteration-count: infinite;
-    -webkit-animation-iteration-count: infinite;
+    animation: load2 1s .3s linear infinite;
+    -moz-animation: load2 1s .3s linear infinite;
+    -webkit-animation: load2 1s .3s linear infinite;
+    -o-animation: load2 1s .3s linear infinite;
 }
 /* 粗线拉伸 */
 /*
@@ -31,6 +41,9 @@
 }*/
 .load3 {
     transform-origin: 0% 50%;
+    -moz-transform-origin: 0% 50%;
+    -webkit-transform-origin: 0% 50%;
+    -o-transform-origin: 0% 50%;
 }
 .baifenbi a{
     position: absolute;

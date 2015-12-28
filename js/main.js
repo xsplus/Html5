@@ -308,10 +308,14 @@ sceneslist.push({
 
 initfunlist.push(function() {
     var main_box = $('.scene-main');
-    if (!scene_main.debug) main_box.css('left', -$.size('w') * 0.3);
+    var left = 0;
+    if (!scene_main.debug) {
+        left = -$.size('w') * 0.3
+        main_box.css('left', left);
+    }
     var pos, moveTo, limit, setlimit, cross_screen = $.isPhone && $.cross_screen;
     if (cross_screen) {
-        pos = {x: 0, y: parseFloat(main_box.css('left'))};
+        pos = {x: 0, y: left};
         setlimit = function () {
             if(main_box.is('.show')){
                 limit = $('.scene-main .bg').height() - $.size('w');
@@ -388,21 +392,19 @@ initfunlist.push(function() {
     else {
         var startPos;
         //触摸事件自定义
-        main_box.on('mousedown', function (event) {
-            startPos = {x: pos.x - event.pageX, y: event.pageY};    //取第一个touch的坐标值
-            main_box.on('mousemove', mousemove);
-            main_box.one('mouseup', mouseup);
+        main_box.on('mousemove', function mousemove(event) {
+            if(!startPos){
+                startPos = event.pageX;
+            }else {
+                var change = limit >> 8;
+                var tmp = event.pageX - startPos;
+                if(Math.abs(tmp) > 1){
+                    tmp = pos.x + (tmp > 0 ? -change : change);
+                    moveTo({x: tmp});
+                    startPos = event.pageX;
+                }
+            }
         });
-        function mousemove(event) {
-            var tmp = {x: event.pageX + startPos.x, y: event.pageY - startPos.y};
-            event.preventDefault();      //阻止触摸事件的默认行为，即阻止滚屏
-            moveTo(tmp)
-        }
-
-        function mouseup() {
-            //解绑事件
-            main_box.off('mousemove', mousemove);
-        }
     }
     win.resize(function(){
         setlimit();
