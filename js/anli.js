@@ -342,7 +342,7 @@ sceneslist.push({
         {"img":"daxuebtn2.png","x":2840,"y":992,"attr":{"class":"daxue"}},
         {"img":"chakanbtn.png",x:1618,y:2072,"attr":{"class":"daxuebtn1 daxue btn"}},
         {"img":"chakanbtn.png",x:3818,y:2072,"attr":{"class":"daxuebtn2 daxue btn"}},
-        //医院 yiyuan
+        //医院 yiyuan 
         {"img":"yiyuanbg.png","x":172,"y":120,"attr":{"class":"yiyuan"}},
        //银行 yinhang
        // {"img":"yinhang_yulan.png","attr":{"class":"yinhang"},"isbg":true},
