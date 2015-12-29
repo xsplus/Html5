@@ -384,7 +384,7 @@ initfunlist.push(function(){
         left = -$.size('w') * 0.3
         anli_box.css('left', left);
     }
-    var pos,moveTo,limit,setlimit,cross_screen = $.isPhone && $.cross_screen;
+    var pos,moveTo,limit = 1024,setlimit,cross_screen = $.isPhone && $.cross_screen;
     if(cross_screen) {
         if (!left) left = 0;
         pos = {x: 0, y: left};
