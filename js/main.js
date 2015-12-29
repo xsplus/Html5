@@ -325,14 +325,16 @@ initfunlist.push(function() {
             }
         }
         moveTo = function (p) {
-            if (p.y > 0) p.y = 0;
-            else if (limit + p.y < 0) p.y = -limit;
-            main_box.css('left', p.y);
-            pos.y = p.y;
-            var s = -pos.y / limit;
-            var width = parseInt($('.scene-main .scroll').css('width')) - parseInt($('.scene-main .scroll_index').css('width'));
-            var left = parseInt($('.scene-main .scroll').css('left')) + width * 0.0185;
-            $('.scene-main .scroll_index').css('left', left + width * s * 0.963);
+            if(p.y){
+                if (p.y > 0) p.y = 0;
+                else if (limit + p.y < 0) p.y = -limit;
+                main_box.css('left', p.y);
+                pos.y = p.y;
+                var s = -pos.y / limit;
+                var width = parseInt($('.scene-main .scroll').css('width')) - parseInt($('.scene-main .scroll_index').css('width'));
+                var left = parseInt($('.scene-main .scroll').css('left')) + width * 0.0185;
+                $('.scene-main .scroll_index').css('left', left + width * s * 0.963);
+            }
         }
     } else {
         pos = {x: parseFloat(main_box.css('left')), y: 0};
@@ -340,14 +342,16 @@ initfunlist.push(function() {
             limit = parseInt($('.scene-main .bg').css('width')) - $.size('w');
         }
         moveTo = function (p) {
-            if (p.x > 0) p.x = 0;
-            else if (limit + p.x < 0) p.x = -limit;
-            main_box.css('left', p.x);
-            pos.x = p.x;
-            var s = -pos.x / limit;
-            var width = parseInt($('.scene-main .scroll').css('width')) - parseInt($('.scene-main .scroll_index').css('width'));
-            var left = parseInt($('.scene-main .scroll').css('left')) + width * 0.0185;
-            $('.scene-main .scroll_index').css('left', left + width * s * 0.963);
+            if(p.x){
+                if (p.x > 0) p.x = 0;
+                else if (limit + p.x < 0) p.x = -limit;
+                main_box.css('left', p.x);
+                pos.x = p.x;
+                var s = -pos.x / limit;
+                var width = parseInt($('.scene-main .scroll').css('width')) - parseInt($('.scene-main .scroll_index').css('width'));
+                var left = parseInt($('.scene-main .scroll').css('left')) + width * 0.0185;
+                $('.scene-main .scroll_index').css('left', left + width * s * 0.963);
+            }
         }
     }
     var isTouch;
