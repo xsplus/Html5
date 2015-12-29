@@ -23,7 +23,7 @@ sceneslist.push({
         {"img":"wenhao.png","x":3298,"y":1693,"attr":{"class":"false wenhaodoudong"}},
         {"img":"wenhao.png","x":3020,"y":1685,"attr":{"class":"false wenhaodoudong"}},
         {"img":"wenhao.png","x":3166,"y":1810,"attr":{"class":"false wenhaodoudong"}},
-        {"img":"hytitle.png","x":310,"y":145},
+        {"img":"hytitle.png","x":310,"y":190},
         {"img":"next.png","x":620,"y":1572,"attr":{"class":"next"}},
     ]
 })

@@ -20,7 +20,7 @@ sceneslist.push({
         {"img":"daanfalse.png","x":368,"y":613,"attr":{"class":"false"}},
         {"img":"msfalse.png","x":2324,"y":672,"attr":{"class":"false"}},
         {"img":"wifi.png","x":3652,"y":1284,"attr":{"class":"wifi"}},
-        {"img":"dttitle.png","x":310,"y":145},
+        {"img":"dttitle.png","x":310,"y":190},
         {"img":"next.png","x":620,"y":1572,"attr":{"class":"next"}},
     ]
 })

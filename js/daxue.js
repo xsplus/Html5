@@ -44,7 +44,7 @@ sceneslist.push({
         {"img":"kele.png","x":3488,"y":1630,"attr":{"class":"true"}},
         {"img":"daantrue.png","x":428,"y":632,"attr":{"class":"true"}},
         {"img":"mstrue.png","x":2304,"y":450,"attr":{"class":"true"}},
-        {"img":"dxtitle.png","x":310,"y":145},
+        {"img":"dxtitle.png","x":310,"y":190},
         {"img":"next.png","x":620,"y":1572,"attr":{"class":"next"}},
     ]
 })

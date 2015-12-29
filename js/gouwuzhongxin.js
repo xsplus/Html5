@@ -22,7 +22,7 @@ sceneslist.push({
         {"img":"msfalse.png","x":2530,"y":764,"attr":{"class":"false"}},
         {"img":"changjing.png","x":3464,"y":1382,"attr":{"class":"changjing"}},
         {"img":"changjingtrue.png","x":3380,"y":1386,"attr":{"class":"true"}},
-        {"img":"gwtitle.png","x":310,"y":145},
+        {"img":"gwtitle.png","x":310,"y":190},
         {"img":"next.png","x":620,"y":1572,"attr":{"class":"next"}},
     ]
 })
