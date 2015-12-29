@@ -122,3 +122,8 @@ body.phone{
     filter: brightness(100);
     -webkit-filter: brightness(100);
 }
+
+.weibiao{
+    transition: .8s;
+    transform: scale(2);
+}

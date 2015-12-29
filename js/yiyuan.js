@@ -39,7 +39,7 @@ sceneslist.push({
     'layers':[                              /*场景的图层数据*/
         {"img":"pre.png","x":620,"y":1872,"attr":{"class":"prev"}},
         {"img":"ku.png","x":1608,"y":1148,"attr":{"class":"false"}},
-        {"img":"weibiao.png","x":1541,"y":370,"attr":{"class":"true"}},
+        {"img":"weibiao.png","x":1541,"y":1100,"attr":{"class":"true weibiao"}},
         {"img":"lingjiang.png","x":734,"y":1520,"attr":{"class":"lingjiang"}},
     ]
 })

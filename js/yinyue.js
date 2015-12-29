@@ -19,6 +19,7 @@ initfunlist.push(function(){
 
     $(".yinyue").append('<audio loop autoplay><source src="music/music.mp3" type="audio/mpeg"></audio>');
     $(".yinyue").append('<audio><source src="music/error.wav" type="audio/mpeg"></audio>');
+    $(".yinyue").append('<audio><source src="music/success.wav" type="audio/mpeg"></audio>');
     $(".yinyue,.shengyin").pitTouch(function(){
         if($(".shengyin").is('.play')){
             $('.yinyue audio').get(0).pause();
@@ -34,6 +35,11 @@ initfunlist.push(function(){
     $.error_wav = function(){
         if($(".shengyin").is('.play')){
             $('.yinyue audio').get(1).play();
+        }
+    }
+    $.success_wav = function(){
+        if($(".shengyin").is('.play')){
+            $('.yinyue audio').get(2).play();
         }
     }
 })

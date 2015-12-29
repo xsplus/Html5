@@ -269,7 +269,7 @@ sceneslist.push(scene_main = {
         {'img':'xiaofeiji1.png',x:8068,y:256,'attr':{'class':'xiaofeiji1'}},
         {'img':'xiaofeiji2.png',x:2091,y:484,'attr':{'class':'xiaofeiji2'}},
         //摩天轮
-        {'img':'motianlun.png',x:2755,y:1115,'attr':{'class':'motianlun'}},
+        {'img':'motianlun.png',x:2755,y:1145,'attr':{'class':'motianlun'}},
         //中小学建筑
         {'img':'zxxjianzhu.png',x:2700,y:1842,'attr':{'class':'zxxjianzhu'}},
 
@@ -290,8 +290,8 @@ sceneslist.push({
         {'img': 'shuoming.png', w: 5251, h: 2953, 'attr': {'class': 'shuoming'}},
         //OK
         {'img': 'btn_ok.png', x: 2504, y: 1940, w: 282, h: 259, attr: {'class': 'btn_ok'}},
-        {'img': 'scroll.png', x: 770, y: 2287, attr: {'class': 'scroll'}},
-        {'img': 'scroll_index.png', x: 830, y: 2208, attr: {'class': 'scroll_index'}}
+        {'img': 'scroll.png', x: 1020, y: 2287, attr: {'class': 'scroll'}},
+        {'img': 'scroll_index.png', x: 1080, y: 2208, attr: {'class': 'scroll_index'}}
     ]
 })
 

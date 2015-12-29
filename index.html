@@ -80,9 +80,13 @@
                 },'0.3s');
                 $('.scene-yinyue').addClass('show');
                 $('.scene .strue').pitTouch(function(){
+                    $.success_wav()
                     $(this).addClass('btndoudong');
                     var scene = $(this).parent();
                     scene.addClass('true');
+                    window.setTimeout(function(){
+                        scene.children('.weibiao').css('transform','scale(1)');
+                    })
                     console.log("回答正确");
                     if($('.scene.child').not('.true').length){
                         scene.children('.next').addClass("show").pitTouch(function(){

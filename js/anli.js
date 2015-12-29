@@ -12,28 +12,28 @@ sceneslist.push(scene_anli = {
     'auto_h':true,                         /*是否自动适应屏幕高度*/
     'layers':[
         //背景图
-        {'img':'bg.png',w:11811,h:2953,'attr':{'class':'bg'},isbg:true},
+        {'img':'anli_bg.png',w:11811,h:2953,'attr':{'class':'bg'},isbg:true},
         //风车
-        {'img':'fengche.png',x:1275,y:1684,w:140,h:120,'attr':{'class':'fengche'}},
-        {'img':'fengche.png',x:1992,y:1476,'attr':{'class':'fengche'}},
-        {'img':'fengche.png',x:2510,y:1565,w:89,h:108,'attr':{'class':'fengche'}},
-        {'img':'fengche.png',x:5127,y:1455,w:197,h:214,'attr':{'class':'fengche'}},
-        {'img':'fengche.png',x:7096,y:1372,w:110,h:122,'attr':{'class':'fengche'}},
-        {'img':'fengche.png',x:7570,y:1381,w:159,h:199,'attr':{'class':'fengche'}},
-        {'img':'fengche.png',x:8461,y:1519,w:164,h:146,'attr':{'class':'fengche'}},
-        {'img':'fengche.png',x:10612,y:590,w:384,h:397,'attr':{'class':'fengche'}},
-        {'img':'fengche.png',x:11154,y:830,w:189,h:215,'attr':{'class':'fengche'}},
-        {'img':'fengche.png',x:11310,y:595,w:370,h:385,'attr':{'class':'fengche'}},
+        {'img':'anli_fengche.png',x:1275,y:1684,w:140,h:120,'attr':{'class':'fengche'}},
+        {'img':'anli_fengche.png',x:1992,y:1476,'attr':{'class':'fengche'}},
+        {'img':'anli_fengche.png',x:2510,y:1565,w:89,h:108,'attr':{'class':'fengche'}},
+        {'img':'anli_fengche.png',x:5132,y:1455,w:197,h:214,'attr':{'class':'fengche'}},
+        {'img':'anli_fengche.png',x:7096,y:1372,w:110,h:122,'attr':{'class':'fengche'}},
+        {'img':'anli_fengche.png',x:7570,y:1381,w:159,h:199,'attr':{'class':'fengche'}},
+        {'img':'anli_fengche.png',x:8461,y:1485,w:164,h:205,'attr':{'class':'fengche'}},
+        {'img':'anli_fengche.png',x:10612,y:590,w:384,h:397,'attr':{'class':'fengche'}},
+        {'img':'anli_fengche.png',x:11154,y:830,w:189,h:215,'attr':{'class':'fengche'}},
+        {'img':'anli_fengche.png',x:11310,y:595,w:370,h:385,'attr':{'class':'fengche'}},
         //云
-        {'img':'heiyun.png',x:100,y:144,w:419,h:137,'attr':{'class':'yun'}},
-        {'img':'heiyun.png',x:1300,y:244,w:419,h:137,'attr':{'class':'yun'}},
-        {'img':'heiyun.png',x:2700,y:144,w:419,h:137,'attr':{'class':'yun'}},
-        {'img':'heiyun.png',x:4300,y:244,w:419,h:137,'attr':{'class':'yun'}},
+        {'img':'anli_heiyun.png',x:100,y:144,w:419,h:137,'attr':{'class':'yun'}},
+        {'img':'anli_heiyun.png',x:1300,y:244,w:419,h:137,'attr':{'class':'yun'}},
+        {'img':'anli_heiyun.png',x:2700,y:144,w:419,h:137,'attr':{'class':'yun'}},
+        {'img':'anli_heiyun.png',x:4300,y:244,w:419,h:137,'attr':{'class':'yun'}},
 
-        {'img':'baiyun.png',x:600,y:526,w:344,h:123,'attr':{'class':'yun'}},
-        {'img':'baiyun.png',x:2000,y:446,w:344,h:123,'attr':{'class':'yun'}},
-        {'img':'baiyun.png',x:3400,y:326,w:344,h:123,'attr':{'class':'yun'}},
-        {'img':'baiyun.png',x:5000,y:356,w:344,h:123,'attr':{'class':'yun'}},
+        {'img':'anli_baiyun.png',x:600,y:526,w:344,h:123,'attr':{'class':'yun'}},
+        {'img':'anli_baiyun.png',x:2000,y:446,w:344,h:123,'attr':{'class':'yun'}},
+        {'img':'anli_baiyun.png',x:3400,y:326,w:344,h:123,'attr':{'class':'yun'}},
+        {'img':'anli_baiyun.png',x:5000,y:356,w:344,h:123,'attr':{'class':'yun'}},
         //星星
         {'img':'star.png',x:674,y:458,w:40,h:40,'attr':{'class':'star star1'}},
         {'img':'star.png',x:1097,y:274,w:30,h:30,'attr':{'class':'star star2'}},
@@ -72,7 +72,7 @@ sceneslist.push(scene_anli = {
         {'img':'dibiaobiaoshi.png',x:10412,y:234,'attr':{'class':'dibiaobiaoshi btn','data-id':'jingqu'}},
         {'img':'dibiaobiaoshi.png',x:11046,y:698,'attr':{'class':'dibiaobiaoshi btn','data-id':'ditie'}},
         //大飞机
-        {'img':'dafeiji.png',x:3387,y:328,w:1467,h:550,'attr':{'class':'dafeiji btn','data-id':'jichang'}},
+        {'img':'anli_dafeiji.png',x:3387,y:328,w:1467,h:550,'attr':{'class':'dafeiji btn','data-id':'jichang'}},
         {'img':'dibiaobiaoshi.png',x:3587,y:30,'attr':{'class':'dibiaobiaoshi btn','data-id':'jichang'}},
         {"img":"jichang.png","x":3780,"y":110,w:400,h:432,"attr":{"class":"jichang btn",'data-id':'jichang'},},
         //大楼灯
@@ -272,9 +272,9 @@ sceneslist.push(scene_anli = {
         {'img':'xiaofeiji1.png',x:8068,y:256,'attr':{'class':'xiaofeiji1'}},
         {'img':'xiaofeiji2.png',x:2091,y:484,'attr':{'class':'xiaofeiji2'}},
         //摩天轮
-        {'img':'motianlun.png',x:2755,y:1115,'attr':{'class':'motianlun'}},
+        {'img':'anli_motianlun.png',x:2759,y:1145,'attr':{'class':'motianlun'}},
         //中小学建筑
-        {'img':'zxxjianzhu.png',x:2700,y:1842,'attr':{'class':'zxxjianzhu'}},
+        {'img':'anli_zxxjianzhu.png',x:2700,y:1842,'attr':{'class':'zxxjianzhu'}},
 
     ]
 });
@@ -294,8 +294,8 @@ sceneslist.push({
         {'img':'shuoming.png',w:5251,h:2953,'attr':{'class':'shuoming'}},
         //OK
         {'img':'btn_ok.png',x:2504,y:1940,w:282,h:259,attr:{'class':'btn_ok'}},
-        {'img': 'scroll.png', x: 770, y: 2287, attr: {'class': 'scroll'}},
-        {'img': 'scroll_index.png', x: 830, y: 2208, attr: {'class': 'scroll_index'}}
+        {'img': 'scroll.png', x: 1020, y: 2287, attr: {'class': 'scroll'}},
+        {'img': 'scroll_index.png', x: 1080, y: 2208, attr: {'class': 'scroll_index'}}
     ]
 })
 
@@ -500,11 +500,7 @@ initfunlist.push(function(){
         var startPos;
         //触摸事件自定义
         anli_box.on('mousemove', function mousemove(event) {
-            var s = event.pageX / $.size('w')
-            moveTo({x: -s * limit});
-            var left = parseInt($('.scene-anli .scroll').css('left'));
-            var width = parseInt($('.scene-anli .scroll').css('width')) - parseInt($('.scene-anli .scroll_index').css('width')) + 1;
-            $('.scene-anli .scroll_index').css('left',left + width * s);
+            moveTo({x: -event.pageX / $.size('w') * limit});
         });
     }
 
