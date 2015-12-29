@@ -379,13 +379,14 @@ sceneslist.push({
 
 initfunlist.push(function(){
     var anli_box = $('.scene-anli');
-    var left = 0;
+    var left;
     if (!scene_anli.debug) {
         left = -$.size('w') * 0.3
         anli_box.css('left', left);
     }
     var pos,moveTo,limit,setlimit,cross_screen = $.isPhone && $.cross_screen;
     if(cross_screen) {
+        if (!left) left = 0;
         pos = {x: 0, y: left};
         setlimit = function () {
             if (anli_box.is('.show')) {
