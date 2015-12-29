@@ -290,8 +290,8 @@ sceneslist.push({
         {'img': 'shuoming.png', w: 5251, h: 2953, 'attr': {'class': 'shuoming'}},
         //OK
         {'img': 'btn_ok.png', x: 2504, y: 1940, w: 282, h: 259, attr: {'class': 'btn_ok'}},
-        {'img': 'scroll.png', x: 1020, y: 2287, attr: {'class': 'scroll'}},
-        {'img': 'scroll_index.png', x: 1080, y: 2208, attr: {'class': 'scroll_index'}}
+        {'img': 'scroll.png', x: 1020, y: 2687, attr: {'class': 'scroll'}},
+        {'img': 'scroll_index.png', x: 1080, y: 2608, attr: {'class': 'scroll_index'}}
     ]
 })
 
@@ -304,7 +304,7 @@ sceneslist.push({
     'auto_w':true,
     'auto_h':true,
     'layers':[
-        {"img":"fanhui.png","x":128,"y":132,w:420,h:165.5,"attr":{"class":"fanhui_to_index"}},
+        {"img":"fanhui.png","x":128,"y":132,"attr":{"class":"fanhui_to_index"}},
     ]
 })
 

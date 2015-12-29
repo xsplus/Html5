@@ -289,13 +289,8 @@ sceneslist.push({
     'auto_h':true,                         /*是否自动适应高度*/
     'layers':[                              /*场景的图层数据*/
         {'img':'chakanxiangqing.png',x:2100,y:2422,'attr':{'class':'chakanxiangqing'}},
-        //说明
-        {'attr':{'class':'shuoming_bg'},isbg:true},
-        {'img':'shuoming.png',w:5251,h:2953,'attr':{'class':'shuoming'}},
-        //OK
-        {'img':'btn_ok.png',x:2504,y:1940,w:282,h:259,attr:{'class':'btn_ok'}},
-        {'img': 'scroll.png', x: 1020, y: 2287, attr: {'class': 'scroll'}},
-        {'img': 'scroll_index.png', x: 1080, y: 2208, attr: {'class': 'scroll_index'}}
+        {'img': 'scroll.png', x: 1020, y: 2687, attr: {'class': 'scroll'}},
+        {'img': 'scroll_index.png', x: 1080, y: 2608, attr: {'class': 'scroll_index'}}
     ]
 })
 
@@ -308,7 +303,7 @@ sceneslist.push({
     'auto_w':true,
     'auto_h':true,
     'layers':[
-        {"img":"fanhui.png","x":128,"y":132,w:420,h:165.5,"attr":{"class":"fanhui_to_index"}},
+        {"img":"fanhui.png","x":128,"y":132,"attr":{"class":"fanhui_to_index"}},
     ]
 })
 
@@ -378,7 +373,7 @@ sceneslist.push({
         {"img":"jichangbg.png","x":712,"y":168,"attr":{"class":"jichang"}},
         {"img":"jichangbtn1.png","x":1784,"y":924,"attr":{"class":"jichang"}},
 
-        {"x":128,"y":132,w:420,h:165.5,css:{'background':"url('img/anlibox/fanhui.png')"},"attr":{"class":"fanhui btn bg"}},
+        {"x":128,"y":132,w:600,h:138,css:{'background':"url('img/anlibox/fanhui.png')"},"attr":{"class":"fanhui btn bg"}},
     ]
 })
 
