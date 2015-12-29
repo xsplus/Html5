@@ -104,21 +104,19 @@
                                 $('.scene.child').eq(0).show();
                             }
                         })
-                        scene.children('.prev').addClass("show").pitTouch(function(){
-                            $(this).addClass('btndoudong');
-                            console.log("进入下一个场景");
-                            scene.removeClass('show');
-                            //scene scene-zhongxiaoxue child show true
-                            var s = scene.attr('class');
-                            var a = s.indexOf('scene-');
-                            $('.scene.scene-main .'+s.substr(a+6,s.indexOf(' ',a)-a-6)).addClass('juliedoudong');
-                            var obj = scene.prev('.scene.child')
-                            if(obj.length){
-                                obj.show();
-                            }else{
-                                $('.scene.child').eq(0).show();
-                            }
-                        })
+                        var prev = scene.prev('.scene.child')
+                        if(prev.length){
+                            scene.children('.prev').addClass("show").pitTouch(function(){
+                                $(this).addClass('btndoudong');
+                                console.log("返回上一个场景");
+                                scene.removeClass('show');
+                                //scene scene-zhongxiaoxue child show true
+                                var s = scene.attr('class');
+                                var a = s.indexOf('scene-');
+                                $('.scene.scene-main .'+s.substr(a+6,s.indexOf(' ',a)-a-6)).addClass('juliedoudong');
+                                prev.show();
+                            })
+                        }
                     }else{
                         scene.children('.lingjiang').addClass('show').pitTouch(function(){
                             $(this).addClass('btndoudong');

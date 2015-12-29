@@ -66,7 +66,7 @@ body.phone{
 }
 .debug .auto_create_btn{
     font-size: 4vh;
-    z-index: 99999;
+    z-index: 999999999;
     position: relative;
     padding: 1vh 2vh;
 }
@@ -117,10 +117,11 @@ body.phone{
 .yinyue .shenyin{
     z-index: 999;
 }
-
-.filter .yinyue,.filter .shengyin{
-    filter: brightness(100);
-    -webkit-filter: brightness(100);
+.filter .yinyue{
+    background-image: url("../img/yinyue/yinyue_fff.png") !important;
+}
+.filter .shengyin{
+    background-image: url("../img/yinyue/shengyin_fff.png") !important;
 }
 
 .weibiao{

@@ -113,6 +113,7 @@ function createScenes(scenes,cross_screen) {
                         if(scene.layers[j].isbg) layer.isbg = true;
                         layers += JSON.stringify(layer) + ',\n';
                     }
+                    console.log(layers);
                 })
                 scene.box.append(auto_create_btn);
                 $('html,body').css('overflow','scroll');
