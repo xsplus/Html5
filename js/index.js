@@ -24,7 +24,7 @@ initfunlist.push(function(){
         $(this).addClass('btndoudong');
         setTimeout(function(){
             $('.scene-index').removeClass('show');
-            $('.scene-main').show();
+            $('.scene-main').show().trigger('touchstart').trigger('touchend');
         },300)
     })
 
@@ -33,7 +33,7 @@ initfunlist.push(function(){
         $(this).addClass('btndoudong');
         setTimeout(function(){
             $('.scene-index').removeClass('show');
-            $('.scene-anli').show();
+            $('.scene-anli').show().trigger('touchstart').trigger('touchend');
         },300)
     })
 })
