@@ -30,25 +30,49 @@
 /* 云飘动 */
 @keyframes yun{
     from{transform:translateX(0)}
-    to{transform:translateX(50vw)}
+    to{transform:translateX(8000px)}
 }
 @-webkit-keyframes yun{
     from{-webkit-transform:translateX(0)}
-    to{-webkit-transform:translateX(50vw)}
+    to{-webkit-transform:translateX(8000px)}
 }
 @-moz-keyframes yun{
     from{-moz-transform:translateX(0)}
-    to{-moz-transform:translateX(50vw)}
+    to{-moz-transform:translateX(8000px)}
 }
 @-o-keyframes yun{
     from{-o-transform:translateX(0)}
-    to{-o-transform:translateX(50vw)}
+    to{-o-transform:translateX(8000px)}
 }
 .yun{
-    animation:yun 50.5s linear 0s infinite ;
-    -webkit-animation:yun 50.5s linear 0s infinite;
-    -moz-animation:yun 50.5s linear 0s infinite;
-    -o-animation:yun 50.5s linear 0s infinite;
+    animation:yun 200s linear 0s infinite ;
+    -webkit-animation:yun 200s linear 0s infinite;
+    -moz-animation:yun 200s linear 0s infinite;
+    -o-animation:yun 200s linear 0s infinite;
+}
+.yun1{
+     animation-delay: -80s;
+    -webkit-animation-delay: -80s;
+    -moz-animation-delay: -80s;
+    -o-animation-delay: -80s;
+ }
+.yun2{
+    animation-delay: -60s;
+    -webkit-animation-delay: -60s;
+    -moz-animation-delay: -60s;
+    -o-animation-delay: -60s;
+}
+.yun3{
+    animation-delay: -40s;
+    -webkit-animation-delay: -40s;
+    -moz-animation-delay: -40s;
+    -o-animation-delay: -40s;
+}
+.yun4{
+    animation-delay: -20s;
+    -webkit-animation-delay: -20s;
+    -moz-animation-delay: -20s;
+    -o-animation-delay: -20s;
 }
 
 /* 星星闪烁 */
@@ -154,19 +178,36 @@
 /* 地标标识 */
 @keyframes dibiaobiaoshi {
     0%{transform:translateY(0)}
-    50%{transform:translateY(3vh)}
+    50%{transform:translateY(60px)}
 }
 @-moz-keyframes dibiaobiaoshi {
     0%{-moz-transform:translateY(0)}
-    50%{-moz-transform:translateY(3vh)}
+    50%{-moz-transform:translateY(60px)}
 }
 @-o-keyframes dibiaobiaoshi {
     0%{-o-transform:translateY(0)}
-    50%{-o-transform:translateY(3vh)}
+    50%{-o-transform:translateY(60px)}
 }
 @-webkit-keyframes dibiaobiaoshi {
     0%{-webkit-transform:translateY(0)}
-    50%{-webkit-transform:translateY(3vh)}
+    50%{-webkit-transform:translateY(60px)}
+}
+
+@keyframes _dibiaobiaoshi {
+    0%{transform:translateY(0)}
+    50%{transform:translateY(30px)}
+}
+@-moz-keyframes _dibiaobiaoshi {
+    0%{-moz-transform:translateY(0)}
+    50%{-moz-transform:translateY(30px)}
+}
+@-o-keyframes _dibiaobiaoshi {
+    0%{-o-transform:translateY(0)}
+    50%{-o-transform:translateY(30px)}
+}
+@-webkit-keyframes _dibiaobiaoshi {
+    0%{-webkit-transform:translateY(0)}
+    50%{-webkit-transform:translateY(30px)}
 }
 .dibiaobiaoshi{
     z-index: 9;
@@ -176,29 +217,12 @@
     -o-animation:dibiaobiaoshi 2s linear infinite ;
 }
 
-/* 大飞机飞动 */
-@keyframes dafeiji {
-    from{transform:translateY(0)}
-    to{transform:translateY(1.2vh)}
-}
-@-webkit-keyframes dafeiji {
-     from{-webkit-transform:translateY(0)}
-     to{-webkit-transform:translateY(1.2vh)}
- }
-@-moz-keyframes dafeiji {
-    from{-moz-transform:translateY(0)}
-    to{-moz-transform:translateY(1.2vh)}
-}
-@-o-keyframes dafeiji {
-    from{-o-transform:translateY(0)}
-    to{-o-transform:translateY(1.2vh)}
-}
-.dafeiji{
-    z-index: 5;
-    animation:dafeiji 2s linear infinite ;
-    -webkit-animation:dafeiji 2s linear infinite ;
-    -o-animation:dafeiji 2s linear infinite ;
-    -moz-animation:dafeiji 2s linear infinite ;
+.phone .dibiaobiaoshi{
+    z-index: 9;
+    animation:_dibiaobiaoshi 2s linear infinite ;
+    -webkit-animation:_dibiaobiaoshi 2s linear infinite ;
+    -moz-animation:_dibiaobiaoshi 2s linear infinite ;
+    -o-animation:_dibiaobiaoshi 2s linear infinite ;
 }
 
 /*大楼灯*/
@@ -322,20 +346,21 @@
 /* 小飞机1 */
 @keyframes xiaofeiji1{
     0%{transform:translateX(0) translateY(0)}
-    100%{transform:translateX(-20vw) translateY(-40vh)}
+    100%{transform:translateX(-500px) translateY(-1000px)}
 }
 @-webkit-keyframes xiaofeiji1{
     0%{-webkit-transform:translateX(0) translateY(0)}
-    100%{-webkit-transform:translateX(-20vw) translateY(-40vh)}
+    100%{-webkit-transform:translateX(-500px) translateY(-1000px)}
 }
 @-moz-keyframes xiaofeiji1{
     0%{-moz-transform:translateX(0) translateY(0)}
-    100%{-moz-transform:translateX(-20vw) translateY(-40vh)}
+    100%{-moz-transform:translateX(-500px) translateY(-1000px)}
 }
 @-o-keyframes xiaofeiji1{
     0%{-o-transform:translateX(0) translateY(0)}
-    100%{-o-transform:translateX(-20vw) translateY(-40vh)}
+    100%{-o-transform:translateX(-500px) translateY(-1000px)}
 }
+
 .xiaofeiji1{
     animation:xiaofeiji1 15s linear 5s infinite ;
     -webkit-animation:xiaofeiji1 15s linear -5s infinite;
@@ -346,19 +371,19 @@
 /* 小飞机2 */
 @keyframes xiaofeiji2{
     0%{transform:translateX(0) translateY(0)}
-    100%{transform:translateX(25vw) translateY(-50vh)}
+    100%{transform:translateX(500px) translateY(-1000px)}
 }
 @-webkit-keyframes xiaofeiji2{
     0%{-webkit-transform:translateX(0) translateY(0)}
-    100%{-webkit-transform:translateX(25vw) translateY(-50vh)}
+    100%{-webkit-transform:translateX(500px) translateY(-1000px)}
 }
 @-moz-keyframes xiaofeiji2{
     0%{-moz-transform:translateX(0) translateY(0)}
-    100%{-moz-transform:translateX(25vw) translateY(-50vh)}
+    100%{-moz-transform:translateX(500px) translateY(-1000px)}
 }
 @-o-keyframes xiaofeiji2{
     0%{-o-transform:translateX(0) translateY(0)}
-    100%{-o-transform:translateX(25vw) translateY(-50vh)}
+    100%{-o-transform:translateX(500px) translateY(-1000px)}
 }
 .xiaofeiji2{
     animation:xiaofeiji2 15s linear infinite ;

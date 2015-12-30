@@ -1,29 +1,58 @@
 /* 首页title抖动 */
 @keyframes title{
     0%{transform:translateX(0) translateY(0)}
-    5%{transform:translateX(10vw) translateY(-10vh)}
-    7%{transform:translateX(-20vw) translateY(10vh)}
+    5%{transform:translateX(150px) translateY(-150px)}
+    7%{transform:translateX(-300px) translateY(150px)}
     9%{transform:translateX(0) translateY(0)}
     100%{transform:translateX(0) translateY(0)}
 }
 @-webkit-keyframes title{
     0%{-webkit-transform:translateX(0) translateY(0)}
-    5%{-webkit-transform:translateX(10vw) translateY(-10vh)}
-    7%{-webkit-transform:translateX(-20vw) translateY(10vh)}
+    5%{-webkit-transform:translateX(150px) translateY(-150px)}
+    7%{-webkit-transform:translateX(-300px) translateY(150px)}
     9%{-webkit-transform:translateX(0) translateY(0)}
     100%{-webkit-transform:translateX(0) translateY(0)}
 }
 @-moz-keyframes title{
     0%{-moz-transform:translateX(0) translateY(0)}
-    5%{-moz-transform:translateX(10vw) translateY(-10vh)}
-    7%{-moz-transform:translateX(-20vw) translateY(10vh)}
+    5%{-moz-transform:translateX(150px) translateY(-150px)}
+    7%{-moz-transform:translateX(-300px) translateY(150px)}
     9%{-moz-transform:translateX(0) translateY(0)}
     100%{-moz-transform:translateX(0) translateY(0)}
 }
 @-o-keyframes title{
     0%{-o-transform:translateX(0) translateY(0)}
-    5%{-o-transform:translateX(10vw) translateY(-10vh)}
-    7%{-o-transform:translateX(-20vw) translateY(10vh)}
+    5%{-o-transform:translateX(150px) translateY(-150px)}
+    7%{-o-transform:translateX(-300px) translateY(150px)}
+    9%{-o-transform:translateX(0) translateY(0)}
+    100%{-o-transform:translateX(0) translateY(0)}
+}
+
+@keyframes _title{
+    0%{transform:translateX(0) translateY(0)}
+    5%{transform:translateX(100px) translateY(-100px)}
+    7%{transform:translateX(-200px) translateY(100px)}
+    9%{transform:translateX(0) translateY(0)}
+    100%{transform:translateX(0) translateY(0)}
+}
+@-webkit-keyframes _title{
+    0%{-webkit-transform:translateX(0) translateY(0)}
+    5%{-webkit-transform:translateX(100px) translateY(-100px)}
+    7%{-webkit-transform:translateX(-200px) translateY(100px)}
+    9%{-webkit-transform:translateX(0) translateY(0)}
+    100%{-webkit-transform:translateX(0) translateY(0)}
+}
+@-moz-keyframes _title{
+    0%{-moz-transform:translateX(0) translateY(0)}
+    5%{-moz-transform:translateX(100px) translateY(-100px)}
+    7%{-moz-transform:translateX(-200px) translateY(100px)}
+    9%{-moz-transform:translateX(0) translateY(0)}
+    100%{-moz-transform:translateX(0) translateY(0)}
+}
+@-o-keyframes _title{
+    0%{-o-transform:translateX(0) translateY(0)}
+    5%{-o-transform:translateX(100px) translateY(-100px)}
+    7%{-o-transform:translateX(-200px) translateY(100px)}
     9%{-o-transform:translateX(0) translateY(0)}
     100%{-o-transform:translateX(0) translateY(0)}
 }
@@ -33,6 +62,12 @@
     -moz-animation :title 2s linear infinite;
     -wekit-animation :title 2s linear infinite;
     -o-animation :title 2s linear infinite;
+}
+.phone .scene-index .title{
+    animation :_title 2s linear infinite;
+    -moz-animation :_title 2s linear infinite;
+    -wekit-animation :_title 2s linear infinite;
+    -o-animation :_title 2s linear infinite;
 }
 
 /* 按钮抖动 */

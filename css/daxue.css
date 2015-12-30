@@ -163,26 +163,49 @@
 }
 
 @keyframes wenhao{
-    33%{transform: translateY(2vh)}
-    66%{transform: translateY(-2vh)}
+    33%{transform: translateY(20px)}
+    66%{transform: translateY(-20px)}
 }
 @-moz-keyframes wenhao{
-    33%{-moz-transform: translateY(2vh)}
-    66%{-moz-transform: translateY(-2vh)}
+    33%{-moz-transform: translateY(20px)}
+    66%{-moz-transform: translateY(-20px)}
 }
 @-o-keyframes wenhao{
-    33%{-o-transform: translateY(2vh)}
-    66%{-o-transform: translateY(-2vh)}
+    33%{-o-transform: translateY(20px)}
+    66%{-o-transform: translateY(-20px)}
 }
 @-webkit-keyframes wenhao{
-    33%{-webkit-transform: translateY(2vh)}
-    66%{-webkei-transform: translateY(-2vh)}
+    33%{-webkit-transform: translateY(20px)}
+    66%{-webkei-transform: translateY(-20px)}
+}
+
+@keyframes _wenhao{
+    33%{transform: translateY(10px)}
+    66%{transform: translateY(-10px)}
+}
+@-moz-keyframes _wenhao{
+    33%{-moz-transform: translateY(10px)}
+    66%{-moz-transform: translateY(-10px)}
+}
+@-o-keyframes _wenhao{
+    33%{-o-transform: translateY(10px)}
+    66%{-o-transform: translateY(-10px)}
+}
+@-webkit-keyframes _wenhao{
+    33%{-webkit-transform: translateY(10px)}
+    66%{-webkei-transform: translateY(-10px)}
 }
 .wenhao{
     animation:wenhao 3s linear 2s infinite ;
     -moz-animation:wenhao 3s linear 2s infinite;
     -o-animation:wenhao 3s linear 2s infinite;
     -webkit-animation:wenhao 3s linear 2s infinite;
+}
+.phone .wenhao{
+    animation:_wenhao 3s linear 2s infinite ;
+    -moz-animation:_wenhao 3s linear 2s infinite;
+    -o-animation:_wenhao 3s linear 2s infinite;
+    -webkit-animation:_wenhao 3s linear 2s infinite;
 }
 
 @keyframes cilun1{
