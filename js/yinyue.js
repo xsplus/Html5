@@ -17,8 +17,8 @@ sceneslist.push({
         //OK
         {'img': 'btn_ok.png', x: 2204, y: 1940, w: 282, h: 259, attr: {'class': 'btn_ok'}},
         {'img':'chakanxiangqing.png',x:1970,y:2122,'attr':{'class':'chakanxiangqing'}},
-        {'img': 'scroll.png', x: 820, y: 2387, attr: {'class': 'scroll'}},
-        { x: 880, y: 2344,w:150,h:150, attr: {'class': 'scroll_index'}},
+        {'img': 'scroll.png', x: 780, y: 2387, attr: {'class': 'scroll'}},
+        { x: 840, y: 2344,w:150,h:150, attr: {'class': 'scroll_index'}},
         {"img":"fanhui.png","x":128,"y":132,"attr":{"class":"fanhui_to_index btn"}},
     ]
 })

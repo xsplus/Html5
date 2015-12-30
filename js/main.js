@@ -303,7 +303,8 @@ initfunlist.push(function() {
                     var s = -pos.y / limit;
                     var width = parseInt($('.scene-yinyue .scroll').css('width')) - parseInt($('.scene-yinyue .scroll_index').css('width'));
                     var left = parseInt($('.scene-yinyue .scroll').css('left')) + width * 0.0185;
-                    $('.scene-yinyue .scroll_index').css('left', left + width * s * 0.963);
+                    var val = left + width * s * 0.963;
+                    $('.scene-yinyue .scroll_index').css('left', val.toFixed(0)+"px");
                 }
             }
         }
@@ -323,7 +324,8 @@ initfunlist.push(function() {
                     var s = -pos.x / limit;
                     var width = parseInt($('.scene-yinyue .scroll').css('width')) - parseInt($('.scene-yinyue .scroll_index').css('width'));
                     var left = parseInt($('.scene-yinyue .scroll').css('left')) + width * 0.0185;
-                    $('.scene-yinyue .scroll_index').css('left', left + width * s * 0.963);
+                    var val = left + width * s * 0.963;
+                    $('.scene-yinyue .scroll_index').css('left', val.toFixed(0)+"px");
                 }
             }
         }
@@ -405,8 +407,10 @@ initfunlist.push(function() {
     else {
         var startPos;
         //触摸事件自定义
-        main_box.on('mousemove', function mousemove(event) {
-            moveTo({x: -event.pageX / $.size('w') * limit});
+        $('body').on('mousemove', function mousemove(event) {
+            if(main_box.is('.show') && event.pageY/ win.height() > 0.6){
+                moveTo({x: -event.pageX / $.size('w') * limit});
+            }
         });
     }
     win.resize(function(){
@@ -422,14 +426,18 @@ initfunlist.push(function() {
 
     //给地标绑定事件
     $('.scene-main .btn').pitTouch(function () {
-        console.log("进入地标场景");
-        count++;
-        var key = $(this).data('id');
         $('.scene-main').removeClass('show');
         $('.scene-anlibox').addClass('show');
-        $('.scene-main ' + key).addClass('juliedoudong');
         $('.scene-yinyue').removeClass('filter');
-        $('.scene-' + key).show();
         $('.scene-yinyue').attr('type','');
+        if($('.scene-anlibox').is('.lingjiang')){
+
+        }else{
+            console.log("进入地标场景");
+            count++;
+            var key = $(this).data('id');
+            $('.scene-main ' + key).addClass('juliedoudong');
+            $('.scene-' + key).show();
+        }
     });
 })

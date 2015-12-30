@@ -363,7 +363,7 @@ sceneslist.push({
         {"x":1376,"y":212,"w":2000,"h":280,"attr":{"class":"jichang opacity"}},
         {"img":"jichangbg.png","attr":{"class":"jichang"}},
 
-        {"x":128,"y":132,w:600,h:138,css:{'background':"url('img/anlibox/yinyue.png')"},"attr":{"class":"fanhui btn bg"}},
+        {"x":128,"y":132,w:600,h:138,css:{'background':"url('img/yinyue/fanhui.png')"},"attr":{"class":"fanhui btn bg"}},
     ]
 })
 
@@ -394,7 +394,8 @@ initfunlist.push(function(){
                     var s = -pos.y / limit;
                     var width = parseInt($('.scene-yinyue .scroll').css('width')) - parseInt($('.scene-yinyue .scroll_index').css('width'));
                     var left = parseInt($('.scene-yinyue .scroll').css('left')) + width * 0.0185;
-                    $('.scene-yinyue .scroll_index').css('left', left + width * s * 0.963);
+                    var val = left + width * s * 0.963;
+                    $('.scene-yinyue .scroll_index').css('left', val.toFixed(0)+"px");
                 }
             }
         }
@@ -414,7 +415,8 @@ initfunlist.push(function(){
                     var s = -pos.x / limit;
                     var width = parseInt($('.scene-yinyue .scroll').css('width')) - parseInt($('.scene-yinyue .scroll_index').css('width'));
                     var left = parseInt($('.scene-yinyue .scroll').css('left')) + width * 0.0185;
-                    $('.scene-yinyue .scroll_index').css('left', left + width * s * 0.963);
+                    var val = left + width * s * 0.963;
+                    $('.scene-yinyue .scroll_index').css('left', val.toFixed(0)+"px");
                 }
             }
         }
@@ -495,8 +497,10 @@ initfunlist.push(function(){
     else{
         var startPos;
         //触摸事件自定义
-        anli_box.on('mousemove', function mousemove(event) {
-            moveTo({x: -event.pageX / $.size('w') * limit});
+        $('body').on('mousemove', function mousemove(event) {
+            if(anli_box.is('.show') && event.pageY/ win.height() > 0.6){
+                moveTo({x: -event.pageX / $.size('w') * limit});
+            }
         });
     }
 
