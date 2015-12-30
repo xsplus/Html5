@@ -362,10 +362,10 @@
 }
 
 .xiaofeiji1{
-    animation:xiaofeiji1 15s linear 5s infinite ;
-    -webkit-animation:xiaofeiji1 15s linear -5s infinite;
-    -moz-animation:xiaofeiji1 15s linear -5s infinite;
-    -o-animation:xiaofeiji1 15s linear -5s infinite;
+    animation:xiaofeiji1 30s linear -5s infinite ;
+    -webkit-animation:xiaofeiji1 30s linear -5s infinite;
+    -moz-animation:xiaofeiji1 30s linear -5s infinite;
+    -o-animation:xiaofeiji1 30s linear -5s infinite;
 }
 
 /* 小飞机2 */
@@ -386,10 +386,10 @@
     100%{-o-transform:translateX(500px) translateY(-1000px)}
 }
 .xiaofeiji2{
-    animation:xiaofeiji2 15s linear infinite ;
-    -webkit-animation:xiaofeiji2 15s linear infinite;
-    -moz-animation:xiaofeiji2 15s linear infinite;
-    -o-animation:xiaofeiji2 15s linear infinite;
+    animation:xiaofeiji2 30s linear infinite ;
+    -webkit-animation:xiaofeiji2 30s linear infinite;
+    -moz-animation:xiaofeiji2 30s linear infinite;
+    -o-animation:xiaofeiji2 30s linear infinite;
 }
 .shuoming_bg{
     background-color:rgba(0,0,0,0.7);

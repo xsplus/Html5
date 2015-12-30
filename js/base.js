@@ -17,10 +17,12 @@ $.fn.show = function (before, after, fn, transition) {
         }, 1000)
     }else if(fn) fn();
 }
-
+var u = navigator.userAgent;
+console.log(u)
 var sceneslist = [],initfunlist = [],loadingfun;
 function scenes_init(cross_screen){
-    $.isPhone = "ontouchend" in document ? true : false;
+    var u = navigator.userAgent;
+    $.isPhone = "ontouchend" in document && u.indexOf('Firefox') < 0 && u.indexOf('Chrome') < 0 ? true : false;
     if($.isPhone){
         $.fn.pitTouch = function(fn){
             $(this).on('touchstart',fn);

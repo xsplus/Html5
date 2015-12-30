@@ -64,7 +64,11 @@
         loadingfun = function (load_n,load_sum) {
             var v = load_n / load_sum;
             $(".baifenbi").html("<a>"+(v * 100).toFixed(0) + "%</a>");
-            $(".load3").css('transform', 'scaleX(' + (v * 2.05) + ')');
+            var val = 'scaleX(' + (v * 2.05) + ')';
+            $(".load3").css('transform', val)
+                    .css('-webkit-transform', val)
+                    .css('-moz-transform', val)
+                    .css('-o-transform', val);
             /*$(".load4").css('transform', 'scaleX(' + (v << 2) + ')');*/
             if (load_n == load_sum) {
                 //$(".load4").remove();

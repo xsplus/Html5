@@ -301,8 +301,8 @@ initfunlist.push(function() {
                     main_box.css('left', p.y);
                     pos.y = p.y;
                     var s = -pos.y / limit;
-                    var width = parseInt($('.scene-main .scroll').css('width')) - parseInt($('.scene-main .scroll_index').css('width'));
-                    var left = parseInt($('.scene-main .scroll').css('left')) + width * 0.0185;
+                    var width = parseInt($('.scene-yinyue .scroll').css('width')) - parseInt($('.scene-yinyue .scroll_index').css('width'));
+                    var left = parseInt($('.scene-yinyue .scroll').css('left')) + width * 0.0185;
                     $('.scene-yinyue .scroll_index').css('left', left + width * s * 0.963);
                 }
             }
