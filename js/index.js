@@ -25,6 +25,7 @@ initfunlist.push(function(){
         setTimeout(function(){
             $('.scene-index').removeClass('show');
             $('.scene-main').show();
+            $('.scene-yinyue').attr('type','main');
         },300)
     })
 
@@ -34,6 +35,7 @@ initfunlist.push(function(){
         setTimeout(function(){
             $('.scene-index').removeClass('show');
             $('.scene-anli').show();
+            $('.scene-yinyue').attr('type','anli');
         },300)
     })
 })

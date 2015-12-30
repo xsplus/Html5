@@ -74,7 +74,7 @@ sceneslist.push(scene_anli = {
         //大飞机
         {'img':'anli_dafeiji.png',x:3387,y:328,w:1467,h:550,'attr':{'class':'dafeiji btn','data-id':'jichang'}},
         {'img':'dibiaobiaoshi.png',x:3587,y:30,'attr':{'class':'dibiaobiaoshi btn','data-id':'jichang'}},
-        {"img":"jichang.png","x":3780,"y":110,w:400,h:432,"attr":{"class":"jichang btn",'data-id':'jichang'},},
+        {"img":"jichang.png","x":3780,"y":110,w:400,h:368,"attr":{"class":"jichang btn",'data-id':'jichang'},},
         //大楼灯
         {x:1102,y:2144,w:10,h:10,'attr':{'class':'daloudeng deng1'}},
         {x:1152,y:2144,w:10,h:10,'attr':{'class':'daloudeng deng2'}},
@@ -280,34 +280,6 @@ sceneslist.push(scene_anli = {
 });
 
 sceneslist.push({
-    'box':$('.scene-anli'),       /*场景的标签*/
-    'debug':false,                            /*是否开启调试模式*/
-    'width':5251,                            /*场景的宽*/
-    'height':2953,                           /*场景的高*/
-    'path':'img/main/',                  /*图片根目录*/
-    'auto_w':true,                        /*是否自动适应宽度*/
-    'auto_h':true,                         /*是否自动适应高度*/
-    'layers':[                              /*场景的图层数据*/
-        {'img':'chakanxiangqing.png',x:2100,y:2422,'attr':{'class':'chakanxiangqing'}},
-        {'img': 'scroll.png', x: 1020, y: 2687, attr: {'class': 'scroll'}},
-        {'img': 'scroll_index.png', x: 1080, y: 2608, attr: {'class': 'scroll_index'}}
-    ]
-})
-
-sceneslist.push({
-    'box':$('.scene-anli'),
-    'debug':false,
-    'width':4742,
-    'height':2667,
-    'path':'img/anlibox/',
-    'auto_w':true,
-    'auto_h':true,
-    'layers':[
-        {"img":"fanhui.png","x":128,"y":132,"attr":{"class":"fanhui_to_index"}},
-    ]
-})
-
-sceneslist.push({
     'box':$('.scene-anlichild'),       /*场景的标签*/
     'debug':false,                            /*是否开启调试模式*/
     'width':4742,                            /*场景的宽*/
@@ -316,65 +288,82 @@ sceneslist.push({
     'auto_w':true,                        /*是否自动适应宽度*/
     'auto_h':true,                         /*是否自动适应高度*/
     'layers':[                              /*场景的图层数据*/
+
+        { isbg:true,w:4742,h:2667,css:{'background':"url('img/anlibox/bg.png')"},"attr":{"class":"bg"}},
         //会议
         /*{"img":"huiyi_yulan.png","isbg":true},*/
         /*{ "img":"_bg.png",isbg:true,w:4742,h:2667,"attr":{"class":"bg"}},*/
-        { isbg:true,w:4742,h:2667,css:{'background':"url('img/anlibox/bg.png')"},"attr":{"class":"bg"}},
-        {"img":"huiyibg.png","x":-4,"attr":{"class":"huiyi"}},
+        {"x":1376,"y":212,"w":2000,"h":280,"attr":{"class":"huiyi opacity"}},
+        {"x":304,"y":772,"w":1160,"h":1420,"attr":{"class":"huiyi opacity"}},
+        {"x":3272,"y":772,"w":1160,"h":1420,"attr":{"class":"huiyi opacity"}},
+        {"x":1792,"y":772,"w":1160,"h":1420,"attr":{"class":"huiyi opacity"}},
+        {"img":"huiyibg.png","attr":{"class":"huiyi"}},
         {"img":"chakanbtn.png","x":802,"y":2000,"attr":{"class":"huiyibtn1 huiyi btn"}},
         {"img":"chakanbtn.png","x":2282,"y":1996,"attr":{"class":"huiyibtn2 huiyi btn"}},
         {"img":"chakanbtn.png","x":3742,"y":1984,"attr":{"class":"huiyibtn2 huiyi btn"}},
        //中小学 zhongxiaoxue
        // {"img":"zhongxiaoxue_yulan.png","attr":{"class":"zhongxiaoxue"},"isbg":true},
-        {"img":"zhongxiaoxuebg.png","x":232,"y":164,"attr":{"class":"zhongxiaoxue"}},
-        {"img":"zhongxiaoxuebtn1.png","x":696,"y":1032,"attr":{"class":"zhongxiaoxue"}},
-        {"img":"zhongxiaoxuebtn2.png","x":2876,"y":1024,"attr":{"class":"zhongxiaoxue"}},
-        {"img":"chakanbtn.png",x:1618,y:2072,"attr":{"class":"zhongxiaoxuebtn1 zhongxiaoxue btn"}},
-        {"img":"chakanbtn.png",x:3818,y:2072,"attr":{"class":"zhongxiaoxuebtn2 zhongxiaoxue btn"}},
+        {"x":1376,"y":212,"w":2000,"h":280,"attr":{"class":"zhongxiaoxue opacity"}},
+        {"x":316,"y":700,"w":1920,"h":1560,"attr":{"class":"zhongxiaoxue opacity"}},
+        {"x":2504,"y":700,"w":1920,"h":1560,"attr":{"class":"zhongxiaoxue opacity"}},
+        {"img":"zhongxiaoxuebg.png","attr":{"class":"zhongxiaoxue"}},
+        {"img":"chakanbtn.png","x":1530,"y":2044,"attr":{"class":"zhongxiaoxuebtn1 zhongxiaoxue btn"}},
+        {"img":"chakanbtn.png","x":3714,"y":2040,"attr":{"class":"zhongxiaoxuebtn2 zhongxiaoxue btn"}},
         //大学 daxue
         //{"img":"daxue_yulan.png","attr":{"class":"daxue"},"isbg":true},
-        {"img":"daxuebg.png","x":200,"y":112,"attr":{"class":"daxue"}},
-        {"img":"daxuebtn1.png","x":660,"y":996,"attr":{"class":"daxue"}},
-        {"img":"daxuebtn2.png","x":2840,"y":992,"attr":{"class":"daxue"}},
-        {"img":"chakanbtn.png",x:1618,y:2072,"attr":{"class":"daxuebtn1 daxue btn"}},
-        {"img":"chakanbtn.png",x:3818,y:2072,"attr":{"class":"daxuebtn2 daxue btn"}},
-        //医院 yiyuan 
+        {"x":1376,"y":212,"w":2000,"h":280,"attr":{"class":"daxue opacity"}},
+        {"x":316,"y":700,"w":1920,"h":1560,"attr":{"class":"daxue opacity"}},
+        {"x":2504,"y":700,"w":1920,"h":1560,"attr":{"class":"daxue opacity"}},
+        {"img":"daxuebg.png","attr":{"class":"daxue"}},
+        {"img":"chakanbtn.png","x":1522,"y":2028,"attr":{"class":"daxuebtn1 daxue btn"}},
+        {"img":"chakanbtn.png","x":3730,"y":2032,"attr":{"class":"daxuebtn2 daxue btn"}},
+        //医院 yiyuan
+        {"x":1376,"y":212,"w":2000,"h":280,"attr":{"class":"yiyuan opacity"}},
+        {"x":324,"y":704,"w":1920,"h":1560,"attr":{"class":"yiyuan opacity"}},
+        {"x":2508,"y":704,"w":1920,"h":1560,"attr":{"class":"yiyuan opacity"}},
         {"img":"yiyuanbg.png","x":4,"attr":{"class":"yiyuan"}},
        //银行 yinhang
        // {"img":"yinhang_yulan.png","attr":{"class":"yinhang"},"isbg":true},
-        {"img":"yinhangbg.png","x":236,"y":168,"attr":{"class":"yinhang"}},
-        {"img":"yinhangbtn1.png","x":692,"y":1032,"attr":{"class":"yinhang"}},
-        {"img":"yinhangbtn2.png","x":2876,"y":1036,"attr":{"class":"yinhang"}},
-        {"img":"chakanbtn.png",x:1618,y:2072,"attr":{"class":"yinhangbtn1 yinhang btn"}},
-        {"img":"chakanbtn.png",x:3818,y:2072,"attr":{"class":"yinhangbtn2 yinhang btn"}},
+        {"x":1376,"y":212,"w":2000,"h":280,"attr":{"class":"yinhang opacity"}},
+        {"x":316,"y":700,"w":1920,"h":1560,"attr":{"class":"yinhang opacity"}},
+        {"x":2504,"y":700,"w":1920,"h":1560,"attr":{"class":"yinhang opacity"}},
+        {"img":"yinhangbg.png","attr":{"class":"yinhang"}},
+        {"img":"chakanbtn.png","x":1538,"y":2048,"attr":{"class":"yinhangbtn1 yinhang btn"}},
+        {"img":"chakanbtn.png","x":3738,"y":2036,"attr":{"class":"yinhangbtn2 yinhang btn"}},
         //购物 gouwuzhongxin
         //{"img":"gouwuzhongxin_yulan.png","attr":{"class":"gouwuzhongxin"},"isbg":true},
-        {"img":"gouwuzhongxinbg.png","x":232,"y":168,"attr":{"class":"gouwuzhongxin"}},
-        {"img":"gouwuzhongxinbtn1.png","x":692,"y":1024,"attr":{"class":"gouwuzhongxin"}},
-        {"img":"gouwuzhongxinbtn2.png","x":2876,"y":1028,"attr":{"class":"gouwuzhongxin"}},
-        {"img":"chakanbtn.png",x:1618,y:2072,"attr":{"class":"gouwuzhongxinbtn1 gouwuzhongxin btn"}},
-        {"img":"chakanbtn.png",x:3818,y:2072,"attr":{"class":"gouwuzhongxinbtn1 gouwuzhongxin btn"}},
+        {"x":1376,"y":212,"w":2000,"h":280,"attr":{"class":"gouwuzhongxin opacity"}},
+        {"x":316,"y":700,"w":1920,"h":1560,"attr":{"class":"gouwuzhongxin opacity"}},
+        {"x":2504,"y":700,"w":1920,"h":1560,"attr":{"class":"gouwuzhongxin opacity"}},
+        {"img":"gouwuzhongxinbg.png","attr":{"class":"gouwuzhongxin"}},
+        {"img":"chakanbtn.png","x":1550,"y":2036,"attr":{"class":"gouwuzhongxinbtn1 gouwuzhongxin btn"}},
+        {"img":"chakanbtn.png","x":3722,"y":2032,"attr":{"class":"gouwuzhongxinbtn1 gouwuzhongxin btn"}},
         //厂房 changfang
         //{"img":"changfang_yulan.png","attr":{"class":"changfang"},"isbg":true},
-        {"img":"changfangbg.png","x":236,"y":172,"attr":{"class":"changfang"}},
-        {"img":"changfangbtn1.png","x":692,"y":1028,"attr":{"class":"changfang"}},
-        {"img":"changfangbtn2.png","x":2880,"y":1028,"attr":{"class":"changfang"}},
-        {"img":"chakanbtn.png",x:1618,y:2072,"attr":{"class":"changfangbtn1 changfang btn"}},
-        {"img":"chakanbtn.png",x:3818,y:2072,"attr":{"class":"changfangbtn2 changfang btn"}},
+        {"x":1376,"y":212,"w":2000,"h":280,"attr":{"class":"changfang opacity"}},
+        {"x":316,"y":700,"w":1920,"h":1560,"attr":{"class":"changfang opacity"}},
+        {"x":2504,"y":700,"w":1920,"h":1560,"attr":{"class":"changfang opacity"}},
+        {"img":"changfangbg.png","attr":{"class":"changfang"}},
+        {"img":"chakanbtn.png","x":1550,"y":2036,"attr":{"class":"changfangbtn1 changfang btn"}},
+        {"img":"chakanbtn.png","x":3722,"y":2032,"attr":{"class":"changfangbtn2 changfang btn"}},
         //景区 jingqu
-        //{"img":"jingqu_yulan.png","attr":{"class":"jingqu"},"isbg":true},
+        //{"img":"jqbg.jpg","attr":{"class":"jingqu"},"isbg":true},
+        {"x":800,"y":700,"w":3146,"h":1570,"attr":{"class":"jingqu opacity"}},
+        {"x":1376,"y":212,"w":2000,"h":280,"attr":{"class":"jingqu opacity"}},
         {"img":"jingqubg.png","attr":{"class":"jingqu"}},
          //地铁 ditie
         //{"img":"ditie_yulan.png","attr":{"class":"ditie"},"isbg":true},
-        {"img":"ditiebg.png","x":712,"y":168,"attr":{"class":"ditie"}},
-        {"img":"ditiebtn1.png","x":1780,"y":924,"attr":{"class":"ditie"}},
+        {"x":800,"y":700,"w":3146,"h":1570,"attr":{"class":"ditie opacity"}},
+        {"x":1376,"y":212,"w":2000,"h":280,"attr":{"class":"ditie opacity"}},
+        {"img":"ditiebg.png","attr":{"class":"ditie"}},
         {"img":"chakanbtn.png","x":3236,"y":2040,"attr":{"class":"ditiebtn1 ditie btn"}},
         //机场 jichang
         //{"img":"jichang_yulan.png","attr":{"class":"jichang"},"isbg":true},
-        {"img":"jichangbg.png","x":712,"y":168,"attr":{"class":"jichang"}},
-        {"img":"jichangbtn1.png","x":1784,"y":924,"attr":{"class":"jichang"}},
+        {"x":800,"y":700,"w":3146,"h":1570,"attr":{"class":"jichang opacity"}},
+        {"x":1376,"y":212,"w":2000,"h":280,"attr":{"class":"jichang opacity"}},
+        {"img":"jichangbg.png","attr":{"class":"jichang"}},
 
-        {"x":128,"y":132,w:600,h:138,css:{'background':"url('img/anlibox/fanhui.png')"},"attr":{"class":"fanhui btn bg"}},
+        {"x":128,"y":132,w:600,h:138,css:{'background':"url('img/anlibox/yinyue.png')"},"attr":{"class":"fanhui btn bg"}},
     ]
 })
 
@@ -396,14 +385,17 @@ initfunlist.push(function(){
         }
         moveTo = function (p) {
             if(p.y){
-                if (p.y > 0) p.y = 0;
-                else if (limit + p.y < 0) p.y = -limit;
-                anli_box.css('left', p.y);
-                pos.y = p.y;
-                var s = -pos.y / limit;
-                var width = parseInt($('.scene-anli .scroll').css('width')) - parseInt($('.scene-anli .scroll_index').css('width'));
-                var left = parseInt($('.scene-anli .scroll').css('left')) + width * 0.0185;
-                $('.scene-anli .scroll_index').css('left', left + width * s * 0.963);
+                var d = (pos.y - p.y).toFixed(0);
+                if (d != 0) {
+                    if (p.y > 0) p.y = 0;
+                    else if (limit + p.y < 0) p.y = -limit;
+                    anli_box.css('left', p.y);
+                    pos.y = p.y;
+                    var s = -pos.y / limit;
+                    var width = parseInt($('.scene-yinyue .scroll').css('width')) - parseInt($('.scene-yinyue .scroll_index').css('width'));
+                    var left = parseInt($('.scene-yinyue .scroll').css('left')) + width * 0.0185;
+                    $('.scene-yinyue .scroll_index').css('left', left + width * s * 0.963);
+                }
             }
         }
     }else {
@@ -413,14 +405,17 @@ initfunlist.push(function(){
         }
         moveTo = function (p) {
             if(p.x){
-                if (p.x > 0) p.x = 0;
-                else if (limit + p.x < 0) p.x = -limit;
-                anli_box.css('left', p.x);
-                pos.x = p.x;
-                var s = -pos.x / limit;
-                var width = parseInt($('.scene-anli .scroll').css('width')) - parseInt($('.scene-anli .scroll_index').css('width'));
-                var left = parseInt($('.scene-anli .scroll').css('left')) + width * 0.0185;
-                $('.scene-anli .scroll_index').css('left', left + width * s * 0.963);
+                var d = (pos.x - p.x).toFixed(0);
+                if (d != 0) {
+                    if (p.x > 0) p.x = 0;
+                    else if (limit + p.x < 0) p.x = -limit;
+                    anli_box.css('left', p.x);
+                    pos.x = p.x;
+                    var s = -pos.x / limit;
+                    var width = parseInt($('.scene-yinyue .scroll').css('width')) - parseInt($('.scene-yinyue .scroll_index').css('width'));
+                    var left = parseInt($('.scene-yinyue .scroll').css('left')) + width * 0.0185;
+                    $('.scene-yinyue .scroll_index').css('left', left + width * s * 0.963);
+                }
             }
         }
     }
@@ -522,6 +517,7 @@ initfunlist.push(function(){
         var key = $(this).data('id');
         $('.scene-anli').removeClass('show');
         $('.scene-anlichild').addClass('show').attr('type',key);
+        $('.scene-yinyue').attr('type','');
     });
     //OK
     $('.scene-anli .btn_ok').pitTouch(function() {
@@ -537,6 +533,7 @@ initfunlist.push(function(){
             console.log('返回anli');
             $('.scene-anlichild').removeClass('show');
             $('.scene-anli').addClass('show');
+            $('.scene-yinyue').attr('type','anli');
         },300)
     })
     //大学

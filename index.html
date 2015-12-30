@@ -58,6 +58,7 @@
 </footer>
 </html>
 <script>
+    var count = 0;
     $(function() {
         createScenes(sceneslist,true);
         loadingfun = function (load_n,load_sum) {
@@ -104,8 +105,7 @@
                                 $('.scene.child').eq(0).show();
                             }
                         })
-                        var prev = scene.prev('.scene.child')
-                        if(prev.length){
+                        if(count > 1){
                             scene.children('.prev').addClass("show").pitTouch(function(){
                                 $(this).addClass('btndoudong');
                                 console.log("返回上一个场景");
@@ -114,7 +114,12 @@
                                 var s = scene.attr('class');
                                 var a = s.indexOf('scene-');
                                 $('.scene.scene-main .'+s.substr(a+6,s.indexOf(' ',a)-a-6)).addClass('juliedoudong');
-                                prev.show();
+                                var obj = scene.prev('.scene.child')
+                                if(obj.length){
+                                    obj.show();
+                                }else{
+                                    $('.scene.child').eq(-1).show();
+                                }
                             })
                         }
                     }else{
@@ -125,6 +130,7 @@
                             $('.scene-anlibox').addClass('lingjiang');
                         })
                     }
+                    count++;
                 })
             }
         }

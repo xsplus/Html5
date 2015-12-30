@@ -123,8 +123,25 @@ body.phone{
 .filter .shengyin{
     background-image: url("../img/yinyue/shengyin_fff.png") !important;
 }
+.scene-yinyue .btn_ok,.scene-yinyue .shuoming_bg,.scene-yinyue .shuoming,
+.scene-yinyue .fanhui_to_index,.scene-yinyue .scroll,.scene-yinyue .scroll_index,
+.scene-yinyue .chakanxiangqing{
+    display: none;
+}
+.scene-yinyue[type='main'] .btn_ok,.scene-yinyue[type='main'] .shuoming_bg,
+.scene-yinyue[type='main'] .shuoming,.scene-yinyue[type='main'] .fanhui_to_index,
+.scene-yinyue[type='main'] .scroll,.scene-yinyue[type='main'] .scroll_index,
+.scene-yinyue[type='anli'] .scroll,.scene-yinyue[type='anli']  .scroll_index,
+.scene-yinyue[type='anli']  .chakanxiangqing,.scene-yinyue[type='anli']  .fanhui_to_index{
+    display: block;
+}
 
 .weibiao{
     transition: .8s;
     transform: scale(2);
+}
+.scroll_index{
+    background-color: #fff;
+    background-color:rgba(255,255,255,0.7);
+    border-radius: 50%;
 }

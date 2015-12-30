@@ -276,38 +276,6 @@ sceneslist.push(scene_main = {
     ]
 });
 
-sceneslist.push({
-    'box': $('.scene-main'), /*场景的标签*/
-    'debug': false, /*是否开启调试模式*/
-    'width': 5251, /*场景的宽*/
-    'height': 2953, /*场景的高*/
-    'path': 'img/main/', /*图片根目录*/
-    'auto_w': true, /*是否自动适应宽度*/
-    'auto_h': true, /*是否自动适应高度*/
-    'layers': [/*场景的图层数据*/
-        //说明
-        {'attr': {'class': 'shuoming_bg'}, isbg: true},
-        {'img': 'shuoming.png', w: 5251, h: 2953, 'attr': {'class': 'shuoming'}},
-        //OK
-        {'img': 'btn_ok.png', x: 2504, y: 1940, w: 282, h: 259, attr: {'class': 'btn_ok'}},
-        {'img': 'scroll.png', x: 1020, y: 2687, attr: {'class': 'scroll'}},
-        {'img': 'scroll_index.png', x: 1080, y: 2608, attr: {'class': 'scroll_index'}}
-    ]
-})
-
-sceneslist.push({
-    'box':$('.scene-main'),
-    'debug':false,
-    'width':4742,
-    'height':2667,
-    'path':'img/anlibox/',
-    'auto_w':true,
-    'auto_h':true,
-    'layers':[
-        {"img":"fanhui.png","x":128,"y":132,"attr":{"class":"fanhui_to_index"}},
-    ]
-})
-
 initfunlist.push(function() {
     var main_box = $('.scene-main');
     var left;
@@ -325,15 +293,18 @@ initfunlist.push(function() {
             }
         }
         moveTo = function (p) {
-            if(p.y){
-                if (p.y > 0) p.y = 0;
-                else if (limit + p.y < 0) p.y = -limit;
-                main_box.css('left', p.y);
-                pos.y = p.y;
-                var s = -pos.y / limit;
-                var width = parseInt($('.scene-main .scroll').css('width')) - parseInt($('.scene-main .scroll_index').css('width'));
-                var left = parseInt($('.scene-main .scroll').css('left')) + width * 0.0185;
-                $('.scene-main .scroll_index').css('left', left + width * s * 0.963);
+            if(p.y) {
+                var d = (pos.y - p.y).toFixed(0);
+                if (d != 0) {
+                    if (p.y > 0) p.y = 0;
+                    else if (limit + p.y < 0) p.y = -limit;
+                    main_box.css('left', p.y);
+                    pos.y = p.y;
+                    var s = -pos.y / limit;
+                    var width = parseInt($('.scene-main .scroll').css('width')) - parseInt($('.scene-main .scroll_index').css('width'));
+                    var left = parseInt($('.scene-main .scroll').css('left')) + width * 0.0185;
+                    $('.scene-yinyue .scroll_index').css('left', left + width * s * 0.963);
+                }
             }
         }
     } else {
@@ -342,15 +313,18 @@ initfunlist.push(function() {
             limit = parseInt($('.scene-main .bg').css('width')) - $.size('w');
         }
         moveTo = function (p) {
-            if(p.x){
-                if (p.x > 0) p.x = 0;
-                else if (limit + p.x < 0) p.x = -limit;
-                main_box.css('left', p.x);
-                pos.x = p.x;
-                var s = -pos.x / limit;
-                var width = parseInt($('.scene-main .scroll').css('width')) - parseInt($('.scene-main .scroll_index').css('width'));
-                var left = parseInt($('.scene-main .scroll').css('left')) + width * 0.0185;
-                $('.scene-main .scroll_index').css('left', left + width * s * 0.963);
+            if(p.x) {
+                var d = (pos.x - p.x).toFixed(0);
+                if (d != 0) {
+                    if (p.x > 0) p.x = 0;
+                    else if (limit + p.x < 0) p.x = -limit;
+                    main_box.css('left', p.x);
+                    pos.x = p.x;
+                    var s = -pos.x / limit;
+                    var width = parseInt($('.scene-yinyue .scroll').css('width')) - parseInt($('.scene-yinyue .scroll_index').css('width'));
+                    var left = parseInt($('.scene-yinyue .scroll').css('left')) + width * 0.0185;
+                    $('.scene-yinyue .scroll_index').css('left', left + width * s * 0.963);
+                }
             }
         }
     }
@@ -449,26 +423,13 @@ initfunlist.push(function() {
     //给地标绑定事件
     $('.scene-main .btn').pitTouch(function () {
         console.log("进入地标场景");
+        count++;
         var key = $(this).data('id');
         $('.scene-main').removeClass('show');
         $('.scene-anlibox').addClass('show');
         $('.scene-main ' + key).addClass('juliedoudong');
         $('.scene-yinyue').removeClass('filter');
         $('.scene-' + key).show();
+        $('.scene-yinyue').attr('type','');
     });
-    //OK
-    $('.scene-main .btn_ok').pitTouch(function () {
-        console.log("关闭提醒");
-        $('.scene-main .shuoming_bg').remove();
-        $('.scene-main .shuoming').remove();
-        $('.scene-main .btn_ok').remove();
-    })
-    $('.scene-main .fanhui_to_index').pitTouch(function () {
-        console.log("返回首页");
-        $('.scene-main').removeClass('show');;
-        $('.scene-index').show();
-        window.setTimeout(function () {
-            main_box.trigger('touchend')
-        }, 500);
-    })
 })

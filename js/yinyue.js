@@ -10,8 +10,16 @@ sceneslist.push({
     'auto_w':true,                        /*是否自动适应宽度*/
     'auto_h':true,                         /*是否自动适应高度*/
     'layers':[                              /*场景的图层数据*/
+        {"w":4742,"h":2667,'attr': {'class': 'shuoming_bg'}, isbg: true},
         {"img":"yinyue.png","x":4380,"y":96,"attr":{"class":"yinyue btn"}},
         {"img":"shengyin.png","x":4493,"y":153,"attr":{"class":"shengyin play"}},
+        {'img': 'shuoming.png', 'attr': {'class': 'shuoming'}},
+        //OK
+        {'img': 'btn_ok.png', x: 2204, y: 1940, w: 282, h: 259, attr: {'class': 'btn_ok'}},
+        {'img':'chakanxiangqing.png',x:2100,y:2422,'attr':{'class':'chakanxiangqing'}},
+        {'img': 'scroll.png', x: 820, y: 2387, attr: {'class': 'scroll'}},
+        { x: 880, y: 2344,w:150,h:150, attr: {'class': 'scroll_index'}},
+        {"img":"fanhui.png","x":128,"y":132,"attr":{"class":"fanhui_to_index btn"}},
     ]
 })
 
@@ -42,4 +50,21 @@ initfunlist.push(function(){
             $('.yinyue audio').get(2).play();
         }
     }
+
+    //OK
+    $('.scene-yinyue .btn_ok').pitTouch(function () {
+        console.log("关闭提醒");
+        $('.scene-yinyue .shuoming_bg').remove();
+        $('.scene-yinyue .shuoming').remove();
+        $('.scene-yinyue .btn_ok').remove();
+    })
+    $('.scene-yinyue .fanhui_to_index').pitTouch(function () {
+        console.log("返回首页");
+        var type = $('.scene-yinyue').attr('type');
+        if(type) {
+            $('.scene-' + type).removeClass('show');
+            $('.scene-index').show();
+            $('.scene-yinyue').attr('type','');
+        }
+    })
 })

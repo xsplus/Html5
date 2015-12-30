@@ -11,8 +11,8 @@ sceneslist.push({
     'auto_h':true,
     'layers':[
         {"img":"bg.png","isbg":true},
-        {"img":"anli_box.png","x":128,"y":353},
-        {"img":"wenti_box.png","x":276,"y":459,"attr":{"class":"wenti_box"}},
+        {"img":"anli_box.png","x":128,"y":353,w:4489,h:2193},
+        {"img":"wenti_box.png","x":276,"y":459,w:1459,h:802,"attr":{"class":"wenti_box"}},
         {"img":"mao.png","x":120,"y":115,"attr":{"class":"mao"}},
         {"img":"cankao.png","x":3540,"y":87,"attr":{"class":"cankao btn"}},
         {"img":"guanbi.png","x":2200,"y":112,"attr":{"class":"fanhui btn"}},
@@ -34,6 +34,7 @@ initfunlist.push(function(){
             $('.scene-yinyue').addClass('filter');
             $('.scene.scene-anlibox').removeClass('show');
             $('.scene-main').addClass('show');
+            $('.scene-yinyue').attr('type','main');
         },300)
     })
 
@@ -42,8 +43,10 @@ initfunlist.push(function(){
         setTimeout(function(){
             console.log('查看参考案例');
             sceneID.removeClass('show');
+            $('.scene-yinyue').addClass('filter');
             $('.scene.scene-anlibox').removeClass('show');
-            $('.scene-anli').show().trigger('touchstart').trigger('touchend');
+            $('.scene-anli').show();
+            $('.scene-yinyue').attr('type','anli');
         },300)
     })
 
@@ -68,8 +71,10 @@ initfunlist.push(function(){
         $(this).addClass('btndoudong');
         setTimeout(function(){
             console.log('查看参考案例');
+            $('.scene-yinyue').addClass('filter');
             $('.scene-anlibox').removeClass('show');
             $('.scene-anli').show();
+            $('.scene-yinyue').attr('type','anli');
         },300)
     })
 })
