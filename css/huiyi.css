@@ -3,7 +3,7 @@
     display: none !important;
 }
 
-.scene-huiyi.true.show .true{
+.scene-huiyi.true.show .true,.scene-huiyi .wenhaodoudong{
     display: block !important;
 }
 

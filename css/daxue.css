@@ -163,37 +163,37 @@
 }
 
 @keyframes wenhao{
-    33%{transform: translateY(20px)}
-    66%{transform: translateY(-20px)}
+    33%{transform: translateY(30px)}
+    66%{transform: translateY(-30px)}
 }
 @-moz-keyframes wenhao{
-    33%{-moz-transform: translateY(20px)}
-    66%{-moz-transform: translateY(-20px)}
+    33%{-moz-transform: translateY(30px)}
+    66%{-moz-transform: translateY(-30px)}
 }
 @-o-keyframes wenhao{
-    33%{-o-transform: translateY(20px)}
-    66%{-o-transform: translateY(-20px)}
+    33%{-o-transform: translateY(30px)}
+    66%{-o-transform: translateY(-30px)}
 }
 @-webkit-keyframes wenhao{
-    33%{-webkit-transform: translateY(20px)}
-    66%{-webkei-transform: translateY(-20px)}
+    33%{-webkit-transform: translateY(30px)}
+    66%{-webkei-transform: translateY(-30px)}
 }
 
 @keyframes _wenhao{
-    33%{transform: translateY(10px)}
-    66%{transform: translateY(-10px)}
+    33%{transform: translateY(8px)}
+    66%{transform: translateY(-8px)}
 }
 @-moz-keyframes _wenhao{
-    33%{-moz-transform: translateY(10px)}
-    66%{-moz-transform: translateY(-10px)}
+    33%{-moz-transform: translateY(8px)}
+    66%{-moz-transform: translateY(-8px)}
 }
 @-o-keyframes _wenhao{
-    33%{-o-transform: translateY(10px)}
-    66%{-o-transform: translateY(-10px)}
+    33%{-o-transform: translateY(8px)}
+    66%{-o-transform: translateY(-8px)}
 }
 @-webkit-keyframes _wenhao{
-    33%{-webkit-transform: translateY(10px)}
-    66%{-webkei-transform: translateY(-10px)}
+    33%{-webkit-transform: translateY(8px)}
+    66%{-webkei-transform: translateY(-8px)}
 }
 .wenhao{
     animation:wenhao 3s linear 2s infinite ;
@@ -258,4 +258,10 @@
     -webkit-animation:wenhao 3s linear infinite;
     -moz-animation:wenhao 3s linear infinite;
     -o-animation:wenhao 3s linear infinite;
+}
+.phone .scene-daxue.true .dengpao{
+    animation:_wenhao 3s linear 2s infinite ;
+    -moz-animation:_wenhao 3s linear 2s infinite;
+    -o-animation:_wenhao 3s linear 2s infinite;
+    -webkit-animation:_wenhao 3s linear 2s infinite;
 }
