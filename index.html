@@ -89,8 +89,11 @@
                     $(this).addClass('btndoudong');
                     var scene = $(this).parent();
                     scene.addClass('true');
-                    window.setTimeout(function(){
-                        scene.children('.weibiao').css('transform','scale(1)');
+                    window.setTimeout(function() {
+                        scene.children('.weibiao').css('transform', 'scale(1)')
+                                .css('-webkit-transform', 'scale(1)')
+                                .css('-moz-transform', 'scale(1)')
+                                .css('-o-transform', 'scale(1)');
                     })
                     console.log("回答正确");
                     if($('.scene.child').not('.true').length){

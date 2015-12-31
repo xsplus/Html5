@@ -139,6 +139,9 @@ body.phone{
 .weibiao{
     transition: .8s;
     transform: scale(2);
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2);
+    -o-transform: scale(2);
 }
 .scroll_index{
     background-color: #fff;
