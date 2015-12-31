@@ -164,7 +164,7 @@ function createScenes(scenes,cross_screen) {
                     }
                     if (autoSize && !scene.debug) obj.on('autoSize', autoSize)
                     function drawobj(x,y,w,h) {
-                        obj.css({'left': x, 'top': y, 'width': w, 'height': h});
+                        obj.css({'left': x.toFixed(0)+"px", 'top': y.toFixed(0)+"px", 'width': w.toFixed(0)+"px", 'height': h.toFixed(0)+"px"});
                     }
                 })(scene.layers[j])
             }
